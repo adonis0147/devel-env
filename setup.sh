@@ -309,8 +309,9 @@ setup_gdb() {
   mkdir build
   cd build
   CFLAGS="-I${DEVEL_HOME_PATH}/include/python3.9" \
-    LDFLAGS="-L${DEVEL_HOME_PATH}/lib" LIBS='-lpython3' \
-  ../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
+    LDFLAGS="-Wl,-rpath,'${ORIGIN_LD_RUN_PATH}' -Wl,-rpath,${BUILD_LD_RUN_PATH} -L${DEVEL_HOME_PATH}/lib" \
+    LIBS='-lpython3' \
+    ../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
   make -j "${NUM_CORES}"
   make install
   popd > /dev/null
@@ -326,9 +327,9 @@ setup_vim() {
   rm -rf "${dir}" && tar -zxvf vim-8.2.3918.tar.gz
   cd "${dir}"
   CFLAGS="-I${DEVEL_HOME_PATH}/include/python3.9" \
-  LDFLAGS="-Wl,-rpath,'\\${ORIGIN_LD_RUN_PATH}' -Wl,-rpath,${BUILD_LD_RUN_PATH} -L${DEVEL_HOME_PATH}/lib" \
-  LIBS='-lpython3' \
-  ./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
+    LDFLAGS="-Wl,-rpath,'\\${ORIGIN_LD_RUN_PATH}' -Wl,-rpath,${BUILD_LD_RUN_PATH} -L${DEVEL_HOME_PATH}/lib" \
+    LIBS='-lpython3' \
+    ./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
     --with-features=huge \
     --enable-python3interp=dynamic \
     --enable-cscope \
@@ -369,6 +370,11 @@ setup_all() {
 }
 
 main() {
+  mkdir -p "${DEVEL_HOME_PATH}"
+  if [[ ! -f "${DEVEL_HOME_PATH}/setup_package.sh" ]]; then
+    cp setup_package.sh "${DEVEL_HOME_PATH}"
+  fi
+
   if [[ "${#@}" -eq 0 ]]; then
     setup_all
   elif [[ "${#@}" -eq 1 ]]; then
