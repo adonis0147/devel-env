@@ -72,24 +72,17 @@ function configure_toolchain() {
 	local patchelf="${prefix}/${TOOLCHAIN_DIRNAME}/bin/${PATCHELF}"
 	if [[ ! -f "${patchelf}" ]]; then
 		log_error "Failed to find the tool \033[34;1m${patchelf}\033[0m ."
-	else
-		log_info "Program ${PATCHELF} was found: \033[34;1m${patchelf}\033[0m"
 	fi
+	log_info "Program ${PATCHELF} was found: \033[34;1m${patchelf}\033[0m"
 
 	local interpreter
-	if ! interpreter="$(find "$(pwd)" -name "${INTERPRETER}")"; then
-		log_error "Failed to find the interpreter \033[34;1m${INTERPRETER}\033[0m"
-	fi
-	if [[ -z "${interpreter}" ]]; then
+	if ! interpreter="$(find "$(pwd)" -name "${INTERPRETER}")" || [[ -z "${interpreter}" ]]; then
 		log_error "Failed to find the interpreter \033[34;1m${INTERPRETER}\033[0m"
 	fi
 	log_info "Interpreter was found: \033[34;1m${interpreter}\033[0m"
 
 	local libc_so
-	if ! libc_so="$(find "$(pwd)" -name "${LIBC_SO}")"; then
-		log_error "Failed to find the library \033[34;1m${LIBC_SO}\033[0m"
-	fi
-	if [[ -z "${libc_so}" ]]; then
+	if ! libc_so="$(find "$(pwd)" -name "${LIBC_SO}")" || [[ -z "${libc_so}" ]]; then
 		log_error "Failed to find the library \033[34;1m${LIBC_SO}\033[0m"
 	fi
 	log_info "Library was found: \033[34;1m${libc_so}\033[0m"
@@ -112,25 +105,26 @@ function configure_toolchain() {
 		if ! file "${file}" | grep ELF >/dev/null; then
 			continue
 		fi
-		local filename
-		filename="$(basename "${file}")"
-		if [[ ! "${filename}" =~ .*\.o ]] && [[ "${filename}" != "${PATCHELF}" ]] &&
-			[[ "${filename}" != "${INTERPRETER}" ]] && [[ "${filename}" != "${LIBC_SO}" ]] &&
-			[[ "${filename}" != 'libmcheck.a' ]]; then
-
-			"${patchelf}" --set-rpath "${rpaths_in_line}" "${file}"
-			if readelf -S "${file}" | grep '.interp' >/dev/null; then
-				"${patchelf}" --set-interpreter "${interpreter}" "${file}"
-			fi
+		"${patchelf}" --set-rpath "${rpaths_in_line}" "${file}"
+		if readelf -S "${file}" | grep '.interp' >/dev/null; then
+			"${patchelf}" --set-interpreter "${interpreter}" "${file}"
 		fi
-	done < <(find "$(pwd)" -type f)
+	done < <(
+		find "$(pwd)" -type f ! -name '*.o' ! -name '*.a' \
+			! -name "${PATCHELF}" ! -name "${INTERPRETER}" ! -name "${LIBC_SO}"
+	)
 
 	# Configure gcc specs
 	bin/gcc -dumpspecs >lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs
 	sed -i "{
-        s/\/lib64\/${INTERPRETER}/${interpreter//\//\\/}/g
-        s/collect2/collect2 -rpath ${rpaths_in_line//\//\\/}/
-    }" lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs
+		s/\/lib64\/${INTERPRETER}/${interpreter//\//\\/}/g
+		s/collect2/collect2 -rpath ${rpaths_in_line//\//\\/}/
+	}" lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs
+
+	# link programs
+	while read -r file; do
+		ln -snf "${file}" bin/
+	done < <(find "$(pwd)/x86_64-pc-linux-gnu/sysroot/usr/bin" -mindepth 1)
 }
 
 function main() {
@@ -138,7 +132,10 @@ function main() {
 		help
 		exit 1
 	fi
-	local prefix
+	local prefix="${1}"
+	if ! mkdir -p "${prefix}"; then
+		log_error "Failed to create the directory \033[34;1m${prefix}\033[0m ."
+	fi
 	if ! prefix="$(readlink -f "${1}")"; then
 		log_error "Failed to get the absolute path of \033[34;1m${1}\033[0m ."
 	fi
@@ -150,6 +147,10 @@ function main() {
 
 	configure_toolchain "${prefix}"
 	log_info 'Completed!'
+
+	local message='Before using the toolchain, please run the following command first:\n\n'
+	message+="\t\033[32;1mexport PATH=\"${prefix}/${TOOLCHAIN_DIRNAME}/bin:\${PATH}\"\033[0m\n"
+	log_info "${message}"
 }
 
 main "${@}"
