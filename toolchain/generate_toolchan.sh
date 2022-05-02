@@ -44,18 +44,6 @@ function prepare() {
 	mv patchelf/bin/patchelf /output/x86_64-pc-linux-gnu/bin
 }
 
-function generate_bin() {
-	pushd bin >/dev/null
-	while read -r file; do
-		local prefix='./x86_64-pc-linux-gnu-'
-		if [[ "$(basename "${file}")" =~ x86_64-pc-linux-gnu-.* ]]; then
-			mv "${file}" "${file:${#prefix}}"
-		fi
-	done < <(find . -mindepth 1)
-	ln -snf gcc cc
-	popd >/dev/null
-}
-
 function main() {
 	if [[ ! -d '/output' ]]; then
 		log_error "The host dirve wasn't mounted."
@@ -71,8 +59,6 @@ function main() {
 	# Clean up
 	cd /output/x86_64-pc-linux-gnu
 	rm -rf build.log.bz2
-
-	generate_bin
 
 	log_info 'Packaging...'
 	cd /output

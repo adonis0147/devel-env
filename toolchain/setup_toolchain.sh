@@ -114,17 +114,36 @@ function configure_toolchain() {
 			! -name "${PATCHELF}" ! -name "${INTERPRETER}" ! -name "${LIBC_SO}"
 	)
 
+	# Rename
+	pushd bin >/dev/null || exit
+	while read -r file; do
+		local path_prefix='./x86_64-pc-linux-gnu-'
+		if [[ "$(basename "${file}")" =~ x86_64-pc-linux-gnu-.* ]]; then
+			mv "${file}" "${file:${#path_prefix}}"
+		fi
+	done < <(find . -mindepth 1)
+	ln -snf gcc cc
+	popd >/dev/null || exit
+
 	# Configure gcc specs
-	bin/gcc -dumpspecs >lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs
+	"$(pwd)/bin/gcc" -dumpspecs >lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs
 	sed -i "{
 		s/\/lib64\/${INTERPRETER}/${interpreter//\//\\/}/g
 		s/collect2/collect2 -rpath ${rpaths_in_line//\//\\/}/
-	}" lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs
+	}" "$(pwd)/lib/gcc/x86_64-pc-linux-gnu/11.2.0/specs"
 
-	# link programs
+	# Link programs
 	while read -r file; do
 		ln -snf "${file}" bin/
 	done < <(find "$(pwd)/x86_64-pc-linux-gnu/sysroot/usr/bin" -mindepth 1)
+
+	# Modify files
+	local python_dir="${prefix}/${TOOLCHAIN_DIRNAME}/share/gcc-11.2.0/python"
+	local lib_dir="${prefix}/${TOOLCHAIN_DIRNAME}/x86_64-pc-linux-gnu/sysroot/lib64"
+	sed -i "{
+		s/^pythondir = .*/pythondir = '${python_dir//\//\\/}'/
+		s/^libdir = .*/libdir = '${lib_dir//\//\\/}'/
+	}" "$(pwd)/x86_64-pc-linux-gnu/sysroot/lib/libstdc++.so.6.0.29-gdb.py"
 }
 
 function main() {
