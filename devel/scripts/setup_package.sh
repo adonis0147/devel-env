@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 declare -r CMD="${BASH_SOURCE[0]}"
 SCRIPTS_PATH="$(dirname "$(readlink -f "${CMD}")")"
 declare -r SCRIPTS_PATH
