@@ -458,7 +458,7 @@ function main() {
 	install_packages
 
 	local message='Before using the packages, please run the following command first:\n\n'
-	message+="\t\033[32;1msource ${DEVEL_HOME_PATH}/scripts/env_vars.sh\033[0m\n"
+	message+="\t\033[32;1msource ${SCRIPTS_PATH}/env_vars.sh\033[0m\n"
 	log_info "${message}"
 }
 
