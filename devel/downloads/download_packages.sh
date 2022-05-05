@@ -52,6 +52,8 @@ function main() {
 	download 'gmp' "${GMP_PACKAGE_URL}" "${GMP_PACKAGE_SHA256SUM}" "${GMP_PACKAGE_NAME}"
 	download 'gdb' "${GDB_PACKAGE_URL}" "${GDB_PACKAGE_SHA256SUM}" "${GDB_PACKAGE_NAME}"
 	download 'neovim' "${NEOVIM_PACKAGE_URL}" "${NEOVIM_PACKAGE_SHA256SUM}" "${NEOVIM_PACKAGE_NAME}"
+	download 'zstd' "${ZSTD_PACKAGE_URL}" "${ZSTD_PACKAGE_SHA256SUM}" "${ZSTD_PACKAGE_NAME}"
+	download 'ccache' "${CCACHE_PACKAGE_URL}" "${CCACHE_PACKAGE_SHA256SUM}" "${CCACHE_PACKAGE_NAME}"
 }
 
 main "${@}"

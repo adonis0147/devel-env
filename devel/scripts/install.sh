@@ -388,6 +388,40 @@ function install_neovim() {
 	log_info 'Success!'
 }
 
+function install_zstd() {
+	local package='zstd'
+	log_info "Start to install ${package}."
+	rm -rf "${ZSTD_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${ZSTD_PACKAGE_NAME}"
+
+	pushd "${ZSTD_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	make -j "${NUM_CORES}" install PREFIX="${DEVEL_HOME_PATH}/opt/zstd"
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_ccache() {
+	local package='ccache'
+	log_info "Start to install ${package}."
+	rm -rf "${CCACHE_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${CCACHE_PACKAGE_NAME}"
+
+	pushd "${CCACHE_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_RPATH="${DEVEL_HOME_PATH}/lib" \
+		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/ccache" \
+		-DZSTD_INCLUDE_DIR="${DEVEL_HOME_PATH}/opt/zstd/include" \
+		-DZSTD_LIBRARY="${DEVEL_HOME_PATH}/opt/zstd/lib/libzstd.so" \
+		-DREDIS_STORAGE_BACKEND=OFF ..
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	install_autoconf
@@ -410,6 +444,8 @@ function install_packages() {
 	install_gmp
 	install_gdb
 	install_neovim
+	install_zstd
+	install_ccache
 	popd >/dev/null
 }
 

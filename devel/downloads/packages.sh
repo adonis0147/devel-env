@@ -98,3 +98,13 @@ GDB_PACKAGE_EXTRACTED_DIR='gdb-12.1'
 NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.tar.gz'
 NEOVIM_PACKAGE_SHA256SUM='5b3fced3f185ae1e1497cb5f949597c4065585fc26e7cd25a31f5f791dbd9b59'
 NEOVIM_PACKAGE_NAME='nvim-linux64.tar.gz'
+
+ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz'
+ZSTD_PACKAGE_SHA256SUM='7c42d56fac126929a6a85dbc73ff1db2411d04f104fae9bdea51305663a83fd0'
+ZSTD_PACKAGE_NAME='zstd-1.5.2.tar.gz'
+ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.2'
+
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.6/ccache-4.6.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='73a1767ac6b7c0404a1a55f761a746d338e702883c7137fbf587023062258625'
+CCACHE_PACKAGE_NAME='ccache-4.6.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.6'
