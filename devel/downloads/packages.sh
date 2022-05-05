@@ -75,6 +75,11 @@ PYTHON_PACKAGE_SHA256SUM='f3bcc65b1d5f1dc78675c746c98fcee823c038168fc629c5935b04
 PYTHON_PACKAGE_NAME='Python-3.10.4.tgz'
 PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.10.4'
 
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_4_8/expat-2.4.8.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='398f6d95bf808d3108e27547b372cb4ac8dc2298a3c4251eb7aa3d4c6d4bb3e2'
+EXPAT_PACKAGE_NAME='expat-2.4.8.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.4.8'
+
 GIT_PACKAGE_URL='https://www.kernel.org/pub/software/scm/git/git-2.36.0.tar.gz'
 GIT_PACKAGE_SHA256SUM='9785f8c99daea037b8443d2f7397ac6aafbf8d5ff21fbfe2e5c0d443d126e211'
 GIT_PACKAGE_NAME='git-2.36.0.tar.gz'

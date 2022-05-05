@@ -299,6 +299,23 @@ function install_python() {
 	log_info 'Success!'
 }
 
+function install_expat() {
+	local package='expat'
+	log_info "Start to install ${package}."
+	rm -rf "${EXPAT_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${EXPAT_PACKAGE_NAME}"
+
+	pushd "${EXPAT_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --without-docbook
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_git() {
 	local package='git'
 	log_info "Start to install ${package}."
@@ -306,8 +323,8 @@ function install_git() {
 
 	pushd "${GIT_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	make configure
-	./configure --prefix="${DEVEL_HOME_PATH}/opt/git" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl" \
-		--with-zlib="${DEVEL_HOME_PATH}/opt/zlib"
+	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
+		./configure --prefix="${DEVEL_HOME_PATH}/opt/git" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -388,6 +405,7 @@ function install_packages() {
 	install_wget
 	install_bzip2
 	install_python
+	install_expat
 	install_git
 	install_gmp
 	install_gdb
