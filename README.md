@@ -39,11 +39,14 @@ cp output/install_toolchain.sh devel/scripts
 bash devel/downloads/download_packages.sh
 
 # Copy the whole devel directory to the target server (e.g. ${HOME}/devel) and run the following commands.
-export DEVEL_HOME_PATH="${HOME}/devel"
-cd "${DEVEL_HOME_PATH}/scripts"
+
+# Optional: DEVEL_HOME_PATH="${HOME}/devel" by default.
+export DEVEL_HOME_PATH="<some devel home path>"
+
+cd "some/path/devel/scripts"
 ./install.sh
 ```
 ### Usage
 ```shell
-source "${HOME}/devel/scripts/env_vars.sh"
+source "some/path/devel/scripts/env_vars.sh"
 ```
