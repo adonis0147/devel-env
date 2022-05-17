@@ -48,4 +48,5 @@ function setup_locale() {
 
 	export LANG="${output_path}"
 	export LANGUAGE="${output_path}"
+	export LESSCHARSET="${charmap}"
 }
