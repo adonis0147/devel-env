@@ -6,7 +6,7 @@ RUN yum install -y which git python3 autoconf automake libtool gcc gcc-c++ make 
     flex byacc bison texinfo bzip2 unzip help2man file patch ncurses-devel
 
 RUN git clone https://github.com/crosstool-ng/crosstool-ng && \
-    cd crosstool-ng && git checkout crosstool-ng-1.25.0-rc2 -b crosstool-ng-1.25.0-rc2
+    cd crosstool-ng && git checkout crosstool-ng-1.25.0 -b crosstool-ng-1.25.0
 RUN cd crosstool-ng && ./bootstrap && ./configure --prefix=/opt/crosstool-ng && make -j "$(nproc)" && make install
 RUN rm -rf crosstool-ng
 
