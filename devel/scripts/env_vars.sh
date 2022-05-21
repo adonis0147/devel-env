@@ -25,6 +25,7 @@ function relocate() {
 	patchelf --set-interpreter "${interpreter}" "${program}"
 }
 
+# Example: setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
 function setup_locale() {
 	local charmap="${1}"
 	local input="${2}"
