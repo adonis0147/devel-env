@@ -12,7 +12,7 @@ export LD_RUN_PATH="${DEVEL_HOME_PATH}/lib"
 export PATH="${DEVEL_HOME_PATH}/bin:${DEVEL_HOME_PATH}/compiler/bin:${PATH}"
 
 export EDITOR='nvim'
-export MANPAGER='col -b | nvim -m -c "set ft=man ts=8 nonu nolist" -'
+export MANPAGER='nvim +Man!'
 
 function relocate() {
 	local program="${1}"
