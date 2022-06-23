@@ -11,8 +11,10 @@ export CPATH="${DEVEL_HOME_PATH}/include"
 export LD_RUN_PATH="${DEVEL_HOME_PATH}/lib"
 export PATH="${DEVEL_HOME_PATH}/bin:${DEVEL_HOME_PATH}/compiler/bin:${PATH}"
 
-export EDITOR='nvim'
-export MANPAGER='nvim +Man!'
+if command -v nvim >/dev/null; then
+	export EDITOR='nvim'
+	export MANPAGER='nvim +Man!'
+fi
 
 function relocate() {
 	local program="${1}"
