@@ -21,7 +21,7 @@ docker build --platform=linux/x86-64 -t toolchain .
 2. Generate the toolchain.
 ```shell
 mkdir output
-docker run -it --platform=linux/x86-64 --rm --mount type=bind,source="$(pwd)/output",target=/output toolchain
+docker run --platform=linux/x86-64 --rm --mount type=bind,source="$(pwd)/output",target=/output toolchain
 ```
 3. Usage
 ```shell
