@@ -16,6 +16,9 @@ if command -v nvim >/dev/null; then
 	export MANPAGER='nvim +Man!'
 fi
 
+GPG_TTY="$(tty)"
+export GPG_TTY
+
 function relocate() {
 	local program="${1}"
 	local libc_so
