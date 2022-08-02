@@ -16,7 +16,7 @@ declare -r LIBC_SO='libc.so.6'
 
 source "${SCRIPTS_PATH}/common.sh"
 source "${SCRIPTS_PATH}/env_vars.sh"
-# shellcheck disable=1091
+# shellcheck source-path=SCRIPTDIR/../../devel/downloads
 source "${DOWNLOADS_PATH}/packages.sh"
 
 function install_toolchain() {

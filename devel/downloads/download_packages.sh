@@ -8,7 +8,6 @@ declare -r DOWNLOADS_PATH
 SCRIPTS_PATH="$(readlink -f "${DOWNLOADS_PATH}/../scripts")"
 declare -r PACKAGES_PATH="${DOWNLOADS_PATH}/packages"
 
-# shellcheck disable=1091
 source "${SCRIPTS_PATH}/common.sh"
 source "${DOWNLOADS_PATH}/packages.sh"
 
