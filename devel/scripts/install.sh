@@ -38,7 +38,8 @@ function setup_package() {
 function install_autoconf() {
 	local package='autoconf'
 	log_info "Start to install ${package}."
-	rm -rf "${AUTOCONF_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${AUTOCONF_PACKAGE_NAME}"
+	rm -rf "${AUTOCONF_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${AUTOCONF_PACKAGE_NAME}"
 
 	pushd "${AUTOCONF_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir -p build
@@ -55,7 +56,8 @@ function install_autoconf() {
 function install_automake() {
 	local package='automake'
 	log_info "Start to install ${package}."
-	rm -rf "${AUTOMAKE_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${AUTOMAKE_PACKAGE_NAME}"
+	rm -rf "${AUTOMAKE_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${AUTOMAKE_PACKAGE_NAME}"
 
 	pushd "${AUTOMAKE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -72,7 +74,8 @@ function install_automake() {
 function install_libtool() {
 	local package='libtool'
 	log_info "Start to install ${package}."
-	rm -rf "${LIBTOOL_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${LIBTOOL_PACKAGE_NAME}"
+	rm -rf "${LIBTOOL_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${LIBTOOL_PACKAGE_NAME}"
 
 	pushd "${LIBTOOL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -89,7 +92,8 @@ function install_libtool() {
 function install_make() {
 	local package='make'
 	log_info "Start to install ${package}."
-	rm -rf "${MAKE_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${MAKE_PACKAGE_NAME}"
+	rm -rf "${MAKE_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${MAKE_PACKAGE_NAME}"
 
 	pushd "${MAKE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -106,7 +110,8 @@ function install_make() {
 function install_pkg_config() {
 	local package='pkg-config'
 	log_info "Start to install ${package}."
-	rm -rf "${PKG_CONFIG_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${PKG_CONFIG_PACKAGE_NAME}"
+	rm -rf "${PKG_CONFIG_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${PKG_CONFIG_PACKAGE_NAME}"
 
 	pushd "${PKG_CONFIG_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -125,7 +130,8 @@ function install_patchelf() {
 	log_info "Start to install ${package}."
 
 	local install_path="${DEVEL_HOME_PATH}/opt/patchelf"
-	rm -rf "${install_path}" && mkdir -p "${install_path}"
+	rm -rf "${install_path}"
+	mkdir -p "${install_path}"
 	tar -zxvf "${PATCHELF_PACKAGE_NAME}" -C "${install_path}"
 	setup_package "${package}"
 
@@ -135,7 +141,8 @@ function install_patchelf() {
 function install_ncurses() {
 	local package='ncurses'
 	log_info "Start to install ${package}."
-	rm -rf "${NCURSES_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${NCURSES_PACKAGE_NAME}"
+	rm -rf "${NCURSES_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${NCURSES_PACKAGE_NAME}"
 
 	pushd "${NCURSES_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -153,7 +160,8 @@ function install_ncurses() {
 function install_readline() {
 	local package='readline'
 	log_info "Start to install ${package}."
-	rm -rf "${READLINE_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${READLINE_PACKAGE_NAME}"
+	rm -rf "${READLINE_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${READLINE_PACKAGE_NAME}"
 
 	pushd "${READLINE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -171,7 +179,8 @@ function install_readline() {
 function install_libffi() {
 	local package='libffi'
 	log_info "Start to install ${package}."
-	rm -rf "${LIBFFI_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${LIBFFI_PACKAGE_NAME}"
+	rm -rf "${LIBFFI_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${LIBFFI_PACKAGE_NAME}"
 
 	pushd "${LIBFFI_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -188,7 +197,8 @@ function install_libffi() {
 function install_zlib() {
 	local package='zlib'
 	log_info "Start to install ${package}."
-	rm -rf "${ZLIB_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${ZLIB_PACKAGE_NAME}"
+	rm -rf "${ZLIB_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${ZLIB_PACKAGE_NAME}"
 
 	pushd "${ZLIB_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -205,7 +215,8 @@ function install_zlib() {
 function install_openssl() {
 	local package='openssl'
 	log_info "Start to install ${package}."
-	rm -rf "${OPENSSL_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${OPENSSL_PACKAGE_NAME}"
+	rm -rf "${OPENSSL_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${OPENSSL_PACKAGE_NAME}"
 
 	pushd "${OPENSSL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -222,7 +233,8 @@ function install_openssl() {
 function install_curl() {
 	local package='curl'
 	log_info "Start to install ${package}."
-	rm -rf "${CURL_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${CURL_PACKAGE_NAME}"
+	rm -rf "${CURL_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${CURL_PACKAGE_NAME}"
 
 	pushd "${CURL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -240,7 +252,8 @@ function install_curl() {
 function install_wget() {
 	local package='wget'
 	log_info "Start to install ${package}."
-	rm -rf "${WGET_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${WGET_PACKAGE_NAME}"
+	rm -rf "${WGET_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${WGET_PACKAGE_NAME}"
 
 	pushd "${WGET_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -259,7 +272,8 @@ function install_wget() {
 function install_bzip2() {
 	local package='bzip2'
 	log_info "Start to install ${package}."
-	rm -rf "${BZIP2_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${BZIP2_PACKAGE_NAME}"
+	rm -rf "${BZIP2_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${BZIP2_PACKAGE_NAME}"
 
 	pushd "${BZIP2_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	make install PREFIX="${DEVEL_HOME_PATH}/opt/${package}" -j "${NUM_CORES}"
@@ -277,7 +291,8 @@ function install_bzip2() {
 function install_python() {
 	local package='python'
 	log_info "Start to install ${package}."
-	rm -rf "${PYTHON_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${PYTHON_PACKAGE_NAME}"
+	rm -rf "${PYTHON_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${PYTHON_PACKAGE_NAME}"
 
 	pushd "${PYTHON_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -302,7 +317,8 @@ function install_python() {
 function install_expat() {
 	local package='expat'
 	log_info "Start to install ${package}."
-	rm -rf "${EXPAT_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${EXPAT_PACKAGE_NAME}"
+	rm -rf "${EXPAT_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${EXPAT_PACKAGE_NAME}"
 
 	pushd "${EXPAT_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -319,7 +335,8 @@ function install_expat() {
 function install_git() {
 	local package='git'
 	log_info "Start to install ${package}."
-	rm -rf "${GIT_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${GIT_PACKAGE_NAME}"
+	rm -rf "${GIT_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${GIT_PACKAGE_NAME}"
 
 	pushd "${GIT_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	make configure
@@ -336,7 +353,8 @@ function install_git() {
 function install_gmp() {
 	local package='gmp'
 	log_info "Start to install ${package}."
-	rm -rf "${GMP_PACKAGE_EXTRACTED_DIR}" && tar -xvf "${GMP_PACKAGE_NAME}"
+	rm -rf "${GMP_PACKAGE_EXTRACTED_DIR}"
+	tar -xvf "${GMP_PACKAGE_NAME}"
 
 	pushd "${GMP_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -353,7 +371,8 @@ function install_gmp() {
 function install_gdb() {
 	local package='gdb'
 	log_info "Start to install ${package}."
-	rm -rf "${GDB_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${GDB_PACKAGE_NAME}"
+	rm -rf "${GDB_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${GDB_PACKAGE_NAME}"
 
 	pushd "${GDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
@@ -375,7 +394,8 @@ function install_neovim() {
 	log_info "Start to install ${package}."
 
 	local install_path="${DEVEL_HOME_PATH}/opt/neovim"
-	rm -rf "${install_path}" && mkdir -p "${install_path}"
+	rm -rf "${install_path}"
+	mkdir -p "${install_path}"
 	tar -zxvf "${NEOVIM_PACKAGE_NAME}" --strip-components=1 -C "${install_path}"
 	local interpreter
 	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name "${INTERPRETER}")"
@@ -391,7 +411,8 @@ function install_neovim() {
 function install_zstd() {
 	local package='zstd'
 	log_info "Start to install ${package}."
-	rm -rf "${ZSTD_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${ZSTD_PACKAGE_NAME}"
+	rm -rf "${ZSTD_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${ZSTD_PACKAGE_NAME}"
 
 	pushd "${ZSTD_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	make -j "${NUM_CORES}" install PREFIX="${DEVEL_HOME_PATH}/opt/zstd"
@@ -404,7 +425,8 @@ function install_zstd() {
 function install_ccache() {
 	local package='ccache'
 	log_info "Start to install ${package}."
-	rm -rf "${CCACHE_PACKAGE_EXTRACTED_DIR}" && tar -zxvf "${CCACHE_PACKAGE_NAME}"
+	rm -rf "${CCACHE_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${CCACHE_PACKAGE_NAME}"
 
 	pushd "${CCACHE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
