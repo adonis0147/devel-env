@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+shopt -s inherit_errexit
 
 declare -r CMD="${BASH_SOURCE[0]}"
 SCRIPTS_PATH="$(dirname "$(readlink -f "${CMD}")")"

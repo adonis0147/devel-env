@@ -3,4 +3,5 @@ source-path=devel/downloads
 
 external-sources=true
 
-enable=quote-safe-variables
+enable=all
+disable=SC2312
