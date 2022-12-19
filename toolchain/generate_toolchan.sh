@@ -270,7 +270,7 @@ function build_binutils_final() {
 		--disable-multilib
 
 	make -j "$(nproc)"
-	make install
+	make install-strip
 
 	# Remove the old files
 	rm -rf "${PREFIX}/lib/ldscripts"
@@ -301,7 +301,7 @@ function build_gcc_final() {
 	# Remove the old files
 	rm -r "${PREFIX}/include/c++"
 
-	make install
+	make install-strip
 
 	popd >/dev/null
 }
