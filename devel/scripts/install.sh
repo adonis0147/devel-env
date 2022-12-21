@@ -11,7 +11,7 @@ declare -r DOWNLOADS_PATH
 
 NUM_CORES="$(nproc)"
 declare -r NUM_CORES
-declare -r INTERPRETER='ld-linux-x86-64.so.2'
+declare -r INTERPRETER='ld-linux-*.so.*'
 declare -r LIBC_SO='libc.so.6'
 
 source "${SCRIPTS_PATH}/common.sh"

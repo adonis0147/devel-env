@@ -10,6 +10,10 @@ declare -r PATCHELF='patchelf'
 declare -r LIBC_SO='libc.so.6'
 declare -r INTERPRETER='ld-linux-*'
 
+declare READELF
+READELF="$(command -v readelf)"
+declare READELF
+
 function log() {
 	local level="${1}"
 	local message="${2}"
@@ -117,7 +121,7 @@ function configure_toolchain() {
 			continue
 		fi
 		"${patchelf}" --set-rpath "${rpaths_in_line}" "${file}"
-		if readelf -S "${file}" | grep '.interp' >/dev/null; then
+		if "${READELF}" -S "${file}" | grep '.interp' >/dev/null; then
 			"${patchelf}" --set-interpreter "${interpreter}" "${file}"
 		fi
 	done < <(
@@ -125,6 +129,10 @@ function configure_toolchain() {
 			! -name "${PATCHELF}" ! -name "${INTERPRETER}" ! -name "${LIBC_SO}"
 	)
 	"${patchelf}" --set-interpreter "${interpreter}" "${libc_so}"
+
+	pushd bin >/dev/null || exit
+	ln -snf gcc cc
+	popd >/dev/null || exit
 
 	# Modify files
 	local current_path

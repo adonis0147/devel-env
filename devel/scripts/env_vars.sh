@@ -5,13 +5,13 @@ export DEVEL_HOME_PATH="${DEVEL_HOME_PATH:-${HOME}/devel}"
 export PKG_CONFIG_PATH="${DEVEL_HOME_PATH}/lib/pkgconfig"
 export ACLOCAL_PATH="${DEVEL_HOME_PATH}/share/aclocal"
 
-export GCONV_PATH="${DEVEL_HOME_PATH}/compiler/x86_64-pc-linux-gnu/sysroot/usr/lib/gconv"
+export GCONV_PATH="${DEVEL_HOME_PATH}/compiler/lib/gconv"
 
 export CPATH="${DEVEL_HOME_PATH}/include"
 export LD_RUN_PATH="${DEVEL_HOME_PATH}/lib"
 export PATH="${DEVEL_HOME_PATH}/bin:${DEVEL_HOME_PATH}/compiler/bin:${PATH}"
 
-export MANPATH="${DEVEL_HOME_PATH}/share/man:${DEVEL_HOME_PATH}/man:${MANPATH}"
+export MANPATH="${DEVEL_HOME_PATH}/share/man:${DEVEL_HOME_PATH}/man:${DEVEL_HOME_PATH}/compiler/share/man:${MANPATH}"
 
 if command -v nvim >/dev/null; then
 	export EDITOR='nvim'
@@ -26,7 +26,7 @@ function relocate() {
 	local libc_so
 	local interpreter
 	libc_so="$(find "${DEVEL_HOME_PATH}/compiler" -name 'libc.so.6')"
-	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name 'ld-linux-x86-64.so.2')"
+	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name 'ld-linux-*.so.*')"
 
 	patchelf --set-rpath "$(dirname "${libc_so}")" "${program}"
 	patchelf --set-interpreter "${interpreter}" "${program}"
@@ -38,7 +38,7 @@ function setup_locale() {
 	local input="${2}"
 	local output_path="${3}"
 
-	export I18NPATH="${DEVEL_HOME_PATH}/compiler/x86_64-pc-linux-gnu/sysroot/usr/share/i18n"
+	export I18NPATH="${DEVEL_HOME_PATH}/compiler/share/i18n"
 	export LOCPATH="${HOME}/.locale"
 
 	local full_ouput_path="${LOCPATH}/${output_path}"
