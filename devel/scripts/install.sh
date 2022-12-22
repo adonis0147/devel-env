@@ -260,7 +260,8 @@ function install_wget() {
 	cd build
 	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
-		--with-ssl=openssl --with-libssl-prefix="${DEVEL_HOME_PATH}/opt/openssl"
+		--with-ssl=openssl --with-libssl-prefix="${DEVEL_HOME_PATH}/opt/openssl" \
+		--disable-pcre
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
