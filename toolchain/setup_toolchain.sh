@@ -28,6 +28,7 @@ function log_info() {
 	log 'INFO' "${message}"
 }
 
+# shellcheck disable=SC2317
 function log_warning() {
 	local message="${1}"
 	log 'WARNING' "${message}"
