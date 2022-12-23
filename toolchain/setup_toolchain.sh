@@ -101,6 +101,7 @@ function configure_toolchain() {
 	# link some paths
 	ln -snf ../include "$(pwd)/$(uname -m)-linux-gnu/include"
 	ln -snf ../lib "$(pwd)/$(uname -m)-linux-gnu/lib"
+	ln -snf ../lib64 "$(pwd)/$(uname -m)-linux-gnu/lib64"
 
 	local rpaths=(
 		"\$ORIGIN"
