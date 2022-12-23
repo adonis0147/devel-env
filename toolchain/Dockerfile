@@ -4,7 +4,7 @@ RUN apt update && apt upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt install --yes \
     build-essential texinfo bison git curl rsync gawk python-is-python3 help2man
 
-RUN git clone -b dev https://github.com/adonis0147/devel-env
+RUN git clone https://github.com/adonis0147/devel-env
 WORKDIR /devel-env/toolchain
 RUN bash generate_toolchan.sh
 
