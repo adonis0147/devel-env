@@ -28,6 +28,11 @@ jobs:
   Publish:
     runs-on: ubuntu-latest
     needs: [build]
+    env:
+      GH_REPO: ${{ github.repository }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -38,25 +43,13 @@ jobs:
           name: toolchain
           path: output
 
-      - name: Generate the release note
-        id: read_release
-        shell: bash
+      - name: Release
         run: |
-          TAG_NAME=${{ github.ref }}
-          echo "TAG_NAME=${TAG_NAME#refs/tags/}" >> $GITHUB_ENV
+          tag_name="${{ github.ref }}"
+          tag_name="${tag_name#refs/tags/}"
+
           md5="$(md5sum output/install_toolchain.sh | awk '{print $1}')"
           sha256="$(sha256sum output/install_toolchain.sh | awk '{print $1}')"
-          body="$(cat .github/templates/release.md | sed "s/MD5_CHECKSUMS/${md5}/;s/SHA256_CHECKSUMS/${sha256}/")"
-          body="${body//$'\n'/'%0A'}"
-          body="${body//$'\r'/'%0D'}"
-          echo "::set-output name=RELEASE_BODY::${body}"
+          cat .github/templates/release.md | sed "s/MD5_CHECKSUMS/${md5}/;s/SHA256_CHECKSUMS/${sha256}/" >release.md
 
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: output/install_toolchain.sh
-          overwrite: true
-          release_name: devel-env ${{ env.TAG_NAME }}
-          body: |
-            ${{ steps.read_release.outputs.RELEASE_BODY }}
+          gh release create -t "devel-env ${tag_name}" "${tag_name}" -F release.md output/install_toolchain.sh
