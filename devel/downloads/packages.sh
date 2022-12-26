@@ -26,8 +26,8 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-PATCHELF_PACKAGE_URL='https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0.tar.gz'
-PATCHELF_PACKAGE_SHA256SUM='eeda23de42bfcd6368615d00dc0700e595493fba6af5d98ed5d7d9d00a214abe'
+PATCHELF_PACKAGE_URL='https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-x86_64.tar.gz'
+PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
 PATCHELF_PACKAGE_NAME='patchelf-0.17.0.tar.gz'
 
 NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.3.tar.gz'
