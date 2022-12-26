@@ -474,11 +474,15 @@ function install_packages() {
 }
 
 function main() {
-	# prepare
+	# Prepare
 	mkdir -p "${DEVEL_HOME_PATH}/lib"
 	ln -snf "${DEVEL_HOME_PATH}/lib" "${DEVEL_HOME_PATH}/lib64"
 
 	install_toolchain
+
+	# Setup locale
+	setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
+
 	install_packages
 
 	local message='Before using the packages, please run the following command first:\n\n'
