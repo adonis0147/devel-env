@@ -150,7 +150,7 @@ function configure_toolchain() {
 	local dirname
 	dirname="$(dirname "${interpreter}")"
 	"$(pwd)/bin/gcc" -dumpspecs | sed "{
-        s/:\([^;}:]*\)\/\(${filename/.so*/}\)/:${dirname//\//\\/}\/\2/g
+		s/:\([^;}:]*\)\/\(${filename/.so*/}\)/:${dirname//\//\\/}\/\2/g
 		s/collect2/collect2 -rpath ${rpaths_in_line//\//\\/}/
 	}" >"$(pwd)/lib/gcc/specs"
 }
