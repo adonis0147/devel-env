@@ -212,6 +212,41 @@ function install_zlib() {
 	log_info 'Success!'
 }
 
+function install_libdb() {
+	local package='libdb'
+	log_info "Start to install ${package}."
+	rm -rf "${BERKELEY_DB_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${BERKELEY_DB_PACKAGE_NAME}"
+
+	pushd "${BERKELEY_DB_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../dist/configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-repmgr-ssl=no
+	make -j "${NUM_CORES}"
+	make install_include install_lib
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_perl() {
+	local package='perl'
+	log_info "Start to install ${package}."
+	rm -rf "${PERL_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${PERL_PACKAGE_NAME}"
+
+	pushd "${PERL_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	./Configure -des -Dprefix="${DEVEL_HOME_PATH}/opt/${package}" \
+		-Aldflags="-L${DEVEL_HOME_PATH}/lib -Wl,-rpath,${DEVEL_HOME_PATH}/lib"
+	make
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_openssl() {
 	local package='openssl'
 	log_info "Start to install ${package}."
@@ -454,10 +489,12 @@ function install_packages() {
 	install_make
 	install_pkg_config
 	install_patchelf
+	install_zlib
+	install_libdb
+	install_perl
 	install_ncurses
 	install_readline
 	install_libffi
-	install_zlib
 	install_openssl
 	install_curl
 	install_wget
