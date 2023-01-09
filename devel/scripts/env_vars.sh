@@ -60,39 +60,13 @@ function setup_locale() {
 }
 
 function setup_terminfo() {
-	local file="${1:+$(readlink -f "${1}")}"
-	local temp_dir
-	local ncurses_package='ncurses-6.4.tar.gz'
-	local url="https://ftpmirror.gnu.org/ncurses/${ncurses_package}"
-	local sha256sum='6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159'
-	local status_code
-
-	if ! temp_dir="$(mktemp -d)"; then
-		status_code="${?}"
-		echo -e "\033[31;1mFailed to create a temporary directory.\033[0m"
-		return "${status_code}"
-	fi
-	# shellcheck disable=2064
-	trap "rm -rf ${temp_dir}" EXIT
-
-	pushd "${temp_dir}" >/dev/null || return "${?}"
-	if [[ -z "${file}" ]]; then
-		curl -L "${url}" -o "${ncurses_package}"
-		if [[ "${sha256sum}" != "$(sha256sum "${ncurses_package}" | awk '{print $1}')" ]]; then
-			echo -e "\033[31;1mFailed to download ${ncurses_package} from ${url} .\033[0m"
+	if [[ ! -L "${HOME}/.terminfo" ]]; then
+		if [[ -d "${DEVEL_HOME_PATH}/share/terminfo" ]]; then
+			ln -s "${DEVEL_HOME_PATH}/share/terminfo" "${HOME}/.terminfo"
+			echo -e "\033[32;1mSuccess!\033[0m"
+		else
+			echo -e "\033[31;1mFailed to find the terminfo directory: ${DEVEL_HOME_PATH}/share/terminfo\033[0m"
 			return 1
 		fi
-		tar -zxf "${ncurses_package}"
-	else
-		tar -zxf "${file}" -C "${temp_dir}"
 	fi
-
-	status_code=0
-	if /usr/bin/tic -xe tmux-256color,alacritty "${ncurses_package%.tar.gz}/misc/terminfo.src"; then
-		echo -e "\033[32;1mSuccess!\033[0m"
-	else
-		status_code="${?}"
-	fi
-	popd >/dev/null || return "${?}"
-	return "${status_code}"
 }
