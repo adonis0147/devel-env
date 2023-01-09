@@ -147,12 +147,20 @@ function install_ncurses() {
 	pushd "${NCURSES_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
+
+	# Install libncursesw
 	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --enable-widec --with-shared --with-termlib
 	make -j "${NUM_CORES}"
+	make install.libs
+
+	# Install ncurses
+	rm -rf ./*
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-shared --with-termlib
+	make -j "${NUM_CORES}"
 	make install
+
 	popd >/dev/null
 	setup_package "${package}"
-	ln -snf "${DEVEL_HOME_PATH}/include/ncursesw" "${DEVEL_HOME_PATH}/include/ncurses"
 
 	log_info 'Success!'
 }
