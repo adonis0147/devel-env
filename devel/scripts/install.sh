@@ -343,9 +343,7 @@ function install_python() {
 	pushd "${PYTHON_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	CFLAGS="-DHAVE_NCURSES_H -DHAVE_NCURSESW -I${DEVEL_HOME_PATH}/include/ncursesw" \
-		LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
-		LIBS='-ltinfow -lncursesw' \
+	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		--with-openssl="${DEVEL_HOME_PATH}/opt/openssl" --enable-shared --enable-optimizations
 	make -j "${NUM_CORES}"
