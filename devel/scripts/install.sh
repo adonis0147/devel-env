@@ -423,8 +423,7 @@ function install_gdb() {
 	pushd "${GDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	CFLAGS="-I${DEVEL_HOME_PATH}/include/python3.10" \
-		LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib -ltinfow -lncursesw -lpython3" \
+	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib -ltinfow -lncursesw" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
 	make -j "${NUM_CORES}"
 	make install
