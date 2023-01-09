@@ -30,10 +30,10 @@ PATCHELF_PACKAGE_URL='https://github.com/NixOS/patchelf/releases/download/0.17.0
 PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
 PATCHELF_PACKAGE_NAME='patchelf-0.17.0.tar.gz'
 
-NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.3.tar.gz'
-NCURSES_PACKAGE_SHA256SUM='97fc51ac2b085d4cde31ef4d2c3122c21abc217e9090a43a30fc5ec21684e059'
-NCURSES_PACKAGE_NAME='ncurses-6.3.tar.gz'
-NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.3'
+NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.4.tar.gz'
+NCURSES_PACKAGE_SHA256SUM='6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159'
+NCURSES_PACKAGE_NAME='ncurses-6.4.tar.gz'
+NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.4'
 
 READLINE_PACKAGE_URL='https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz'
 READLINE_PACKAGE_SHA256SUM='3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35'
@@ -105,8 +105,8 @@ GDB_PACKAGE_SHA256SUM='87296a3a9727356b56712c793704082d5df0ff36a34ca9ec9734fc9a8
 GDB_PACKAGE_NAME='gdb-12.1.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-12.1'
 
-NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.8.1/nvim-linux64.tar.gz'
-NEOVIM_PACKAGE_SHA256SUM='a901b8815d1c0a26104bcbe405e1aa308f364f98d9dc7daa58c70114def60a29'
+NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.8.2/nvim-linux64.tar.gz'
+NEOVIM_PACKAGE_SHA256SUM='27aef92fba0d3f51ebb8b98f3689895f9bbe48f11b74920d89280bc58fbe8e28'
 NEOVIM_PACKAGE_NAME='nvim-linux64.tar.gz'
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz'
