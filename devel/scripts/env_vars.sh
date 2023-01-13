@@ -70,3 +70,22 @@ function setup_terminfo() {
 		fi
 	fi
 }
+
+# Example:
+#   curl -L https://curl.se/ca/cacert.pem -o "${HOME}/.local/share/cacert.pem"
+#   setup_ca_certificate "${HOME}/.local/share/cacert.pem"
+function setup_ca_certificate() {
+	local cacert="${1:+$(readlink -f "${1}")}"
+
+	# wget2
+	local wget2rc="${HOME}/.config/wget/wget2rc"
+	local content="ca_certificate=${cacert}"
+	if [[ ! -f "${wget2rc}" ]] || ! grep "${content}" "${wget2rc}" >/dev/null; then
+		echo -e "Configure ca_certificate to \033[34;1m${wget2rc}\033[0m"
+		mkdir -p "$(dirname "${wget2rc}")"
+		echo "${content}" >>"${wget2rc}"
+	fi
+
+	# curl
+	export CURL_CA_BUNDLE="${cacert}"
+}
