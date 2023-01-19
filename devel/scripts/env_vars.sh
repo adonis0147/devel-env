@@ -18,8 +18,9 @@ if command -v nvim >/dev/null; then
 	export MANPAGER='nvim +Man!'
 fi
 
-GPG_TTY="$(tty)"
-export GPG_TTY
+if GPG_TTY="$(tty)"; then
+	export GPG_TTY
+fi
 
 function relocate() {
 	local program="${1}"
