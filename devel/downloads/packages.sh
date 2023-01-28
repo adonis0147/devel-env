@@ -1,6 +1,11 @@
 #!/bin/bash
 # shellcheck disable=2034
 
+M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.19.tar.xz'
+M4_PACKAGE_SHA256SUM='63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96'
+M4_PACKAGE_NAME='m4-1.4.19.tar.xz'
+M4_PACKAGE_EXTRACTED_DIR='m4-1.4.19'
+
 AUTOCONF_PACKAGE_URL='https://ftpmirror.gnu.org/autoconf/autoconf-2.71.tar.gz'
 AUTOCONF_PACKAGE_SHA256SUM='431075ad0bf529ef13cb41e9042c542381103e80015686222b8a9d4abef42a1c'
 AUTOCONF_PACKAGE_NAME='autoconf-2.71.tar.gz'

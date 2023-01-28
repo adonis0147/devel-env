@@ -35,6 +35,24 @@ function setup_package() {
 	"${SCRIPTS_PATH}/setup_package.sh" "${package}"
 }
 
+function install_m4() {
+	local package='m4'
+	log_info "Start to install ${package}."
+	rm -rf "${M4_PACKAGE_EXTRACTED_DIR}"
+	tar -xvf "${M4_PACKAGE_NAME}"
+
+	pushd "${M4_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir -p build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_autoconf() {
 	local package='autoconf'
 	log_info "Start to install ${package}."
@@ -488,15 +506,16 @@ function install_ccache() {
 
 function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
+	install_m4
+	install_zlib
+	install_libdb
+	install_perl
 	install_autoconf
 	install_automake
 	install_libtool
 	install_make
 	install_pkg_config
 	install_patchelf
-	install_zlib
-	install_libdb
-	install_perl
 	install_ncurses
 	install_readline
 	install_libffi

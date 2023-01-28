@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-shopt -s inherit_errexit
 
 declare -r CMD="${BASH_SOURCE[0]}"
 SCRIPTS_PATH="$(dirname "$(readlink -f "${CMD}")")"
@@ -36,8 +35,14 @@ function setup_package() {
 	log_info "Setup ${package} ..."
 	while read -r path; do
 		full_path="$(basename "${OPT_PATH}")/${package}/${path}"
-		num="$(count_layers "${package}" "${full_path}")"
-		link_path_prefix="$(generate_link_path_prefix "${num}" "${full_path}")"
+		num="$(
+			set -e
+			count_layers "${package}" "${full_path}"
+		)"
+		link_path_prefix="$(
+			set -e
+			generate_link_path_prefix "${num}" "${full_path}"
+		)"
 		mkdir -p "${DEVEL_HOME_PATH}/${path}"
 		while read -r sub_path; do
 			ln -snf "${link_path_prefix}/${sub_path}" "${DEVEL_HOME_PATH}/${path}/"
