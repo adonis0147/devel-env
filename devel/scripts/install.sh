@@ -379,15 +379,16 @@ function install_python() {
 	pushd "${PYTHON_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
+	CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
+		LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		--with-openssl="${DEVEL_HOME_PATH}/opt/openssl" --enable-shared --enable-optimizations
 	make -j "${NUM_CORES}"
 	make install
 	cd "${DEVEL_HOME_PATH}/bin"
-	ln -s python3 python
-	ln -s python3-config python-config
-	ln -s pip3 pip
+	ln -snf python3 python
+	ln -snf python3-config python-config
+	ln -snf pip3 pip
 	popd >/dev/null
 	setup_package "${package}"
 
