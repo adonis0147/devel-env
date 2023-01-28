@@ -352,6 +352,24 @@ function install_bzip2() {
 	log_info 'Success!'
 }
 
+function install_sqlite() {
+	local package='sqlite'
+	log_info "Start to install ${package}."
+	rm -rf "${SQLITE_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${SQLITE_PACKAGE_NAME}"
+
+	pushd "${SQLITE_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_python() {
 	local package='python'
 	log_info "Start to install ${package}."
@@ -523,6 +541,7 @@ function install_packages() {
 	install_curl
 	install_wget
 	install_bzip2
+	install_sqlite
 	install_python
 	install_expat
 	install_git

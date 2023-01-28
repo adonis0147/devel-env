@@ -36,9 +36,9 @@ if [[ "${ARCH}" == 'arm64' ]]; then
 	ARCH='aarch64'
 fi
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-${ARCH}.tar.gz"
-if [[ "$(uname -m)" == 'x86-64' ]]; then
+if [[ "${ARCH}" == 'x86_64' ]]; then
 	PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
-elif [[ "$(uname -m)" == 'aarch64' ]]; then
+elif [[ "${ARCH}" == 'aarch64' ]]; then
 	PATCHELF_PACKAGE_SHA256SUM='78bcba9452d4f9cd8162ea0acdffd67073c3ded331fc8ca81196a88017cfd214'
 fi
 PATCHELF_PACKAGE_NAME="patchelf-0.17.0-${ARCH}.tar.gz"
@@ -92,6 +92,11 @@ BZIP2_PACKAGE_URL='https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269'
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
+
+SQLITE_PACKAGE_URL='https://sqlite.org/2022/sqlite-autoconf-3400100.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='2c5dea207fa508d765af1ef620b637dcb06572afa6f01f0815bd5bbf864b33d9'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3400100.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3400100'
 
 PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz'
 PYTHON_PACKAGE_SHA256SUM='baed518e26b337d4d8105679caf68c5c32630d702614fc174e98cb95c46bdfa4'
