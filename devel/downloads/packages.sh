@@ -31,9 +31,17 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-PATCHELF_PACKAGE_URL='https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-x86_64.tar.gz'
-PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
-PATCHELF_PACKAGE_NAME='patchelf-0.17.0.tar.gz'
+ARCH="$(uname -m)"
+if [[ "${ARCH}" == 'arm64' ]]; then
+	ARCH='aarch64'
+fi
+PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-${ARCH}.tar.gz"
+if [[ "$(uname -m)" == 'x86-64' ]]; then
+	PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
+elif [[ "$(uname -m)" == 'aarch64' ]]; then
+	PATCHELF_PACKAGE_SHA256SUM='78bcba9452d4f9cd8162ea0acdffd67073c3ded331fc8ca81196a88017cfd214'
+fi
+PATCHELF_PACKAGE_NAME="patchelf-0.17.0-${ARCH}.tar.gz"
 
 NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.4.tar.gz'
 NCURSES_PACKAGE_SHA256SUM='6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159'
