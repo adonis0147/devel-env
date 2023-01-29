@@ -1,6 +1,11 @@
 #!/bin/bash
 # shellcheck disable=2034
 
+ARCH="$(uname -m)"
+if [[ "${ARCH}" == 'arm64' ]]; then
+	ARCH='aarch64'
+fi
+
 M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.19.tar.xz'
 M4_PACKAGE_SHA256SUM='63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96'
 M4_PACKAGE_NAME='m4-1.4.19.tar.xz'
@@ -31,10 +36,6 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-ARCH="$(uname -m)"
-if [[ "${ARCH}" == 'arm64' ]]; then
-	ARCH='aarch64'
-fi
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
 	PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
@@ -131,6 +132,14 @@ ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.2/zstd
 ZSTD_PACKAGE_SHA256SUM='7c42d56fac126929a6a85dbc73ff1db2411d04f104fae9bdea51305663a83fd0'
 ZSTD_PACKAGE_NAME='zstd-1.5.2.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.2'
+
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.25.2/cmake-3.25.2-linux-${ARCH}.tar.gz"
+if [[ "${ARCH}" == 'x86_64' ]]; then
+	CMAKE_PACKAGE_SHA256SUM='783da74f132fd1fea91b8236d267efa4df5b91c5eec1dea0a87f0cf233748d99'
+elif [[ "${ARCH}" == 'aarch64' ]]; then
+	CMAKE_PACKAGE_SHA256SUM='9216ecf0449ade700e66e0def11eeaebf9fa7d4428c02f49cb59f11418d3f8a5'
+fi
+CMAKE_PACKAGE_NAME="cmake-3.25.2-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.7.4/ccache-4.7.4.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='dc283906b73bd7c461178ca472a459e9d86b5523405035921bd8204e77620264'

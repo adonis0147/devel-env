@@ -501,6 +501,19 @@ function install_zstd() {
 	log_info 'Success!'
 }
 
+function install_cmake() {
+	local package='cmake'
+	log_info "Start to install ${package}."
+
+	local install_path="${DEVEL_HOME_PATH}/opt/cmake"
+	rm -rf "${install_path}"
+	mkdir -p "${install_path}"
+	tar -zxvf "${CMAKE_PACKAGE_NAME}" --strip-components=1 -C "${install_path}"
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_ccache() {
 	local package='ccache'
 	log_info "Start to install ${package}."
@@ -550,6 +563,7 @@ function install_packages() {
 	install_gdb
 	install_neovim
 	install_zstd
+	install_cmake
 	install_ccache
 	popd >/dev/null
 }
