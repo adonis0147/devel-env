@@ -18,9 +18,15 @@ build_packages_task:
   prepare_script: |
     cd devel-env
 
-    latest_tag="$(git tag -l | tail -n 1)"
-    curl -L "https://github.com/adonis0147/devel-env/releases/download/${latest_tag}/install_toolchain.sh" \
-      -o devel/scripts/install_toolchain.sh
+    while read -r tag; do
+      url="https://github.com/adonis0147/devel-env/releases/download/${tag}/install_toolchain.sh"
+      if curl --silent --head --fail -L "${url}" -o /dev/null; then
+        break
+      fi
+    done < <(git tag -l | tac)
+
+    echo "Download the toolchain from ${url}"
+    curl -L "${url}" -o devel/scripts/install_toolchain.sh
     chmod a+x devel/scripts/install_toolchain.sh
 
     devel/downloads/download_packages.sh
