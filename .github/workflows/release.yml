@@ -6,28 +6,9 @@ on:
       - '*'
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Build
-        run: |
-          cd toolchain
-          docker build --platform=linux/x86-64 -t toolchain .
-          mkdir output
-          docker run --platform=linux/x86-64 --rm --mount type=bind,source="$(pwd)/output",target=/output toolchain
-
-      - name: Upload
-        uses: actions/upload-artifact@v3
-        with:
-          name: toolchain
-          path: toolchain/output/install_toolchain.sh
-
   Publish:
     runs-on: ubuntu-latest
-    needs: [build]
+    environment: CIRRUS-CI
     env:
       GH_REPO: ${{ github.repository }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -36,20 +17,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Download
-        uses: actions/download-artifact@v3
         with:
-          name: toolchain
-          path: output
+          ref: ${{ github.ref_name }}
+          submodules: true
 
-      - name: Release
+      - name: Cirrus CI Build
         run: |
-          tag_name="${{ github.ref }}"
-          tag_name="${tag_name#refs/tags/}"
+          trigger='.github/cirrus-ci-tools/src/trigger-cirrus-ci.py'
+          config='.github/cirrus-ci/build_toolchain.yml'
+          urls="$(python3 "${trigger}" --token ${{ secrets.CIRRUS_CI_TOKEN }} --repository ${{ github.repository }} \
+            --branch master --config "${config}" --timeout 240)"
 
-          md5="$(md5sum output/install_toolchain.sh | awk '{print $1}')"
-          sha256="$(sha256sum output/install_toolchain.sh | awk '{print $1}')"
-          cat .github/templates/release.md | sed "s/MD5_CHECKSUMS/${md5}/;s/SHA256_CHECKSUMS/${sha256}/" >release.md
+          while read -r url; do
+            echo "The artifact url: ${url}"
+            curl -L ${url} -o binary.zip
+            unzip binary.zip
+          done <<<"${urls}"
 
-          gh release create -t "devel-env ${tag_name}" "${tag_name}" -F release.md output/install_toolchain.sh
+      - name: Upload
+        run: |
+          content="$(cat .github/templates/release.md)"
+
+          pushd output >/dev/null
+          content="${content/<MD5SUM>/$(md5sum *)}"
+          content="${content/<SHA256SUM>/$(sha256sum *)}"
+          popd >/dev/null
+
+          echo "${content}" >note.md
+
+          gh release create -t "devel-env ${{ github.ref_name }}" -F note.md ${{ github.ref_name }} output/*

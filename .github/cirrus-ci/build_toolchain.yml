@@ -1,0 +1,28 @@
+build_toolchain_task:
+  timeout_in: 120m
+
+  compute_engine_instance:
+    platform: linux
+    cpu: 4
+    memory: 8G
+    image_project: cirrus-images
+    matrix:
+      - name: 'Linux x86_64'
+        image: family/docker-builder
+      - name: 'Linux aarch64'
+        image: family/docker-builder-arm64
+        architecture: arm64
+
+  clone_script: |
+    git clone -b "${CIRRUS_BRANCH}" https://github.com/adonis0147/devel-env
+
+  script: |
+    cd devel-env/toolchain
+    docker build -t toolchain .
+    docker run --rm --mount type=bind,source="$(pwd)",target=/output toolchain
+
+    mkdir -p "${CIRRUS_WORKING_DIR}/output"
+    mv "install_toolchain.sh" "${CIRRUS_WORKING_DIR}/output/install_toolchain_$(uname -m).sh"
+
+  artifacts:
+    path: output/install_toolchain_*.sh

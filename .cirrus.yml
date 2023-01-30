@@ -1,13 +1,19 @@
 build_packages_task:
   only_if: ${CIRRUS_TAG} == ''
 
-  container:
-    image: centos:centos7
-    cpu: 4
-    memory: 8G
+  matrix:
+    - name: 'Linux x86_64'
+      container:
+        image: centos:centos7
+        cpu: 4
+        memory: 8G
+    - name: 'Linux aarch64'
+      arm_container:
+        image: centos:centos7
+        cpu: 4
+        memory: 8G
 
   clone_script: |
-    curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
     yum update -y && yum upgrade -y
     yum install -y git
 
@@ -19,7 +25,7 @@ build_packages_task:
     cd devel-env
 
     while read -r tag; do
-      url="https://github.com/adonis0147/devel-env/releases/download/${tag}/install_toolchain.sh"
+      url="https://github.com/adonis0147/devel-env/releases/download/${tag}/install_toolchain_$(uname -m).sh"
       if curl --silent --head --fail -L "${url}" -o /dev/null; then
         break
       fi

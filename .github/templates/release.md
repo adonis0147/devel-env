@@ -1,15 +1,18 @@
 ## Install GCC Toolchain
 ```shell
-bash install_toolchain.sh PATH
+# For x86_64 platform
+bash install_toolchain_x86_64.sh PATH
+
+# For aarch64 platform
+bash install_toolchain_aarch64.sh PATH
 ```
 
 ## MD5 Checksums
 ```
-MD5_CHECKSUMS        install_toolchain.sh
+<MD5SUM>
 ```
 
 ## SHA256 Checksums
 ```
-SHA256_CHECKSUMS        install_toolchain.sh
+<SHA256SUM>
 ```
-
