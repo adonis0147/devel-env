@@ -523,7 +523,8 @@ function install_ccache() {
 	pushd "${CCACHE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_RPATH="${DEVEL_HOME_PATH}/lib" \
+	cmake -DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_RPATH="${DEVEL_HOME_PATH}/lib" \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/ccache" \
 		-DZSTD_INCLUDE_DIR="${DEVEL_HOME_PATH}/opt/zstd/include" \
 		-DZSTD_LIBRARY="${DEVEL_HOME_PATH}/opt/zstd/lib/libzstd.so" \
