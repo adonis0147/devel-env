@@ -1,22 +1,19 @@
 build_packages_task:
   only_if: ${CIRRUS_TAG} == ''
 
-  matrix:
-    - name: 'Linux x86_64'
-      container:
-        image: centos:centos7
-        cpu: 4
-        memory: 8G
-    - name: 'Linux aarch64'
-      arm_container:
-        image: centos:centos7
-        cpu: 4
-        memory: 8G
+  compute_engine_instance:
+    platform: linux
+    cpu: 4
+    memory: 8G
+    image_project: cirrus-images
+    matrix:
+      - name: 'Linux x86_64'
+        image: family/docker-builder
+      - name: 'Linux aarch64'
+        image: family/docker-builder-arm64
+        architecture: arm64
 
   clone_script: |
-    yum update -y && yum upgrade -y
-    yum install -y git
-
     git clone -b "${CIRRUS_BRANCH}" https://github.com/adonis0147/devel-env
     cd devel-env
     git fetch --tags
@@ -38,7 +35,16 @@ build_packages_task:
     devel/downloads/download_packages.sh
 
   script: |
-    yum install -y xz file make gettext texinfo
+    cat >Dockerfile <<EOF
+    FROM centos:centos7
+    RUN yum install -y xz file make gettext texinfo
 
-    cd devel-env/devel/scripts
-    DEVEL_HOME_PATH=/opt/devel bash install.sh
+    RUN mkdir /devel-env
+    WORKDIR /devel-env
+
+    CMD ["/bin/bash"]
+    EOF
+
+    docker build -t packages .
+    docker run --rm --mount=type=bind,source="$(pwd)/devel-env",target=/devel-env packages \
+      bash -c 'cd devel/scripts; bash install.sh'
