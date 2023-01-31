@@ -144,6 +144,9 @@ function configure_toolchain() {
 		find . -type f -exec grep -E -I -l $'[=\'" ]/opt/toolchain' {} \;
 	)
 
+	# Modify ldd
+	sed -i "/RTLDLIST=/s/${current_path//\//\\/}//g" bin/ldd
+
 	# Configure gcc specs
 	local filename
 	filename="$(basename "${interpreter}")"
