@@ -288,7 +288,7 @@ function build_gcc_final() {
 	mkdir build
 	cd build
 
-	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath=${PREFIX}/lib -Wl,--dynamic-linker=$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
+	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
 		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
 		--with-local-prefix="${PREFIX}" \
