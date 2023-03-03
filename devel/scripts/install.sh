@@ -361,7 +361,8 @@ function install_sqlite() {
 	pushd "${SQLITE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
