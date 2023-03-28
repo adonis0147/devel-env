@@ -352,6 +352,22 @@ function install_bzip2() {
 	log_info 'Success!'
 }
 
+function install_xz() {
+	local package='xz'
+	log_info "Start to install ${package}."
+	rm -rf "${XZ_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${XZ_PACKAGE_NAME}"
+
+	pushd "${XZ_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_sqlite() {
 	local package='sqlite'
 	log_info "Start to install ${package}."
@@ -557,14 +573,15 @@ function install_packages() {
 	install_curl
 	install_wget
 	install_bzip2
+	install_xz
 	install_sqlite
 	install_python
 	install_expat
 	install_git
 	install_gmp
+	install_zstd
 	install_gdb
 	install_neovim
-	install_zstd
 	install_cmake
 	install_ccache
 	popd >/dev/null
