@@ -98,10 +98,23 @@ function configure_toolchain() {
 	rm -rf "$(pwd)/$(uname -m)-linux-gnu"/*
 	find "$(pwd)" -name '*.la' -delete
 
-	# link some paths
-	ln -snf ../include "$(pwd)/$(uname -m)-linux-gnu/include"
-	ln -snf ../lib "$(pwd)/$(uname -m)-linux-gnu/lib"
-	ln -snf ../lib64 "$(pwd)/$(uname -m)-linux-gnu/lib64"
+	mkdir "$(pwd)/$(uname -m)-linux-gnu/include"
+	mkdir "$(pwd)/$(uname -m)-linux-gnu/lib"
+	ln -snf lib "$(pwd)/$(uname -m)-linux-gnu/lib64"
+
+	# Link headers
+	local include_path
+	include_path="$(pwd)/include"
+	pushd "$(uname -m)-linux-gnu/include" >/dev/null || exit
+	while read -r path; do
+		local absolute_path="${include_path}/${path}"
+		if [[ -d "${absolute_path}" ]]; then
+			mkdir -p "${path}"
+		else
+			ln -snf "${absolute_path}" "${path}"
+		fi
+	done < <(find "${include_path}" -mindepth 1 -printf '%P\n')
+	popd >/dev/null || exit
 
 	local rpaths=(
 		"\$ORIGIN"
@@ -109,6 +122,7 @@ function configure_toolchain() {
 		"\$ORIGIN/lib64"
 		"\$ORIGIN/../lib"
 		"\$ORIGIN/../lib64"
+		"$(pwd)/$(uname -m)-linux-gnu/lib"
 		"$(dirname "${libc_so}")"
 	)
 	local rpaths_in_line
