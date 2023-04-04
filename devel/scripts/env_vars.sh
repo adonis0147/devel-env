@@ -7,8 +7,6 @@ export ACLOCAL_PATH="${DEVEL_HOME_PATH}/share/aclocal"
 
 export GCONV_PATH="${DEVEL_HOME_PATH}/compiler/lib/gconv"
 
-export CPATH="${DEVEL_HOME_PATH}/include"
-export LD_RUN_PATH="${DEVEL_HOME_PATH}/lib"
 export PATH="${DEVEL_HOME_PATH}/bin:${DEVEL_HOME_PATH}/compiler/bin:${PATH}"
 
 export MANPATH="${DEVEL_HOME_PATH}/share/man:${DEVEL_HOME_PATH}/man:${DEVEL_HOME_PATH}/compiler/share/man:${MANPATH}"

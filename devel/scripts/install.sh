@@ -193,8 +193,7 @@ function install_readline() {
 	mkdir build
 	cd build
 	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
-	make SHLIB_LIBS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib -ltinfow" \
-		-j "${NUM_CORES}"
+	make SHLIB_LIBS='-ltinfow' -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
 	setup_package "${package}"
@@ -264,7 +263,7 @@ function install_perl() {
 
 	pushd "${PERL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	./Configure -des -Dprefix="${DEVEL_HOME_PATH}/opt/${package}" \
-		-Aldflags="-L${DEVEL_HOME_PATH}/lib -Wl,-rpath,${DEVEL_HOME_PATH}/lib"
+		-Dlibpth="${DEVEL_HOME_PATH}/lib ${DEVEL_HOME_PATH}/compiler/lib"
 	make
 	make install
 	popd >/dev/null
@@ -300,8 +299,7 @@ function install_curl() {
 	pushd "${CURL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib" ../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
-		--with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -319,8 +317,7 @@ function install_wget() {
 	pushd "${WGET_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib" \
-		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		--with-ssl=openssl --with-libssl-prefix="${DEVEL_HOME_PATH}/opt/openssl" \
 		--without-libpcre --without-libidn
 	make -j "${NUM_CORES}"
@@ -377,8 +374,7 @@ function install_sqlite() {
 	pushd "${SQLITE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
-		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -397,7 +393,7 @@ function install_python() {
 	mkdir build
 	cd build
 	CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
-		LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
+		LDFLAGS="-L${DEVEL_HOME_PATH}/lib" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		--with-openssl="${DEVEL_HOME_PATH}/opt/openssl" --enable-shared --enable-optimizations
 	make -j "${NUM_CORES}"
@@ -438,8 +434,7 @@ function install_git() {
 
 	pushd "${GIT_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	make configure
-	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib" \
-		./configure --prefix="${DEVEL_HOME_PATH}/opt/git" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
+	./configure --prefix="${DEVEL_HOME_PATH}/opt/git" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -475,7 +470,7 @@ function install_gdb() {
 	pushd "${GDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	LDFLAGS="-Wl,-rpath,${DEVEL_HOME_PATH}/lib -L${DEVEL_HOME_PATH}/lib -ltinfow -lncursesw" \
+	LDFLAGS='-ltinfow -lncursesw' \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
 	make -j "${NUM_CORES}"
 	make install
@@ -541,7 +536,6 @@ function install_ccache() {
 	mkdir build
 	cd build
 	cmake -DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_RPATH="${DEVEL_HOME_PATH}/lib" \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/ccache" \
 		-DZSTD_INCLUDE_DIR="${DEVEL_HOME_PATH}/opt/zstd/include" \
 		-DZSTD_LIBRARY="${DEVEL_HOME_PATH}/opt/zstd/lib/libzstd.so" \
@@ -589,10 +583,12 @@ function install_packages() {
 
 function main() {
 	# Prepare
-	mkdir -p "${DEVEL_HOME_PATH}/lib"
-	ln -snf "${DEVEL_HOME_PATH}/lib" "${DEVEL_HOME_PATH}/lib64"
-
 	install_toolchain
+
+	pushd "${DEVEL_HOME_PATH}" >/dev/null
+	mkdir -p "compiler/$(uname -m)-linux-gnu/opt"
+	ln -snf "compiler/$(uname -m)-linux-gnu"/* .
+	popd >/dev/null
 
 	# Setup locale
 	setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
