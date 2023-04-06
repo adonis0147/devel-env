@@ -474,8 +474,10 @@ function install_gdb() {
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
 	make -j "${NUM_CORES}"
 	make install
+
+	cd "${DEVEL_HOME_PATH}/bin"
+	ln -snf ../opt/"${package}/bin"/* "${DEVEL_HOME_PATH}/bin/"
 	popd >/dev/null
-	setup_package "${package}"
 
 	log_info 'Success!'
 }
@@ -517,7 +519,7 @@ function install_cmake() {
 	local package='cmake'
 	log_info "Start to install ${package}."
 
-	local install_path="${DEVEL_HOME_PATH}/opt/cmake"
+	local install_path="${DEVEL_HOME_PATH}/opt/${package}"
 	rm -rf "${install_path}"
 	mkdir -p "${install_path}"
 	tar -zxvf "${CMAKE_PACKAGE_NAME}" --strip-components=1 -C "${install_path}"
@@ -536,14 +538,69 @@ function install_ccache() {
 	mkdir build
 	cd build
 	cmake -DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/ccache" \
-		-DZSTD_INCLUDE_DIR="${DEVEL_HOME_PATH}/opt/zstd/include" \
-		-DZSTD_LIBRARY="${DEVEL_HOME_PATH}/opt/zstd/lib/libzstd.so" \
-		-DREDIS_STORAGE_BACKEND=OFF ..
+		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
+		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
+		-DREDIS_STORAGE_BACKEND=OFF \
+		..
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
 	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_libxml2() {
+	local package='libxml2'
+	log_info "Start to install ${package}."
+	rm -rf "${LIBXML2_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${LIBXML2_PACKAGE_NAME}"
+
+	pushd "${LIBXML2_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	./autogen.sh --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_llvm() {
+	local package='llvm'
+	log_info "Start to install ${package}."
+	rm -rf "${LLVM_PACKAGE_EXTRACTED_DIR}"
+	tar -Jxvf "${LLVM_PACKAGE_NAME}"
+
+	pushd "${LLVM_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir -p "${HOME}/.config/${package}"
+	local rpath
+	rpath="$(sed -n 's/collect2 -rpath \(.*\)/\1/p' "${DEVEL_HOME_PATH}/compiler/lib/gcc/specs")"
+	cat >"${HOME}/.config/${package}/clang.cfg" <<EOF
+-Wl,-rpath,${rpath//\$/\\\$}
+-Wl,--dynamic-linker,$(find "${DEVEL_HOME_PATH}/compiler/lib" -name 'ld-linux-*')
+EOF
+	ln -snf clang.cfg "${HOME}/.config/${package}/clang++.cfg"
+
+	mkdir build
+	cd build
+	cmake -DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
+		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
+		-DLLVM_ENABLE_PROJECTS="clang;lld;clang-tools-extra;lldb" \
+		-DGCC_INSTALL_PREFIX="${DEVEL_HOME_PATH}/compiler" \
+		-DCLANG_CONFIG_FILE_USER_DIR='~/.config/llvm' \
+		-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
+		-DLIBCXXABI_USE_LLVM_UNWINDER=ON \
+		-DCOMPILER_RT_USE_LLVM_UNWINDER=ON \
+		../llvm
+	make -j "${NUM_CORES}"
+	make install
+
+	rpath="$(find "${DEVEL_HOME_PATH}/opt/${package}/lib" -maxdepth 1 -name "$(uname -m)-*-linux-gnu")"
+	sed -i "/-Wl,-rpath/ s/\$/:${rpath//\//\\/}/" "${HOME}/.config/${package}/clang.cfg"
+	mv "${HOME}/.config/${package}"/* "${DEVEL_HOME_PATH}/opt/${package}/bin/"
+	popd >/dev/null
 
 	log_info 'Success!'
 }
@@ -578,6 +635,8 @@ function install_packages() {
 	install_neovim
 	install_cmake
 	install_ccache
+	install_libxml2
+	install_llvm
 	popd >/dev/null
 }
 

@@ -1,5 +1,6 @@
 build_packages_task:
   only_if: ${CIRRUS_TAG} == ''
+  timeout_in: 120m
 
   compute_engine_instance:
     platform: linux
@@ -33,6 +34,9 @@ build_packages_task:
     chmod a+x devel/scripts/install_toolchain.sh
 
     devel/downloads/download_packages.sh
+
+    # Don't build llvm
+    sed -i '/function install_packages/,/^}/ s/install_llvm//' devel/scripts/install.sh
 
   script: |
     cat >Dockerfile <<EOF

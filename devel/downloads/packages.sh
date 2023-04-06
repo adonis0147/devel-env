@@ -150,3 +150,13 @@ CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.7.4/cc
 CCACHE_PACKAGE_SHA256SUM='dc283906b73bd7c461178ca472a459e9d86b5523405035921bd8204e77620264'
 CCACHE_PACKAGE_NAME='ccache-4.7.4.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.7.4'
+
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.10.3.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='3f9fb74bb02049f3454892c88d3e57a23e30a88a7d444a80064625af2f543898'
+LIBXML2_PACKAGE_NAME='libxml2-2.10.3.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.10.3'
+
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.1/llvm-project-16.0.1.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='ab7e3b95adb88fd5b669ca8c1d3c1e8d2a601c4478290d3ae31d8d70e96f2064'
+LLVM_PACKAGE_NAME='llvm-project-16.0.1.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-16.0.1.src'
