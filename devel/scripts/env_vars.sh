@@ -21,14 +21,25 @@ if GPG_TTY="$(tty)"; then
 fi
 
 function relocate() {
-	local program="${1}"
+	local base_path="${1}"
 	local libc_so
+	local library_path
 	local interpreter
 	libc_so="$(find "${DEVEL_HOME_PATH}/compiler" -name 'libc.so.6')"
+	library_path="$(dirname "${libc_so}")"
 	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name 'ld-linux-*.so.*')"
 
-	patchelf --set-rpath "$(dirname "${libc_so}")" "${program}"
-	patchelf --set-interpreter "${interpreter}" "${program}"
+	local old_rpath
+	local new_rpath
+	while read -r file; do
+		if old_rpath="$(patchelf --print-rpath "${file}" 2>/dev/null)"; then
+			new_rpath="${old_rpath:+${old_rpath}:}${DEVEL_HOME_PATH}/compiler/$(uname -m)-linux-gnu/lib:${library_path}"
+			patchelf --set-rpath "${new_rpath}" "${file}"
+			if readelf -S "${file}" | grep '.interp' >/dev/null; then
+				patchelf --set-interpreter "${interpreter}" "${file}"
+			fi
+		fi
+	done < <(find "$(readlink -f "${base_path}")" -type f)
 }
 
 # Example: setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
