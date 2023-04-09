@@ -592,6 +592,14 @@ EOF
 
 	mkdir build
 	cd build
+
+	# See https://github.com/rust-lang/rust/issues/102897
+	local kernel_version
+	kernel_version="$(uname -r | sed -n 's/\([[:digit:]]\+\.[[:digit:]]\+\).*/\1/p')"
+	if [[ "$(echo "${kernel_version}" 3.17 | awk '{print $1 < $2}')" == 1 ]]; then
+		disable_arc4random='-DHAVE_DECL_ARC4RANDOM=0'
+	fi
+
 	cmake -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
@@ -601,6 +609,7 @@ EOF
 		-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
 		-DLIBCXXABI_USE_LLVM_UNWINDER=ON \
 		-DCOMPILER_RT_USE_LLVM_UNWINDER=ON \
+		${disable_arc4random:+${disable_arc4random}} \
 		../llvm
 	make -j "${NUM_CORES}"
 	make install
