@@ -35,8 +35,13 @@ build_packages_task:
 
     devel/downloads/download_packages.sh
 
-    # Don't build llvm
+    # Don't install llvm
     sed -i '/function install_packages/,/^}/ s/install_llvm//' devel/scripts/install.sh
+
+    if [[ "$(uname -m)" != 'x86_64' ]]; then
+      # Don't install neovim
+      sed -i '/function install_packages/,/^}/ s/install_neovim//' devel/scripts/install.sh
+    fi
 
   script: |
     cat >Dockerfile <<EOF
