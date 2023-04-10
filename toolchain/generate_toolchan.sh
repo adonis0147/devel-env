@@ -163,6 +163,7 @@ function build_gcc_step1() {
 		--with-local-prefix="${TARGET_PREFIX}" \
 		--with-gxx-include-dir="${TARGET_PREFIX}/include/c++" \
 		--enable-languages=c,c++ \
+		--enable-default-pie \
 		--disable-multilib \
 		--disable-libssp \
 		--disable-threads \
@@ -293,6 +294,7 @@ function build_gcc_final() {
 		--host="${TARGET}" \
 		--with-local-prefix="${PREFIX}" \
 		--enable-languages=c,c++ \
+		--enable-default-pie \
 		--disable-multilib \
 		--disable-libquadmath \
 		--disable-libquadmath-support
