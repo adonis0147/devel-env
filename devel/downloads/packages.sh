@@ -156,6 +156,16 @@ LIBXML2_PACKAGE_SHA256SUM='3f9fb74bb02049f3454892c88d3e57a23e30a88a7d444a8006462
 LIBXML2_PACKAGE_NAME='libxml2-2.10.3.tar.gz'
 LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.10.3'
 
+SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz'
+SWIG_PACKAGE_SHA256SUM='2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b'
+SWIG_PACKAGE_NAME='swig-4.1.1.tar.gz'
+SWIG_PACKAGE_EXTRACTED_DIR='swig-4.1.1'
+
+LIBEDIT_PACKAGE_URL='https://www.thrysoee.dk/editline/libedit-20221030-3.1.tar.gz'
+LIBEDIT_PACKAGE_SHA256SUM='f0925a5adf4b1bf116ee19766b7daa766917aec198747943b1c4edf67a4be2bb'
+LIBEDIT_PACKAGE_NAME='libedit-20221030-3.1.tar.gz'
+LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20221030-3.1'
+
 LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.1/llvm-project-16.0.1.src.tar.xz'
 LLVM_PACKAGE_SHA256SUM='ab7e3b95adb88fd5b669ca8c1d3c1e8d2a601c4478290d3ae31d8d70e96f2064'
 LLVM_PACKAGE_NAME='llvm-project-16.0.1.src.tar.xz'

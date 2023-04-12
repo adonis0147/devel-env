@@ -356,7 +356,9 @@ function install_xz() {
 	tar -zxvf "${XZ_PACKAGE_NAME}"
 
 	pushd "${XZ_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -558,6 +560,25 @@ function install_ccache() {
 	log_info 'Success!'
 }
 
+function install_libedit() {
+	local package='libedit'
+	log_info "Start to install ${package}."
+	rm -rf "${LIBEDIT_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${LIBEDIT_PACKAGE_NAME}"
+
+	pushd "${LIBEDIT_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	CFLAGS="-I${DEVEL_HOME_PATH}/include/ncurses" \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_libxml2() {
 	local package='libxml2'
 	log_info "Start to install ${package}."
@@ -565,7 +586,27 @@ function install_libxml2() {
 	tar -zxvf "${LIBXML2_PACKAGE_NAME}"
 
 	pushd "${LIBXML2_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	./autogen.sh --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	mkdir build
+	cd build
+	../autogen.sh --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_swig() {
+	local package='swig'
+	log_info "Start to install ${package}."
+	rm -rf "${SWIG_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${SWIG_PACKAGE_NAME}"
+
+	pushd "${SWIG_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --without-pcre
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -609,6 +650,8 @@ EOF
 		-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
 		-DLIBCXXABI_USE_LLVM_UNWINDER=ON \
 		-DCOMPILER_RT_USE_LLVM_UNWINDER=ON \
+		-DTerminfo_LIBRARIES="${DEVEL_HOME_PATH}/lib/libtinfow.so" \
+		-DCURSES_NEED_WIDE=ON \
 		${disable_arc4random:+${disable_arc4random}} \
 		../llvm
 	make -j "${NUM_CORES}"
@@ -652,7 +695,9 @@ function install_packages() {
 	install_neovim
 	install_cmake
 	install_ccache
+	install_libedit
 	install_libxml2
+	install_swig
 	install_llvm
 	popd >/dev/null
 }
