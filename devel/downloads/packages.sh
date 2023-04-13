@@ -36,6 +36,11 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
+NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.11.1.tar.gz'
+NINJA_PACKAGE_SHA256SUM='31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67fe7400cea'
+NINJA_PACKAGE_NAME='ninja-1.11.1.tar.gz'
+NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.11.1'
+
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
 	PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'

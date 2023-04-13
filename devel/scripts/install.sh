@@ -143,6 +143,24 @@ function install_pkg_config() {
 	log_info 'Success!'
 }
 
+function install_ninja() {
+	local package='ninja'
+	log_info "Start to install ${package}."
+	rm -rf "${NINJA_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${NINJA_PACKAGE_NAME}"
+
+	pushd "${NINJA_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" ..
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_patchelf() {
 	local package='patchelf'
 	log_info "Start to install ${package}."
@@ -547,13 +565,13 @@ function install_ccache() {
 	pushd "${CCACHE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	cmake -DCMAKE_BUILD_TYPE=Release \
+	cmake -G Ninja -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
 		-DREDIS_STORAGE_BACKEND=OFF \
 		..
-	make -j "${NUM_CORES}"
-	make install
+	ninja -j "${NUM_CORES}"
+	ninja install
 	popd >/dev/null
 	setup_package "${package}"
 
@@ -641,7 +659,7 @@ EOF
 		disable_arc4random='-DHAVE_DECL_ARC4RANDOM=0'
 	fi
 
-	cmake -DCMAKE_BUILD_TYPE=Release \
+	cmake -G Ninja -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
 		-DLLVM_ENABLE_PROJECTS="clang;lld;clang-tools-extra;lldb" \
@@ -654,8 +672,8 @@ EOF
 		-DCURSES_NEED_WIDE=ON \
 		${disable_arc4random:+${disable_arc4random}} \
 		../llvm
-	make -j "${NUM_CORES}"
-	make install
+	ninja -j "${NUM_CORES}"
+	ninja install
 
 	rpath="$(find "${DEVEL_HOME_PATH}/opt/${package}/lib" -maxdepth 1 -name "$(uname -m)-*-linux-gnu")"
 	sed -i "/-Wl,-rpath/ s/\$/:${rpath//\//\\/}/" "${HOME}/.config/${package}/clang.cfg"
@@ -676,6 +694,8 @@ function install_packages() {
 	install_libtool
 	install_make
 	install_pkg_config
+	install_cmake
+	install_ninja
 	install_patchelf
 	install_ncurses
 	install_readline
@@ -693,7 +713,6 @@ function install_packages() {
 	install_zstd
 	install_gdb
 	install_neovim
-	install_cmake
 	install_ccache
 	install_libedit
 	install_libxml2
