@@ -26,10 +26,10 @@ LIBTOOL_PACKAGE_SHA256SUM='04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1
 LIBTOOL_PACKAGE_NAME='libtool-2.4.7.tar.gz'
 LIBTOOL_PACKAGE_EXTRACTED_DIR='libtool-2.4.7'
 
-MAKE_PACKAGE_URL='https://ftpmirror.gnu.org/make/make-4.4.tar.gz'
-MAKE_PACKAGE_SHA256SUM='581f4d4e872da74b3941c874215898a7d35802f03732bdccee1d4a7979105d18'
-MAKE_PACKAGE_NAME='make-4.4.tar.gz'
-MAKE_PACKAGE_EXTRACTED_DIR='make-4.4'
+MAKE_PACKAGE_URL='https://ftpmirror.gnu.org/make/make-4.4.1.tar.gz'
+MAKE_PACKAGE_SHA256SUM='dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3'
+MAKE_PACKAGE_NAME='make-4.4.1.tar.gz'
+MAKE_PACKAGE_EXTRACTED_DIR='make-4.4.1'
 
 PKG_CONFIG_PACKAGE_URL='https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591'
@@ -41,13 +41,13 @@ NINJA_PACKAGE_SHA256SUM='31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67
 NINJA_PACKAGE_NAME='ninja-1.11.1.tar.gz'
 NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.11.1'
 
-PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.17.2/patchelf-0.17.2-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='f569b8d5868a5968012d7ff80eb5ca496d6308c481089e6b103855f162080164'
+	PATCHELF_PACKAGE_SHA256SUM='a3fb9c1de3512bc91f27cc47297d6d6cf208adee9b64ed719130da59ac13e26b'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='78bcba9452d4f9cd8162ea0acdffd67073c3ded331fc8ca81196a88017cfd214'
+	PATCHELF_PACKAGE_SHA256SUM='e5165eb592a317e1f6da0ac7fcbccf60d7fb8e5ac1f0d7336a9be51c23308b06'
 fi
-PATCHELF_PACKAGE_NAME="patchelf-0.17.0-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_NAME="patchelf-0.17.2-${ARCH}.tar.gz"
 
 NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.4.tar.gz'
 NCURSES_PACKAGE_SHA256SUM='6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159'
@@ -79,15 +79,15 @@ PERL_PACKAGE_SHA256SUM='e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7
 PERL_PACKAGE_NAME='perl-5.36.0.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.36.0'
 
-OPENSSL_PACKAGE_URL='https://www.openssl.org/source/openssl-3.0.7.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='83049d042a260e696f62406ac5c08bf706fd84383f945cf21bd61e9ed95c396e'
-OPENSSL_PACKAGE_NAME='openssl-3.0.7.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.0.7'
+OPENSSL_PACKAGE_URL='https://www.openssl.org/source/openssl-3.0.8.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='6c13d2bf38fdf31eac3ce2a347073673f5d63263398f1f69d0df4a41253e4b3e'
+OPENSSL_PACKAGE_NAME='openssl-3.0.8.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.0.8'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-7.87.0.tar.gz'
-CURL_PACKAGE_SHA256SUM='8a063d664d1c23d35526b87a2bf15514962ffdd8ef7fd40519191b3c23e39548'
-CURL_PACKAGE_NAME='curl-7.87.0.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-7.87.0'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.0.1.tar.gz'
+CURL_PACKAGE_SHA256SUM='5fd29000a4089934f121eff456101f0a5d09e2a3e89da1d714adf06c4be887cb'
+CURL_PACKAGE_NAME='curl-8.0.1.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.0.1'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.0.1.tar.gz'
 WGET_PACKAGE_SHA256SUM='0bb7fa03697bb5b8d05e1b5e15b863440826eb845874c4ffb5e32330f9845db1'
@@ -104,25 +104,25 @@ XZ_PACKAGE_SHA256SUM='87947679abcf77cc509d8d1b474218fd16b72281e2797360e909deaee1
 XZ_PACKAGE_NAME='xz-5.4.2.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.2'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2022/sqlite-autoconf-3400100.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='2c5dea207fa508d765af1ef620b637dcb06572afa6f01f0815bd5bbf864b33d9'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3400100.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3400100'
+SQLITE_PACKAGE_URL='https://sqlite.org/2023/sqlite-autoconf-3410200.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='e98c100dd1da4e30fa460761dab7c0b91a50b785e167f8c57acc46514fae9499'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3410200.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3410200'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz'
-PYTHON_PACKAGE_SHA256SUM='2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849'
-PYTHON_PACKAGE_NAME='Python-3.11.2.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.11.2'
+PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz'
+PYTHON_PACKAGE_SHA256SUM='1a79f3df32265d9e6625f1a0b31c28eb1594df911403d11f3320ee1da1b3e048'
+PYTHON_PACKAGE_NAME='Python-3.11.3.tgz'
+PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.11.3'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='6b902ab103843592be5e99504f846ec109c1abb692e85347587f237a4ffa1033'
 EXPAT_PACKAGE_NAME='expat-2.5.0.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.5.0'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='d929fe67cef7ac3ca709d2b56a9920f17112d5a524bf8112af37ec045a7a5109'
-GIT_PACKAGE_NAME='git-2.39.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.39.0'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='ab37c343c0ad097282fd311ab9ca521ab3da836e5c4ed2093994f1b7f8575b09'
+GIT_PACKAGE_NAME='git-2.40.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.40.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.2.1.tar.xz'
 GMP_PACKAGE_SHA256SUM='fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddadc49b4f2'
@@ -138,28 +138,28 @@ NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.0/nv
 NEOVIM_PACKAGE_SHA256SUM='0e1e6d53c6c8055de23bdb33f60bb64af0baf11390669c1b40ecbbf2c7a34547'
 NEOVIM_PACKAGE_NAME='nvim.appimage'
 
-ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz'
-ZSTD_PACKAGE_SHA256SUM='7c42d56fac126929a6a85dbc73ff1db2411d04f104fae9bdea51305663a83fd0'
-ZSTD_PACKAGE_NAME='zstd-1.5.2.tar.gz'
-ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.2'
+ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz'
+ZSTD_PACKAGE_SHA256SUM='9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78646d3ee4'
+ZSTD_PACKAGE_NAME='zstd-1.5.5.tar.gz'
+ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.5'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.25.2/cmake-3.25.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='783da74f132fd1fea91b8236d267efa4df5b91c5eec1dea0a87f0cf233748d99'
+	CMAKE_PACKAGE_SHA256SUM='28d4d1d0db94b47d8dfd4f7dec969a3c747304f4a28ddd6fd340f553f2384dc2'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='9216ecf0449ade700e66e0def11eeaebf9fa7d4428c02f49cb59f11418d3f8a5'
+	CMAKE_PACKAGE_SHA256SUM='7a4fbe374475db1a098b632b54e3c9180973e8a791c700deabe5408ae23ea3ce'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.25.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.26.3-linux-${ARCH}.tar.gz"
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.7.4/ccache-4.7.4.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='dc283906b73bd7c461178ca472a459e9d86b5523405035921bd8204e77620264'
-CCACHE_PACKAGE_NAME='ccache-4.7.4.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.7.4'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.7.5/ccache-4.7.5.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='fe304140b0c2e391e6c00fc123e7d202fa0313c569689ca67574686769ac0781'
+CCACHE_PACKAGE_NAME='ccache-4.7.5.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.7.5'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.10.3.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='3f9fb74bb02049f3454892c88d3e57a23e30a88a7d444a80064625af2f543898'
-LIBXML2_PACKAGE_NAME='libxml2-2.10.3.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.10.3'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.10.4.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='6f6fb27f91bb65f9d7196e3c616901b3e18a7dea31ccc2ae857940b125faa780'
+LIBXML2_PACKAGE_NAME='libxml2-2.10.4.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.10.4'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b'
@@ -171,7 +171,7 @@ LIBEDIT_PACKAGE_SHA256SUM='f0925a5adf4b1bf116ee19766b7daa766917aec198747943b1c4e
 LIBEDIT_PACKAGE_NAME='libedit-20221030-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20221030-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.1/llvm-project-16.0.1.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='ab7e3b95adb88fd5b669ca8c1d3c1e8d2a601c4478290d3ae31d8d70e96f2064'
-LLVM_PACKAGE_NAME='llvm-project-16.0.1.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-16.0.1.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.2/llvm-project-16.0.2.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='6d8acae041ccd34abe144cda6eaa76210e1491f286574815b7261b3f2e58734c'
+LLVM_PACKAGE_NAME='llvm-project-16.0.2.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-16.0.2.src'
