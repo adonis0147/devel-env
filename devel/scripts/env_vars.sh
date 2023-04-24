@@ -21,6 +21,30 @@ if GPG_TTY="$(tty)"; then
 fi
 
 function relocate() {
+	local opts
+	local overwrite=false
+	if ! opts="$(getopt -o '' -l 'overwrite' -- "${@}")"; then
+		return 1
+	fi
+	eval "set -- ${opts}"
+
+	while true; do
+		case "${1}" in
+		--overwrite)
+			overwrite=true
+			shift
+			;;
+		--)
+			shift
+			break
+			;;
+		*)
+			echo 'Invalid arguments'
+			return 1
+			;;
+		esac
+	done
+
 	local base_path="${1}"
 	local libc_so
 	local library_path
@@ -33,6 +57,9 @@ function relocate() {
 	local new_rpath
 	while read -r file; do
 		if old_rpath="$(patchelf --print-rpath "${file}" 2>/dev/null)"; then
+			if ${overwrite}; then
+				old_rpath="\$ORIGIN:\$ORIGIN/lib:\$ORIGIN/lib64:\$ORIGIN/../lib:\$ORIGIN/../lib64"
+			fi
 			new_rpath="${old_rpath:+${old_rpath}:}${DEVEL_HOME_PATH}/compiler/$(uname -m)-linux-gnu/lib:${library_path}"
 			patchelf --set-rpath "${new_rpath}" "${file}"
 			if readelf -S "${file}" | grep '.interp' >/dev/null; then
