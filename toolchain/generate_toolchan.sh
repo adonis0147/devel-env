@@ -8,17 +8,17 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.39.tar.xz'
-declare -r BINUTILS_MD5SUM='f7e986ae9ff06405cafb2e585ee36d27'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.xz'
+declare -r BINUTILS_MD5SUM='007b59bd908a737c06e5a8d3d2c737eb'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.22.tar.xz'
-declare -r LINUX_MD5SUM='d889d541302da503f566f4d53a0453dc'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.25.tar.xz'
+declare -r LINUX_MD5SUM='ecd40e8189def3fd30f8fc677bdf8c79'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.36.tar.xz'
-declare -r GLIBC_MD5SUM='00e9b89e043340f688bc93ec03239b57'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.37.tar.xz'
+declare -r GLIBC_MD5SUM='e89cf3dcb64939d29f04b4ceead5cc4e'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz'
-declare -r GCC_MD5SUM='73bafd0af874439dcdb9fc063b6fb069'
+declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz'
+declare -r GCC_MD5SUM='43e4de77f2218c83ca675257ea1af9ef'
 
 function log() {
 	local level="${1}"

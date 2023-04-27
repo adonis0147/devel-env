@@ -5,10 +5,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt install --yes \
     build-essential texinfo bison git curl rsync gawk python-is-python3 help2man file
 
 RUN mkdir -p /opt/patchelf
-RUN curl -L "https://github.com/NixOS/patchelf/releases/download/0.17.0/patchelf-0.17.0-$(uname -m).tar.gz" \
+RUN curl -L "https://github.com/NixOS/patchelf/releases/download/0.16.1/patchelf-0.16.1-$(uname -m).tar.gz" \
     -o - | tar -zxv -C /opt/patchelf
 
-RUN git clone https://github.com/adonis0147/devel-env
+COPY ./* /devel-env/toolchain/
 WORKDIR /devel-env/toolchain
 RUN TARGET="$(uname -m)-linux-gnu" bash generate_toolchan.sh
 

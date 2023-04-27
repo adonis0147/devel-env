@@ -3,7 +3,7 @@ build_toolchain_task:
 
   compute_engine_instance:
     platform: linux
-    cpu: 4
+    cpu: 8
     memory: 8G
     image_project: cirrus-images
     matrix:
