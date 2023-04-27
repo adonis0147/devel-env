@@ -27,7 +27,7 @@ build_packages_task:
       if curl --silent --head --fail -L "${url}" -o /dev/null; then
         break
       fi
-    done < <(git tag -l | tac)
+    done < <(git tag --sort=creatordate | tac)
 
     echo "Download the toolchain from ${url}"
     curl -L "${url}" -o devel/scripts/install_toolchain.sh
