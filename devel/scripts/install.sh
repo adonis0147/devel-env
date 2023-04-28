@@ -683,6 +683,24 @@ EOF
 	log_info 'Success!'
 }
 
+function install_zsh() {
+	local package='zsh'
+	log_info "Start to install ${package}."
+	rm -rf "${ZSH_PACKAGE_EXTRACTED_DIR}"
+	tar -Jxvf "${ZSH_PACKAGE_NAME}"
+
+	pushd "${ZSH_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir -p build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	install_m4
@@ -718,6 +736,7 @@ function install_packages() {
 	install_libxml2
 	install_swig
 	install_llvm
+	install_zsh
 	popd >/dev/null
 }
 

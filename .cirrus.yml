@@ -43,6 +43,9 @@ build_packages_task:
       sed -i '/function install_packages/,/^}/ s/install_neovim//' devel/scripts/install.sh
     fi
 
+    # Don't install zsh
+    sed -i '/function install_packages/,/^}/ s/install_zsh//' devel/scripts/install.sh
+
   script: |
     cat >Dockerfile <<EOF
     FROM centos:centos7

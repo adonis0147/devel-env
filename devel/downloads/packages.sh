@@ -175,3 +175,8 @@ LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg
 LLVM_PACKAGE_SHA256SUM='6d8acae041ccd34abe144cda6eaa76210e1491f286574815b7261b3f2e58734c'
 LLVM_PACKAGE_NAME='llvm-project-16.0.2.src.tar.xz'
 LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-16.0.2.src'
+
+ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
+ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
+ZSH_PACKAGE_NAME='zsh-5.9.tar.xz'
+ZSH_PACKAGE_EXTRACTED_DIR='zsh-5.9'

@@ -64,6 +64,7 @@ function main() {
 	download 'libxml2' "${LIBXML2_PACKAGE_URL}" "${LIBXML2_PACKAGE_SHA256SUM}" "${LIBXML2_PACKAGE_NAME}"
 	download 'swig' "${SWIG_PACKAGE_URL}" "${SWIG_PACKAGE_SHA256SUM}" "${SWIG_PACKAGE_NAME}"
 	download 'llvm' "${LLVM_PACKAGE_URL}" "${LLVM_PACKAGE_SHA256SUM}" "${LLVM_PACKAGE_NAME}"
+	download 'zsh' "${ZSH_PACKAGE_URL}" "${ZSH_PACKAGE_SHA256SUM}" "${ZSH_PACKAGE_NAME}"
 }
 
 main "${@}"
