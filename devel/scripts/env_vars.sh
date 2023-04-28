@@ -109,8 +109,8 @@ function setup_terminfo() {
 }
 
 # Example:
-#   curl -L https://curl.se/ca/cacert.pem -o "${HOME}/.local/share/cacert.pem"
-#   setup_ca_certificate "${HOME}/.local/share/cacert.pem"
+#   curl -L https://curl.se/ca/cacert.pem -o "${HOME}/.local/share/certs/cacert.pem"
+#   setup_ca_certificate "${HOME}/.local/share/certs/cacert.pem"
 function setup_ca_certificate() {
 	local cacert="${1:+$(readlink -f "${1}")}"
 
