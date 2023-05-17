@@ -702,45 +702,108 @@ function install_zsh() {
 }
 
 function install_packages() {
+	local continue=${1}
+	local start_package="${2}"
+	local packages
+	shift 2
+	read -r -a packages <<<"${@}"
+	local found=false
+
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
-	install_m4
-	install_zlib
-	install_libdb
-	install_perl
-	install_autoconf
-	install_automake
-	install_libtool
-	install_make
-	install_pkg_config
-	install_cmake
-	install_ninja
-	install_patchelf
-	install_ncurses
-	install_readline
-	install_libffi
-	install_openssl
-	install_curl
-	install_wget
-	install_bzip2
-	install_xz
-	install_sqlite
-	install_python
-	install_expat
-	install_git
-	install_gmp
-	install_zstd
-	install_gdb
-	install_neovim
-	install_ccache
-	install_libedit
-	install_libxml2
-	install_swig
-	install_llvm
-	install_zsh
+	if [[ "${#packages[@]}" -eq 0 ]]; then
+		packages=(
+			m4
+			zlib
+			libdb
+			perl
+			autoconf
+			automake
+			libtool
+			make
+			pkg_config
+			cmake
+			ninja
+			patchelf
+			ncurses
+			readline
+			libffi
+			openssl
+			curl
+			wget
+			bzip2
+			xz
+			sqlite
+			python
+			expat
+			git
+			gmp
+			zstd
+			gdb
+			neovim
+			ccache
+			libedit
+			libxml2
+			swig
+			llvm
+			zsh
+		)
+	fi
+
+	for package in "${packages[@]}"; do
+		if [[ "${package}" == "${start_package}" ]]; then
+			found=true
+		fi
+		if ! ${continue} || ${found}; then
+			local command="install_${package}"
+			${command}
+		fi
+	done
 	popd >/dev/null
 }
 
+function usage() {
+	cat >&2 <<EOF
+Usage: ${BASH_SOURCE[0]} [options...] [packages...]
+
+Options:
+  -h, --help                Show usage
+  --continue <package>      Continue to install packages starting from the specified package
+
+EOF
+	exit 1
+}
+
 function main() {
+	local opts
+	local packages
+	local continue=false
+	local start_package
+
+	if ! opts="$(getopt -n "${0}" -o 'h' -l 'help,continue:' -- "${@}")"; then
+		usage
+	fi
+	eval set -- "${opts}"
+	while true; do
+		case "${1}" in
+		--continue)
+			continue=true
+			start_package="${2}"
+			shift 2
+			;;
+		-h | --help)
+			usage
+			;;
+		--)
+			shift
+			break
+			;;
+		*) ;;
+		esac
+	done
+	if ${continue} && [[ "${#}" -ne 0 ]]; then
+		usage
+	fi
+
 	# Prepare
 	install_toolchain
 
@@ -752,7 +815,7 @@ function main() {
 	# Setup locale
 	setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
 
-	install_packages
+	install_packages "${continue}" "${start_package}" "${@}"
 
 	local message='Before using the packages, please run the following command first:\n\n'
 	message+="\t\033[32;1msource ${SCRIPTS_PATH}/env_vars.sh\033[0m\n"
