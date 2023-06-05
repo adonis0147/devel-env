@@ -129,10 +129,10 @@ GMP_PACKAGE_SHA256SUM='fd4829912cddd12f84181c3451cc752be224643e87fac497b69edddad
 GMP_PACKAGE_NAME='gmp-6.2.1.tar.xz'
 GMP_PACKAGE_EXTRACTED_DIR='gmp-6.2.1'
 
-GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-13.1.tar.gz'
-GDB_PACKAGE_SHA256SUM='4cc3d7143d6d54d289d227b1e7289dbc0fa4cbd46131ab87136e1ea831cf46d4'
-GDB_PACKAGE_NAME='gdb-13.1.tar.gz'
-GDB_PACKAGE_EXTRACTED_DIR='gdb-13.1'
+GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.gz'
+GDB_PACKAGE_SHA256SUM='7ead13d9e19fa0c57bb19104e1a5f67eefa9fc79f2e6360de491e8fddeda1e30'
+GDB_PACKAGE_NAME='gdb-13.2.tar.gz'
+GDB_PACKAGE_EXTRACTED_DIR='gdb-13.2'
 
 NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.1/nvim.appimage'
 NEOVIM_PACKAGE_SHA256SUM='262892176e21da0902c4f0b1e027d54d21b4bcae6b0397afccd8a81b476c3055'
