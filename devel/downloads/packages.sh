@@ -109,10 +109,10 @@ SQLITE_PACKAGE_SHA256SUM='e98c100dd1da4e30fa460761dab7c0b91a50b785e167f8c57acc46
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3410200.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3410200'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz'
-PYTHON_PACKAGE_SHA256SUM='1a79f3df32265d9e6625f1a0b31c28eb1594df911403d11f3320ee1da1b3e048'
-PYTHON_PACKAGE_NAME='Python-3.11.3.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.11.3'
+PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz'
+PYTHON_PACKAGE_SHA256SUM='85c37a265e5c9dd9f75b35f954e31fbfc10383162417285e30ad25cc073a0d63'
+PYTHON_PACKAGE_NAME='Python-3.11.4.tgz'
+PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.11.4'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='6b902ab103843592be5e99504f846ec109c1abb692e85347587f237a4ffa1033'
@@ -151,10 +151,10 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 CMAKE_PACKAGE_NAME="cmake-3.26.3-linux-${ARCH}.tar.gz"
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.1/ccache-4.8.1.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='869903c1891beb8bee87f1ec94d8a0dad18c2add4072c456acbc85cdfc23ca63'
-CCACHE_PACKAGE_NAME='ccache-4.8.1.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.1'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.2/ccache-4.8.2.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='75eef15b8b9da48db9c91e1d0ff58b3645fc70c0e4ca2ef1b6825a12f21f217d'
+CCACHE_PACKAGE_NAME='ccache-4.8.2.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.2'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.10.4.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='6f6fb27f91bb65f9d7196e3c616901b3e18a7dea31ccc2ae857940b125faa780'
@@ -171,10 +171,10 @@ LIBEDIT_PACKAGE_SHA256SUM='f0925a5adf4b1bf116ee19766b7daa766917aec198747943b1c4e
 LIBEDIT_PACKAGE_NAME='libedit-20221030-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20221030-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.5/llvm-project-16.0.5.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='37f540124b9cfd4680666e649f557077f9937c9178489cea285a672e714b2863'
-LLVM_PACKAGE_NAME='llvm-project-16.0.5.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-16.0.5.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e'
+LLVM_PACKAGE_NAME='llvm-project-16.0.6.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-16.0.6.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
