@@ -8,17 +8,17 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.xz'
-declare -r BINUTILS_MD5SUM='007b59bd908a737c06e5a8d3d2c737eb'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz'
+declare -r BINUTILS_MD5SUM='256d7e0ad998e423030c84483a7c1e30'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.25.tar.xz'
-declare -r LINUX_MD5SUM='ecd40e8189def3fd30f8fc677bdf8c79'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.42.tar.xz'
+declare -r LINUX_MD5SUM='c28c8757cc8733e9b75e9009dbd86c2d'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.37.tar.xz'
-declare -r GLIBC_MD5SUM='e89cf3dcb64939d29f04b4ceead5cc4e'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.38.tar.xz'
+declare -r GLIBC_MD5SUM='778cce0ea6bf7f84ca8caacf4a01f45b'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz'
-declare -r GCC_MD5SUM='43e4de77f2218c83ca675257ea1af9ef'
+declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz'
+declare -r GCC_MD5SUM='e0e48554cc6e4f261d55ddee9ab69075'
 
 function log() {
 	local level="${1}"
@@ -264,7 +264,9 @@ function build_binutils_final() {
 	mkdir build
 	cd build
 
-	../configure --prefix="${PREFIX}" \
+	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
+        -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
+		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
 		--enable-gold \
 		--enable-plugins \
@@ -289,15 +291,19 @@ function build_gcc_final() {
 	mkdir build
 	cd build
 
-	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
-		../configure --prefix="${PREFIX}" \
+	ldflags="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
+        -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')"
+
+	../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
 		--with-local-prefix="${PREFIX}" \
 		--enable-languages=c,c++ \
 		--enable-default-pie \
 		--disable-multilib \
 		--disable-libquadmath \
-		--disable-libquadmath-support
+		--disable-libquadmath-support \
+		--with-stage1-ldflags="${ldflags}" \
+		--with-boot-ldflags="${ldflags}"
 	make -j "$(nproc)"
 
 	# Remove the old files
