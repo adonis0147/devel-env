@@ -294,17 +294,17 @@ function build_gcc_final() {
 	ldflags="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
         -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')"
 
-	../configure --prefix="${PREFIX}" \
+	LDFLAGS="${ldflags}" LDFLAGS_FOR_TARGET="${ldflags}" \
+		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
 		--with-local-prefix="${PREFIX}" \
 		--enable-languages=c,c++ \
 		--enable-default-pie \
 		--disable-multilib \
 		--disable-libquadmath \
-		--disable-libquadmath-support \
-		--with-stage1-ldflags="${ldflags}" \
-		--with-boot-ldflags="${ldflags}"
-	make -j "$(nproc)"
+		--disable-libquadmath-support
+
+	make BOOT_LDFLAGS="${ldflags}" -j "$(nproc)"
 
 	# Remove the old files
 	rm -r "${PREFIX}/include/c++"
