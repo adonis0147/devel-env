@@ -20,6 +20,9 @@ declare -r GLIBC_MD5SUM='778cce0ea6bf7f84ca8caacf4a01f45b'
 declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz'
 declare -r GCC_MD5SUM='e0e48554cc6e4f261d55ddee9ab69075'
 
+declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz'
+declare -r LIBXCRYPT_MD5SUM='b84cd4104e08c975063ec6c4d0372446'
+
 function log() {
 	local level="${1}"
 	local message="${2}"
@@ -96,6 +99,7 @@ function download_all() {
 	download "${LINUX_PACKAGE_URL}" "${LINUX_MD5SUM}"
 	download "${GLIBC_PACKAGE_URL}" "${GLIBC_MD5SUM}"
 	download "${GCC_PACKAGE_URL}" "${GCC_MD5SUM}"
+	download "${LIBXCRYPT_PACKAGE_URL}" "${LIBXCRYPT_MD5SUM}"
 }
 
 function extract_packages() {
@@ -332,6 +336,22 @@ function build_glibc_final() {
 	popd >/dev/null
 }
 
+function build_libxcrypt() {
+	local package
+	package="$(basename "${LIBXCRYPT_PACKAGE_URL}")"
+	pushd "${package/.tar.xz/}" >/dev/null
+
+	rm -rf build
+	mkdir build
+	cd build
+
+	../configure --prefix="${PREFIX}"
+	make -j "$(nproc)"
+	make install
+
+	popd >/dev/null
+}
+
 function build_final_toolchain() {
 	build_binutils_final
 	build_gcc_final
@@ -343,6 +363,7 @@ function build_all() {
 
 	build_cross_toolchain
 	build_final_toolchain
+	build_libxcrypt
 
 	popd >/dev/null
 }
