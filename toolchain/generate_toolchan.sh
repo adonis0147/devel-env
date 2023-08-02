@@ -11,14 +11,14 @@ declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.xz'
 declare -r BINUTILS_MD5SUM='9202d02925c30969d1917e4bad5a2320'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.2.tar.xz'
-declare -r LINUX_MD5SUM='00b4181d5087910cecb81c281909beba'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.4.tar.xz'
+declare -r LINUX_MD5SUM='65af21bb8e024c2ef26c067d51d7f8f9'
 
 declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.39.tar.xz'
 declare -r GLIBC_MD5SUM='be81e87f72b5ea2c0ffe2bedfeb680c6'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz'
-declare -r GCC_MD5SUM='2268420ba02dc01821960e274711bde0'
+declare -r GCC_PACKAGE_URL='https://gcc.gnu.org/pub/gcc/snapshots/LATEST-15/gcc-15-20241208.tar.xz'
+declare -r GCC_MD5SUM='b73c043092890f0fe0509b674a19928e'
 
 declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz'
 declare -r LIBXCRYPT_MD5SUM='b84cd4104e08c975063ec6c4d0372446'
@@ -282,8 +282,13 @@ function build_binutils_final() {
 	mkdir build
 	cd build
 
-	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
-        -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
+	# Prevent binutils from linking libfl.so
+	export LEX='missing lex'
+	export FLEX='missing flex'
+
+	CFLAGS='-std=gnu17' \
+		LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
+		-Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
 		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
 		--enable-gold \
@@ -292,6 +297,9 @@ function build_binutils_final() {
 		--with-sysroot=/
 	make -j "$(nproc)"
 	make install-strip
+
+	unset FLEX
+	unset LEX
 
 	# Remove the old files
 	rm -rf "${PREFIX}/lib/ldscripts"
@@ -358,7 +366,8 @@ function build_libxcrypt() {
 	mkdir build
 	cd build
 
-	../configure --prefix="${PREFIX}"
+	CFLAGS='-Wno-unterminated-string-initialization' \
+		../configure --prefix="${PREFIX}"
 	make -j "$(nproc)"
 	make install
 
