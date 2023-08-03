@@ -349,6 +349,8 @@ function build_libxcrypt() {
 	make -j "$(nproc)"
 	make install
 
+	rm -rf "${PREFIX}/lib/pkgconfig"
+
 	popd >/dev/null
 }
 
