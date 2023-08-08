@@ -304,9 +304,7 @@ function build_gcc_final() {
 		--with-local-prefix="${PREFIX}" \
 		--enable-languages=c,c++ \
 		--enable-default-pie \
-		--disable-multilib \
-		--disable-libquadmath \
-		--disable-libquadmath-support
+		--disable-multilib
 
 	make BOOT_LDFLAGS="${ldflags}" -j "$(nproc)"
 
