@@ -64,10 +64,10 @@ LIBFFI_PACKAGE_SHA256SUM='d66c56ad259a82cf2a9dfc408b32bf5da52371500b84745f7fb8b6
 LIBFFI_PACKAGE_NAME='libffi-3.4.4.tar.gz'
 LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.4.4'
 
-ZLIB_PACKAGE_URL='https://github.com/madler/zlib/releases/download/v1.2.13/zlib-1.2.13.tar.gz'
-ZLIB_PACKAGE_SHA256SUM='b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30'
-ZLIB_PACKAGE_NAME='zlib-1.2.13.tar.gz'
-ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.2.13'
+ZLIB_PACKAGE_URL='https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz'
+ZLIB_PACKAGE_SHA256SUM='ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e'
+ZLIB_PACKAGE_NAME='zlib-1.3.tar.gz'
+ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3'
 
 BERKELEY_DB_PACKAGE_URL='https://download.oracle.com/berkeley-db/db-18.1.40.tar.gz'
 BERKELEY_DB_PACKAGE_SHA256SUM='0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8'
@@ -99,30 +99,30 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://tukaani.org/xz/xz-5.4.3.tar.gz'
-XZ_PACKAGE_SHA256SUM='1c382e0bc2e4e0af58398a903dd62fff7e510171d2de47a1ebe06d1528e9b7e9'
-XZ_PACKAGE_NAME='xz-5.4.3.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.3'
+XZ_PACKAGE_URL='https://tukaani.org/xz/xz-5.4.4.tar.gz'
+XZ_PACKAGE_SHA256SUM='aae39544e254cfd27e942d35a048d592959bd7a79f9a624afb0498bb5613bdf8'
+XZ_PACKAGE_NAME='xz-5.4.4.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.4'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2023/sqlite-autoconf-3420000.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='7abcfd161c6e2742ca5c6c0895d1f853c940f203304a0b49da4e1eca5d088ca6'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3420000.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3420000'
+SQLITE_PACKAGE_URL='https://sqlite.org/2023/sqlite-autoconf-3430000.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='49008dbf3afc04d4edc8ecfc34e4ead196973034293c997adad2f63f01762ae1'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3430000.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3430000'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz'
-PYTHON_PACKAGE_SHA256SUM='85c37a265e5c9dd9f75b35f954e31fbfc10383162417285e30ad25cc073a0d63'
-PYTHON_PACKAGE_NAME='Python-3.11.4.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.11.4'
+PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz'
+PYTHON_PACKAGE_SHA256SUM='a12a0a013a30b846c786c010f2c19dd36b7298d888f7c4bd1581d90ce18b5e58'
+PYTHON_PACKAGE_NAME='Python-3.11.5.tgz'
+PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.11.5'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='6b902ab103843592be5e99504f846ec109c1abb692e85347587f237a4ffa1033'
 EXPAT_PACKAGE_NAME='expat-2.5.0.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.5.0'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='c4a6a3dd1827895a80cbd824e14d94811796ae54037549e0da93f7b84cb45b9f'
-GIT_PACKAGE_NAME='git-2.41.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.41.0'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='34aedd54210d7216a55d642bbb4cfb22695b7610719a106bf0ddef4c82a8beed'
+GIT_PACKAGE_NAME='git-2.42.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.42.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -143,23 +143,23 @@ ZSTD_PACKAGE_SHA256SUM='9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78
 ZSTD_PACKAGE_NAME='zstd-1.5.5.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.5'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.27.1/cmake-3.27.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.27.4/cmake-3.27.4-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='9fef63e1cf87cab1153f9433045df2e43c336e462518b0f5e52d2cc91d762cff'
+	CMAKE_PACKAGE_SHA256SUM='186c53121cf6ef4e48b51e88690e6ef84f268611064a42e5a2e829c3d6b2efde'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='812e32b569bcfb61f5ededdec244c4fddcd18d2c352a902ef88ed7d02005b2bd'
+	CMAKE_PACKAGE_SHA256SUM='45538d394bd4ef2a423fa78dff5cad16bcf437a4a6dc655e999177170632b039'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.27.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.27.4-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.2/ccache-4.8.2.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='75eef15b8b9da48db9c91e1d0ff58b3645fc70c0e4ca2ef1b6825a12f21f217d'
 CCACHE_PACKAGE_NAME='ccache-4.8.2.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.2'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.11.4.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='2fd59eccfe277f7b7dec8836254acbebd24af33857a018dd64ddcf92d88d7f7e'
-LIBXML2_PACKAGE_NAME='libxml2-2.11.4.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.11.4'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.11.5.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='6c28059e2e3eeb42b5b4b16489e3916a6346c1095a74fee3bc65cdc5d89a6215'
+LIBXML2_PACKAGE_NAME='libxml2-2.11.5.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.11.5'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b'
