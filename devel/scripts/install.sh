@@ -152,7 +152,7 @@ function install_ninja() {
 	pushd "${NINJA_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" ..
+	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" ..
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
