@@ -151,10 +151,10 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 CMAKE_PACKAGE_NAME="cmake-3.27.4-linux-${ARCH}.tar.gz"
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.2/ccache-4.8.2.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='75eef15b8b9da48db9c91e1d0ff58b3645fc70c0e4ca2ef1b6825a12f21f217d'
-CCACHE_PACKAGE_NAME='ccache-4.8.2.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.2'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='d59dd569ad2bbc826c0bc335c8ebd73e78ed0f2f40ba6b30069347e63585d9ef'
+CCACHE_PACKAGE_NAME='ccache-4.8.3.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.3'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.11.5.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='6c28059e2e3eeb42b5b4b16489e3916a6346c1095a74fee3bc65cdc5d89a6215'
