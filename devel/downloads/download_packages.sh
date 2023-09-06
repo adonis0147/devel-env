@@ -18,7 +18,7 @@ function download() {
 	local output="${PACKAGES_PATH}/${4}"
 
 	log_info "Downloading ${package}..."
-	if [[ ! -f "${output}" ]] || [[ "${sha256sum}" != "$(sha256sum "${output}" | awk '{print $1}')" ]]; then
+	if [[ ! -f "${output}" ]] || ! echo "${sha256sum}  ${output}" | sha256sum --check &>/dev/null; then
 		curl -L "${url}" -o "${output}"
 	fi
 	log_info "Download ${package} successfully!"

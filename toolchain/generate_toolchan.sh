@@ -85,7 +85,7 @@ function download() {
 	mkdir -p "${PACKAGES_PATH}"
 	pushd "${PACKAGES_PATH}" >/dev/null
 
-	if [[ ! -f "${package}" ]] || [[ "$(md5sum "${package}" | awk '{print $1}')" != "${md5sum}" ]]; then
+	if [[ ! -f "${package}" ]] || ! echo "${md5sum}  ${package}" | md5sum --check &>/dev/null; then
 		log_info "Download ${package} ..."
 		curl -L "${url}" -o "${package}"
 		log_info "Download ${package} successfully!"
