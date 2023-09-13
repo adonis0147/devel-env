@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
-from ftplib import FTP
 import json
 import logging
 import os
-import packaging.version
 import re
-import requests
 import textwrap
+from ftplib import FTP
+
+import packaging.version
+import requests
 
 
 def singleton(cls):
@@ -63,7 +64,7 @@ class GitHubGraphQL:
         return response['data']['repository']['refs']['nodes'][0]['name']
 
 
-def get_all_urls(file: str) -> map:
+def get_all_urls(file: str) -> dict[str, str]:
     urls = dict()
     with open(file, 'r') as f:
         for line in filter(lambda line: '_URL=' in line, f):
@@ -78,8 +79,13 @@ def check_gnu_package(package: str, url: str) -> bool:
     ftp.cwd('/gnu/{}'.format(package.lower()))
     name = package.lower() if package != 'WGET' else 'wget2'
 
+    def get_version(file):
+        match = re.compile(r'{}-(\d+(\.\d+)*).*'.format(name)).match(file)
+        assert match is not None
+        return match.group(1)
+
     versions = [
-        re.compile(r'{}-(\d+(\.\d+)*).*'.format(name)).match(file).group(1)
+        get_version(file)
         for file in ftp.nlst() if re.compile(r'{}-(\d+(\.\d+)*).*\.tar\.gz'.format(name)).match(file)
     ]
     versions.sort(key=packaging.version.parse)
@@ -93,19 +99,22 @@ def check_gnu_package(package: str, url: str) -> bool:
 
 def check_github_package(package: str, url: str) -> bool:
     match = re.compile(r'https://github.com/([^/]*)/([^/]*)/.*').match(url)
+    assert match is not None
     owner, name = match.group(1), match.group(2)
 
     latest_version = GitHubGraphQL().get_latest_version(owner, name)
     if '/refs/tags/' in url:
         version = os.path.basename(url)[:-len('.tar.gz')]
     elif '/releases/download/' in url:
-        version = re.compile(r'.*/releases/download/([^/]+)/.*').match(url).group(1)
+        match = re.compile(r'.*/releases/download/([^/]+)/.*').match(url)
+        assert match is not None
+        version = match.group(1)
     logging.log(logging.INFO if version == latest_version else logging.WARN,
                 'Check {}: {} -> {}'.format(package, version, latest_version))
     return version != latest_version
 
 
-def check_updates(urls: map) -> tuple:
+def check_updates(urls: dict[str, str]) -> tuple[list[str], list[str]]:
     checked = []
     updates = []
     for package, url in urls.items():
