@@ -11,8 +11,8 @@ declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz'
 declare -r BINUTILS_MD5SUM='256d7e0ad998e423030c84483a7c1e30'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.53.tar.xz'
-declare -r LINUX_MD5SUM='e5ff696af762aab242f58f64de9ee450'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.55.tar.xz'
+declare -r LINUX_MD5SUM='c30503bd59b3aac17dbd4a04a32401c7'
 
 declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.38.tar.xz'
 declare -r GLIBC_MD5SUM='778cce0ea6bf7f84ca8caacf4a01f45b'
