@@ -652,13 +652,6 @@ EOF
 	mkdir build
 	cd build
 
-	# See https://github.com/rust-lang/rust/issues/102897
-	local kernel_version
-	kernel_version="$(uname -r | sed -n 's/\([[:digit:]]\+\.[[:digit:]]\+\).*/\1/p')"
-	if [[ "$(echo "${kernel_version}" 3.17 | awk '{print $1 < $2}')" == 1 ]]; then
-		disable_arc4random='-DHAVE_DECL_ARC4RANDOM=0'
-	fi
-
 	cmake -G Ninja -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
@@ -670,7 +663,6 @@ EOF
 		-DCOMPILER_RT_USE_LLVM_UNWINDER=ON \
 		-DTerminfo_LIBRARIES="${DEVEL_HOME_PATH}/lib/libtinfow.so" \
 		-DCURSES_NEED_WIDE=ON \
-		${disable_arc4random:+${disable_arc4random}} \
 		../llvm
 	ninja -j "${NUM_CORES}"
 	ninja install
