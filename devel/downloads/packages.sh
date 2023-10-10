@@ -134,8 +134,8 @@ GDB_PACKAGE_SHA256SUM='7ead13d9e19fa0c57bb19104e1a5f67eefa9fc79f2e6360de491e8fdd
 GDB_PACKAGE_NAME='gdb-13.2.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-13.2'
 
-NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.2/nvim.appimage'
-NEOVIM_PACKAGE_SHA256SUM='61950131e18157ab9c7f14131a3dda0aa81f8e4fb47994bf6d8b418d9be6e3c0'
+NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.4/nvim.appimage'
+NEOVIM_PACKAGE_SHA256SUM='028cfaaf551d64cbb2f39d15363ed78edb01e2673579b48cb694e3604207d656'
 NEOVIM_PACKAGE_NAME='nvim.appimage'
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz'
@@ -143,13 +143,13 @@ ZSTD_PACKAGE_SHA256SUM='9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78
 ZSTD_PACKAGE_NAME='zstd-1.5.5.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.5'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.27.6/cmake-3.27.6-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.27.7/cmake-3.27.7-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='26373a283daa8490d772dc8a179450cd6d391cb2a9db8d4242fe09e361efc42e'
+	CMAKE_PACKAGE_SHA256SUM='a8c92ecb139bcc7a1f92a8108179bd1d021bdb158a5ee759cba6d60010b83ae9'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='811e5040ad7f3fb4924a875373d2a1a174a01400233a81a638a989157438a5e3'
+	CMAKE_PACKAGE_SHA256SUM='f40ec1b7d41e94efd6c79cf0b7fc45ed6068543af0fea47b0c9fbf2b1b1b3fbc'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.27.6-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.27.7-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='d59dd569ad2bbc826c0bc335c8ebd73e78ed0f2f40ba6b30069347e63585d9ef'
