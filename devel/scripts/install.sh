@@ -645,7 +645,7 @@ function install_llvm() {
 	rpath="$(sed -n 's/collect2 -rpath \(.*\)/\1/p' "${DEVEL_HOME_PATH}/compiler/lib/gcc/specs")"
 	cat >"${HOME}/.config/${package}/clang.cfg" <<EOF
 -Wl,-rpath,${rpath//\$/\\\$}
--Wl,--dynamic-linker,$(find "${DEVEL_HOME_PATH}/compiler/lib" -name 'ld-linux-*')
+-Wl,-dynamic-linker,$(find "${DEVEL_HOME_PATH}/compiler/lib" -name 'ld-linux-*')
 EOF
 	ln -snf clang.cfg "${HOME}/.config/${package}/clang++.cfg"
 

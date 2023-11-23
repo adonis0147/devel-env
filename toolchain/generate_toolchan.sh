@@ -269,7 +269,7 @@ function build_binutils_final() {
 	cd build
 
 	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
-        -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
+        -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
 		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
 		--enable-gold \
@@ -296,7 +296,7 @@ function build_gcc_final() {
 	cd build
 
 	ldflags="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
-        -Wl,--dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')"
+        -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')"
 
 	LDFLAGS="${ldflags}" LDFLAGS_FOR_TARGET="${ldflags}" \
 		../configure --prefix="${PREFIX}" \
