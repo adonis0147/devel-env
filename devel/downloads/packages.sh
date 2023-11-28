@@ -156,10 +156,10 @@ CCACHE_PACKAGE_SHA256SUM='d59dd569ad2bbc826c0bc335c8ebd73e78ed0f2f40ba6b30069347
 CCACHE_PACKAGE_NAME='ccache-4.8.3.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.3'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.0.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='2ae24ad98bc8365017b40470c370d9d3620e6b5b5ebafca46ef5c275eb33dbf4'
-LIBXML2_PACKAGE_NAME='libxml2-2.12.0.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.0'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.1.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='9815c91fcfab336b1e2a6ba506cf38c5baa6817c9ed4f30211cbc9011406d9fb'
+LIBXML2_PACKAGE_NAME='libxml2-2.12.1.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.1'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b'
@@ -171,10 +171,10 @@ LIBEDIT_PACKAGE_SHA256SUM='4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c
 LIBEDIT_PACKAGE_NAME='libedit-20230828-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20230828-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.2/llvm-project-17.0.2.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='351562b14d42fcefcbf00cc1f327680a1062bbbf67a1e1ca6acb64c473b06394'
-LLVM_PACKAGE_NAME='llvm-project-17.0.2.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-17.0.2.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/llvm-project-17.0.6.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='58a8818c60e6627064f312dbf46c02d9949956558340938b71cf731ad8bc0813'
+LLVM_PACKAGE_NAME='llvm-project-17.0.6.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-17.0.6.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
