@@ -481,6 +481,24 @@ function install_gmp() {
 	log_info 'Success!'
 }
 
+function install_mpfr() {
+	local package='mpfr'
+	log_info "Start to install ${package}."
+	rm -rf "${MPFR_PACKAGE_EXTRACTED_DIR}"
+	tar -Jxvf "${MPFR_PACKAGE_NAME}"
+
+	pushd "${MPFR_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_gdb() {
 	local package='gdb'
 	log_info "Start to install ${package}."
@@ -729,6 +747,7 @@ function install_packages() {
 			expat
 			git
 			gmp
+			mpfr
 			zstd
 			gdb
 			neovim
