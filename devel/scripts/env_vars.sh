@@ -69,6 +69,24 @@ function relocate() {
 	done < <(find "$(readlink -f "${base_path}")" -type f)
 }
 
+function export_locale_environment() {
+	local value="${1}"
+
+	export LC_CTYPE="${value}"
+	export LC_NUMERIC="${value}"
+	export LC_TIME="${value}"
+	export LC_COLLATE="${value}"
+	export LC_MONETARY="${value}"
+	export LC_MESSAGES="${value}"
+	export LC_PAPER="${value}"
+	export LC_NAME="${value}"
+	export LC_ADDRESS="${value}"
+	export LC_TELEPHONE="${value}"
+	export LC_MEASUREMENT="${value}"
+	export LC_IDENTIFICATION="${value}"
+	export LC_ALL=''
+}
+
 # Example: setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
 function setup_locale() {
 	local charmap="${1}"
@@ -94,6 +112,7 @@ function setup_locale() {
 	export LANG="${output_path}"
 	export LANGUAGE="${output_path}"
 	export LESSCHARSET="${charmap}"
+	export_locale_environment "${output_path}"
 }
 
 function setup_terminfo() {
