@@ -84,10 +84,10 @@ OPENSSL_PACKAGE_SHA256SUM='f93c9e8edde5e9166119de31755fc87b4aa34863662f67ddfcba1
 OPENSSL_PACKAGE_NAME='openssl-3.0.12.tar.gz'
 OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.0.12'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.4.0.tar.gz'
-CURL_PACKAGE_SHA256SUM='816e41809c043ff285e8c0f06a75a1fa250211bbfb2dc0a037eeef39f1a9e427'
-CURL_PACKAGE_NAME='curl-8.4.0.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.4.0'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.5.0.tar.gz'
+CURL_PACKAGE_SHA256SUM='05fc17ff25b793a437a0906e0484b82172a9f4de02be5ed447e0cab8c3475add'
+CURL_PACKAGE_NAME='curl-8.5.0.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.5.0'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='a05dc5191c6bad9313fd6db2777a78f5527ba4774f665d5d69f5a7461b49e2e7'
@@ -104,10 +104,10 @@ XZ_PACKAGE_SHA256SUM='135c90b934aee8fbc0d467de87a05cb70d627da36abe518c357a873709
 XZ_PACKAGE_NAME='xz-5.4.5.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.5'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2023/sqlite-autoconf-3440100.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='63c3181633844adb5e36187f75b8f31a51cd32487992a26b89bf26b22ecdcf48'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3440100.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3440100'
+SQLITE_PACKAGE_URL='https://sqlite.org/2023/sqlite-autoconf-3440200.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='1c6719a148bc41cf0f2bbbe3926d7ce3f5ca09d878f1246fcc20767b175bb407'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3440200.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3440200'
 
 PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz'
 PYTHON_PACKAGE_SHA256SUM='51412956d24a1ef7c97f1cb5f70e185c13e3de1f50d131c0aac6338080687afb'
@@ -148,23 +148,23 @@ ZSTD_PACKAGE_SHA256SUM='9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78
 ZSTD_PACKAGE_NAME='zstd-1.5.5.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.5'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.27.7/cmake-3.27.7-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.28.0/cmake-3.28.0-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='a8c92ecb139bcc7a1f92a8108179bd1d021bdb158a5ee759cba6d60010b83ae9'
+	CMAKE_PACKAGE_SHA256SUM='898f0b5ca6e2ea5286998e97bd33f030d7d09f18ca4b88be661fdfbad5dadd88'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='f40ec1b7d41e94efd6c79cf0b7fc45ed6068543af0fea47b0c9fbf2b1b1b3fbc'
+	CMAKE_PACKAGE_SHA256SUM='3a29efd9fce558254b870730ab6f9a672cde1c1e7b128e010ae5582937b99788'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.27.7-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.28.0-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='d59dd569ad2bbc826c0bc335c8ebd73e78ed0f2f40ba6b30069347e63585d9ef'
 CCACHE_PACKAGE_NAME='ccache-4.8.3.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.3'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.1.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='9815c91fcfab336b1e2a6ba506cf38c5baa6817c9ed4f30211cbc9011406d9fb'
-LIBXML2_PACKAGE_NAME='libxml2-2.12.1.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.1'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.2.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='0ae29f4bad60d9d65fe6e6b8bc96147b743f9075b63c13d4aeb0391c0046c442'
+LIBXML2_PACKAGE_NAME='libxml2-2.12.2.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.2'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.1.1/swig-4.1.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b'
