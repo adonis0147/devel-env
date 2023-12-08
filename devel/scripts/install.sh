@@ -569,6 +569,15 @@ function install_cmake() {
 	rm -rf "${install_path}"
 	mkdir -p "${install_path}"
 	tar -zxvf "${CMAKE_PACKAGE_NAME}" --strip-components=1 -C "${install_path}"
+
+	local interpreter
+	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name "${INTERPRETER}")"
+	local libc_so
+	libc_so="$(find "${DEVEL_HOME_PATH}/compiler" -name "${LIBC_SO}")"
+
+	patchelf --set-rpath "${DEVEL_HOME_PATH}/compiler/$(uname -m)-linux-gnu/lib:$(dirname "${libc_so}")" "${install_path}/bin"/*
+	patchelf --set-interpreter "${interpreter}" "${install_path}/bin"/*
+
 	setup_package "${package}"
 
 	log_info 'Success!'
