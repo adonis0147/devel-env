@@ -1,6 +1,6 @@
 # devel-env
 
-_**Devel-env**_ is aimed to set the development environment up on Linux server _**WITHOUT**_ root privilege.
+_**Devel-env**_ is aimed to set the development environment up on Linux server _**WITHOUT**_ root privileges.
 
 It provides the following stuffs:
 1. GCC toolchain **(GCC 13.2 + GLIBC 2.38)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
