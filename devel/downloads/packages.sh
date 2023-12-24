@@ -11,10 +11,10 @@ M4_PACKAGE_SHA256SUM='63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a827
 M4_PACKAGE_NAME='m4-1.4.19.tar.xz'
 M4_PACKAGE_EXTRACTED_DIR='m4-1.4.19'
 
-AUTOCONF_PACKAGE_URL='https://ftpmirror.gnu.org/autoconf/autoconf-2.71.tar.gz'
-AUTOCONF_PACKAGE_SHA256SUM='431075ad0bf529ef13cb41e9042c542381103e80015686222b8a9d4abef42a1c'
-AUTOCONF_PACKAGE_NAME='autoconf-2.71.tar.gz'
-AUTOCONF_PACKAGE_EXTRACTED_DIR='autoconf-2.71'
+AUTOCONF_PACKAGE_URL='https://ftpmirror.gnu.org/autoconf/autoconf-2.72.tar.gz'
+AUTOCONF_PACKAGE_SHA256SUM='afb181a76e1ee72832f6581c0eddf8df032b83e2e0239ef79ebedc4467d92d6e'
+AUTOCONF_PACKAGE_NAME='autoconf-2.72.tar.gz'
+AUTOCONF_PACKAGE_EXTRACTED_DIR='autoconf-2.72'
 
 AUTOMAKE_PACKAGE_URL='https://ftpmirror.gnu.org/automake/automake-1.16.5.tar.gz'
 AUTOMAKE_PACKAGE_SHA256SUM='07bd24ad08a64bc17250ce09ec56e921d6343903943e99ccf63bbf0705e34605'
@@ -148,13 +148,13 @@ ZSTD_PACKAGE_SHA256SUM='9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78
 ZSTD_PACKAGE_NAME='zstd-1.5.5.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.5'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.28.0/cmake-3.28.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='898f0b5ca6e2ea5286998e97bd33f030d7d09f18ca4b88be661fdfbad5dadd88'
+	CMAKE_PACKAGE_SHA256SUM='f76398c24362ad87bad1a3d6f1e8f4377632b5b1c360c4ba1fd7cd205fd9d8d4'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='3a29efd9fce558254b870730ab6f9a672cde1c1e7b128e010ae5582937b99788'
+	CMAKE_PACKAGE_SHA256SUM='e84d88e46ed8c85fbe259bcd4ca07df7a928df87e84013e0da34d91b01a25d71'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.28.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.28.1-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='d59dd569ad2bbc826c0bc335c8ebd73e78ed0f2f40ba6b30069347e63585d9ef'
