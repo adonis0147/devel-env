@@ -139,8 +139,8 @@ GDB_PACKAGE_SHA256SUM='683e63182fb72bd5d8db32ab388143796370a8e3e71c26bc264effb48
 GDB_PACKAGE_NAME='gdb-14.1.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-14.1'
 
-NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.4/nvim.appimage'
-NEOVIM_PACKAGE_SHA256SUM='028cfaaf551d64cbb2f39d15363ed78edb01e2673579b48cb694e3604207d656'
+NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage'
+NEOVIM_PACKAGE_SHA256SUM='0c82e5702af7a11fbb916a11b4a82e98928abf8266c74b2030ea740340437bf9'
 NEOVIM_PACKAGE_NAME='nvim.appimage'
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz'
@@ -156,10 +156,10 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 CMAKE_PACKAGE_NAME="cmake-3.28.1-linux-${ARCH}.tar.gz"
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='d59dd569ad2bbc826c0bc335c8ebd73e78ed0f2f40ba6b30069347e63585d9ef'
-CCACHE_PACKAGE_NAME='ccache-4.8.3.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.8.3'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.9/ccache-4.9.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='866b2223d59333640f0e7a003cbb85b32d9ca3c9445bd9e3cf142942e69dd3ec'
+CCACHE_PACKAGE_NAME='ccache-4.9.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.9'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.3.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='ffad925bc27ca1266db8daa16b833f0afa6745df3cfcc0b8bbbc08bf52265676'
