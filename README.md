@@ -38,9 +38,9 @@ cp output/install_toolchain.sh devel/scripts
 # Download the packages
 bash devel/downloads/download_packages.sh
 
-# Copy the whole devel directory to the target server (e.g. ${HOME}/devel) and run the following commands.
+# Copy the whole devel directory to the target server (e.g. ${HOME}/.local/share/devel) and run the following commands.
 
-# Optional: DEVEL_HOME_PATH="${HOME}/devel" by default.
+# Optional: DEVEL_HOME_PATH="${HOME}/.local/share/devel" by default.
 export DEVEL_HOME_PATH="<some devel home path>"
 
 cd "some/path/devel/scripts"

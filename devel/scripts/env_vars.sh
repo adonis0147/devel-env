@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVEL_HOME_PATH="${DEVEL_HOME_PATH:-${HOME}/devel}"
+export DEVEL_HOME_PATH="${DEVEL_HOME_PATH:-${HOME}/.local/share/devel}"
 
 export PKG_CONFIG_PATH="${DEVEL_HOME_PATH}/lib/pkgconfig"
 export ACLOCAL_PATH="${DEVEL_HOME_PATH}/share/aclocal"
