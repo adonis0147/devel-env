@@ -317,7 +317,8 @@ function install_curl() {
 	pushd "${CURL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl" \
+		--without-libpsl
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
