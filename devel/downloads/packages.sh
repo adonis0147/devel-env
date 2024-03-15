@@ -99,10 +99,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.6.0/xz-5.6.0.tar.gz'
-XZ_PACKAGE_SHA256SUM='0f5c81f14171b74fcc9777d302304d964e63ffc2d7b634ef023a7249d9b5d875'
-XZ_PACKAGE_NAME='xz-5.6.0.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.6.0'
+XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.6.1/xz-5.6.1.tar.gz'
+XZ_PACKAGE_SHA256SUM='2398f4a8e53345325f44bdd9f0cc7401bd9025d736c6d43b372f4dea77bf75b8'
+XZ_PACKAGE_NAME='xz-5.6.1.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.6.1'
 
 SQLITE_PACKAGE_URL='https://sqlite.org/2024/sqlite-autoconf-3450100.tar.gz'
 SQLITE_PACKAGE_SHA256SUM='cd9c27841b7a5932c9897651e20b86c701dd740556989b01ca596fcfa3d49a0a'
@@ -114,10 +114,10 @@ PYTHON_PACKAGE_SHA256SUM='a7c4f6a9dc423d8c328003254ab0c9338b83037bd787d680826a5b
 PYTHON_PACKAGE_NAME='Python-3.12.2.tgz'
 PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.12.2'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_1/expat-2.6.1.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='86943cd33f952077f4a50aaa540333d61c49d980c435f551c63640833e2229d1'
-EXPAT_PACKAGE_NAME='expat-2.6.1.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.1'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_2/expat-2.6.2.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='d4cf38d26e21a56654ffe4acd9cd5481164619626802328506a2869afab29ab3'
+EXPAT_PACKAGE_NAME='expat-2.6.2.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.2'
 
 GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.44.0.tar.gz'
 GIT_PACKAGE_SHA256SUM='f9e36f085458fe9688fbbe7846b8c4770b13d161fcd8953655f36b2b85f06b76'
@@ -176,10 +176,10 @@ LIBEDIT_PACKAGE_SHA256SUM='4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c
 LIBEDIT_PACKAGE_NAME='libedit-20230828-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20230828-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/llvm-project-17.0.6.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='58a8818c60e6627064f312dbf46c02d9949956558340938b71cf731ad8bc0813'
-LLVM_PACKAGE_NAME='llvm-project-17.0.6.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-17.0.6.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.1/llvm-project-18.1.1.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='8f34c6206be84b186b4b31f47e1b52758fa38348565953fad453d177ef34c0ad'
+LLVM_PACKAGE_NAME='llvm-project-18.1.1.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-18.1.1.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
