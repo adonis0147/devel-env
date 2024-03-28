@@ -143,28 +143,28 @@ NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.9.5/nv
 NEOVIM_PACKAGE_SHA256SUM='0c82e5702af7a11fbb916a11b4a82e98928abf8266c74b2030ea740340437bf9'
 NEOVIM_PACKAGE_NAME='nvim.appimage'
 
-ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz'
-ZSTD_PACKAGE_SHA256SUM='9c4396cc829cfae319a6e2615202e82aad41372073482fce286fac78646d3ee4'
-ZSTD_PACKAGE_NAME='zstd-1.5.5.tar.gz'
-ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.5'
+ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz'
+ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a34fd403c1'
+ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
+ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.29.0/cmake-3.29.0-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='804d231460ab3c8b556a42d2660af4ac7a0e21c98a7f8ee3318a74b4a9a187a6'
+	CMAKE_PACKAGE_SHA256SUM='f06258f52c5649752dfb10c4c2e1d8167c760c8826f078c6f5c332fa9d976bf8'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='bbf023139f944cefe731d944f2864d8ea3ea0c4f9310b46ac72b3cb4e314b023'
+	CMAKE_PACKAGE_SHA256SUM='2cb768a14b28a4478bb931d917dbc419305b82433bdecc046df98e7c336225fa'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.28.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.29.0-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.9.1/ccache-4.9.1.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='12834ecaaaf2db069dda1d1d991f91c19e3274cc04a471af5b64195def17e90f'
 CCACHE_PACKAGE_NAME='ccache-4.9.1.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.9.1'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.5.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='042c7b161e58ca59d816eee69fc36774dcc8ab7b88a2b9a6e3d4f5e454a9474a'
-LIBXML2_PACKAGE_NAME='libxml2-2.12.5.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.5'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.6.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='b6ce34641cc2f3084289d5ac3cd49e8892394591a3df8c05f19d633f4e6058bc'
+LIBXML2_PACKAGE_NAME='libxml2-2.12.6.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.6'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.2.1/swig-4.2.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8'
@@ -176,10 +176,10 @@ LIBEDIT_PACKAGE_SHA256SUM='4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c
 LIBEDIT_PACKAGE_NAME='libedit-20230828-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20230828-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.1/llvm-project-18.1.1.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='8f34c6206be84b186b4b31f47e1b52758fa38348565953fad453d177ef34c0ad'
-LLVM_PACKAGE_NAME='llvm-project-18.1.1.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-18.1.1.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.2/llvm-project-18.1.2.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='51073febd91d1f2c3b411d022695744bda322647e76e0b4eb1918229210c48d5'
+LLVM_PACKAGE_NAME='llvm-project-18.1.2.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-18.1.2.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
