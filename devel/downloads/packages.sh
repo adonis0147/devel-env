@@ -36,10 +36,10 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.11.1.tar.gz'
-NINJA_PACKAGE_SHA256SUM='31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67fe7400cea'
-NINJA_PACKAGE_NAME='ninja-1.11.1.tar.gz'
-NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.11.1'
+NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.0.tar.gz'
+NINJA_PACKAGE_SHA256SUM='8b2c86cd483dc7fcb7975c5ec7329135d210099a89bc7db0590a07b0bbfe49a5'
+NINJA_PACKAGE_NAME='ninja-1.12.0.tar.gz'
+NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.12.0'
 
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.16.1/patchelf-0.16.1-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
@@ -49,10 +49,10 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 PATCHELF_PACKAGE_NAME="patchelf-0.16.1-${ARCH}.tar.gz"
 
-NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.4.tar.gz'
-NCURSES_PACKAGE_SHA256SUM='6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159'
-NCURSES_PACKAGE_NAME='ncurses-6.4.tar.gz'
-NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.4'
+NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.5.tar.gz'
+NCURSES_PACKAGE_SHA256SUM='136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6'
+NCURSES_PACKAGE_NAME='ncurses-6.5.tar.gz'
+NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.5'
 
 READLINE_PACKAGE_URL='https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz'
 READLINE_PACKAGE_SHA256SUM='3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35'
@@ -104,25 +104,25 @@ XZ_PACKAGE_SHA256SUM='aeba3e03bf8140ddedf62a0a367158340520f6b384f75ca6045ccc6c0d
 XZ_PACKAGE_NAME='xz-5.4.6.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.6'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2024/sqlite-autoconf-3450200.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='bc9067442eedf3dd39989b5c5cfbfff37ae66cc9c99274e0c3052dc4d4a8f6ae'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3450200.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3450200'
+SQLITE_PACKAGE_URL='https://sqlite.org/2024/sqlite-autoconf-3450300.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='b2809ca53124c19c60f42bf627736eae011afdcc205bb48270a5ee9a38191531'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3450300.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3450300'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz'
-PYTHON_PACKAGE_SHA256SUM='a7c4f6a9dc423d8c328003254ab0c9338b83037bd787d680826a5bf84308116e'
-PYTHON_PACKAGE_NAME='Python-3.12.2.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.12.2'
+PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz'
+PYTHON_PACKAGE_SHA256SUM='a6b9459f45a6ebbbc1af44f5762623fa355a0c87208ed417628b379d762dddb0'
+PYTHON_PACKAGE_NAME='Python-3.12.3.tgz'
+PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.12.3'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_2/expat-2.6.2.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='d4cf38d26e21a56654ffe4acd9cd5481164619626802328506a2869afab29ab3'
 EXPAT_PACKAGE_NAME='expat-2.6.2.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.2'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.44.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='f9e36f085458fe9688fbbe7846b8c4770b13d161fcd8953655f36b2b85f06b76'
-GIT_PACKAGE_NAME='git-2.44.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.44.0'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='a0fc1410878716add0a3c0cf3d35728f3a7c960f751c657656cca0212bf89e65'
+GIT_PACKAGE_NAME='git-2.45.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.45.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -148,13 +148,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.29.0/cmake-3.29.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.29.2/cmake-3.29.2-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='f06258f52c5649752dfb10c4c2e1d8167c760c8826f078c6f5c332fa9d976bf8'
+	CMAKE_PACKAGE_SHA256SUM='0416c70cf88e8f92efcbfe292e181bc09ead7d70e29ab37b697522c01121eab5'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='2cb768a14b28a4478bb931d917dbc419305b82433bdecc046df98e7c336225fa'
+	CMAKE_PACKAGE_SHA256SUM='ca883c6dc3ce9eebd833804f0f940ecbbff603520cfd169ee58916dbbc23c2b8'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.29.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.29.2-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.9.1/ccache-4.9.1.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='12834ecaaaf2db069dda1d1d991f91c19e3274cc04a471af5b64195def17e90f'
@@ -176,10 +176,10 @@ LIBEDIT_PACKAGE_SHA256SUM='4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c
 LIBEDIT_PACKAGE_NAME='libedit-20230828-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20230828-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.2/llvm-project-18.1.2.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='51073febd91d1f2c3b411d022695744bda322647e76e0b4eb1918229210c48d5'
-LLVM_PACKAGE_NAME='llvm-project-18.1.2.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-18.1.2.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.4/llvm-project-18.1.4.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='2c01b2fbb06819a12a92056a7fd4edcdc385837942b5e5260b9c2c0baff5116b'
+LLVM_PACKAGE_NAME='llvm-project-18.1.4.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-18.1.4.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'

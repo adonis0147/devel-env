@@ -191,7 +191,7 @@ function install_ncurses() {
 
 	# Install ncurses
 	rm -rf ./*
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-shared --with-termlib
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --disable-widec --with-shared --with-termlib
 	make -j "${NUM_CORES}"
 	make install
 
