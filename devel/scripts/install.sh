@@ -712,7 +712,8 @@ function install_zsh() {
 	pushd "${ZSH_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir -p build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	CFLAGS='-Wno-incompatible-pointer-types' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
