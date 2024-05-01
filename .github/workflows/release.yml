@@ -21,11 +21,19 @@ jobs:
           ref: ${{ github.ref_name }}
           submodules: true
 
+      - name: Setup Rye
+        run: |
+          curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
+          source "${HOME}/.rye/env"
+          cd .github/cirrus-ci-tools
+          rye sync
+
       - name: Cirrus CI Build
         run: |
-          trigger='.github/cirrus-ci-tools/src/trigger-cirrus-ci.py'
+          source .github/cirrus-ci-tools/.venv/bin/activate
+
           config='.github/cirrus-ci/build_toolchain.yml'
-          urls="$(python3 "${trigger}" --token ${{ secrets.CIRRUS_CI_TOKEN }} --repository ${{ github.repository }} \
+          urls="$(trigger-cirrus-ci --token ${{ secrets.CIRRUS_CI_TOKEN }} --repository ${{ github.repository }} \
             --branch master --config "${config}" --timeout 240)"
 
           while read -r url; do
