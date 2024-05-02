@@ -680,6 +680,8 @@ EOF
 	mkdir build
 	cd build
 
+	export CFLAGS='-Wno-implicit-function-declaration'
+
 	cmake -G Ninja -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
@@ -694,6 +696,8 @@ EOF
 		../llvm
 	ninja -j "${NUM_CORES}"
 	ninja install
+
+	unset CFLAGS
 
 	rpath="$(find "${DEVEL_HOME_PATH}/opt/${package}/lib" -maxdepth 1 -name "$(uname -m)-*-linux-gnu")"
 	sed -i "/-Wl,-rpath/ s/\$/:${rpath//\//\\/}/" "${HOME}/.config/${package}/clang.cfg"
@@ -710,9 +714,13 @@ function install_zsh() {
 	tar -Jxvf "${ZSH_PACKAGE_NAME}"
 
 	pushd "${ZSH_PACKAGE_EXTRACTED_DIR}" >/dev/null
+
+	patch -p1 <"${DOWNLOADS_PATH}/patches/zsh.patch"
+
 	mkdir -p build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	CFLAGS='-Wno-incompatible-pointer-types' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
