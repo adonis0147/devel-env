@@ -672,6 +672,7 @@ function install_llvm() {
 	local rpath
 	rpath="$(sed -n 's/collect2 -rpath \(.*\)/\1/p' "${DEVEL_HOME_PATH}/compiler/lib/gcc/specs")"
 	cat >"${HOME}/.config/${package}/clang.cfg" <<EOF
+--gcc-install-dir=$(find "${DEVEL_HOME_PATH}/compiler/lib/gcc/$(uname -m)-linux-gnu" -mindepth 1 -maxdepth 1 -type d)
 -Wl,-rpath,${rpath//\$/\\\$}
 -Wl,-dynamic-linker,$(find "${DEVEL_HOME_PATH}/compiler/lib" -name 'ld-linux-*')
 EOF
@@ -686,7 +687,6 @@ EOF
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
 		-DLLVM_ENABLE_PROJECTS="clang;lld;clang-tools-extra;lldb" \
-		-DGCC_INSTALL_PREFIX="${DEVEL_HOME_PATH}/compiler" \
 		-DCLANG_CONFIG_FILE_USER_DIR='~/.config/llvm' \
 		-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
 		-DLIBCXXABI_USE_LLVM_UNWINDER=ON \
