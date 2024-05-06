@@ -34,7 +34,7 @@ jobs:
 
           config='.github/cirrus-ci/build_toolchain.yml'
           urls="$(trigger-cirrus-ci --token ${{ secrets.CIRRUS_CI_TOKEN }} --repository ${{ github.repository }} \
-            --branch master --config "${config}" --timeout 240)"
+            --branch main --config "${config}" --timeout 240)"
 
           while read -r url; do
             echo "The artifact url: ${url}"
