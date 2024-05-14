@@ -7,7 +7,6 @@
 #   all-features: false
 #   with-sources: false
 
---trusted-host mirrors.aliyun.com
 -e file:.
 certifi==2024.2.2
     # via requests

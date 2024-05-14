@@ -7,7 +7,6 @@
 #   all-features: false
 #   with-sources: false
 
---trusted-host mirrors.aliyun.com
 -e file:.
 astroid==3.0.3
     # via pylint
@@ -79,9 +78,7 @@ python-lsp-server==1.10.0
     # via pylsp-mypy
     # via python-lsp-isort
     # via python-lsp-ruff
-    # via python-lsp-server
 pytoolconfig==1.3.1
-    # via pytoolconfig
     # via rope
 requests==2.31.0
     # via check-updates
