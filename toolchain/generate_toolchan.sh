@@ -130,7 +130,6 @@ function build_binutils() {
 	../configure --prefix="${CROSS_PREFIX}" \
 		--target="${TARGET}" \
 		--disable-multilib
-
 	make -j "$(nproc)"
 	make install
 
@@ -275,7 +274,6 @@ function build_binutils_final() {
 		--enable-gold \
 		--enable-plugins \
 		--disable-multilib
-
 	make -j "$(nproc)"
 	make install-strip
 
@@ -283,7 +281,6 @@ function build_binutils_final() {
 	rm -rf "${PREFIX}/lib/ldscripts"
 
 	popd >/dev/null
-
 }
 
 function build_gcc_final() {

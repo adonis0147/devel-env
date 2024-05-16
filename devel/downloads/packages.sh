@@ -36,10 +36,10 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.0.tar.gz'
-NINJA_PACKAGE_SHA256SUM='8b2c86cd483dc7fcb7975c5ec7329135d210099a89bc7db0590a07b0bbfe49a5'
-NINJA_PACKAGE_NAME='ninja-1.12.0.tar.gz'
-NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.12.0'
+NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz'
+NINJA_PACKAGE_SHA256SUM='821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a'
+NINJA_PACKAGE_NAME='ninja-1.12.1.tar.gz'
+NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.12.1'
 
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.16.1/patchelf-0.16.1-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
@@ -119,10 +119,10 @@ EXPRT_PACKAGE_SHA256SUM='d4cf38d26e21a56654ffe4acd9cd5481164619626802328506a2869
 EXPAT_PACKAGE_NAME='expat-2.6.2.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.2'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='a0fc1410878716add0a3c0cf3d35728f3a7c960f751c657656cca0212bf89e65'
-GIT_PACKAGE_NAME='git-2.45.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.45.0'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.1.tar.gz'
+GIT_PACKAGE_SHA256SUM='10acb581993061e616be9c5674469335922025a666318e0748cb8306079fef24'
+GIT_PACKAGE_NAME='git-2.45.1.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.45.1'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -148,23 +148,23 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.29.2/cmake-3.29.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.29.3/cmake-3.29.3-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='0416c70cf88e8f92efcbfe292e181bc09ead7d70e29ab37b697522c01121eab5'
+	CMAKE_PACKAGE_SHA256SUM='90b543a30220401db0e08347af067545be158ce89ffb09b7df1516cda8617329'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='ca883c6dc3ce9eebd833804f0f940ecbbff603520cfd169ee58916dbbc23c2b8'
+	CMAKE_PACKAGE_SHA256SUM='ae61d262b2771ba9cbdf1eeac288e64d6510d2f0417d2d92e27807d269ac90fa'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.29.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.29.3-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.9.1/ccache-4.9.1.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='12834ecaaaf2db069dda1d1d991f91c19e3274cc04a471af5b64195def17e90f'
 CCACHE_PACKAGE_NAME='ccache-4.9.1.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.9.1'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.6.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='b6ce34641cc2f3084289d5ac3cd49e8892394591a3df8c05f19d633f4e6058bc'
-LIBXML2_PACKAGE_NAME='libxml2-2.12.6.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.6'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.12.7.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='3153691186d9a72446d0f4bc9c096e2036eb8317b94f3f249b2260281ccd63d1'
+LIBXML2_PACKAGE_NAME='libxml2-2.12.7.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.12.7'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.2.1/swig-4.2.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8'
