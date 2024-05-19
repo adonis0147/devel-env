@@ -681,8 +681,6 @@ EOF
 	mkdir build
 	cd build
 
-	export CFLAGS='-Wno-implicit-function-declaration'
-
 	# See https://github.com/rust-lang/rust/issues/102897
 	local kernel_version
 	kernel_version="$(uname -r | sed -n 's/\([[:digit:]]\+\.[[:digit:]]\+\).*/\1/p')"
@@ -704,8 +702,6 @@ EOF
 		../llvm
 	ninja -j "${NUM_CORES}"
 	ninja install
-
-	unset CFLAGS
 
 	rpath="$(find "${DEVEL_HOME_PATH}/opt/${package}/lib" -maxdepth 1 -name "$(uname -m)-*-linux-gnu")"
 	sed -i "/-Wl,-rpath/ s/\$/:${rpath//\//\\/}/" "${HOME}/.config/${package}/clang.cfg"
