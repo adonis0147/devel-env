@@ -47,8 +47,15 @@ build_packages_task:
     sed -i '/function install_packages/,/^}/ s/zsh//' devel/scripts/install.sh
 
   script: |
-    cat >Dockerfile <<EOF
-    FROM centos:centos7
+    if [[ "$(uname -m)" == 'x86_64' ]]; then
+      cmd="sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://vault.centos.org/7.9.2009|' /etc/yum.repos.d/CentOS-Base.repo"
+    else
+      cmd="sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/altarch|baseurl=https://vault.centos.org/altarch|' /etc/yum.repos.d/CentOS-Base.repo"
+    fi
+
+    cat >>Dockerfile <<EOF
+    FROM centos:7
+    RUN ${cmd}
     RUN yum install -y xz file make gettext texinfo
 
     RUN mkdir /devel-env
