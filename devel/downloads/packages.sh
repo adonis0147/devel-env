@@ -84,10 +84,10 @@ OPENSSL_PACKAGE_SHA256SUM='eeca035d4dd4e84fc25846d952da6297484afa0650a6f84c682e3
 OPENSSL_PACKAGE_NAME='openssl-3.0.14.tar.gz'
 OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.0.14'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.8.0.tar.gz'
-CURL_PACKAGE_SHA256SUM='77c0e1cd35ab5b45b659645a93b46d660224d0024f1185e8a95cdb27ae3d787d'
-CURL_PACKAGE_NAME='curl-8.8.0.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.8.0'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.9.0.tar.gz'
+CURL_PACKAGE_SHA256SUM='14d931fa98a329310dca7b190d047c3d4987674b1f466481f5490e4e12067ba4'
+CURL_PACKAGE_NAME='curl-8.9.0.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.9.0'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='a05dc5191c6bad9313fd6db2777a78f5527ba4774f665d5d69f5a7461b49e2e7'
@@ -139,8 +139,8 @@ GDB_PACKAGE_SHA256SUM='8b61b0c2bdd9d9c83b113c9167866bdb474651d291fedcaa5eb7cde49
 GDB_PACKAGE_NAME='gdb-15.1.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-15.1'
 
-NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage'
-NEOVIM_PACKAGE_SHA256SUM='6a021e9465fe3d3375e28c3e94c1c2c4f7d1a5a67e4a78cf52d18d77b1471390'
+NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.10.1/nvim.appimage'
+NEOVIM_PACKAGE_SHA256SUM='c4762d54cadfd9fa4497c7969197802c9cf9e0d926c39e561f0bd170e36c8aa0'
 NEOVIM_PACKAGE_NAME='nvim.appimage'
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz'
@@ -148,23 +148,23 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.30.0/cmake-3.30.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.30.1/cmake-3.30.1-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='09846a3858583f38189b59177586adf125a08c15f3cddcaf7d7d7081ac86969f'
+	CMAKE_PACKAGE_SHA256SUM='ac31f077ef3378641fa25a3cb980d21b2f083982d3149a8f2eb9154f2b53696b'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='3db7f12dadc91be9b30f0e5a71038c51d7f5b7cc03e32625621a052e9996bef0'
+	CMAKE_PACKAGE_SHA256SUM='ad234996f8750f11d7bd0d17b03f55c434816adf1f1671aab9e8bab21a43286a'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.30.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.30.1-linux-${ARCH}.tar.gz"
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.10.1/ccache-4.10.1.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='8f8ad60d9363857812aa8af3fa7fb72be5ea5cf193f824d16d237a8a79256be4'
-CCACHE_PACKAGE_NAME='ccache-4.10.1.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.10.1'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='108100960bb7e64573ea925af2ee7611701241abb36ce0aae3354528403a7d87'
+CCACHE_PACKAGE_NAME='ccache-4.10.2.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.10.2'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.13.2.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='4a59282c8cf1914857496f959103acbd6b4eccb7131fa8643a4a58eb679d14a1'
-LIBXML2_PACKAGE_NAME='libxml2-2.13.2.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.13.2'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.13.3.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='c52b765ffc468d4effb584d6e0143f5ba9870a86fa850b68bb6085518a9a88a0'
+LIBXML2_PACKAGE_NAME='libxml2-2.13.3.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.13.3'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.2.1/swig-4.2.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='fa045354e2d048b2cddc69579e4256245d4676894858fcf0bab2290ecf59b7d8'
