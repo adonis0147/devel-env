@@ -144,4 +144,7 @@ function setup_ca_certificate() {
 
 	# curl
 	export CURL_CA_BUNDLE="${cacert}"
+
+	# openssl
+	export SSL_CERT_FILE="${cacert}"
 }
