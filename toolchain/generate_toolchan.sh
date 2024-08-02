@@ -282,6 +282,10 @@ function build_binutils_final() {
 	mkdir build
 	cd build
 
+	# Prevent binutils from linking libfl.so
+	export LEX='missing lex'
+	export FLEX='missing flex'
+
 	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
         -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
 		../configure --prefix="${PREFIX}" \
@@ -291,6 +295,9 @@ function build_binutils_final() {
 		--disable-multilib
 	make -j "$(nproc)"
 	make install-strip
+
+	unset FLEX
+	unset LEX
 
 	# Remove the old files
 	rm -rf "${PREFIX}/lib/ldscripts"
