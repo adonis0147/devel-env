@@ -8,17 +8,17 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.46.0.tar.xz'
-declare -r BINUTILS_MD5SUM='81bb6810bcd1119819dc0804956e1c92'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.47.tar.xz'
+declare -r BINUTILS_MD5SUM='d772acfbd55a81644e9fe7b8189cd2a5'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.14.tar.xz'
-declare -r LINUX_MD5SUM='e32bba7d039ae6a34879d2898c1228cf'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.5.tar.xz'
+declare -r LINUX_MD5SUM='75f719d50ea10e0bb623a95f468600cb'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.43.tar.xz'
-declare -r GLIBC_MD5SUM='7ec2588300b299215a65aec7e6afa04f'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.44.tar.xz'
+declare -r GLIBC_MD5SUM='7677da43ef759c68e005f5d4c37986a6'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz'
-declare -r GCC_MD5SUM='9b016416f8e2dce4a0ef8759d1936446'
+declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz'
+declare -r GCC_MD5SUM='19b777fb19ea4982731392481306f0d3'
 
 declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcrypt-4.5.2.tar.xz'
 declare -r LIBXCRYPT_MD5SUM='25e888919ddcd153a07daa95224fa436'
@@ -287,6 +287,10 @@ function build_binutils_final() {
 	mkdir build
 	cd build
 
+	# Prevent binutils from linking libfl.so
+	export LEX='missing lex'
+	export FLEX='missing flex'
+
 	CFLAGS='-Wno-discarded-qualifiers' \
 		LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
         -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
@@ -297,6 +301,9 @@ function build_binutils_final() {
 		--with-sysroot=/
 	make -j "$(nproc)"
 	make install-strip
+
+	unset FLEX
+	unset LEX
 
 	# Remove the old files
 	rm -rf "${PREFIX}/lib/ldscripts"
