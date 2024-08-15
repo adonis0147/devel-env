@@ -53,6 +53,7 @@ function relocate() {
 	library_path="$(dirname "${libc_so}")"
 	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name 'ld-linux-*.so.*')"
 
+	local file
 	local old_rpath
 	local new_rpath
 	while read -r file; do
