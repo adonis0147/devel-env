@@ -137,15 +137,25 @@ function setup_ca_certificate() {
 	# wget2
 	local wget2rc="${HOME}/.config/wget/wget2rc"
 	local content="ca_certificate=${cacert}"
-	if [[ ! -f "${wget2rc}" ]] || ! grep "${content}" "${wget2rc}" >/dev/null; then
+	if ! grep "${content}" "${wget2rc}" >/dev/null; then
 		echo -e "Configure ca_certificate to \033[34;1m${wget2rc}\033[0m"
 		mkdir -p "$(dirname "${wget2rc}")"
 		echo "${content}" >>"${wget2rc}"
 	fi
 
 	# curl
+	local curlrc="${HOME}/.config/curlrc"
+	content="proxy-cacert=${cacert}"
+	if ! grep "${content}" "${curlrc}" >/dev/null; then
+		echo -e "Configure ca_certificate to \033[34;1m${curlrc}\033[0m"
+		echo "${content}" >>"${curlrc}"
+	fi
 	export CURL_CA_BUNDLE="${cacert}"
 
 	# openssl
 	export SSL_CERT_FILE="${cacert}"
+
+	# git
+	export GIT_SSL_CAINFO="${cacert}"
+	export GIT_PROXY_SSL_CAINFO="${cacert}"
 }
