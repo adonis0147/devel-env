@@ -79,15 +79,15 @@ PERL_PACKAGE_SHA256SUM='c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8
 PERL_PACKAGE_NAME='perl-5.40.0.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.40.0'
 
-OPENSSL_PACKAGE_URL='https://www.openssl.org/source/openssl-3.0.14.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='eeca035d4dd4e84fc25846d952da6297484afa0650a6f84c682e39df3a4123ca'
-OPENSSL_PACKAGE_NAME='openssl-3.0.14.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.0.14'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.3.2/openssl-3.3.2.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='2e8a40b01979afe8be0bbfb3de5dc1c6709fedb46d6c89c10da114ab5fc3d281'
+OPENSSL_PACKAGE_NAME='openssl-3.3.2.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.3.2'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.9.1.tar.gz'
-CURL_PACKAGE_SHA256SUM='291124a007ee5111997825940b3876b3048f7d31e73e9caa681b80fe48b2dcd5'
-CURL_PACKAGE_NAME='curl-8.9.1.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.9.1'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.10.0.tar.gz'
+CURL_PACKAGE_SHA256SUM='58c9dcf73493ae9d181fd334b3b3987ff73124621565187ade237bff1064a716'
+CURL_PACKAGE_NAME='curl-8.10.0.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.10.0'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='a05dc5191c6bad9313fd6db2777a78f5527ba4774f665d5d69f5a7461b49e2e7'
@@ -104,20 +104,20 @@ XZ_PACKAGE_SHA256SUM='aeba3e03bf8140ddedf62a0a367158340520f6b384f75ca6045ccc6c0d
 XZ_PACKAGE_NAME='xz-5.4.6.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.6'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2024/sqlite-autoconf-3460000.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='6f8e6a7b335273748816f9b3b62bbdc372a889de8782d7f048c653a447417a7d'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3460000.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3460000'
+SQLITE_PACKAGE_URL='https://sqlite.org/2024/sqlite-autoconf-3460100.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38ddf2965071'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3460100.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3460100'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.12.5/Python-3.12.5.tgz'
-PYTHON_PACKAGE_SHA256SUM='38dc4e2c261d49c661196066edbfb70fdb16be4a79cc8220c224dfeb5636d405'
-PYTHON_PACKAGE_NAME='Python-3.12.5.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.12.5'
+PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz'
+PYTHON_PACKAGE_SHA256SUM='85a4c1be906d20e5c5a69f2466b00da769c221d6a684acfd3a514dbf5bf10a66'
+PYTHON_PACKAGE_NAME='Python-3.12.6.tgz'
+PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.12.6'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_2/expat-2.6.2.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='d4cf38d26e21a56654ffe4acd9cd5481164619626802328506a2869afab29ab3'
-EXPAT_PACKAGE_NAME='expat-2.6.2.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.2'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_3/expat-2.6.3.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='17aa6cfc5c4c219c09287abfc10bc13f0c06f30bb654b28bfe6f567ca646eb79'
+EXPAT_PACKAGE_NAME='expat-2.6.3.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.3'
 
 GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.46.0.tar.gz'
 GIT_PACKAGE_SHA256SUM='b138811e16838f669a2516e40f09d50500e1c7fc541b5ab50ce84b98585e5230'
@@ -148,13 +148,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.30.3/cmake-3.30.3-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='cdd7fb352605cee3ae53b0e18b5929b642900e33d6b0173e19f6d4f2067ebf16'
+	CMAKE_PACKAGE_SHA256SUM='4a5864e9ff0d7945731fe6d14afb61490bf0ec154527bc3af0456bd8fa90decb'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='d18f50f01b001303d21f53c6c16ff12ee3aa45df5da1899c2fe95be7426aa026'
+	CMAKE_PACKAGE_SHA256SUM='420f17c58de4ed8b53c1055a34318aec5c06d94b04dac9dd3c72861dfdc99d52'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.30.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.30.3-linux-${ARCH}.tar.gz"
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='108100960bb7e64573ea925af2ee7611701241abb36ce0aae3354528403a7d87'
