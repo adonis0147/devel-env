@@ -119,10 +119,10 @@ EXPRT_PACKAGE_SHA256SUM='17aa6cfc5c4c219c09287abfc10bc13f0c06f30bb654b28bfe6f567
 EXPAT_PACKAGE_NAME='expat-2.6.3.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.3'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.46.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='b138811e16838f669a2516e40f09d50500e1c7fc541b5ab50ce84b98585e5230'
-GIT_PACKAGE_NAME='git-2.46.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.46.0'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.46.1.tar.gz'
+GIT_PACKAGE_SHA256SUM='b0a4d1ad50e820edd84c0d1b609c29349d4ae2681ed458914ea759aafcd4bf21'
+GIT_PACKAGE_NAME='git-2.46.1.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.46.1'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -176,10 +176,10 @@ LIBEDIT_PACKAGE_SHA256SUM='5f0573349d77c4a48967191cdd6634dd7aa5f6398c6a57fe037cc
 LIBEDIT_PACKAGE_NAME='libedit-20240808-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20240808-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='0b58557a6d32ceee97c8d533a59b9212d87e0fc4d2833924eb6c611247db2f2a'
-LLVM_PACKAGE_NAME='llvm-project-18.1.8.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-18.1.8.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.0/llvm-project-19.1.0.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='5042522b49945bc560ff9206f25fb87980a9b89b914193ca00d961511ff0673c'
+LLVM_PACKAGE_NAME='llvm-project-19.1.0.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-19.1.0.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
