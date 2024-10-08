@@ -109,20 +109,20 @@ SQLITE_PACKAGE_SHA256SUM='67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3460100.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3460100'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.12.6/Python-3.12.6.tgz'
-PYTHON_PACKAGE_SHA256SUM='85a4c1be906d20e5c5a69f2466b00da769c221d6a684acfd3a514dbf5bf10a66'
-PYTHON_PACKAGE_NAME='Python-3.12.6.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.12.6'
+PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz'
+PYTHON_PACKAGE_SHA256SUM='12445c7b3db3126c41190bfdc1c8239c39c719404e844babbd015a1bc3fafcd4'
+PYTHON_PACKAGE_NAME='Python-3.13.0.tgz'
+PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.13.0'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_3/expat-2.6.3.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='17aa6cfc5c4c219c09287abfc10bc13f0c06f30bb654b28bfe6f567ca646eb79'
 EXPAT_PACKAGE_NAME='expat-2.6.3.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.3'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.46.2.tar.gz'
-GIT_PACKAGE_SHA256SUM='65c5689fd44f1d09de7fd8c44de7fef074ddd69dda8b8503d44afb91495ecbce'
-GIT_PACKAGE_NAME='git-2.46.2.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.46.2'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.47.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='a84a7917e0ab608312834413f01fc01edc7844f9f9002ba69f3b4f4bcb8d937a'
+GIT_PACKAGE_NAME='git-2.47.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.47.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -139,8 +139,8 @@ GDB_PACKAGE_SHA256SUM='9d16bc2539a2a20dc3ef99b48b8414d51c51305c8577eb7a1da00996f
 GDB_PACKAGE_NAME='gdb-15.2.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-15.2'
 
-NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.10.1/nvim.appimage'
-NEOVIM_PACKAGE_SHA256SUM='c4762d54cadfd9fa4497c7969197802c9cf9e0d926c39e561f0bd170e36c8aa0'
+NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.10.2/nvim.appimage'
+NEOVIM_PACKAGE_SHA256SUM='970113b5279718126b82adddf3fbed1741db7afabf8a4134635a0d75c9f2c5d8'
 NEOVIM_PACKAGE_NAME='nvim.appimage'
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz'
