@@ -3,7 +3,7 @@
 _**Devel-env**_ is aimed to set the development environment up on Linux server _**WITHOUT**_ root privileges.
 
 It provides the following stuffs:
-1. GCC toolchain **(GCC 14.2 + GLIBC 2.40)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
+1. GCC toolchain **(GCC 14.2 + GLIBC 2.39)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
 2. Toolset - built from source manually
 
 ### TIPS: The GCC toolchain can be used *standalone*.

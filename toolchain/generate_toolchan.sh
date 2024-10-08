@@ -14,8 +14,8 @@ declare -r BINUTILS_MD5SUM='9202d02925c30969d1917e4bad5a2320'
 declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.2.tar.xz'
 declare -r LINUX_MD5SUM='00b4181d5087910cecb81c281909beba'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.40.tar.xz'
-declare -r GLIBC_MD5SUM='b390feef233022114950317f10c4fa97'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.39.tar.xz'
+declare -r GLIBC_MD5SUM='be81e87f72b5ea2c0ffe2bedfeb680c6'
 
 declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz'
 declare -r GCC_MD5SUM='2268420ba02dc01821960e274711bde0'
