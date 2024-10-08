@@ -109,10 +109,10 @@ SQLITE_PACKAGE_SHA256SUM='67d3fe6d268e6eaddcae3727fce58fcc8e9c53869bdd07a0c61e38
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3460100.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3460100'
 
-PYTHON_PACKAGE_URL='https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz'
-PYTHON_PACKAGE_SHA256SUM='12445c7b3db3126c41190bfdc1c8239c39c719404e844babbd015a1bc3fafcd4'
-PYTHON_PACKAGE_NAME='Python-3.13.0.tgz'
-PYTHON_PACKAGE_EXTRACTED_DIR='Python-3.13.0'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.13.0.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='d2c5dbd73111a80ee654489eb0f52b663b38ef9ce9e9323312515d941d0dfaa2'
+PYTHON_PACKAGE_NAME='cpython-3.13.0.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.13.0'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_3/expat-2.6.3.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='17aa6cfc5c4c219c09287abfc10bc13f0c06f30bb654b28bfe6f567ca646eb79'

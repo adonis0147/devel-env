@@ -411,6 +411,12 @@ function install_python() {
 	tar -zxvf "${PYTHON_PACKAGE_NAME}"
 
 	pushd "${PYTHON_PACKAGE_EXTRACTED_DIR}" >/dev/null
+
+	# Patch
+	if [[ -d "${HOME}/.local/share/zoneinfo" ]]; then
+		sed -i "s|'/usr/share/zoneinfo'|'${HOME}/.local/share/zoneinfo'|" Lib/test/datetimetester.py
+	fi
+
 	mkdir build
 	cd build
 	CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
@@ -844,6 +850,9 @@ function main() {
 	mkdir -p "compiler/$(uname -m)-linux-gnu/opt"
 	ln -snf "compiler/$(uname -m)-linux-gnu"/* .
 	popd >/dev/null
+
+	# Setup zoneinfo
+	setup_zoneinfo
 
 	# Setup locale
 	setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
