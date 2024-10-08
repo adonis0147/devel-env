@@ -8,8 +8,8 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.43.tar.xz'
-declare -r BINUTILS_MD5SUM='a54bb52cd75555416f316fbbe885925a'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.xz'
+declare -r BINUTILS_MD5SUM='9202d02925c30969d1917e4bad5a2320'
 
 declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.2.tar.xz'
 declare -r LINUX_MD5SUM='00b4181d5087910cecb81c281909beba'
