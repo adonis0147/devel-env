@@ -35,6 +35,24 @@ function setup_package() {
 	"${SCRIPTS_PATH}/setup_package.sh" "${package}"
 }
 
+function install_tzdata() {
+	local package='tzdata'
+	log_info "Start to install ${package}."
+	rm -rf "${TZDATA_PACKAGE_EXTRACTED_DIR}"
+	mkdir -p "${TZDATA_PACKAGE_EXTRACTED_DIR}"
+	tar -C "${TZDATA_PACKAGE_EXTRACTED_DIR}" -zxvf "${TZDATA_PACKAGE_NAME}"
+	tar -C "${TZCODE_PACKAGE_EXTRACTED_DIR}" -zxvf "${TZCODE_PACKAGE_NAME}"
+
+	pushd "${TZDATA_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	make TOPDIR="${DEVEL_HOME_PATH}/opt/${package}" USRDIR='.' install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+
+	export TZDIR="${DEVEL_HOME_PATH}/share/zoneinfo"
+}
+
 function install_m4() {
 	local package='m4'
 	log_info "Start to install ${package}."
@@ -413,8 +431,8 @@ function install_python() {
 	pushd "${PYTHON_PACKAGE_EXTRACTED_DIR}" >/dev/null
 
 	# Patch
-	if [[ -d "${HOME}/.local/share/zoneinfo" ]]; then
-		sed -i "s|'/usr/share/zoneinfo'|'${HOME}/.local/share/zoneinfo'|" Lib/test/datetimetester.py
+	if [[ -d "${TZDIR}" ]]; then
+		sed -i "s|'/usr/share/zoneinfo'|'${TZDIR}'|" Lib/test/datetimetester.py
 	fi
 
 	mkdir build
@@ -750,6 +768,7 @@ function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
 		packages=(
+			tzdata
 			m4
 			zlib
 			libdb
@@ -850,9 +869,6 @@ function main() {
 	mkdir -p "compiler/$(uname -m)-linux-gnu/opt"
 	ln -snf "compiler/$(uname -m)-linux-gnu"/* .
 	popd >/dev/null
-
-	# Setup zoneinfo
-	setup_zoneinfo
 
 	# Setup locale
 	setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'

@@ -11,6 +11,8 @@ export PATH="${DEVEL_HOME_PATH}/bin:${DEVEL_HOME_PATH}/compiler/bin:${PATH}"
 
 export MANPATH="${HOME}/.local/share/man:${DEVEL_HOME_PATH}/share/man:${DEVEL_HOME_PATH}/man:${DEVEL_HOME_PATH}/compiler/share/man:${MANPATH}"
 
+[[ -d "${DEVEL_HOME_PATH}/share/zoneinfo" ]] && export TZDIR="${DEVEL_HOME_PATH}/share/zoneinfo"
+
 if command -v nvim >/dev/null; then
 	export EDITOR='nvim'
 	export MANPAGER='nvim +Man!'
@@ -158,29 +160,4 @@ function setup_ca_certificate() {
 	# git
 	export GIT_SSL_CAINFO="${cacert}"
 	export GIT_PROXY_SSL_CAINFO="${cacert}"
-}
-
-function setup_zoneinfo() {
-	if [[ ! -d "${HOME}/.local/share/zoneinfo" ]]; then
-		local tzdata='tzdb-2024b'
-		local version="${tzdata/*-/}"
-		local cwd
-		cwd="$(pwd)"
-
-		cd /tmp || return
-
-		rm -rf "${tzdata}"
-		mkdir -p "${tzdata}"
-		curl -L "https://data.iana.org/time-zones/releases/tzdata${version}.tar.gz" -o - | tar -C "${tzdata}" -zxf -
-		curl -L "https://data.iana.org/time-zones/releases/tzcode${version}.tar.gz" -o - | tar -C "${tzdata}" -zxf -
-		cd "${tzdata}" || return
-
-		TZDIR="$(pwd)"
-		export TZDIR
-		make TOPDIR="${HOME}/.local" USRDIR='.' install
-
-		cd "${cwd}" || return
-	fi
-
-	export TZDIR="${HOME}/.local/share/zoneinfo"
 }
