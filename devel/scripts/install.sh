@@ -606,6 +606,20 @@ function install_cmake() {
 	log_info 'Success!'
 }
 
+function install_xxhash() {
+	local package='xxhash'
+	log_info "Start to install ${package}."
+	rm -rf "${XXHASH_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${XXHASH_PACKAGE_NAME}"
+
+	pushd "${XXHASH_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	make PREFIX="${DEVEL_HOME_PATH}/opt/${package}" install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_ccache() {
 	local package='ccache'
 	log_info "Start to install ${package}."
@@ -796,6 +810,7 @@ function install_packages() {
 			zstd
 			gdb
 			neovim
+			xxhash
 			ccache
 			libedit
 			libxml2

@@ -161,6 +161,11 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 CMAKE_PACKAGE_NAME="cmake-3.30.5-linux-${ARCH}.tar.gz"
 
+XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.2.tar.gz'
+XXHASH_PACKAGE_SHA256SUM='baee0c6afd4f03165de7a4e67988d16f0f2b257b51d0e3cb91909302a26a79c4'
+XXHASH_PACKAGE_NAME='xxHash-0.8.2.tar.gz'
+XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.2'
+
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='108100960bb7e64573ea925af2ee7611701241abb36ce0aae3354528403a7d87'
 CCACHE_PACKAGE_NAME='ccache-4.10.2.tar.gz'
