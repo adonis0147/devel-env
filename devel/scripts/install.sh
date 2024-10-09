@@ -35,15 +35,13 @@ function setup_package() {
 	"${SCRIPTS_PATH}/setup_package.sh" "${package}"
 }
 
-function install_tzdata() {
-	local package='tzdata'
+function install_tzdb() {
+	local package='tzdb'
 	log_info "Start to install ${package}."
-	rm -rf "${TZDATA_PACKAGE_EXTRACTED_DIR}"
-	mkdir -p "${TZDATA_PACKAGE_EXTRACTED_DIR}"
-	tar -C "${TZDATA_PACKAGE_EXTRACTED_DIR}" -zxvf "${TZDATA_PACKAGE_NAME}"
-	tar -C "${TZCODE_PACKAGE_EXTRACTED_DIR}" -zxvf "${TZCODE_PACKAGE_NAME}"
+	rm -rf "${TZDB_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${TZDB_PACKAGE_NAME}"
 
-	pushd "${TZDATA_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	pushd "${TZDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	make TOPDIR="${DEVEL_HOME_PATH}/opt/${package}" USRDIR='.' install
 	popd >/dev/null
 	setup_package "${package}"
@@ -768,7 +766,7 @@ function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
 		packages=(
-			tzdata
+			tzdb
 			m4
 			zlib
 			libdb

@@ -6,15 +6,10 @@ if [[ "${ARCH}" == 'arm64' ]]; then
 	ARCH='aarch64'
 fi
 
-TZDATA_PACKAGE_URL='https://data.iana.org/time-zones/releases/tzdata2024b.tar.gz'
-TZDATA_PACKAGE_SHA256SUM='70e754db126a8d0db3d16d6b4cb5f7ec1e04d5f261255e4558a67fe92d39e550'
-TZDATA_PACKAGE_NAME='tzdata2024b.tar.gz'
-TZDATA_PACKAGE_EXTRACTED_DIR='tzdb-2024b'
-
-TZCODE_PACKAGE_URL='https://data.iana.org/time-zones/releases/tzcode2024b.tar.gz'
-TZCODE_PACKAGE_SHA256SUM='5e438fc449624906af16a18ff4573739f0cda9862e5ec28d3bcb19cbaed0f672'
-TZCODE_PACKAGE_NAME='tzcode2024b.tar.gz'
-TZCODE_PACKAGE_EXTRACTED_DIR='tzdb-2024b'
+TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2024b.tar.gz'
+TZDB_PACKAGE_SHA256SUM='557c41d8eb5c29387a9d496db87c4aeb4f2ac8a2b6d5f60e869a8cade26e679c'
+TZDB_PACKAGE_NAME='tz-2024b.tar.gz'
+TZDB_PACKAGE_EXTRACTED_DIR='tz-2024b'
 
 M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.19.tar.xz'
 M4_PACKAGE_SHA256SUM='63aede5c6d33b6d9b13511cd0be2cac046f2e70fd0a07aa9573a04a82783af96'
