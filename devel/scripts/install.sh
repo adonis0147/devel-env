@@ -632,6 +632,7 @@ function install_ccache() {
 	cmake -G Ninja -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX="${DEVEL_HOME_PATH}/opt/${package}" \
 		-DCMAKE_PREFIX_PATH="${DEVEL_HOME_PATH}" \
+		-DENABLE_TESTING=OFF \
 		-DREDIS_STORAGE_BACKEND=OFF \
 		..
 	ninja -j "${NUM_CORES}"
