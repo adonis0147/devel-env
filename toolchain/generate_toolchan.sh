@@ -177,6 +177,7 @@ function build_gcc_step1() {
 		--disable-libquadmath \
 		--disable-libquadmath-support \
 		--disable-libsanitizer \
+		--disable-fixincludes \
 		--disable-bootstrap
 	make -j "$(nproc)" all-gcc
 	make install-gcc
@@ -302,7 +303,8 @@ function build_gcc_final() {
 		--with-local-prefix="${PREFIX}" \
 		--enable-languages=c,c++ \
 		--enable-default-pie \
-		--disable-multilib
+		--disable-multilib \
+		--disable-fixincludes
 
 	make BOOT_LDFLAGS="${ldflags}" -j "$(nproc)"
 
