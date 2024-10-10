@@ -14,8 +14,8 @@ declare -r BINUTILS_MD5SUM='9202d02925c30969d1917e4bad5a2320'
 declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.2.tar.xz'
 declare -r LINUX_MD5SUM='00b4181d5087910cecb81c281909beba'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.39.tar.xz'
-declare -r GLIBC_MD5SUM='be81e87f72b5ea2c0ffe2bedfeb680c6'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.40.tar.xz'
+declare -r GLIBC_MD5SUM='b390feef233022114950317f10c4fa97'
 
 declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz'
 declare -r GCC_MD5SUM='2268420ba02dc01821960e274711bde0'
@@ -228,6 +228,11 @@ function build_glibc_step1() {
 	local package
 	package="$(basename "${GLIBC_PACKAGE_URL}")"
 	pushd "${package/.tar.xz/}" >/dev/null
+
+	# https://git.ipfire.org/?p=thirdparty/glibc.git;a=commitdiff;h=5f62cf88c4530c11904482775b7582bd7f6d80d2;hp=cc84cd389c7329ceb38228f931044e8c84ca7245
+	sed -i '119 a \
+#else \
+  *r = v;' sysdeps/posix/tempname.c
 
 	rm -rf build
 	mkdir build
