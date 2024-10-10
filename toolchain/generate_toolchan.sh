@@ -225,6 +225,7 @@ function build_glibc_step1() {
 		--target="${TARGET}" \
 		--with-headers="${TARGET_PREFIX}"/include \
 		--disable-multilib \
+		--disable-timezone-tools \
 		libc_cv_forced_unwind=yes
 	make install-bootstrap-headers=yes install-headers
 	make -j "$(nproc)" csu/subdir_lib
@@ -324,7 +325,8 @@ function build_glibc_final() {
 
 	../configure --prefix="${PREFIX}" \
 		--with-headers="${PREFIX}"/include \
-		--disable-multilib
+		--disable-multilib \
+		--disable-timezone-tools
 	make -j "$(nproc)"
 	make install
 
