@@ -153,13 +153,13 @@ function configure_toolchain() {
 	local current_path
 	current_path="$(pwd)"
 	while read -r file; do
-		sed -i "s/\/opt\/toolchain/${current_path//\//\\/}/g" "${file}"
+		sed -i "s|/opt/toolchain|${current_path}|g" "${file}"
 	done < <(
 		find . -type f -exec grep -E -I -l $'[=\'" ]/opt/toolchain' {} \;
 	)
 
 	# Modify ldd
-	sed -i "/RTLDLIST=/s/${current_path//\//\\/}//g" bin/ldd
+	sed -i "s|RTLDLIST=.*|RTLDLIST='${interpreter}'|" bin/ldd
 
 	# Configure gcc specs
 	local filename
@@ -167,8 +167,8 @@ function configure_toolchain() {
 	local dirname
 	dirname="$(dirname "${interpreter}")"
 	"$(pwd)/bin/gcc" -dumpspecs | sed "{
-		s/:\([^;}:]*\)\/\(${filename/.so*/}\)/:${dirname//\//\\/}\/\2/g
-		s/collect2/collect2 -rpath ${rpaths_in_line//\//\\/}/
+		s|:\([^;}:]*\)/\(${filename/.so*/}\)|:${dirname}/\2|g
+		s|collect2|collect2 -rpath ${rpaths_in_line}|
 	}" >"$(pwd)/lib/gcc/specs"
 }
 
