@@ -161,24 +161,19 @@ function configure_toolchain() {
 	# Modify ldd
 	sed -i "s|RTLDLIST=.*|RTLDLIST='${interpreter}'|" bin/ldd
 
-	# Fall back on system ldd automatically
-	sed -i '1a \
-\
-output="$(bash -c "$(sed "2,/^# -\\*- EOF -\\*-$/d" "$(readlink -f "${BASH_SOURCE[0]}")")" -- "${@}" 2>&1)" \
-status="${?}" \
-if [[ "${#@}" -ne 1 ]] || [[ "${status}" -eq 1 ]] || ! echo "${output}" | grep "=>" &>/dev/null; then \
-  echo "${output}" \
-  exit "${status}" \
-else \
-  if ! echo "${output}" | grep "'"${interpreter}"'" &>/dev/null && [[ -x /usr/bin/ldd ]]; then \
-    exec /usr/bin/ldd "${@}" \
-  else \
-    echo "${output}" \
-    exit "${status}" \
-  fi \
-fi \
-# -*- EOF -*-\
-' bin/ldd
+	if command -v ld &>/dev/null; then
+		local search_dirs
+		read -r -a search_dirs <<<"$(ld --verbose | grep SEARCH_DIR | sed -n 's/SEARCH_DIR("=*\([^)]*\)");/\1/gp')"
+
+		local library_path
+		library_path="$(dirname "${libc_so}"):$(
+			IFS=':'
+			echo "${search_dirs[*]}"
+		)"
+		sed -i "/RTLDLIST=/i \
+export LD_LIBRARY_PATH=\"${library_path}:\${LD_LIBRARY_PATH}\" \\
+" bin/ldd
+	fi
 
 	# Configure gcc specs
 	local filename
