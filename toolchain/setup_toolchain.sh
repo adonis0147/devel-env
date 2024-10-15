@@ -161,6 +161,25 @@ function configure_toolchain() {
 	# Modify ldd
 	sed -i "s|RTLDLIST=.*|RTLDLIST='${interpreter}'|" bin/ldd
 
+	# Fall back on system ldd automatically
+	sed -i '1a \
+\
+output="$(bash -c "$(sed "2,/^# -\\*- EOF -\\*-$/d" "$(readlink -f "${BASH_SOURCE[0]}")")" -- "${@}" 2>&1)" \
+status="${?}" \
+if [[ "${#@}" -ne 1 ]] || [[ "${status}" -eq 1 ]] || ! echo "${output}" | grep "=>" &>/dev/null; then \
+  echo "${output}" \
+  exit "${status}" \
+else \
+  if ! echo "${output}" | grep "'"${interpreter}"'" &>/dev/null && [[ -x /usr/bin/ldd ]]; then \
+    exec /usr/bin/ldd "${@}" \
+  else \
+    echo "${output}" \
+    exit "${status}" \
+  fi \
+fi \
+# -*- EOF -*-\
+' bin/ldd
+
 	# Configure gcc specs
 	local filename
 	filename="$(basename "${interpreter}")"
