@@ -10,9 +10,11 @@ declare -r PATCHELF='patchelf'
 declare -r LIBC_SO='libc.so.6'
 declare -r INTERPRETER='ld-linux-*'
 
-declare READELF
 READELF="$(command -v readelf)"
-declare READELF
+declare -r READELF
+
+LD="$(command -v ld)"
+declare -r LD
 
 function log() {
 	local level="${1}"
@@ -161,9 +163,9 @@ function configure_toolchain() {
 	# Modify ldd
 	sed -i "s|RTLDLIST=.*|RTLDLIST='${interpreter}'|" bin/ldd
 
-	if command -v ld &>/dev/null; then
+	if [[ -n "${LD}" ]]; then
 		local search_dirs
-		read -r -a search_dirs <<<"$(ld --verbose | grep SEARCH_DIR | sed -n 's/SEARCH_DIR("=*\([^)]*\)");/\1/gp')"
+		read -r -a search_dirs <<<"$("${LD}" --verbose | grep SEARCH_DIR | sed -n 's/SEARCH_DIR("=*\([^)]*\)");/\1/gp')"
 
 		local library_path
 		library_path="$(dirname "${libc_so}"):$(
