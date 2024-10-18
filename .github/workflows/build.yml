@@ -1,0 +1,54 @@
+name: Build Packages on Centos 7 (3.10.0-123)
+
+on: push
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+            root-reserve-mb: 4096
+            swap-size-mb: 8192
+            remove-dotnet: 'true'
+            remove-android: 'true'
+            remove-haskell: 'true'
+            remove-codeql: 'true'
+            remove-docker-images: 'true'
+
+      - name: Set up QEMU
+        run: |
+          sudo apt-get install qemu-system
+          curl -L -C - "https://d.pcs.baidu.com/file/509d34166vb404253defb6da861768d9?fid=4046697190-250528-415677622311826&rt=pr&sign=FDtAERK-DCb740ccc5511e5e8fedcff06b081203-IQ8r2xxVb4P9%2BWi%2FK9nhABmBeXQ%3D&expires=8h&chkbd=0&chkv=0&dp-logid=606232006248577810&dp-callid=0&dstime=1729245786&r=877182316&vuk=4046697190&origin_appid=15195230&file_type=0&access_token=123.ccaf8fff94022f661490c89ab45e4ec8.YsWabv6pVDeL3nki1NEReR5v8YnuP1VRUAEHhmp.MjAQLw" -o "centos-image.tar.xz" -A "pan.baidu.com" -b "BDUSS=2tpdVM4WldMdGVaM0s3RW9tbGlkbXNhWHdZRTRTUUNOeUcwcUdxeG5oejN1emxuSVFBQUFBJCQAAAAAAAAAAAEAAAD88Tk3YWRvbmlzX2xpbmcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPcuEmf3LhJnc"
+          tar -Jxvf centos-image.tar.xz
+
+      - name: Test
+        run: |
+          mkfifo ./out.fifo
+
+          nohup qemu-system-x86_64 \
+            -accel tcg \
+            -smp "$(nproc)" \
+            -m 7G \
+            -drive if=virtio,format=raw,file=./centos.img \
+            -device virtio-net-pci,netdev=mynet0 \
+            -netdev user,id=mynet0,net=192.168.76.0/24,dhcpstart=192.168.76.1 \
+            -device virtio-net-pci,netdev=mynet1 \
+            -netdev user,id=mynet1,hostfwd=tcp::2222-:22 \
+            -nographic &>out.fifo &
+
+          exec 3<./out.fifo
+
+          while read -r line; do
+            if echo "${line}" | grep -E '^CentOS Linux 7' &>/dev/null; then
+              echo "Started!"
+              break
+            fi
+          done <&3
+
+          exec 3<&-
+
+          ssh -o 'StrictHostKeyChecking=no' -i .github/qemu/ssh/id_rsa -p 2222 centos@127.0.0.1 uname -a
+
