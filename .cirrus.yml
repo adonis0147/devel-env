@@ -20,6 +20,8 @@ build_packages_task:
     git fetch --tags
 
   prepare_script: |
+    uname -a
+
     cd devel-env
 
     while read -r tag; do

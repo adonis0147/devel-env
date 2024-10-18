@@ -1,0 +1,97 @@
+name: Build Packages on Centos 7 (old kernel)
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ${{ github.ref }}
+        uses: actions/checkout@v4
+
+      - name: Install prerequisites
+        run: |
+          sudo apt install qemu-system libvirt-daemon libvirt-daemon-system cloud-image-utils virtinst
+
+          sudo mkdir -p /etc/qemu
+          echo 'allow virbr0' >bridge.conf
+          sudo mv bridge.conf /etc/qemu/
+          sudo chmod u+s /usr/lib/qemu/qemu-bridge-helper
+
+          cd .github/qemu
+
+          curl -LO 'https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2'
+          qemu-img resize CentOS-7-x86_64-GenericCloud.qcow2 50G
+
+          cloud-localds cloud-init.iso cloud-init/user-data.yaml cloud-init/meta-data.yaml
+
+          virt-install \
+            --name centos \
+            --osinfo centos7 \
+            --vcpus "$(nproc)" \
+            --memory 7168 \
+            --disk "$(pwd)"/cloud-init.iso,device=cdrom \
+            --disk "$(pwd)"/CentOS-7-x86_64-GenericCloud.qcow2,device=disk \
+            --network bridge=virbr0,model=virtio \
+            --nographic \
+            --noautoconsole \
+            --import
+
+          while true; do
+            content="$(sudo virsh net-dhcp-leases default)"
+            if [[ -n "$(echo "${content}" | sed -n '3,$ p')" ]]; then
+              break
+            fi
+            echo "${content}"
+            sleep 1
+          done
+
+      - name: Build
+        run: |
+          ip="$(sudo virsh net-dhcp-leases default | sed -n '3,$ p' | awk '{print $5}')"
+          ip="${ip%/24}"
+
+          ref="${{ github.ref_name }}"
+
+          cat >build.sh <<EOF
+          set -e
+
+          uname -a
+
+          sudo sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://vault.centos.org/7.9.2009|' /etc/yum.repos.d/CentOS-Base.repo
+
+          sudo yum -y install xz file make gettext texinfo git
+
+          git clone https://github.com/adonis0147/devel-env
+          cd devel-env
+          git fetch --all --tags
+          git checkout "${ref}"
+
+          pushd devel/scripts
+          latest="\$(curl -s 'https://api.github.com/repos/adonis0147/devel-env/releases/latest' | \
+            python -c "import json; import sys; print(json.load(sys.stdin)['tag_name'])")"
+          curl -L "https://github.com/adonis0147/devel-env/releases/download/\${latest}/install_toolchain_x86_64.sh" -o install_toolchain.sh
+          chmod a+x install_toolchain.sh
+          popd
+
+          devel/downloads/download_packages.sh
+
+          # Don't install llvm
+          sed -i '/function install_packages/,/^}/ s/llvm//' devel/scripts/install.sh
+
+          # Don't install zsh
+          sed -i '/function install_packages/,/^}/ s/zsh//' devel/scripts/install.sh
+
+          cd devel/scripts
+          bash install.sh
+          EOF
+
+          chmod 600 "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa
+          while ! scp -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa build.sh centos@"${ip}":~/; do
+            echo 'Retry...'
+            sleep 1
+          done
+
+          ssh -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -n centos@"${ip}" 'bash -x build.sh'
+
