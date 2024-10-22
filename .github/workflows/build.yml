@@ -84,7 +84,22 @@ jobs:
           sed -i '/function install_packages/,/^}/ s/zsh//' devel/scripts/install.sh
 
           cd devel/scripts
-          bash install.sh
+
+          packages=(
+            tzdb
+            m4
+            zlib
+            libdb
+            perl
+            autoconf
+            automake
+            libtool
+            make
+            pkg_config
+            cmake
+            ninja
+          )
+          bash install.sh "\${packages[@]}"
           EOF
 
           chmod 600 "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa
