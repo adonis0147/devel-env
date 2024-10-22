@@ -12,12 +12,7 @@ jobs:
 
       - name: Install prerequisites
         run: |
-          sudo apt install qemu-system libvirt-daemon libvirt-daemon-system cloud-image-utils virtinst
-
-          sudo mkdir -p /etc/qemu
-          echo 'allow virbr0' >bridge.conf
-          sudo mv bridge.conf /etc/qemu/
-          sudo chmod u+s /usr/lib/qemu/qemu-bridge-helper
+          sudo apt install qemu-system cloud-image-utils
 
           cd .github/qemu
 
@@ -26,32 +21,25 @@ jobs:
 
           cloud-localds cloud-init.iso cloud-init/user-data.yaml cloud-init/meta-data.yaml
 
-          virt-install \
-            --name centos \
-            --osinfo centos7 \
-            --vcpus "$(nproc)" \
-            --memory 7168 \
-            --disk "$(pwd)"/cloud-init.iso,device=cdrom \
-            --disk "$(pwd)"/CentOS-7-x86_64-GenericCloud.qcow2,device=disk \
-            --network bridge=virbr0,model=virtio \
-            --nographic \
-            --noautoconsole \
-            --import
+          nohup qemu-system-x86_64 \
+            -accel tcg \
+            -smp "$(nproc)" \
+            -m 7G \
+            -drive if=virtio,format=qcow2,file=CentOS-7-x86_64-GenericCloud.qcow2 \
+            -cdrom cloud-init.iso \
+            -nic user,model=virtio-net-pci,hostfwd=tcp::2222-:22 \
+            -nographic &>/dev/null &
 
-          while true; do
-            content="$(sudo virsh net-dhcp-leases default)"
-            if [[ -n "$(echo "${content}" | sed -n '3,$ p')" ]]; then
-              break
-            fi
-            echo "${content}"
+          chmod 600 "$(pwd)"/cloud-init/ssh/id_rsa
+          while ! scp -o StrictHostKeyChecking=no -i "$(pwd)"/cloud-init/ssh/id_rsa -P 2222 "$(pwd)"/downgrade-kernel.sh centos@127.0.0.1:~/; do
+            echo 'Retry...'
             sleep 1
           done
 
+          ssh -o StrictHostKeyChecking=no -i "$(pwd)"/cloud-init/ssh/id_rsa -p 2222 -n centos@127.0.0.1 'sudo bash downgrade-kernel.sh' || true
+
       - name: Build
         run: |
-          ip="$(sudo virsh net-dhcp-leases default | sed -n '3,$ p' | awk '{print $5}')"
-          ip="${ip%/24}"
-
           ref="${{ github.ref_name }}"
 
           cat >build.sh <<EOF
@@ -76,6 +64,8 @@ jobs:
           popd
 
           devel/downloads/download_packages.sh
+
+          sed -i '/function install_perl/,/^}/ s/make$/make -j "\\\$(nproc)"/' devel/scripts/install.sh
 
           # Don't install llvm
           sed -i '/function install_packages/,/^}/ s/llvm//' devel/scripts/install.sh
@@ -103,10 +93,10 @@ jobs:
           EOF
 
           chmod 600 "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa
-          while ! scp -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa build.sh centos@"${ip}":~/; do
+          while ! scp -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -P 2222 build.sh centos@127.0.0.1:~/; do
             echo 'Retry...'
             sleep 1
           done
 
-          ssh -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -n centos@"${ip}" 'bash -x build.sh'
+          ssh -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -p 2222 -n centos@127.0.0.1 'bash -x build.sh'
 
