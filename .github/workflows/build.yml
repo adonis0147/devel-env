@@ -1,6 +1,10 @@
 name: Build Packages on Centos 7 (old kernel)
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: The url of the GCC toolchain
 
 jobs:
   build:
@@ -41,6 +45,7 @@ jobs:
       - name: Build
         run: |
           ref="${{ github.ref_name }}"
+          url="${{ inputs.url }}"
 
           cat >build.sh <<EOF
           set -e
@@ -57,9 +62,14 @@ jobs:
           git checkout "${ref}"
 
           pushd devel/scripts
-          latest="\$(curl -s 'https://api.github.com/repos/adonis0147/devel-env/releases/latest' | \
-            python -c "import json; import sys; print(json.load(sys.stdin)['tag_name'])")"
-          curl -L "https://github.com/adonis0147/devel-env/releases/download/\${latest}/install_toolchain_x86_64.sh" -o install_toolchain.sh
+
+          if [[ -z '${url}' ]]; then
+            latest="\$(curl -s 'https://api.github.com/repos/adonis0147/devel-env/releases/latest' | \
+              python -c "import json; import sys; print(json.load(sys.stdin)['tag_name'])")"
+            curl -L "https://github.com/adonis0147/devel-env/releases/download/\${latest}/install_toolchain_x86_64.sh" -o install_toolchain.sh
+          else
+            curl -L '${url}' -o install_toolchain.sh
+          fi
           chmod a+x install_toolchain.sh
           popd
 
