@@ -21,7 +21,8 @@ jobs:
           cd .github/qemu
 
           curl -LO 'https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2'
-          qemu-img resize CentOS-7-x86_64-GenericCloud.qcow2 50G
+          qemu-img resize CentOS-7-x86_64-GenericCloud.qcow2 10G
+          qemu-img convert -f qcow2 -O raw -o preallocation=full CentOS-7-x86_64-GenericCloud.qcow2 centos.img
 
           cloud-localds cloud-init.iso cloud-init/user-data.yaml cloud-init/meta-data.yaml
 
@@ -29,7 +30,7 @@ jobs:
             -accel tcg \
             -smp "$(nproc)" \
             -m 7G \
-            -drive if=virtio,format=qcow2,file=CentOS-7-x86_64-GenericCloud.qcow2 \
+            -drive if=virtio,format=raw,file=centos.img \
             -cdrom cloud-init.iso \
             -nic user,model=virtio-net-pci,hostfwd=tcp::2222-:22 \
             -nographic &>/dev/null &
