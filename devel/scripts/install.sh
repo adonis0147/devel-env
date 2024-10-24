@@ -298,7 +298,7 @@ function install_perl() {
 	pushd "${PERL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	./Configure -des -Dprefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		-Dlibpth="${DEVEL_HOME_PATH}/lib ${DEVEL_HOME_PATH}/compiler/lib"
-	make
+	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
 	setup_package "${package}"

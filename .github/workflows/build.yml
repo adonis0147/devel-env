@@ -76,8 +76,6 @@ jobs:
 
           devel/downloads/download_packages.sh
 
-          sed -i '/function install_perl/,/^}/ s/make$/make -j "\\\$(nproc)"/' devel/scripts/install.sh
-
           # Don't install llvm
           sed -i '/function install_packages/,/^}/ s/llvm//' devel/scripts/install.sh
 
