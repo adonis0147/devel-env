@@ -10,27 +10,45 @@ It provides the following stuffs:
 
 ---
 
-## GCC Toolchain
+## Use Prebuilt GCC Toolchain
 
-### Generation
-1. Build the docker image. _**CAVEAT:**_ It may take **TOO TOO LONG** time to finish on **ARM64** platform (e.g. macOS with Apple Silicon). It is recommended to download it from [the release page](https://github.com/adonis0147/devel-env/releases).
-```shell
-cd toolchain
-docker build --platform=linux/x86-64 -t toolchain .
-```
+1. Go to [the release page](https://github.com/adonis0147/devel-env/releases) and fetch the `install_toolchain_x86_64.sh` (if you're on the x86_64 system) or `install_toolchain_aarch64.sh` (if you're on the aarch64 system).
+
+2. Extract the toolchain.
+   ```
+   bash install_toolchain_x86_64.sh <some path>
+   ```
+
+3. Optionally, adjust the `$PATH` variable to easily access all the tools.
+   ```
+   export PATH="<some path>/compiler/bin:${PATH}"
+   ```
+
+4. Now `gcc --help` should work!
+
+## Build GCC Toolchain Yourself (Advanced)
+
+1. Build the docker image. _**CAVEAT:**_ It may take **TOO TOO LONG** time to finish on **ARM64** platform (e.g.
+   macOS with Apple Silicon). It is recommended to download it from [the release page](https://github.com/adonis0147/devel-env/releases).
+   ```shell
+   cd toolchain
+   docker build --platform=linux/x86-64 -t toolchain .
+   ```
+
 2. Generate the toolchain.
-```shell
-mkdir output
-docker run --platform=linux/x86-64 --rm --mount type=bind,source="$(pwd)/output",target=/output toolchain
-```
-3. Usage
-```shell
-# Copy the output/install_toolchain.sh to the target server and run the following commands.
-./install_toolchain.sh <some path>
-export PATH="<some path>/compiler/bin:${PATH}"
-```
+   ```shell
+   mkdir output
+   docker run --platform=linux/x86-64 --rm --mount type=bind,source="$(pwd)/output",target=/output toolchain
+   ```
 
-## Toolset
+3. Usage
+   ```shell
+   # Copy the output/install_toolchain.sh to the target server and run the following commands.
+   bash install_toolchain.sh <some path>
+   export PATH="<some path>/compiler/bin:${PATH}"
+   ```
+
+## Use Optional Toolset
 ### Install the toolset
 ```shell
 cp output/install_toolchain.sh devel/scripts
