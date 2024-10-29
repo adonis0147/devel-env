@@ -10,9 +10,6 @@ declare -r PATCHELF='patchelf'
 declare -r LIBC_SO='libc.so.6'
 declare -r INTERPRETER='ld-linux-*'
 
-READELF="$(command -v readelf)"
-declare -r READELF
-
 LD="$(command -v ld)"
 declare -r LD
 
@@ -69,6 +66,19 @@ function extract_toolchain() {
 	fi
 	mv "${temp_dir}" "${prefix}/${TOOLCHAIN_DIRNAME}"
 	log_info 'Success!'
+}
+
+function relocate() {
+	local patchelf="${1}"
+	local rpath="${2}"
+	local interpreter="${3}"
+	shift 3
+
+	local file
+	for file in "${@}"; do
+		"${patchelf}" --set-rpath "${rpath}" "${file}"
+		"${patchelf}" --set-interpreter "${interpreter}" "${file}"
+	done
 }
 
 function configure_toolchain() {
@@ -133,12 +143,17 @@ function configure_toolchain() {
 		echo "${rpaths[*]}"
 	)"
 
+	# Use bundled readelf
+	local readelf
+	readelf="$(pwd)/bin/readelf"
+	relocate "${patchelf}" "${rpaths_in_line}" "${interpreter}" "${readelf}"
+
 	while read -r file; do
-		if ! file "${file}" | grep ELF >/dev/null; then
+		if ! "${readelf}" -h "${file}" &>/dev/null; then
 			continue
 		fi
 		"${patchelf}" --set-rpath "${rpaths_in_line}" "${file}"
-		if "${READELF}" -S "${file}" | grep '.interp' >/dev/null; then
+		if "${readelf}" -S "${file}" | grep '.interp' >/dev/null; then
 			"${patchelf}" --set-interpreter "${interpreter}" "${file}"
 		fi
 	done < <(
