@@ -53,6 +53,10 @@ function extract_toolchain() {
 	local prefix="${1}"
 	local temp_dir
 
+	if [[ -d "${prefix}/${TOOLCHAIN_DIRNAME}" ]]; then
+		log_error "Failed to extract the toolchain due to the target directory already exists."
+	fi
+
 	if ! temp_dir="$(mktemp -d)"; then
 		log_error "Failed to create a temporary directory."
 	fi
@@ -64,6 +68,7 @@ function extract_toolchain() {
 	if ! sed '1,/^# -\*- EOF -\*-$/d' "${FILENAME}" | tar -Jx --strip-components=1 -C "${temp_dir}"; then
 		log_error 'Failed to extract the toolchain.'
 	fi
+
 	mv "${temp_dir}" "${prefix}/${TOOLCHAIN_DIRNAME}"
 	log_info 'Success!'
 }
