@@ -23,6 +23,10 @@ declare -r GCC_MD5SUM='2268420ba02dc01821960e274711bde0'
 declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz'
 declare -r LIBXCRYPT_MD5SUM='b84cd4104e08c975063ec6c4d0372446'
 
+declare -r MUSL_OBSTACK_URL='https://github.com/void-linux/musl-obstack/archive/refs/tags/v1.2.3.tar.gz'
+declare -r MUSL_OBSTACK_MD5SUM='e4f1d16aa3187e8d071f656dd2b10a9e'
+declare -r MUSL_OBSTACK_NAME='musl-obstack-1.2.3.tar.gz'
+
 function log() {
 	local level="${1}"
 	local message="${2}"
@@ -79,8 +83,7 @@ function show_environment() {
 function download() {
 	local url="${1}"
 	local md5sum="${2}"
-	local package
-	package="$(basename "${url}")"
+	local package="${3:-$(basename "${url}")}"
 
 	mkdir -p "${PACKAGES_PATH}"
 	pushd "${PACKAGES_PATH}" >/dev/null
@@ -100,15 +103,25 @@ function download_all() {
 	download "${GLIBC_PACKAGE_URL}" "${GLIBC_MD5SUM}"
 	download "${GCC_PACKAGE_URL}" "${GCC_MD5SUM}"
 	download "${LIBXCRYPT_PACKAGE_URL}" "${LIBXCRYPT_MD5SUM}"
+	download "${MUSL_OBSTACK_URL}" "${MUSL_OBSTACK_MD5SUM}" "${MUSL_OBSTACK_NAME}"
 }
 
 function extract_packages() {
+	local package
+
 	pushd "${PACKAGES_PATH}" >/dev/null
 
 	find . -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \;
+
 	for package in *.tar.xz; do
 		log_info "Extract ${package} ..."
-		tar -xf "${package}"
+		tar -Jxf "${package}"
+		log_info "Extract ${package} successfully!"
+	done
+
+	for package in *.tar.gz; do
+		log_info "Extract ${package} ..."
+		tar -zxf "${package}"
 		log_info "Extract ${package} successfully!"
 	done
 
@@ -353,6 +366,25 @@ function build_libxcrypt() {
 	popd >/dev/null
 }
 
+function build_musl_obstack() {
+	local package="${MUSL_OBSTACK_NAME}"
+	pushd "${package/.tar.gz/}" >/dev/null
+
+	./bootstrap.sh
+
+	rm -rf build
+	mkdir build
+	cd build
+
+	../configure --prefix="${PREFIX}"
+	make -j "$(nproc)"
+	make install
+
+	rm -rf "${PREFIX}/lib/pkgconfig"
+
+	popd >/dev/null
+}
+
 function build_final_toolchain() {
 	build_binutils_final
 	build_gcc_final
@@ -365,6 +397,7 @@ function build_all() {
 	build_cross_toolchain
 	build_final_toolchain
 	build_libxcrypt
+	build_musl_obstack
 
 	popd >/dev/null
 }

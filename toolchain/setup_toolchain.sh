@@ -54,7 +54,7 @@ function extract_toolchain() {
 	local temp_dir
 
 	if [[ -d "${prefix}/${TOOLCHAIN_DIRNAME}" ]]; then
-		log_error "Failed to extract the toolchain due to the target directory already exists."
+		log_error "Failed to extract the toolchain due to the target directory \033[34;1m${prefix}/${TOOLCHAIN_DIRNAME}\033[0m already exists."
 	fi
 
 	if ! temp_dir="$(mktemp -d)"; then
