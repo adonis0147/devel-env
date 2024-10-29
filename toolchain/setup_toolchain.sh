@@ -10,7 +10,7 @@ declare -r PATCHELF='patchelf'
 declare -r LIBC_SO='libc.so.6'
 declare -r INTERPRETER='ld-linux-*'
 
-LD="$(command -v ld)"
+LD="$(command -v ld || true)"
 declare -r LD
 
 function log() {
@@ -116,16 +116,17 @@ function configure_toolchain() {
 
 	# Link headers
 	local include_path
-	include_path="$(pwd)/include"
+	include_path="$(pwd)/include/"
 	pushd "$(uname -m)-linux-gnu/include" >/dev/null || exit
-	while read -r path; do
-		local absolute_path="${include_path}/${path}"
+	local absolute_path
+	while read -r absolute_path; do
+		local path="${absolute_path/${include_path}/}"
 		if [[ -d "${absolute_path}" ]]; then
 			mkdir -p "${path}"
 		else
 			ln -snf "${absolute_path}" "${path}"
 		fi
-	done < <(find "${include_path}" -mindepth 1 -printf '%P\n')
+	done < <(find "${include_path}" -mindepth 1)
 	popd >/dev/null || exit
 
 	local rpaths=(
