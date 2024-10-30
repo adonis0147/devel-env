@@ -186,10 +186,10 @@ LIBEDIT_PACKAGE_SHA256SUM='5f0573349d77c4a48967191cdd6634dd7aa5f6398c6a57fe037cc
 LIBEDIT_PACKAGE_NAME='libedit-20240808-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20240808-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.2/llvm-project-19.1.2.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='3666f01fc52d8a0b0da83e107d74f208f001717824be0b80007f529453aa1e19'
-LLVM_PACKAGE_NAME='llvm-project-19.1.2.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-19.1.2.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.3/llvm-project-19.1.3.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='324d483ff0b714c8ce7819a1b679dd9e4706cf91c6caf7336dc4ac0c1d3bf636'
+LLVM_PACKAGE_NAME='llvm-project-19.1.3.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-19.1.3.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'

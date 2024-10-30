@@ -55,7 +55,7 @@ jobs:
 
           sudo sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://vault.centos.org/7.9.2009|' /etc/yum.repos.d/CentOS-Base.repo
 
-          sudo yum -y install xz file make gettext texinfo git
+          sudo yum -y install xz file make gettext texinfo git patch
 
           git clone https://github.com/adonis0147/devel-env
           cd devel-env
