@@ -33,7 +33,11 @@ function setup_package() {
 	local num
 	local link_path_prefix
 	log_info "Setup ${package} ..."
-	while read -r path; do
+
+	local directory_path
+	local full_path
+	while read -r directory_path; do
+		local path="${directory_path/${OPT_PATH}\/${package}\//}"
 		full_path="$(basename "${OPT_PATH}")/${package}/${path}"
 		num="$(
 			set -e
@@ -44,19 +48,24 @@ function setup_package() {
 			generate_link_path_prefix "${num}" "${full_path}"
 		)"
 		mkdir -p "${DEVEL_HOME_PATH}/${path}"
-		while read -r sub_path; do
+		local sub_directory_path
+		local sub_path
+		while read -r sub_directory_path; do
+			sub_path="${sub_directory_path/${DEVEL_HOME_PATH}\/${full_path}\//}"
 			ln -snf "${link_path_prefix}/${sub_path}" "${DEVEL_HOME_PATH}/${path}/"
-		done < <(find "${DEVEL_HOME_PATH}/${full_path}" -mindepth 1 -maxdepth 1 ! -type d -printf '%P\n')
-	done < <(find "${OPT_PATH}/${package}" -mindepth 1 -type d -printf '%P\n')
+		done < <(find "${DEVEL_HOME_PATH}/${full_path}/" -mindepth 1 -maxdepth 1 ! -type d)
+	done < <(find "${OPT_PATH}/${package}/" -mindepth 1 -type d)
 	log_info "Setup ${package} done."
 }
 
 function setup() {
 	local package="${1}"
 	if [[ -z "${package}" ]]; then
-		while read -r package; do
+		local full_path
+		while read -r full_path; do
+			package="${full_path/${OPT_PATH}\//}"
 			setup_package "${package}"
-		done < <(find "${OPT_PATH}" -mindepth 1 -maxdepth 1 ! -name 'musl' -printf '%P\n')
+		done < <(find "${OPT_PATH}/" -mindepth 1 -maxdepth 1 ! -name 'musl')
 	else
 		setup_package "${package}"
 	fi
