@@ -8,7 +8,7 @@ RUN mkdir -p /opt/patchelf
 RUN curl -L "https://github.com/NixOS/patchelf/releases/download/0.16.1/patchelf-0.16.1-$(uname -m).tar.gz" \
     -o - | tar -zxv -C /opt/patchelf
 
-COPY ./* /devel-env/toolchain/
+ADD . /devel-env/toolchain/
 WORKDIR /devel-env/toolchain
 RUN TARGET="$(uname -m)-linux-gnu" bash generate_toolchan.sh
 
