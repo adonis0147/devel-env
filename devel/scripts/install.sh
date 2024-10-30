@@ -780,8 +780,12 @@ function install_packages() {
 
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
-		packages=(
-			tzdb
+		if sed -n 's/^NAME=\(.*\)/\1/p' /etc/os-release 2>/dev/null | grep 'Alpine Linux' &>/dev/null; then
+			packages=()
+		else
+			packages=(tzdb)
+		fi
+		packages+=(
 			m4
 			zlib
 			libdb
@@ -810,15 +814,21 @@ function install_packages() {
 			mpfr
 			zstd
 			gdb
-			neovim
 			xxhash
 			ccache
 			libedit
 			libxml2
 			swig
 			llvm
-			zsh
 		)
+
+		if [[ "$(uname -m)" == 'x86_64' ]]; then
+			packages+=(neovim)
+		fi
+
+		if tty &>/dev/null; then
+			packages+=(zsh)
+		fi
 	fi
 
 	for package in "${packages[@]}"; do

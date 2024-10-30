@@ -79,9 +79,6 @@ jobs:
           # Don't install llvm
           sed -i '/function install_packages/,/^}/ s/llvm//' devel/scripts/install.sh
 
-          # Don't install zsh
-          sed -i '/function install_packages/,/^}/ s/zsh//' devel/scripts/install.sh
-
           cd devel/scripts
 
           packages=(
