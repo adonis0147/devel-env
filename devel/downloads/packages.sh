@@ -84,10 +84,10 @@ PERL_PACKAGE_SHA256SUM='c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8
 PERL_PACKAGE_NAME='perl-5.40.0.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.40.0'
 
-OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.3.2/openssl-3.3.2.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='2e8a40b01979afe8be0bbfb3de5dc1c6709fedb46d6c89c10da114ab5fc3d281'
-OPENSSL_PACKAGE_NAME='openssl-3.3.2.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.3.2'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.4.0/openssl-3.4.0.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf'
+OPENSSL_PACKAGE_NAME='openssl-3.4.0.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.4.0'
 
 CURL_PACKAGE_URL='https://curl.se/download/curl-8.10.1.tar.gz'
 CURL_PACKAGE_SHA256SUM='d15ebab765d793e2e96db090f0e172d127859d78ca6f6391d7eafecfd894bbc0'
