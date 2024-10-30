@@ -135,13 +135,13 @@ function configure_toolchain() {
 	popd >/dev/null || exit
 
 	local rpaths=(
+		"$(pwd)/$(uname -m)-linux-gnu/lib"
 		"$(dirname "${libc_so}")"
 		"\$ORIGIN"
 		"\$ORIGIN/lib64"
-		"\$ORIGIN/../lib64"
 		"\$ORIGIN/lib"
+		"\$ORIGIN/../lib64"
 		"\$ORIGIN/../lib"
-		"$(pwd)/$(uname -m)-linux-gnu/lib"
 	)
 	local rpaths_in_line
 	rpaths_in_line="$(

@@ -61,9 +61,9 @@ function relocate() {
 	while read -r file; do
 		if old_rpath="$(patchelf --print-rpath "${file}" 2>/dev/null)"; then
 			if ${overwrite}; then
-				old_rpath="\$ORIGIN:\$ORIGIN/lib:\$ORIGIN/lib64:\$ORIGIN/../lib:\$ORIGIN/../lib64"
+				old_rpath="\$ORIGIN:\$ORIGIN/lib64:\$ORIGIN/lib:\$ORIGIN/../lib64:\$ORIGIN/../lib"
 			fi
-			new_rpath="${old_rpath:+${old_rpath}:}${DEVEL_HOME_PATH}/compiler/$(uname -m)-linux-gnu/lib:${library_path}"
+			new_rpath="${DEVEL_HOME_PATH}/compiler/$(uname -m)-linux-gnu/lib:${library_path}${old_rpath:+:${old_rpath}}"
 			patchelf --set-rpath "${new_rpath}" "${file}"
 			if readelf -S "${file}" | grep '.interp' >/dev/null; then
 				patchelf --set-interpreter "${interpreter}" "${file}"
