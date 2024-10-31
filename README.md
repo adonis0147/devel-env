@@ -160,22 +160,18 @@ git clone https://github.com/adonis0147/devel-env
 
 cd devel-env
 
-# Download packages
 devel/downloads/download_packages.sh
 
-# Download the latest GCC toolchain
 curl -L "$(curl -L https://api.github.com/repos/adonis0147/devel-env/releases/latest |
     sed -n 's|[[:space:]]*"browser_download_url": "\(.*\)\"|\1|p' |
     grep "$(uname -m | sed 's/arm64/aarch64/')")" -o devel/scripts/install_toolchain.sh
 chmod a+x devel/scripts/install_toolchain.sh
 
-# Optional: DEVEL_HOME_PATH="${HOME}/.local/share/devel" by default.
-# The toolchain will be extracted to /some/path/compiler and the softwares will be installed in /some/path
+# The toolchain will be extracted to /root/devel/compiler and the softwares will be installed in /root/devel
 export DEVEL_HOME_PATH=/root/devel
 
 devel/scripts/install.sh
 
-# Set some environment variables and useful functions up
 source devel/scripts/env_vars.sh
 ```
 
