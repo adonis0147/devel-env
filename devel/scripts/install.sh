@@ -130,11 +130,10 @@ function install_make() {
 	tar -zxvf "${MAKE_PACKAGE_NAME}"
 
 	pushd "${MAKE_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	mkdir build
-	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
-	make -j "${NUM_CORES}"
-	make install
+	./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --disable-dependency-tracking
+	./build.sh
+	./make -j "${NUM_CORES}"
+	./make install
 	popd >/dev/null
 	setup_package "${package}"
 
@@ -781,9 +780,9 @@ function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
 		if sed -n 's/^NAME=\(.*\)/\1/p' /etc/os-release 2>/dev/null | grep 'Alpine Linux' &>/dev/null; then
-			packages=()
+			packages=(make)
 		else
-			packages=(tzdb)
+			packages=(make tzdb)
 		fi
 		packages+=(
 			m4
@@ -793,7 +792,6 @@ function install_packages() {
 			autoconf
 			automake
 			libtool
-			make
 			pkg_config
 			cmake
 			ninja
@@ -828,6 +826,10 @@ function install_packages() {
 
 		if tty &>/dev/null; then
 			packages+=(zsh)
+		fi
+	else
+		if ! command -v make &>/dev/null; then
+			install_make
 		fi
 	fi
 

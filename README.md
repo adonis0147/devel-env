@@ -117,7 +117,6 @@ The project provides scripts to install some softwares built by the GCC toolchai
 * Bash
 * XZ
 * install_toolchain.sh (_*provided*_)
-* make
 * gettext
 * texinfo
 * patch
@@ -158,7 +157,7 @@ $ docker run -it alpine:latest
 
 # In container
 
-apk add bash libc6-compat make gettext texinfo patch git curl
+apk add bash libc6-compat gettext texinfo patch git curl
 
 git clone https://github.com/adonis0147/devel-env
 
@@ -186,7 +185,7 @@ source devel/scripts/env_vars.sh
 **Ubuntu**
 
 ```shell
-apt install xz-utils make gettext texinfo patch git curl
+apt install xz-utils gettext texinfo patch git curl
 
 ...
 ```
@@ -194,7 +193,7 @@ apt install xz-utils make gettext texinfo patch git curl
 **CentOS**
 
 ```shell
-yum install xz make gettext texinfo patch git curl
+yum install xz gettext texinfo patch git curl
 
 ...
 ```
