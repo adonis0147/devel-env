@@ -42,7 +42,7 @@ function install_tzdb() {
 	tar -zxvf "${TZDB_PACKAGE_NAME}"
 
 	pushd "${TZDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	make TOPDIR="${DEVEL_HOME_PATH}/opt/${package}" USRDIR='.' install
+	CC=gcc make TOPDIR="${DEVEL_HOME_PATH}/opt/${package}" USRDIR='.' install
 	popd >/dev/null
 	setup_package "${package}"
 
@@ -820,12 +820,9 @@ function install_packages() {
 
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
-		if sed -n 's/^NAME=\(.*\)/\1/p' /etc/os-release 2>/dev/null | grep 'Alpine Linux' &>/dev/null; then
-			packages=(make)
-		else
-			packages=(make tzdb)
-		fi
 		packages+=(
+			make
+			tzdb
 			m4
 			zlib
 			libdb
