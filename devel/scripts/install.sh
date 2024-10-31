@@ -468,6 +468,24 @@ function install_expat() {
 	log_info 'Success!'
 }
 
+function install_gettext() {
+	local package='gettext'
+	log_info "Start to install ${package}."
+	rm -rf "${GETTEXT_PACKAGE_EXTRACTED_DIR}"
+	tar -Jxvf "${GETTEXT_PACKAGE_NAME}"
+
+	pushd "${GETTEXT_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --disable-xattr
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_git() {
 	local package='git'
 	log_info "Start to install ${package}."
@@ -510,6 +528,24 @@ function install_mpfr() {
 	tar -Jxvf "${MPFR_PACKAGE_NAME}"
 
 	pushd "${MPFR_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_texinfo() {
+	local package='texinfo'
+	log_info "Start to install ${package}."
+	rm -rf "${TEXINFO_PACKAGE_EXTRACTED_DIR}"
+	tar -Jxvf "${TEXINFO_PACKAGE_NAME}"
+
+	pushd "${TEXINFO_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
 	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
@@ -755,7 +791,12 @@ function install_zsh() {
 
 	pushd "${ZSH_PACKAGE_EXTRACTED_DIR}" >/dev/null
 
-	patch -p1 <"${DOWNLOADS_PATH}/patches/zsh.patch"
+	if command -v patch &>/dev/null; then
+		patch -p1 <"${DOWNLOADS_PATH}/patches/zsh.patch"
+	elif command -v git &>/dev/null; then
+		git init .
+		git apply "${DOWNLOADS_PATH}/patches/zsh.patch"
+	fi
 
 	mkdir -p build
 	cd build
@@ -807,10 +848,12 @@ function install_packages() {
 			sqlite
 			python
 			expat
+			gettext
 			git
 			gmp
 			mpfr
 			zstd
+			texinfo
 			gdb
 			xxhash
 			ccache
