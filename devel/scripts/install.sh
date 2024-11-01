@@ -416,7 +416,9 @@ function install_python() {
 
 	mkdir build
 	cd build
-	CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
+
+	py_cv_module__dbm='n/a' py_cv_module__gdbm='n/a' py_cv_module__uuid='n/a' \
+		CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
 		LDFLAGS="-L${DEVEL_HOME_PATH}/lib" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		--with-openssl="${DEVEL_HOME_PATH}/opt/openssl" --enable-shared --enable-optimizations
