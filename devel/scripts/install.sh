@@ -270,24 +270,6 @@ function install_zlib() {
 	log_info 'Success!'
 }
 
-function install_libdb() {
-	local package='libdb'
-	log_info "Start to install ${package}."
-	rm -rf "${BERKELEY_DB_PACKAGE_EXTRACTED_DIR}"
-	tar -zxvf "${BERKELEY_DB_PACKAGE_NAME}"
-
-	pushd "${BERKELEY_DB_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	mkdir build
-	cd build
-	../dist/configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-repmgr-ssl=no
-	make -j "${NUM_CORES}"
-	make install_include install_lib
-	popd >/dev/null
-	setup_package "${package}"
-
-	log_info 'Success!'
-}
-
 function install_perl() {
 	local package='perl'
 	log_info "Start to install ${package}."
@@ -296,7 +278,7 @@ function install_perl() {
 
 	pushd "${PERL_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	./Configure -des -Dprefix="${DEVEL_HOME_PATH}/opt/${package}" \
-		-Dlibpth="${DEVEL_HOME_PATH}/lib ${DEVEL_HOME_PATH}/compiler/lib"
+		-Dlibpth="${DEVEL_HOME_PATH}/lib ${DEVEL_HOME_PATH}/compiler/lib" -Dlibswanted='pthread dl m crypt util c'
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -825,7 +807,6 @@ function install_packages() {
 			tzdb
 			m4
 			zlib
-			libdb
 			perl
 			autoconf
 			automake
