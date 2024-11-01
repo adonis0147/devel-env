@@ -50,7 +50,6 @@ build_packages_task:
     cat >>Dockerfile <<EOF
     FROM centos:7
     RUN ${cmd}
-    RUN yum install -y file
 
     RUN mkdir /devel-env
     WORKDIR /devel-env
