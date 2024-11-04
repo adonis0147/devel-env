@@ -922,7 +922,7 @@ function main() {
 	# Setup locale
 	setup_locale 'UTF-8' 'en_US' 'en_US.UTF-8'
 
-	install_packages "${continue}" "${start_package}" "${@}"
+	# install_packages "${continue}" "${start_package}" "${@}"
 
 	local message='Before using the packages, please run the following command first:\n\n'
 	message+="\t\033[32;1msource ${SCRIPTS_PATH}/env_vars.sh\033[0m\n"
