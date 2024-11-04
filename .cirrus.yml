@@ -15,9 +15,18 @@ build_packages_task:
         architecture: arm64
 
   clone_script: |
-    git clone -b "${CIRRUS_BRANCH}" https://github.com/adonis0147/devel-env
+    git clone https://github.com/adonis0147/devel-env
     cd devel-env
-    git fetch --tags
+    git fetch --all --tags
+
+    if [[ -z "${CIRRUS_PR}" ]]; then
+      git checkout "${CIRRUS_BRANCH}"
+    else
+      git fetch origin "pull/${CIRRUS_PR}/head:pr_${CIRRUS_PR}"
+      git checkout "pr_${CIRRUS_PR}"
+    fi
+
+    git status
 
   prepare_script: |
     uname -a
