@@ -52,6 +52,11 @@ jobs:
           set -e
 
           uname -a
+          kernel="\$(uname -a | awk '{print \$3}')"
+          if [[ ! "\${kernel}" =~ 3.10.0-123.1.2* ]]; then
+            echo "The version of the kernel is wrong."
+            exit 1
+          fi
 
           sudo sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://vault.centos.org/7.9.2009|' /etc/yum.repos.d/CentOS-Base.repo
 
