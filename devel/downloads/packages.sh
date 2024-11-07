@@ -84,10 +84,10 @@ OPENSSL_PACKAGE_SHA256SUM='e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a2
 OPENSSL_PACKAGE_NAME='openssl-3.4.0.tar.gz'
 OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.4.0'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.10.1.tar.gz'
-CURL_PACKAGE_SHA256SUM='d15ebab765d793e2e96db090f0e172d127859d78ca6f6391d7eafecfd894bbc0'
-CURL_PACKAGE_NAME='curl-8.10.1.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.10.1'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.11.0.tar.gz'
+CURL_PACKAGE_SHA256SUM='264537d90e58d2b09dddc50944baf3c38e7089151c8986715e2aaeaaf2b8118f'
+CURL_PACKAGE_NAME='curl-8.11.0.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.11.0'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='a05dc5191c6bad9313fd6db2777a78f5527ba4774f665d5d69f5a7461b49e2e7'
@@ -114,10 +114,10 @@ PYTHON_PACKAGE_SHA256SUM='d2c5dbd73111a80ee654489eb0f52b663b38ef9ce9e9323312515d
 PYTHON_PACKAGE_NAME='cpython-3.13.0.tar.gz'
 PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.13.0'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_3/expat-2.6.3.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='17aa6cfc5c4c219c09287abfc10bc13f0c06f30bb654b28bfe6f567ca646eb79'
-EXPAT_PACKAGE_NAME='expat-2.6.3.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.3'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='fd03b7172b3bd7427a3e7a812063f74754f24542429b634e0db6511b53fb2278'
+EXPAT_PACKAGE_NAME='expat-2.6.4.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.6.4'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-0.22.5.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='fe10c37353213d78a5b83d48af231e005c4da84db5ce88037d88355938259640'
@@ -158,13 +158,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.30.5/cmake-3.30.5-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.0/cmake-3.31.0-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='f747d9b23e1a252a8beafb4ed2bc2ddf78cff7f04a8e4de19f4ff88e9b51dc9d'
+	CMAKE_PACKAGE_SHA256SUM='0fcb338b4515044f9ac77543550ac92c314c58f6f95aafcac5cd36aa75db6924'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='da7dead2c92c1747b40d506d7f7d68590f5bab175316d2e7af73e48a2e417e48'
+	CMAKE_PACKAGE_SHA256SUM='e0f74862734c2d14ef8ac5a71941691531db0bbebee0a9c20a8e96e8a97390f9'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.30.5-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.31.0-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.2.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='baee0c6afd4f03165de7a4e67988d16f0f2b257b51d0e3cb91909302a26a79c4'
