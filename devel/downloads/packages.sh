@@ -26,10 +26,10 @@ AUTOMAKE_PACKAGE_SHA256SUM='397767d4db3018dd4440825b60c64258b636eaf6bf99ac8b0897
 AUTOMAKE_PACKAGE_NAME='automake-1.17.tar.gz'
 AUTOMAKE_PACKAGE_EXTRACTED_DIR='automake-1.17'
 
-LIBTOOL_PACKAGE_URL='https://ftpmirror.gnu.org/libtool/libtool-2.5.3.tar.gz'
-LIBTOOL_PACKAGE_SHA256SUM='9322bd8f6bc848fda3e385899dd1934957169652acef716d19d19d24053abb95'
-LIBTOOL_PACKAGE_NAME='libtool-2.5.3.tar.gz'
-LIBTOOL_PACKAGE_EXTRACTED_DIR='libtool-2.5.3'
+LIBTOOL_PACKAGE_URL='https://ftpmirror.gnu.org/libtool/libtool-2.5.4.tar.gz'
+LIBTOOL_PACKAGE_SHA256SUM='da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf'
+LIBTOOL_PACKAGE_NAME='libtool-2.5.4.tar.gz'
+LIBTOOL_PACKAGE_EXTRACTED_DIR='libtool-2.5.4'
 
 MAKE_PACKAGE_URL='https://ftpmirror.gnu.org/make/make-4.4.1.tar.gz'
 MAKE_PACKAGE_SHA256SUM='dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3'
@@ -89,10 +89,10 @@ CURL_PACKAGE_SHA256SUM='264537d90e58d2b09dddc50944baf3c38e7089151c8986715e2aaeaa
 CURL_PACKAGE_NAME='curl-8.11.0.tar.gz'
 CURL_PACKAGE_EXTRACTED_DIR='curl-8.11.0'
 
-WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.1.0.tar.gz'
-WGET_PACKAGE_SHA256SUM='a05dc5191c6bad9313fd6db2777a78f5527ba4774f665d5d69f5a7461b49e2e7'
-WGET_PACKAGE_NAME='wget2-2.1.0.tar.gz'
-WGET_PACKAGE_EXTRACTED_DIR='wget2-2.1.0'
+WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.2.0.tar.gz'
+WGET_PACKAGE_SHA256SUM='2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357'
+WGET_PACKAGE_NAME='wget2-2.2.0.tar.gz'
+WGET_PACKAGE_EXTRACTED_DIR='wget2-2.2.0'
 
 BZIP2_PACKAGE_URL='https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269'
@@ -158,13 +158,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.0/cmake-3.31.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.1/cmake-3.31.1-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='0fcb338b4515044f9ac77543550ac92c314c58f6f95aafcac5cd36aa75db6924'
+	CMAKE_PACKAGE_SHA256SUM='3b72fde0d40fa8be617667ea08d12c5ee47f6cf8950c2fbfcf2acfb5f83fb9de'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='e0f74862734c2d14ef8ac5a71941691531db0bbebee0a9c20a8e96e8a97390f9'
+	CMAKE_PACKAGE_SHA256SUM='ca63bdfcef0dd2d97e72ce4cefe5cb6c571a95fe7a9f96734e66e67571accfee'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.31.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.31.1-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.2.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='baee0c6afd4f03165de7a4e67988d16f0f2b257b51d0e3cb91909302a26a79c4'
