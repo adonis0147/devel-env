@@ -752,7 +752,6 @@ EOF
 		-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
 		-DLIBCXXABI_USE_LLVM_UNWINDER=ON \
 		-DCOMPILER_RT_USE_LLVM_UNWINDER=ON \
-		-DTerminfo_LIBRARIES="${DEVEL_HOME_PATH}/lib/libtinfow.so" \
 		-DCURSES_NEED_WIDE=ON \
 		${disable_arc4random:+${disable_arc4random}} \
 		../llvm
