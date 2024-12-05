@@ -12,7 +12,7 @@ ADD . /devel-env/toolchain/
 WORKDIR /devel-env/toolchain
 RUN TARGET="$(uname -m)-linux-gnu" bash generate_toolchan.sh
 
-RUN cd /opt && mv patchelf/bin/patchelf toolchain/bin && tar -cf - toolchain | xz -T0 -z - >output.tar.xz
+RUN cd /opt && mv patchelf/bin/patchelf /compiler/bin && tar -cf - /compiler | xz -T0 -z - >output.tar.xz
 
 FROM ubuntu:latest
 

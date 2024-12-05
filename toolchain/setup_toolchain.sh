@@ -179,9 +179,9 @@ function configure_toolchain() {
 		if "${readelf}" -h "${file}" &>/dev/null; then
 			continue
 		fi
-		sed -i "s|/opt/toolchain|${current_path}|g" "${file}"
+		sed -i "s|/compiler|${current_path}|g" "${file}"
 	done < <(
-		find . -type f -exec grep -E -I -l $'[=\'" ]/opt/toolchain' {} \;
+		find . -type f -exec grep -E -I -l $'[=\'" ]/compiler' {} \;
 	)
 
 	# Modify ldd

@@ -59,7 +59,7 @@ function log_error() {
 }
 
 function setup_environment() {
-	declare -gr PREFIX="${PREFIX:-/opt/toolchain}"
+	declare -gr PREFIX="${PREFIX:-/compiler}"
 	declare -gr CROSS_PREFIX="${PREFIX}/cross"
 	declare -gr TARGET="${TARGET:-x86_64-linux-gnu}"
 	declare -gr TARGET_PREFIX="${CROSS_PREFIX}/${TARGET}"
