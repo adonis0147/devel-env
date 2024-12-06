@@ -883,7 +883,7 @@ function main() {
 	local start_package
 
 	if [[ "${DEVEL_HOME_PATH}" == '/' ]]; then
-		log_error "Can not set the environment variable DEVEL_HOME_PATH to /."
+		log_error "Can not set the environment variable DEVEL_HOME_PATH to \033[34;1m/\033[0m."
 	fi
 
 	if ! opts="$(getopt -n "${0}" -o 'h' -l 'help,continue:' -- "${@}")"; then
