@@ -417,9 +417,7 @@ function install_python() {
 	mkdir build
 	cd build
 
-	py_cv_module__dbm='n/a' py_cv_module__gdbm='n/a' py_cv_module__uuid='n/a' \
-		CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
-		LDFLAGS="-L${DEVEL_HOME_PATH}/lib" \
+	CFLAGS="-I${DEVEL_HOME_PATH}/include/ncursesw" \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
 		--with-openssl="${DEVEL_HOME_PATH}/opt/openssl" --enable-shared --enable-optimizations
 	make -j "${NUM_CORES}"
@@ -726,9 +724,10 @@ function install_llvm() {
 	pushd "${LLVM_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir -p "${HOME}/.config/${package}"
 	local rpath
-	rpath="$(sed -n 's/collect2 -rpath \(.*\)/\1/p' "${DEVEL_HOME_PATH}/compiler/lib/gcc/specs")"
+	rpath="$(sed -n 's/collect2 .*-rpath \(.*\)/\1/p' "${DEVEL_HOME_PATH}/compiler/lib/gcc/specs")"
 	cat >"${HOME}/.config/${package}/clang.cfg" <<EOF
 --gcc-install-dir=$(find "${DEVEL_HOME_PATH}/compiler/lib/gcc/$(uname -m)-linux-gnu" -mindepth 1 -maxdepth 1 -type d)
+--sysroot=${DEVEL_HOME_PATH}
 -Wl,-rpath,${rpath//\$/\\\$}
 -Wl,-dynamic-linker,$(find "${DEVEL_HOME_PATH}/compiler/lib" -name 'ld-linux-*')
 EOF
@@ -750,8 +749,6 @@ EOF
 		-DLLVM_ENABLE_PROJECTS="clang;lld;clang-tools-extra;lldb" \
 		-DCLANG_CONFIG_FILE_USER_DIR='~/.config/llvm' \
 		-DLLVM_ENABLE_RUNTIMES="compiler-rt;libcxx;libcxxabi;libunwind" \
-		-DLIBCXXABI_USE_LLVM_UNWINDER=ON \
-		-DCOMPILER_RT_USE_LLVM_UNWINDER=ON \
 		-DCURSES_NEED_WIDE=ON \
 		${disable_arc4random:+${disable_arc4random}} \
 		../llvm
@@ -759,7 +756,7 @@ EOF
 	ninja install
 
 	rpath="$(find "${DEVEL_HOME_PATH}/opt/${package}/lib" -maxdepth 1 -name "$(uname -m)-*-linux-gnu")"
-	sed -i "/-Wl,-rpath/ s/\$/:${rpath//\//\\/}/" "${HOME}/.config/${package}/clang.cfg"
+	sed -i "/-Wl,-rpath/ s|\$|:${rpath}|" "${HOME}/.config/${package}/clang.cfg"
 	mv "${HOME}/.config/${package}"/* "${DEVEL_HOME_PATH}/opt/${package}/bin/"
 	popd >/dev/null
 
@@ -885,6 +882,10 @@ function main() {
 	local continue=false
 	local start_package
 
+	if [[ "${DEVEL_HOME_PATH}" == '/' ]]; then
+		log_error "Can not set the environment variable DEVEL_HOME_PATH to /."
+	fi
+
 	if ! opts="$(getopt -n "${0}" -o 'h' -l 'help,continue:' -- "${@}")"; then
 		usage
 	fi
@@ -914,8 +915,13 @@ function main() {
 	install_toolchain
 
 	pushd "${DEVEL_HOME_PATH}" >/dev/null
-	mkdir -p "compiler/$(uname -m)-linux-gnu/opt"
-	ln -snf "compiler/$(uname -m)-linux-gnu"/* .
+	rm -rf "compiler/$(uname -m)-linux-gnu"
+	ln -snf .. "compiler/$(uname -m)-linux-gnu"
+
+	mkdir -p lib
+	ln -snf lib lib64
+
+	ln -snf compiler usr
 	popd >/dev/null
 
 	# Setup locale

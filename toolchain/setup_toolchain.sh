@@ -119,21 +119,6 @@ function configure_toolchain() {
 	mkdir "$(pwd)/$(uname -m)-linux-gnu/lib"
 	ln -snf lib "$(pwd)/$(uname -m)-linux-gnu/lib64"
 
-	# Link headers
-	local include_path
-	include_path="$(pwd)/include/"
-	pushd "$(uname -m)-linux-gnu/include" >/dev/null || exit
-	local absolute_path
-	while read -r absolute_path; do
-		local path="${absolute_path/${include_path}/}"
-		if [[ -d "${absolute_path}" ]]; then
-			mkdir -p "${path}"
-		else
-			ln -snf "${absolute_path}" "${path}"
-		fi
-	done < <(find "${include_path}" -mindepth 1)
-	popd >/dev/null || exit
-
 	local rpaths=(
 		"$(pwd)/$(uname -m)-linux-gnu/lib"
 		"$(dirname "${libc_so}")"
@@ -179,7 +164,11 @@ function configure_toolchain() {
 		if "${readelf}" -h "${file}" &>/dev/null; then
 			continue
 		fi
-		sed -i "s|/compiler|${current_path}|g" "${file}"
+		if [[ "${file}" != *.so ]]; then
+			sed -i "s|/compiler|${current_path}|g" "${file}"
+		else
+			sed -i "s|/compiler|..|g" "${file}"
+		fi
 	done < <(
 		find . -type f -exec grep -E -I -l $'[=\'" ]/compiler' {} \;
 	)
@@ -207,8 +196,9 @@ export LD_LIBRARY_PATH=\"${library_path}:\${LD_LIBRARY_PATH}\" \\
 	local dirname
 	dirname="$(dirname "${interpreter}")"
 	"$(pwd)/bin/gcc" -dumpspecs | sed "{
+		/^\*cc1:/ {n; s|\$| -isysroot ${prefix}|}
 		s|:\([^;}:]*\)/\(${filename/.so*/}\)|:${dirname}/\2|g
-		s|collect2|collect2 -rpath ${rpaths_in_line}|
+		s|collect2|collect2 --sysroot=${prefix} -rpath ${rpaths_in_line}|
 	}" >"$(pwd)/lib/gcc/specs"
 }
 

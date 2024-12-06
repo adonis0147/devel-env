@@ -288,7 +288,8 @@ function build_binutils_final() {
 		--host="${TARGET}" \
 		--enable-gold \
 		--enable-plugins \
-		--disable-multilib
+		--disable-multilib \
+		--with-sysroot=/
 	make -j "$(nproc)"
 	make install-strip
 
