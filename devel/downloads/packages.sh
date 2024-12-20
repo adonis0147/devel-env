@@ -59,10 +59,10 @@ NCURSES_PACKAGE_SHA256SUM='136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90ce
 NCURSES_PACKAGE_NAME='ncurses-6.5.tar.gz'
 NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.5'
 
-READLINE_PACKAGE_URL='https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz'
-READLINE_PACKAGE_SHA256SUM='3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35'
-READLINE_PACKAGE_NAME='readline-8.2.tar.gz'
-READLINE_PACKAGE_EXTRACTED_DIR='readline-8.2'
+READLINE_PACKAGE_URL='https://ftpmirror.gnu.org/readline/readline-8.2.13.tar.gz'
+READLINE_PACKAGE_SHA256SUM='0e5be4d2937e8bd9b7cd60d46721ce79f88a33415dd68c2d738fb5924638f656'
+READLINE_PACKAGE_NAME='readline-8.2.13.tar.gz'
+READLINE_PACKAGE_EXTRACTED_DIR='readline-8.2.13'
 
 LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.4.6/libffi-3.4.6.tar.gz'
 LIBFFI_PACKAGE_SHA256SUM='b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e'
@@ -158,13 +158,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.2/cmake-3.31.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='fd76a2201de23a5cb392f2d2abe3a0aa40d4870c39fd92ed52c896daf55e4aa1'
+	CMAKE_PACKAGE_SHA256SUM='442b93b3db0f6c6501a74add587acca5ea6b8c1526ccca7bc8d89fc592036971'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='99f769d9246958fe28e44d73c29c0e3980911b372fe5e851b9ab548e26e42ba8'
+	CMAKE_PACKAGE_SHA256SUM='d46f9bbbb5f66a057ae223aaeba906b0b9d4aad715d427ffa891f3591e35a7fc'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.31.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.31.3-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.2.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='baee0c6afd4f03165de7a4e67988d16f0f2b257b51d0e3cb91909302a26a79c4'
