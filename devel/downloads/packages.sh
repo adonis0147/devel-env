@@ -124,10 +124,10 @@ GETTEXT_PACKAGE_SHA256SUM='c1f97a72a7385b7e71dd07b5fea6cdaf12c9b88b564976b23bd8c
 GETTEXT_PACKAGE_NAME='gettext-0.23.1.tar.xz'
 GETTEXT_PACKAGE_EXTRACTED_DIR='gettext-0.23.1'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.47.1.tar.gz'
-GIT_PACKAGE_SHA256SUM='f4c4e98667800585d218dfdf415eb72f73baa7abcac4569e2ce497970f8d6665'
-GIT_PACKAGE_NAME='git-2.47.1.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.47.1'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.48.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='430c94c0927a6fe5a2b57072060db545e2b151944e00180694cf301c9eb0a859'
+GIT_PACKAGE_NAME='git-2.48.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.48.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -158,13 +158,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.4/cmake-3.31.4-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='442b93b3db0f6c6501a74add587acca5ea6b8c1526ccca7bc8d89fc592036971'
+	CMAKE_PACKAGE_SHA256SUM='e8c096779b25acf006190b79b42a09f350e6d3c33ab7d395ed86a0871a9f8e96'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='d46f9bbbb5f66a057ae223aaeba906b0b9d4aad715d427ffa891f3591e35a7fc'
+	CMAKE_PACKAGE_SHA256SUM='f39924617380a1ef1d0350a2c9e0adb864139d1d3881f059c9e33c0d055828d2'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.31.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.31.4-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
