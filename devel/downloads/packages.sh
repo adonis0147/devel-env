@@ -74,10 +74,10 @@ ZLIB_PACKAGE_SHA256SUM='9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f0
 ZLIB_PACKAGE_NAME='zlib-1.3.1.tar.gz'
 ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3.1'
 
-PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz'
-PERL_PACKAGE_SHA256SUM='c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8dfe7161f'
-PERL_PACKAGE_NAME='perl-5.40.0.tar.gz'
-PERL_PACKAGE_EXTRACTED_DIR='perl-5.40.0'
+PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.40.1.tar.gz'
+PERL_PACKAGE_SHA256SUM='02f8c45bb379ed0c3de7514fad48c714fd46be8f0b536bfd5320050165a1ee26'
+PERL_PACKAGE_NAME='perl-5.40.1.tar.gz'
+PERL_PACKAGE_EXTRACTED_DIR='perl-5.40.1'
 
 OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.4.0/openssl-3.4.0.tar.gz'
 OPENSSL_PACKAGE_SHA256SUM='e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf'
