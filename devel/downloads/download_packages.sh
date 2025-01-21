@@ -17,8 +17,14 @@ function download() {
 	local sha256sum="${3}"
 	local output="${PACKAGES_PATH}/${4}"
 
+	if command -v gsha256sum &>/dev/null; then
+		sha256sum_cmd='gsha256sum'
+	else
+		sha256sum_cmd='sha256sum'
+	fi
+
 	log_info "Downloading ${package}..."
-	if [[ ! -f "${output}" ]] || ! echo "${sha256sum}  ${output}" | sha256sum --check &>/dev/null; then
+	if [[ ! -f "${output}" ]] || ! echo "${sha256sum}  ${output}" | "${sha256sum_cmd}" --check &>/dev/null; then
 		curl -L "${url}" -o "${output}"
 	fi
 	log_info "Download ${package} successfully!"
