@@ -546,10 +546,8 @@ function install_gdb() {
 	tar -zxvf "${GDB_PACKAGE_NAME}"
 
 	pushd "${GDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	mkdir build
-	cd build
 	LDFLAGS='-ltinfow -lncursesw' \
-		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
+		./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
 	make -j "${NUM_CORES}"
 	make install
 
