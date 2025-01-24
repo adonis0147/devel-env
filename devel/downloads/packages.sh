@@ -158,13 +158,13 @@ ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a3
 ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.4/cmake-3.31.4-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.5/cmake-3.31.5-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='e8c096779b25acf006190b79b42a09f350e6d3c33ab7d395ed86a0871a9f8e96'
+	CMAKE_PACKAGE_SHA256SUM='2984e70515ff60c5e4a41922b5d715a8168a696a89721e3b114e36f453244f72'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='f39924617380a1ef1d0350a2c9e0adb864139d1d3881f059c9e33c0d055828d2'
+	CMAKE_PACKAGE_SHA256SUM='eb92af175ea91e3706ff62484088c3a3774ef3e1a8c399111785dd5f47010164'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.31.4-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-3.31.5-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
