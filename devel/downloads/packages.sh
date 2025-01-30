@@ -149,9 +149,13 @@ GDB_PACKAGE_SHA256SUM='ff2cfff60546a3851561ddac7c012a7c184bb95b66286ae332d16880f
 GDB_PACKAGE_NAME='gdb-16.1.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-16.1'
 
-NEOVIM_PACKAGE_URL='https://github.com/neovim/neovim/releases/download/v0.10.4/nvim.appimage'
-NEOVIM_PACKAGE_SHA256SUM='0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5'
-NEOVIM_PACKAGE_NAME='nvim.appimage'
+NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
+if [[ "${ARCH}" == 'x86_64' ]]; then
+	NEOVIM_PACKAGE_SHA256SUM='95aaa8e89473f5421114f2787c13ae0ec6e11ebbd1a13a1bd6fcf63420f8073f'
+else
+	NEOVIM_PACKAGE_SHA256SUM='c819bf47a9878013ba35ceae87125dd170ede4a72844d049fb35f781045872eb'
+fi
+NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz'
 ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a34fd403c1'

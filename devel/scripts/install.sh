@@ -564,18 +564,13 @@ function install_neovim() {
 
 	local install_path="${DEVEL_HOME_PATH}/opt/neovim"
 	rm -rf "${install_path}"
+	mkdir -p "${install_path}"
+	tar -zxvf "${NEOVIM_PACKAGE_NAME}" --strip-components=1 -C "${install_path}"
 
 	local interpreter
 	interpreter="$(find "${DEVEL_HOME_PATH}/compiler" -name "${INTERPRETER}")"
 	local libc_so
 	libc_so="$(find "${DEVEL_HOME_PATH}/compiler" -name "${LIBC_SO}")"
-
-	chmod u+x nvim.appimage
-	patchelf --set-rpath "${DEVEL_HOME_PATH}/compiler/$(uname -m)-linux-gnu/lib:$(dirname "${libc_so}")" nvim.appimage
-	patchelf --set-interpreter "${interpreter}" nvim.appimage
-	./nvim.appimage --appimage-extract
-	mv ./squashfs-root/usr "${install_path}"
-	rm -rf ./squashfs-root
 
 	patchelf --set-rpath "$(dirname "${libc_so}")" "${install_path}/bin/nvim"
 	patchelf --set-interpreter "${interpreter}" "${install_path}/bin/nvim"
@@ -835,11 +830,8 @@ function install_packages() {
 			libxml2
 			swig
 			llvm
+			neovim
 		)
-
-		if [[ "$(uname -m)" == 'x86_64' ]]; then
-			packages+=(neovim)
-		fi
 
 		if tty &>/dev/null; then
 			packages+=(zsh)
