@@ -8,8 +8,8 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.xz'
-declare -r BINUTILS_MD5SUM='9202d02925c30969d1917e4bad5a2320'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz'
+declare -r BINUTILS_MD5SUM='49912ce774666a30806141f106124294'
 
 declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.1.tar.xz'
 declare -r LINUX_MD5SUM='de76ca88517747ef626ee4db697178ef'
@@ -286,7 +286,6 @@ function build_binutils_final() {
         -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
 		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
-		--enable-gold \
 		--enable-plugins \
 		--disable-multilib \
 		--with-sysroot=/
