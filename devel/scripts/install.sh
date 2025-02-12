@@ -390,9 +390,7 @@ function install_sqlite() {
 	tar -zxvf "${SQLITE_PACKAGE_NAME}"
 
 	pushd "${SQLITE_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	mkdir build
-	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null

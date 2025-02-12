@@ -79,15 +79,15 @@ PERL_PACKAGE_SHA256SUM='02f8c45bb379ed0c3de7514fad48c714fd46be8f0b536bfd53200501
 PERL_PACKAGE_NAME='perl-5.40.1.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.40.1'
 
-OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.4.0/openssl-3.4.0.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf'
-OPENSSL_PACKAGE_NAME='openssl-3.4.0.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.4.0'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='002a2d6b30b58bf4bea46c43bdd96365aaf8daa6c428782aa4feee06da197df3'
+OPENSSL_PACKAGE_NAME='openssl-3.4.1.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.4.1'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.12.0.tar.gz'
-CURL_PACKAGE_SHA256SUM='b72ec874e403c90462dc3019c5b24cc3cdd895247402bf23893b3b59419353bc'
-CURL_PACKAGE_NAME='curl-8.12.0.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.12.0'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.12.1.tar.gz'
+CURL_PACKAGE_SHA256SUM='7b40ea64947e0b440716a4d7f0b7aa56230a5341c8377d7b609649d4aea8dbcf'
+CURL_PACKAGE_NAME='curl-8.12.1.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.12.1'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.2.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357'
