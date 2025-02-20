@@ -458,7 +458,9 @@ function install_gettext() {
 	pushd "${GETTEXT_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --disable-xattr
+	LDFLAGS="-L${DEVEL_HOME_PATH}/opt/ncurses/lib -ltinfo" \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
+		--disable-xattr
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
