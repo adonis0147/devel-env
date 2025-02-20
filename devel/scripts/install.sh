@@ -812,10 +812,10 @@ function install_packages() {
 			libffi
 			zstd
 			bzip2
+			xz
 			openssl
 			curl
 			wget
-			xz
 			sqlite
 			python
 			expat
