@@ -390,7 +390,8 @@ function install_sqlite() {
 	tar -zxvf "${SQLITE_PACKAGE_NAME}"
 
 	pushd "${SQLITE_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --enable-all
+	./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --enable-all \
+		--with-readline-header="${DEVEL_HOME_PATH}/opt/readline/include/readline"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -807,10 +808,11 @@ function install_packages() {
 			ncurses
 			readline
 			libffi
+			zstd
+			bzip2
 			openssl
 			curl
 			wget
-			bzip2
 			xz
 			sqlite
 			python
@@ -819,7 +821,6 @@ function install_packages() {
 			git
 			gmp
 			mpfr
-			zstd
 			texinfo
 			gdb
 			xxhash
