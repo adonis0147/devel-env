@@ -157,10 +157,10 @@ else
 fi
 NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
-ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz'
-ZSTD_PACKAGE_SHA256SUM='8c29e06cf42aacc1eafc4077ae2ec6c6fcb96a626157e0593d5e82a34fd403c1'
-ZSTD_PACKAGE_NAME='zstd-1.5.6.tar.gz'
-ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.6'
+ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz'
+ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3'
+ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
+ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
 CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.5/cmake-3.31.5-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
