@@ -13,6 +13,8 @@ export MANPATH="${HOME}/.local/share/man:${DEVEL_HOME_PATH}/share/man:${DEVEL_HO
 
 [[ -d "${DEVEL_HOME_PATH}/share/zoneinfo" ]] && export TZDIR="${DEVEL_HOME_PATH}/share/zoneinfo"
 
+export GOFLAGS='-ldflags=-linkmode=external'
+
 if command -v nvim >/dev/null; then
 	export EDITOR='nvim'
 	export MANPAGER='nvim +Man!'
