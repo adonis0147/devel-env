@@ -99,10 +99,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://downloads.sourceforge.net/project/lzmautils/xz-5.4.6.tar.gz'
-XZ_PACKAGE_SHA256SUM='aeba3e03bf8140ddedf62a0a367158340520f6b384f75ca6045ccc6c0d43fd5c'
-XZ_PACKAGE_NAME='xz-5.4.6.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.4.6'
+XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.0/xz-5.8.0.tar.gz'
+XZ_PACKAGE_SHA256SUM='b523c5e47d1490338c5121bdf2a6ecca2bcf0dce05a83ad40a830029cbe6679b'
+XZ_PACKAGE_NAME='xz-5.8.0.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.0'
 
 SQLITE_PACKAGE_URL='https://sqlite.org/2025/sqlite-autoconf-3490100.tar.gz'
 SQLITE_PACKAGE_SHA256SUM='106642d8ccb36c5f7323b64e4152e9b719f7c0215acf5bfeac3d5e7f97b59254'
@@ -114,10 +114,10 @@ PYTHON_PACKAGE_SHA256SUM='a0e0b542861672d44b8cb596aea4c03ef91f59f0f717710f654f1a
 PYTHON_PACKAGE_NAME='cpython-3.13.2.tar.gz'
 PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.13.2'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_7_0/expat-2.7.0.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='362e89ca6b8a0d46fc5740a917eb2a8b4d6356edbe016eee09f49c0781215844'
-EXPAT_PACKAGE_NAME='expat-2.7.0.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.7.0'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='0cce2e6e69b327fc607b8ff264f4b66bdf71ead55a87ffd5f3143f535f15cfa2'
+EXPAT_PACKAGE_NAME='expat-2.7.1.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.7.1'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-0.24.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='e1620d518b26d7d3b16ac570e5018206e8b0d725fb65c02d048397718b5cf318'
@@ -149,11 +149,11 @@ GDB_PACKAGE_SHA256SUM='bdc1da4a033280ac752e7d34b0418efaa45bed093235cb88e62ea9617
 GDB_PACKAGE_NAME='gdb-16.2.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-16.2'
 
-NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
+NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.11.0/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	NEOVIM_PACKAGE_SHA256SUM='95aaa8e89473f5421114f2787c13ae0ec6e11ebbd1a13a1bd6fcf63420f8073f'
+	NEOVIM_PACKAGE_SHA256SUM='fe0a5bc79e64c5e4d9f844cd96157ebd3919ef1343b329e9ebc3f455924cc7d6'
 else
-	NEOVIM_PACKAGE_SHA256SUM='c819bf47a9878013ba35ceae87125dd170ede4a72844d049fb35f781045872eb'
+	NEOVIM_PACKAGE_SHA256SUM='6959583f45042da20e0a082dc65108725629a4739ab91246c678fd084ecaf50e'
 fi
 NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
@@ -162,13 +162,13 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v3.31.6/cmake-3.31.6-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.0.0/cmake-4.0.0-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='5a1133ff103c71eb5120e2cc3de922733e7d8a26a98ae716397e8676adb367bf'
+	CMAKE_PACKAGE_SHA256SUM='a06e6e32da747e569162bc0442a3fd400fadd9db7d4f185c9e4464ab299a294b'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='b4cc788d63112b2749b40627e719eb5d3b8ed8f00c36d77189f4019cfe64bc9e'
+	CMAKE_PACKAGE_SHA256SUM='3727d7a6ca900331447a55c08404cc11248b2e8d2709a6b3ed85b01189bb16af'
 fi
-CMAKE_PACKAGE_NAME="cmake-3.31.6-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-4.0.0-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
@@ -180,10 +180,10 @@ CCACHE_PACKAGE_SHA256SUM='d51b82bb8c3932649323fd4cb8e5a0a9f7fe7f672c71a6d6839bee
 CCACHE_PACKAGE_NAME='ccache-4.11.2.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.11.2'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.13.6.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='bb5e2e66b7f8842599fcf3a06c6b65f444ab87f00c214e376413e5004135c3df'
-LIBXML2_PACKAGE_NAME='libxml2-2.13.6.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.13.6'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.14.0.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='5ef0c82e17b26c90ecd06f0feaeb60892bf1f9a8beef89dce20f3425bec337de'
+LIBXML2_PACKAGE_NAME='libxml2-2.14.0.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.14.0'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.3.0/swig-4.3.0.tar.gz'
 SWIG_PACKAGE_SHA256SUM='f7203ef796f61af986c70c05816236cbd0d31b7aa9631e5ab53020ab7804aa9e'
