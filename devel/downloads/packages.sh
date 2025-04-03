@@ -84,10 +84,10 @@ OPENSSL_PACKAGE_SHA256SUM='002a2d6b30b58bf4bea46c43bdd96365aaf8daa6c428782aa4fee
 OPENSSL_PACKAGE_NAME='openssl-3.4.1.tar.gz'
 OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.4.1'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.12.1.tar.gz'
-CURL_PACKAGE_SHA256SUM='7b40ea64947e0b440716a4d7f0b7aa56230a5341c8377d7b609649d4aea8dbcf'
-CURL_PACKAGE_NAME='curl-8.12.1.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.12.1'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.13.0.tar.gz'
+CURL_PACKAGE_SHA256SUM='c261a4db579b289a7501565497658bbd52d3138fdbaccf1490fa918129ab45bc'
+CURL_PACKAGE_NAME='curl-8.13.0.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.13.0'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.2.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357'
@@ -195,10 +195,10 @@ LIBEDIT_PACKAGE_SHA256SUM='23792701694550a53720630cd1cd6167101b5773adddcb4104f73
 LIBEDIT_PACKAGE_NAME='libedit-20250104-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20250104-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.1/llvm-project-20.1.1.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='4d5ebbd40ce1e984a650818a4bb5ae86fc70644dec2e6d54e78b4176db3332e0'
-LLVM_PACKAGE_NAME='llvm-project-20.1.1.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-20.1.1.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.2/llvm-project-20.1.2.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='f0a4a240aabc9b056142d14d5478bb6d962aeac549cbd75b809f5499240a8b38'
+LLVM_PACKAGE_NAME='llvm-project-20.1.2.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-20.1.2.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
