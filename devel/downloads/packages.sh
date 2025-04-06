@@ -99,10 +99,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.0/xz-5.8.0.tar.gz'
-XZ_PACKAGE_SHA256SUM='b523c5e47d1490338c5121bdf2a6ecca2bcf0dce05a83ad40a830029cbe6679b'
-XZ_PACKAGE_NAME='xz-5.8.0.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.0'
+XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.gz'
+XZ_PACKAGE_SHA256SUM='507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543'
+XZ_PACKAGE_NAME='xz-5.8.1.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.1'
 
 SQLITE_PACKAGE_URL='https://sqlite.org/2025/sqlite-autoconf-3490100.tar.gz'
 SQLITE_PACKAGE_SHA256SUM='106642d8ccb36c5f7323b64e4152e9b719f7c0215acf5bfeac3d5e7f97b59254'
@@ -180,10 +180,10 @@ CCACHE_PACKAGE_SHA256SUM='d51b82bb8c3932649323fd4cb8e5a0a9f7fe7f672c71a6d6839bee
 CCACHE_PACKAGE_NAME='ccache-4.11.2.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.11.2'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.14.0.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='5ef0c82e17b26c90ecd06f0feaeb60892bf1f9a8beef89dce20f3425bec337de'
-LIBXML2_PACKAGE_NAME='libxml2-2.14.0.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.14.0'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.14.1.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='1c1511fdc5d35a8168ea14b5254c6df01a898ac32e1edc69df4c17a0fbf92316'
+LIBXML2_PACKAGE_NAME='libxml2-2.14.1.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.14.1'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.3.0/swig-4.3.0.tar.gz'
 SWIG_PACKAGE_SHA256SUM='f7203ef796f61af986c70c05816236cbd0d31b7aa9631e5ab53020ab7804aa9e'
