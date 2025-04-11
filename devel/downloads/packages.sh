@@ -64,10 +64,10 @@ READLINE_PACKAGE_SHA256SUM='0e5be4d2937e8bd9b7cd60d46721ce79f88a33415dd68c2d738f
 READLINE_PACKAGE_NAME='readline-8.2.13.tar.gz'
 READLINE_PACKAGE_EXTRACTED_DIR='readline-8.2.13'
 
-LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.4.7/libffi-3.4.7.tar.gz'
-LIBFFI_PACKAGE_SHA256SUM='138607dee268bdecf374adf9144c00e839e38541f75f24a1fcf18b78fda48b2d'
-LIBFFI_PACKAGE_NAME='libffi-3.4.7.tar.gz'
-LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.4.7'
+LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.4.8/libffi-3.4.8.tar.gz'
+LIBFFI_PACKAGE_SHA256SUM='bc9842a18898bfacb0ed1252c4febcc7e78fa139fd27fdc7a3e30d9d9356119b'
+LIBFFI_PACKAGE_NAME='libffi-3.4.8.tar.gz'
+LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.4.8'
 
 ZLIB_PACKAGE_URL='https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz'
 ZLIB_PACKAGE_SHA256SUM='9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23'
@@ -79,10 +79,10 @@ PERL_PACKAGE_SHA256SUM='02f8c45bb379ed0c3de7514fad48c714fd46be8f0b536bfd53200501
 PERL_PACKAGE_NAME='perl-5.40.1.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.40.1'
 
-OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='002a2d6b30b58bf4bea46c43bdd96365aaf8daa6c428782aa4feee06da197df3'
-OPENSSL_PACKAGE_NAME='openssl-3.4.1.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.4.1'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.5.0/openssl-3.5.0.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='344d0a79f1a9b08029b0744e2cc401a43f9c90acd1044d09a530b4885a8e9fc0'
+OPENSSL_PACKAGE_NAME='openssl-3.5.0.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.5.0'
 
 CURL_PACKAGE_URL='https://curl.se/download/curl-8.13.0.tar.gz'
 CURL_PACKAGE_SHA256SUM='c261a4db579b289a7501565497658bbd52d3138fdbaccf1490fa918129ab45bc'
@@ -109,10 +109,10 @@ SQLITE_PACKAGE_SHA256SUM='106642d8ccb36c5f7323b64e4152e9b719f7c0215acf5bfeac3d5e
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3490100.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3490100'
 
-PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.13.2.tar.gz'
-PYTHON_PACKAGE_SHA256SUM='a0e0b542861672d44b8cb596aea4c03ef91f59f0f717710f654f1abba9516996'
-PYTHON_PACKAGE_NAME='cpython-3.13.2.tar.gz'
-PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.13.2'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.13.3.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='edaf8fbabfc08ef4c3d012784b7aab4836bdf7d018d7f7ac5fa8375bf22f6046'
+PYTHON_PACKAGE_NAME='cpython-3.13.3.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.13.3'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='0cce2e6e69b327fc607b8ff264f4b66bdf71ead55a87ffd5f3143f535f15cfa2'
@@ -162,13 +162,13 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.0.0/cmake-4.0.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.0.1/cmake-4.0.1-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='a06e6e32da747e569162bc0442a3fd400fadd9db7d4f185c9e4464ab299a294b'
+	CMAKE_PACKAGE_SHA256SUM='d66c11c010588c8256ee20a26b45977cd5b2f4aee2b742d4b8a353769940d147'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='3727d7a6ca900331447a55c08404cc11248b2e8d2709a6b3ed85b01189bb16af'
+	CMAKE_PACKAGE_SHA256SUM='e4549bc77be50c4dacac18602befe0ec5cfc19444dbc64e16256f5ae98f7b63e'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.0.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-4.0.1-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
