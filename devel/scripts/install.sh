@@ -60,7 +60,8 @@ function install_m4() {
 	pushd "${M4_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir -p build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -149,7 +150,8 @@ function install_pkg_config() {
 	pushd "${PKG_CONFIG_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-internal-glib
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-internal-glib
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -200,13 +202,15 @@ function install_ncurses() {
 	cd build
 
 	# Install libncursesw
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --enable-widec --with-shared --with-termlib
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --enable-widec --with-shared --with-termlib
 	make -j "${NUM_CORES}"
 	make install.libs
 
 	# Install ncurses
 	rm -rf ./*
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --disable-widec --with-shared --with-termlib
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --disable-widec --with-shared --with-termlib
 	make -j "${NUM_CORES}"
 	make install
 
@@ -225,7 +229,8 @@ function install_readline() {
 	pushd "${READLINE_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make SHLIB_LIBS='-ltinfow' -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -493,7 +498,8 @@ function install_gmp() {
 	pushd "${GMP_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -529,7 +535,8 @@ function install_texinfo() {
 	pushd "${TEXINFO_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	CFLAGS='-std=c17' \
+		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
@@ -545,7 +552,8 @@ function install_gdb() {
 	tar -zxvf "${GDB_PACKAGE_NAME}"
 
 	pushd "${GDB_PACKAGE_EXTRACTED_DIR}" >/dev/null
-	LDFLAGS='-ltinfow -lncursesw' \
+	CFLAGS='-std=c17' \
+		LDFLAGS='-ltinfow -lncursesw' \
 		./configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-gmp="${DEVEL_HOME_PATH}/opt/gmp"
 	make -j "${NUM_CORES}"
 	make install
