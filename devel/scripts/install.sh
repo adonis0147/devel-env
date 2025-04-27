@@ -150,7 +150,7 @@ function install_pkg_config() {
 	pushd "${PKG_CONFIG_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir build
 	cd build
-	CFLAGS='-std=c17' \
+	CFLAGS='-std=gnu17' \
 		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-internal-glib
 	make -j "${NUM_CORES}"
 	make install
