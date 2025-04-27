@@ -11,14 +11,14 @@ declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz'
 declare -r BINUTILS_MD5SUM='49912ce774666a30806141f106124294'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.1.tar.xz'
-declare -r LINUX_MD5SUM='de76ca88517747ef626ee4db697178ef'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.4.tar.xz'
+declare -r LINUX_MD5SUM='c8e750100a5fc02bb856539ff9b9a41f'
 
 declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.41.tar.xz'
 declare -r GLIBC_MD5SUM='19862601af60f73ac69e067d3e9267d4'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz'
-declare -r GCC_MD5SUM='2268420ba02dc01821960e274711bde0'
+declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz'
+declare -r GCC_MD5SUM='e55d13c55428bca27b4d2ea02f883135'
 
 declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz'
 declare -r LIBXCRYPT_MD5SUM='1796a5d20098e9dd9e3f576803c83000'
