@@ -119,10 +119,10 @@ EXPRT_PACKAGE_SHA256SUM='0cce2e6e69b327fc607b8ff264f4b66bdf71ead55a87ffd5f3143f5
 EXPAT_PACKAGE_NAME='expat-2.7.1.tar.gz'
 EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.7.1'
 
-GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-0.24.1.tar.xz'
-GETTEXT_PACKAGE_SHA256SUM='6164ec7aa61653ac9cdfb41d5c2344563b21f707da1562712e48715f1d2052a6'
-GETTEXT_PACKAGE_NAME='gettext-0.24.1.tar.xz'
-GETTEXT_PACKAGE_EXTRACTED_DIR='gettext-0.24.1'
+GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-0.25.tar.xz'
+GETTEXT_PACKAGE_SHA256SUM='05240b29f5b0f422e5a4ef8e9b5f76d8fa059cc057693d2723cdb76f36a88ab0'
+GETTEXT_PACKAGE_NAME='gettext-0.25.tar.xz'
+GETTEXT_PACKAGE_EXTRACTED_DIR='gettext-0.25'
 
 GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.49.0.tar.gz'
 GIT_PACKAGE_SHA256SUM='f8047f572f665bebeb637fd5f14678f31b3ca5d2ff9a18f20bd925bd48f75d3c'
@@ -162,13 +162,13 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.0.1/cmake-4.0.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.0.2/cmake-4.0.2-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='d66c11c010588c8256ee20a26b45977cd5b2f4aee2b742d4b8a353769940d147'
+	CMAKE_PACKAGE_SHA256SUM='80940e81de61584fe4eedd3c40adc597d7c5b76ad8709668007b467a3c2a36c7'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='e4549bc77be50c4dacac18602befe0ec5cfc19444dbc64e16256f5ae98f7b63e'
+	CMAKE_PACKAGE_SHA256SUM='7a88303641c85ce1af09dfc4ffc201520bc7061f71ceafbf59680fc42af7d553'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.0.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-4.0.2-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
