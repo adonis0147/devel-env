@@ -60,8 +60,7 @@ function install_m4() {
 	pushd "${M4_PACKAGE_EXTRACTED_DIR}" >/dev/null
 	mkdir -p build
 	cd build
-	CFLAGS='-std=c17' \
-		../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
