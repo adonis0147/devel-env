@@ -84,10 +84,10 @@ OPENSSL_PACKAGE_SHA256SUM='344d0a79f1a9b08029b0744e2cc401a43f9c90acd1044d09a530b
 OPENSSL_PACKAGE_NAME='openssl-3.5.0.tar.gz'
 OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.5.0'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.14.0.tar.gz'
-CURL_PACKAGE_SHA256SUM='5eba3ec2d898919a4b34cc89ace0068d9d09420b8643f265aebac59f8d126203'
-CURL_PACKAGE_NAME='curl-8.14.0.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.14.0'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.14.1.tar.gz'
+CURL_PACKAGE_SHA256SUM='6766ada7101d292b42b8b15681120acd68effa4a9660935853cf6d61f0d984d4'
+CURL_PACKAGE_NAME='curl-8.14.1.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.14.1'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.2.0.tar.gz'
 WGET_PACKAGE_SHA256SUM='2b3b9c85b7fb26d33ca5f41f1f8daca71838d869a19b406063aa5c655294d357'
@@ -104,10 +104,10 @@ XZ_PACKAGE_SHA256SUM='507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150
 XZ_PACKAGE_NAME='xz-5.8.1.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.1'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2025/sqlite-autoconf-3500000.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='3bc776a5f243897415f3b80fb74db3236501d45194c75c7f69012e4ec0128327'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3500000.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3500000'
+SQLITE_PACKAGE_URL='https://sqlite.org/2025/sqlite-autoconf-3500100.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='00a65114d697cfaa8fe0630281d76fd1b77afcd95cd5e40ec6a02cbbadbfea71'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3500100.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3500100'
 
 PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.13.5.tar.gz'
 PYTHON_PACKAGE_SHA256SUM='f313a2f32818c35d95814455311cc3f1e1e09c81b7d00a814f325048404c02eb'
@@ -195,10 +195,10 @@ LIBEDIT_PACKAGE_SHA256SUM='23792701694550a53720630cd1cd6167101b5773adddcb4104f73
 LIBEDIT_PACKAGE_NAME='libedit-20250104-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20250104-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/llvm-project-20.1.6.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='5c70549d524284c184fe9fbff862c3d2d7a61b787570611b5a30e5cc345f145e'
-LLVM_PACKAGE_NAME='llvm-project-20.1.6.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-20.1.6.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/llvm-project-20.1.7.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='cd8fd55d97ad3e360b1d5aaf98388d1f70dfffb7df36beee478be3b839ff9008'
+LLVM_PACKAGE_NAME='llvm-project-20.1.7.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-20.1.7.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
