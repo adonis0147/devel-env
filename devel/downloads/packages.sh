@@ -41,10 +41,10 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz'
-NINJA_PACKAGE_SHA256SUM='821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a'
-NINJA_PACKAGE_NAME='ninja-1.12.1.tar.gz'
-NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.12.1'
+NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.0.tar.gz'
+NINJA_PACKAGE_SHA256SUM='f08641d00099a9e40d44ec0146f841c472ae58b7e6dd517bee3945cfd923cedf'
+NINJA_PACKAGE_NAME='ninja-1.13.0.tar.gz'
+NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.13.0'
 
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.16.1/patchelf-0.16.1-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
