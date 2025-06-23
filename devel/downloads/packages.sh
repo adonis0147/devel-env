@@ -124,10 +124,10 @@ GETTEXT_PACKAGE_SHA256SUM='05240b29f5b0f422e5a4ef8e9b5f76d8fa059cc057693d2723cdb
 GETTEXT_PACKAGE_NAME='gettext-0.25.tar.xz'
 GETTEXT_PACKAGE_EXTRACTED_DIR='gettext-0.25'
 
-GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.49.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='f8047f572f665bebeb637fd5f14678f31b3ca5d2ff9a18f20bd925bd48f75d3c'
-GIT_PACKAGE_NAME='git-2.49.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.49.0'
+GIT_PACKAGE_URL='https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='920f8ca563d16a7d4fdecb44349cbffbc5cb814a8b36c96028463478197050da'
+GIT_PACKAGE_NAME='git-2.50.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.50.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
