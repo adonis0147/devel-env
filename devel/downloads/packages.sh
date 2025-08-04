@@ -64,10 +64,10 @@ READLINE_PACKAGE_SHA256SUM='fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f6
 READLINE_PACKAGE_NAME='readline-8.3.tar.gz'
 READLINE_PACKAGE_EXTRACTED_DIR='readline-8.3'
 
-LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.5.1/libffi-3.5.1.tar.gz'
-LIBFFI_PACKAGE_SHA256SUM='f99eb68a67c7d54866b7706af245e87ba060d419a062474b456d3bc8d4abdbd1'
-LIBFFI_PACKAGE_NAME='libffi-3.5.1.tar.gz'
-LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.5.1'
+LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz'
+LIBFFI_PACKAGE_SHA256SUM='f3a3082a23b37c293a4fcd1053147b371f2ff91fa7ea1b2a52e335676bac82dc'
+LIBFFI_PACKAGE_NAME='libffi-3.5.2.tar.gz'
+LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.5.2'
 
 ZLIB_PACKAGE_URL='https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz'
 ZLIB_PACKAGE_SHA256SUM='9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23'
