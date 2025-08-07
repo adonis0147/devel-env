@@ -8,17 +8,17 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.xz'
-declare -r BINUTILS_MD5SUM='49912ce774666a30806141f106124294'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.45.tar.xz'
+declare -r BINUTILS_MD5SUM='c50c0e7f9cb188980e2cc97e4537626b1672441815587f1eab69d2a1bfbef5d2'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.4.tar.xz'
-declare -r LINUX_MD5SUM='c8e750100a5fc02bb856539ff9b9a41f'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.9.tar.xz'
+declare -r LINUX_MD5SUM='e94f3af85492302f7a819441458f80bca0ad9912e5a4c83c699ff3c63c52957d'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.41.tar.xz'
-declare -r GLIBC_MD5SUM='19862601af60f73ac69e067d3e9267d4'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.42.tar.xz'
+declare -r GLIBC_MD5SUM='23c6f5a27932b435cae94e087cb8b1f5'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-15.1.0/gcc-15.1.0.tar.xz'
-declare -r GCC_MD5SUM='e55d13c55428bca27b4d2ea02f883135'
+declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz'
+declare -r GCC_MD5SUM='b861b092bf1af683c46a8aa2e689a6fd'
 
 declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz'
 declare -r LIBXCRYPT_MD5SUM='1796a5d20098e9dd9e3f576803c83000'
