@@ -482,6 +482,9 @@ function install_git() {
 	./configure --prefix="${DEVEL_HOME_PATH}/opt/git" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl"
 	make -j "${NUM_CORES}"
 	make install
+
+	cd contrib/subtree
+	make prefix="${DEVEL_HOME_PATH}/opt/git" install
 	popd >/dev/null
 	setup_package "${package}"
 
