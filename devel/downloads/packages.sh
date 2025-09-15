@@ -175,10 +175,10 @@ XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f390
 XXHASH_PACKAGE_NAME='xxHash-0.8.3.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.3'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.11.3/ccache-4.11.3.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='28a407314f03a7bd7a008038dbaffa83448bc670e2fc119609b1d99fb33bb600'
-CCACHE_PACKAGE_NAME='ccache-4.11.3.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.11.3'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.12/ccache-4.12.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='e884c62cbacae2e9488b8641a671a79fb7a1221db01310dacef61c9e55c2e55b'
+CCACHE_PACKAGE_NAME='ccache-4.12.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.12'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.14.6.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='546ab74561c040df210c88dbd3c652bf509d826954ab2002c8973f1fa8d10130'
@@ -195,10 +195,10 @@ LIBEDIT_PACKAGE_SHA256SUM='23792701694550a53720630cd1cd6167101b5773adddcb4104f73
 LIBEDIT_PACKAGE_NAME='libedit-20250104-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20250104-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.0/llvm-project-21.1.0.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='1672e3efb4c2affd62dbbe12ea898b28a451416c7d95c1bd0190c26cbe878825'
-LLVM_PACKAGE_NAME='llvm-project-21.1.0.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-21.1.0.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.1/llvm-project-21.1.1.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='8863980e14484a72a9b7d2c80500e1749054d74f08f8c5102fd540a3c5ac9f8a'
+LLVM_PACKAGE_NAME='llvm-project-21.1.1.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-21.1.1.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
