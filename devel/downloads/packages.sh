@@ -114,10 +114,10 @@ PYTHON_PACKAGE_SHA256SUM='f8762e978080e395ffd1d4b3999523e35632d5c17f2a722dfe5a5b
 PYTHON_PACKAGE_NAME='cpython-3.13.7.tar.gz'
 PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.13.7'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_7_2/expat-2.7.2.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='13d42a125897329bfeecab899cb9b5a3ec8c26072994b5cd4c41f28241f5bce7'
-EXPAT_PACKAGE_NAME='expat-2.7.2.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.7.2'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='821ac9710d2c073eaf13e1b1895a9c9aa66c1157a99635c639fbff65cdbdd732'
+EXPAT_PACKAGE_NAME='expat-2.7.3.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.7.3'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-0.26.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='d1fb86e260cfe7da6031f94d2e44c0da55903dbae0a2fa0fae78c91ae1b56f00'
