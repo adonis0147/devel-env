@@ -79,10 +79,10 @@ PERL_PACKAGE_SHA256SUM='e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329
 PERL_PACKAGE_NAME='perl-5.42.0.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.42.0'
 
-OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='c53a47e5e441c930c3928cf7bf6fb00e5d129b630e0aa873b08258656e7345ec'
-OPENSSL_PACKAGE_NAME='openssl-3.5.2.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.5.2'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.6.0/openssl-3.6.0.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='b6a5f44b7eb69e3fa35dbf15524405b44837a481d43d81daddde3ff21fcbb8e9'
+OPENSSL_PACKAGE_NAME='openssl-3.6.0.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.6.0'
 
 CURL_PACKAGE_URL='https://curl.se/download/curl-8.16.0.tar.gz'
 CURL_PACKAGE_SHA256SUM='a21e20476e39eca5a4fc5cfb00acf84bbc1f5d8443ec3853ad14c26b3c85b970'
@@ -162,23 +162,23 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.1.1/cmake-4.1.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.1.2/cmake-4.1.2-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='5a6c61cb62b38e153148a2c8d4af7b3d387f0c8c32b6dbceb5eb4af113efd65a'
+	CMAKE_PACKAGE_SHA256SUM='773cc679c3a7395413bd096523f8e5d6c39f8718af4e12eb4e4195f72f35e4ab'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='a34bc76b1ebe76ca0bbd6067f68d4614b93221912770dc08f466aec1923e9bef'
+	CMAKE_PACKAGE_SHA256SUM='0634996f918b3bab11f45522899c81c987b09c9a64d15f6a0d2bb51c42099534'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.1.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-4.1.2-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
 XXHASH_PACKAGE_NAME='xxHash-0.8.3.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.3'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.12/ccache-4.12.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='e884c62cbacae2e9488b8641a671a79fb7a1221db01310dacef61c9e55c2e55b'
-CCACHE_PACKAGE_NAME='ccache-4.12.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.12'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.12.1/ccache-4.12.1.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='a3da50ab0fb0d42f60c17d1450312e6ace9b681f6221cb77c8a09a845f9d760c'
+CCACHE_PACKAGE_NAME='ccache-4.12.1.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.12.1'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.0.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='e24bd5209afefe390e704ebc55649c7ae240e1f157cefd433ccc86c610d20aac'
