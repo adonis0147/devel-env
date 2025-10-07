@@ -4,7 +4,7 @@ _**Devel-env**_ is aimed to set the development environment up on Linux server _
 
 It provides the following stuffs:
 
-1. Portable GCC toolchain **(GCC 15.1 + GLIBC 2.41)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
+1. Portable GCC toolchain **(GCC 15.2 + GLIBC 2.42)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
 2. Toolset - built from source manually
 
 ### TIPS: The GCC toolchain can be used *standalone*.

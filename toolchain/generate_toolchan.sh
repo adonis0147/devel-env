@@ -9,10 +9,10 @@ declare -r WORKSPACE_PATH
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
 declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.45.tar.xz'
-declare -r BINUTILS_MD5SUM='c50c0e7f9cb188980e2cc97e4537626b1672441815587f1eab69d2a1bfbef5d2'
+declare -r BINUTILS_MD5SUM='dee5b4267e0305a99a3c9d6131f45759'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.9.tar.xz'
-declare -r LINUX_MD5SUM='e94f3af85492302f7a819441458f80bca0ad9912e5a4c83c699ff3c63c52957d'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.1.tar.xz'
+declare -r LINUX_MD5SUM='a09fa9fc11ac8e087661edd7b9524bc0'
 
 declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.42.tar.xz'
 declare -r GLIBC_MD5SUM='23c6f5a27932b435cae94e087cb8b1f5'
