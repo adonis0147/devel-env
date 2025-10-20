@@ -180,10 +180,10 @@ CCACHE_PACKAGE_SHA256SUM='a3da50ab0fb0d42f60c17d1450312e6ace9b681f6221cb77c8a09a
 CCACHE_PACKAGE_NAME='ccache-4.12.1.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.12.1'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.0.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='e24bd5209afefe390e704ebc55649c7ae240e1f157cefd433ccc86c610d20aac'
-LIBXML2_PACKAGE_NAME='libxml2-2.15.0.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.0'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.1.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='23b1ebd74cc562cd592cd2618c2bd88dc06fa0dfdbcd56e03cb26d6ff6b7e373'
+LIBXML2_PACKAGE_NAME='libxml2-2.15.1.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.1'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.3.1/swig-4.3.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='44fc829f70f1e17d635a2b4d69acab38896699ecc24aa023e516e0eabbec61b8'
