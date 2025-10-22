@@ -185,10 +185,10 @@ LIBXML2_PACKAGE_SHA256SUM='23b1ebd74cc562cd592cd2618c2bd88dc06fa0dfdbcd56e03cb26
 LIBXML2_PACKAGE_NAME='libxml2-2.15.1.tar.gz'
 LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.1'
 
-SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.3.1/swig-4.3.1.tar.gz'
-SWIG_PACKAGE_SHA256SUM='44fc829f70f1e17d635a2b4d69acab38896699ecc24aa023e516e0eabbec61b8'
-SWIG_PACKAGE_NAME='swig-4.3.1.tar.gz'
-SWIG_PACKAGE_EXTRACTED_DIR='swig-4.3.1'
+SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.4.0/swig-4.4.0.tar.gz'
+SWIG_PACKAGE_SHA256SUM='c3f8e5dcd68c18aa19847b33b0a1bb92f07e904c53ae9cf5ae4ff8727a72927e'
+SWIG_PACKAGE_NAME='swig-4.4.0.tar.gz'
+SWIG_PACKAGE_EXTRACTED_DIR='swig-4.4.0'
 
 LIBEDIT_PACKAGE_URL='https://www.thrysoee.dk/editline/libedit-20250104-3.1.tar.gz'
 LIBEDIT_PACKAGE_SHA256SUM='23792701694550a53720630cd1cd6167101b5773adddcb4104f7345b73a568ac'
