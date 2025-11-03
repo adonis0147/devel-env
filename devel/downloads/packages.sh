@@ -149,11 +149,11 @@ GDB_PACKAGE_SHA256SUM='86015081217dc82c5485db9ce864dcc0b703759d2bdbe4441b095c5f9
 GDB_PACKAGE_NAME='gdb-16.3.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-16.3'
 
-NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
+NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	NEOVIM_PACKAGE_SHA256SUM='a74740047e73b2b380d63a474282814063d10650cd6cc95efa16d1713c7e616c'
+	NEOVIM_PACKAGE_SHA256SUM='b2f91117be5b5ea39edd7297156dc2a4a8df4add6c95a90809a8df19e7ab6f52'
 else
-	NEOVIM_PACKAGE_SHA256SUM='684e4262d2296e469cb43f0d05edbbb52b960b7f117bed6b22936fc768993cd9'
+	NEOVIM_PACKAGE_SHA256SUM='ea4f9a31b11cc1477ff014aebb7b207684e7280f94ffa97abdab6cacd9b98519'
 fi
 NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
