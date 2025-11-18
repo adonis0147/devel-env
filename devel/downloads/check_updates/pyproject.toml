@@ -2,35 +2,28 @@
 name = "check-updates"
 version = "0.1.0"
 description = "Check updates for packages"
+readme = "README.md"
 authors = [
     { name = "Adonis Ling", email = "adonis0147@gmail.com" }
 ]
+requires-python = ">=3.14"
 dependencies = [
-    "packaging>=23.2",
-    "requests>=2.31.0",
+    "packaging>=25.0",
+    "requests>=2.32.5",
 ]
-readme = "README.md"
-requires-python = ">= 3.8"
 
 [project.scripts]
 check_updates = "check_updates:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build>=0.9.10,<0.10.0"]
+build-backend = "uv_build"
 
-[tool.rye]
-managed = true
-dev-dependencies = [
-    "python-lsp-server[all]>=1.10.0",
-    "pylsp-mypy>=0.6.8",
-    "types-requests>=2.31.0.20240218",
-    "python-lsp-ruff>=2.1.0",
-    "python-lsp-isort>=0.1",
+[dependency-groups]
+dev = [
+    "pylsp-mypy>=0.7.0",
+    "python-lsp-isort>=0.2.1",
+    "python-lsp-ruff>=2.3.0",
+    "python-lsp-server[all]>=1.13.1",
+    "types-requests>=2.32.4.20250913",
 ]
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/check_updates"]
