@@ -162,13 +162,13 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.1.2/cmake-4.1.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.1.3/cmake-4.1.3-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='773cc679c3a7395413bd096523f8e5d6c39f8718af4e12eb4e4195f72f35e4ab'
+	CMAKE_PACKAGE_SHA256SUM='507e9c721d3a0084df30661c4731980daa18f077fdcc71f7d342a21b07b07920'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='0634996f918b3bab11f45522899c81c987b09c9a64d15f6a0d2bb51c42099534'
+	CMAKE_PACKAGE_SHA256SUM='06bb6c4d5d4a31b95ad419a4c8efb88364fa72077ba7a29c909e7b658760f6b3'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.1.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-4.1.3-linux-${ARCH}.tar.gz"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
@@ -195,10 +195,10 @@ LIBEDIT_PACKAGE_SHA256SUM='23792701694550a53720630cd1cd6167101b5773adddcb4104f73
 LIBEDIT_PACKAGE_NAME='libedit-20250104-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20250104-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.5/llvm-project-21.1.5.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='1794be4bf974e99a3fe1da4b2b9b1456c02ae9479c942f365441d8d207bd650c'
-LLVM_PACKAGE_NAME='llvm-project-21.1.5.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-21.1.5.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.6/llvm-project-21.1.6.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='ae67086eb04bed7ca11ab880349b5f1ab6f50e1b88cda376eaf8a845b935762b'
+LLVM_PACKAGE_NAME='llvm-project-21.1.6.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-21.1.6.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
