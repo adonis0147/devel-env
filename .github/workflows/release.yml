@@ -21,12 +21,12 @@ jobs:
           ref: ${{ github.ref_name }}
           submodules: true
 
-      - name: Setup Rye
+      - name: Setup uv
         run: |
-          curl -sSL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
-          source "${HOME}/.rye/env"
+          export PATH="${HOME}/.local/bin:${PATH}"
+          curl -LsSf https://astral.sh/uv/install.sh | bash
           cd .github/cirrus-ci-tools
-          rye sync
+          uv sync --no-dev
 
       - name: Cirrus CI Build
         run: |
