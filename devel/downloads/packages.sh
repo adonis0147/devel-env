@@ -69,10 +69,10 @@ LIBFFI_PACKAGE_SHA256SUM='f3a3082a23b37c293a4fcd1053147b371f2ff91fa7ea1b2a52e335
 LIBFFI_PACKAGE_NAME='libffi-3.5.2.tar.gz'
 LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.5.2'
 
-ZLIB_PACKAGE_URL='https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz'
-ZLIB_PACKAGE_SHA256SUM='9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23'
-ZLIB_PACKAGE_NAME='zlib-1.3.1.tar.gz'
-ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3.1'
+ZLIB_PACKAGE_URL='https://github.com/madler/zlib/archive/refs/tags/v1.3.1.2.tar.gz'
+ZLIB_PACKAGE_SHA256SUM='fbf1c8476136693e6c3f1fa26e6d8c4f2c8b5a5c44340c04df349dad02eed09e'
+ZLIB_PACKAGE_NAME='zlib-1.3.1.2.tar.gz'
+ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3.1.2'
 
 PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.42.0.tar.gz'
 PERL_PACKAGE_SHA256SUM='e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc'
