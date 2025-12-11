@@ -6,10 +6,10 @@ if [[ "${ARCH}" == 'arm64' ]]; then
 	ARCH='aarch64'
 fi
 
-TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2025b.tar.gz'
-TZDB_PACKAGE_SHA256SUM='7e281b316b85e20c9a67289805aa2a2ee041b5a41ccf5d096af3386ba76cf9d5'
-TZDB_PACKAGE_NAME='tz-2025b.tar.gz'
-TZDB_PACKAGE_EXTRACTED_DIR='tz-2025b'
+TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2025c.tar.gz'
+TZDB_PACKAGE_SHA256SUM='d970fb6753529583226fb1bb9df6237e5e968ea7d70a8bd0df2f3394c86f7ac4'
+TZDB_PACKAGE_NAME='tz-2025c.tar.gz'
+TZDB_PACKAGE_EXTRACTED_DIR='tz-2025c'
 
 M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.20.tar.xz'
 M4_PACKAGE_SHA256SUM='e236ea3a1ccf5f6c270b1c4bb60726f371fa49459a8eaaebc90b216b328daf2b'
