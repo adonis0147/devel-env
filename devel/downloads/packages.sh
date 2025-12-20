@@ -144,10 +144,10 @@ TEXINFO_PACKAGE_SHA256SUM='0329d7788fbef113fa82cb80889ca197a344ce0df7646fe000974
 TEXINFO_PACKAGE_NAME='texinfo-7.2.tar.xz'
 TEXINFO_PACKAGE_EXTRACTED_DIR='texinfo-7.2'
 
-GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-16.3.tar.gz'
-GDB_PACKAGE_SHA256SUM='86015081217dc82c5485db9ce864dcc0b703759d2bdbe4441b095c5f900a6a37'
-GDB_PACKAGE_NAME='gdb-16.3.tar.gz'
-GDB_PACKAGE_EXTRACTED_DIR='gdb-16.3'
+GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-17.1.tar.gz'
+GDB_PACKAGE_SHA256SUM='2b93c4c9726a4b8cfe771036e155377405dfa41c483d90945481319c5663c120'
+GDB_PACKAGE_NAME='gdb-17.1.tar.gz'
+GDB_PACKAGE_EXTRACTED_DIR='gdb-17.1'
 
 NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
