@@ -99,10 +99,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.gz'
-XZ_PACKAGE_SHA256SUM='507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543'
-XZ_PACKAGE_NAME='xz-5.8.1.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.1'
+XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.2/xz-5.8.2.tar.gz'
+XZ_PACKAGE_SHA256SUM='ce09c50a5962786b83e5da389c90dd2c15ecd0980a258dd01f70f9e7ce58a8f1'
+XZ_PACKAGE_NAME='xz-5.8.2.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.2'
 
 SQLITE_PACKAGE_URL='https://sqlite.org/2025/sqlite-autoconf-3510100.tar.gz'
 SQLITE_PACKAGE_SHA256SUM='4f2445cd70479724d32ad015ec7fd37fbb6f6130013bd4bfbc80c32beb42b7e0'
