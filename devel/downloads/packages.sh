@@ -54,10 +54,10 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 PATCHELF_PACKAGE_NAME="patchelf-0.16.1-${ARCH}.tar.gz"
 
-NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.5.tar.gz'
-NCURSES_PACKAGE_SHA256SUM='136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6'
-NCURSES_PACKAGE_NAME='ncurses-6.5.tar.gz'
-NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.5'
+NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.6.tar.gz'
+NCURSES_PACKAGE_SHA256SUM='355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11'
+NCURSES_PACKAGE_NAME='ncurses-6.6.tar.gz'
+NCURSES_PACKAGE_EXTRACTED_DIR='ncurses-6.6'
 
 READLINE_PACKAGE_URL='https://ftpmirror.gnu.org/readline/readline-8.3.tar.gz'
 READLINE_PACKAGE_SHA256SUM='fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc'
