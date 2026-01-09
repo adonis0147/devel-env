@@ -3,28 +3,32 @@ import logging
 import os
 import re
 import textwrap
-from ftplib import FTP
+from io import BytesIO
 
 import packaging.version
+import pycurl
 import requests
+from lxml import html
 
 
-def singleton(cls):
-    instances = {}
-
-    def get(*args, **kwargs):
-        if cls not in instances:
-            instances[cls] = cls(*args, **kwargs)
-        return instances[cls]
-
-    return get
-
-
-@singleton
 class GNUFTP:
     def __init__(self):
-        self.ftp = FTP("ftp.gnu.org")
-        self.ftp.login()
+        self.url = "https://ftp.gnu.org/gnu"
+
+    def list(self, package: str) -> list[str]:
+        data = self._curl(f"{self.url}/{package.lower()}/")
+        document = html.fromstring(data)
+        return document.xpath("//td/a[not(@href='/gnu/')]/@href")
+
+    def _curl(self, url: str) -> str:
+        buffer = BytesIO()
+        curl = pycurl.Curl()
+        curl.setopt(pycurl.URL, url)
+        curl.setopt(pycurl.WRITEDATA, buffer)
+        curl.setopt(pycurl.SSLVERSION, pycurl.SSLVERSION_TLSv1_3)
+        curl.perform()
+        curl.close()
+        return buffer.getvalue().decode()
 
 
 class GitHubGraphQL:
@@ -32,7 +36,7 @@ class GitHubGraphQL:
         self.url = "https://api.github.com/graphql"
         self.token = os.getenv("GITHUB_TOKEN")
 
-    def request(self, query: str, variables: dict):
+    def _request(self, query: str, variables: dict):
         payload = {
             "query": textwrap.dedent(query).strip(),
             "variables": variables,
@@ -55,7 +59,7 @@ class GitHubGraphQL:
             }
         """
         variables = {"owner": owner, "name": name}
-        response = self.request(query, variables)
+        response = self._request(query, variables)
         if "errors" in response:
             raise RuntimeError(response["errors"])
         return response["data"]["repository"]["refs"]["nodes"][0]["name"]
@@ -72,8 +76,6 @@ def get_all_urls(file: str) -> dict[str, str]:
 
 
 def check_gnu_package(package: str, url: str) -> bool:
-    ftp = GNUFTP().ftp
-    ftp.cwd("/gnu/{}".format(package.lower()))
     name = package.lower() if package != "WGET" else "wget2"
 
     def get_version(file):
@@ -83,7 +85,7 @@ def check_gnu_package(package: str, url: str) -> bool:
 
     versions = [
         get_version(file)
-        for file in ftp.nlst()
+        for file in GNUFTP().list(package)
         if re.compile(r"{}-(\d+(\.\d+)*).*\.tar\.gz".format(name)).match(file)
     ]
     versions.sort(key=packaging.version.parse)

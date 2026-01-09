@@ -8,8 +8,12 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "lxml>=6.0.2",
     "packaging>=25.0",
+    "pycurl>=7.45.7",
     "requests>=2.32.5",
+    "types-lxml>=2026.1.1",
+    "types-pycurl>=7.45.7.20251101",
 ]
 
 [project.scripts]
