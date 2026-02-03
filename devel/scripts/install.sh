@@ -834,11 +834,11 @@ function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
 		packages+=(
-			rust
 			make
 			tzdb
 			m4
 			zlib
+			rust
 			perl
 			autoconf
 			automake
