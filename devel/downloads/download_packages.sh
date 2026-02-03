@@ -30,6 +30,16 @@ function download() {
 	log_info "Download ${package} successfully!"
 }
 
+function download_rustup_init() {
+	if [[ ! -f "${PACKAGES_PATH}/rustup-init" ]]; then
+		log_info "Downloading rustup-init..."
+
+		curl -L "https://static.rust-lang.org/rustup/dist/${ARCH}-unknown-linux-gnu/rustup-init" -o "${PACKAGES_PATH}/rustup-init"
+
+		log_info "Download rustup-init successfully!"
+	fi
+}
+
 function main() {
 	if [[ ! -d "${DOWNLOADS_PATH}/packages" ]]; then
 		if ! mkdir "${PACKAGES_PATH}"; then
@@ -37,6 +47,9 @@ function main() {
 		fi
 	fi
 
+	download_rustup_init
+
+	download 'rust' "${RUST_PACKAGE_URL}" "${RUST_PACKAGE_SHA256SUM}" "${RUST_PACKAGE_NAME}"
 	download 'tzdb' "${TZDB_PACKAGE_URL}" "${TZDB_PACKAGE_SHA256SUM}" "${TZDB_PACKAGE_NAME}"
 	download 'm4' "${M4_PACKAGE_URL}" "${M4_PACKAGE_SHA256SUM}" "${M4_PACKAGE_NAME}"
 	download 'zlib' "${ZLIB_PACKAGE_URL}" "${ZLIB_PACKAGE_SHA256SUM}" "${ZLIB_PACKAGE_NAME}"

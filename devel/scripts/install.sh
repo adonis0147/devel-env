@@ -35,6 +35,37 @@ function setup_package() {
 	"${SCRIPTS_PATH}/setup_package.sh" "${package}"
 }
 
+function install_rust() {
+	local package="rust"
+
+	log_info "Start to install ${package}."
+
+	if [[ ! -x rustup-init ]]; then
+		chmod a+x rustup-init
+		relocate rustup-init
+	fi
+
+	if [[ ! -d "${HOME}/.rustup" ]]; then
+		./rustup-init -y --no-modify-path --default-toolchain=none
+		relocate "${HOME}/.cargo"
+	fi
+
+	rm -rf "${RUST_PACKAGE_EXTRACTED_DIR}"
+	xz -dc "${RUST_PACKAGE_NAME}" | tar -xv
+
+	pushd "${RUST_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	local toolchain="${RUST_PACKAGE_EXTRACTED_DIR/rust-/}"
+	./install.sh --prefix="${HOME}/.rustup/toolchains/${toolchain}"
+	relocate "${HOME}/.rustup/toolchains/${toolchain}"
+
+	# shellcheck disable=SC1091
+	source "${HOME}/.cargo/env"
+	rustup default "${toolchain%%-*}"
+	popd >/dev/null
+
+	log_info 'Success!'
+}
+
 function install_tzdb() {
 	local package='tzdb'
 	log_info "Start to install ${package}."
@@ -803,6 +834,7 @@ function install_packages() {
 	pushd "${DOWNLOADS_PATH}/packages" >/dev/null
 	if [[ "${#packages[@]}" -eq 0 ]]; then
 		packages+=(
+			rust
 			make
 			tzdb
 			m4

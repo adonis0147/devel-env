@@ -27,7 +27,7 @@ jobs:
           cat >>Dockerfile <<EOF
           FROM alpine:latest
 
-          RUN apk add bash libc6-compat
+          RUN apk add bash libc6-compat xz
 
           RUN mkdir /devel-env
           WORKDIR /devel-env
