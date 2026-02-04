@@ -350,7 +350,7 @@ function install_curl() {
 	mkdir build
 	cd build
 	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" --with-openssl="${DEVEL_HOME_PATH}/opt/openssl" \
-		--without-libpsl
+		--without-libpsl --without-libidn2
 	make -j "${NUM_CORES}"
 	make install
 	popd >/dev/null
