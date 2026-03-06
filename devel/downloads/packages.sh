@@ -6,14 +6,14 @@ if [[ "${ARCH}" == 'arm64' ]]; then
 	ARCH='aarch64'
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.93.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.94.0-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='518872275a3648f735471d7add854d39171c5a6b17f423c4d7f931f52120c2af'
+	RUST_PACKAGE_SHA256SUM='e8fa4185f3ef6ae32725ff638b1ecdbff28f5d651dc0b3111e2539350d03b15a'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='701d55b62286bed013ceb2393ff7687d0953205605afaa15c62e2cd18024c32c'
+	RUST_PACKAGE_SHA256SUM='c6fd6d1c925ed986df3b2c0b89bbc90ce15afb62e4d522a054e7d50c856b3c1a'
 fi
-RUST_PACKAGE_NAME="rust-1.93.1-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.93.1-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.94.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.94.0-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026a.tar.gz'
 TZDB_PACKAGE_SHA256SUM='686cdc7b5b1dbe8396f5e244782f1e3972ed3afae6c653c756949da803ab8129'
