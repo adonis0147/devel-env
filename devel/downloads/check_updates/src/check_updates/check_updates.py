@@ -118,6 +118,185 @@ def check_github_package(package: str, url: str) -> bool:
     return version != latest_version
 
 
+def check_rust_package(package: str, url: str) -> bool:
+    match = re.search(r"rust-(\d+\.\d+\.\d+)-", url)
+    assert match is not None
+    version = match.group(1)
+
+    response = requests.get(
+        "https://static.rust-lang.org/dist/channel-rust-stable.toml"
+    )
+    response.raise_for_status()
+    m = re.search(r'\[pkg\.rust\]\nversion = "(\d+\.\d+\.\d+)', response.text)
+    assert m is not None
+    latest_version = m.group(1)
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_pkgconfig_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("pkg-config-") : -len(".tar.gz")]
+
+    response = requests.get("https://pkgconfig.freedesktop.org/releases/")
+    response.raise_for_status()
+    document = html.fromstring(response.content)
+    hrefs = document.xpath("//a/@href")
+
+    pattern = re.compile(r"pkg-config-(\d+(?:\.\d+)*)\.tar\.gz$")
+    versions = [m.group(1) for href in hrefs if (m := pattern.search(href))]
+    versions.sort(key=packaging.version.parse)
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_perl_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("perl-") : -len(".tar.gz")]
+
+    response = requests.get("https://www.cpan.org/src/5.0/")
+    response.raise_for_status()
+    document = html.fromstring(response.content)
+    hrefs = document.xpath("//a/@href")
+
+    pattern = re.compile(r"perl-(\d+)\.(\d+)\.(\d+)\.tar\.gz$")
+    versions = []
+    for href in hrefs:
+        m = pattern.search(href)
+        if m and int(m.group(2)) % 2 == 0:  # stable: even minor version
+            versions.append("{}.{}.{}".format(m.group(1), m.group(2), m.group(3)))
+    versions.sort(key=packaging.version.parse)
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_curl_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("curl-") : -len(".tar.gz")]
+
+    response = requests.get("https://curl.se/download/")
+    response.raise_for_status()
+    document = html.fromstring(response.content)
+    hrefs = document.xpath("//a/@href")
+
+    pattern = re.compile(r"curl-(\d+(?:\.\d+)*)\.tar\.gz$")
+    versions = [m.group(1) for href in hrefs if (m := pattern.search(href))]
+    versions.sort(key=packaging.version.parse)
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_bzip2_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("bzip2-") : -len(".tar.gz")]
+
+    response = requests.get("https://sourceware.org/pub/bzip2/")
+    response.raise_for_status()
+    document = html.fromstring(response.content)
+    hrefs = document.xpath("//a/@href")
+
+    pattern = re.compile(r"bzip2-(\d+(?:\.\d+)*)\.tar\.gz$")
+    versions = [m.group(1) for href in hrefs if (m := pattern.search(href))]
+    versions.sort(key=packaging.version.parse)
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_sqlite_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("sqlite-autoconf-") : -len(".tar.gz")]
+
+    response = requests.get("https://sqlite.org/download.html")
+    response.raise_for_status()
+
+    pattern = re.compile(r"sqlite-autoconf-(\d+)\.tar\.gz")
+    versions = list({m.group(1) for m in pattern.finditer(response.text)})
+    versions.sort(key=int)
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_sourceforge_package(package: str, url: str) -> bool:
+    # URL: https://downloads.sourceforge.net/project/PROJ/.../VERSION/FILE
+    # Version directory is the second-to-last path component
+    url_parts = url.rstrip("/").split("/")
+    version = url_parts[-2]
+
+    match = re.compile(r"https://downloads\.sourceforge\.net/project/([^/]+)/([^/]+)/").match(
+        url
+    )
+    assert match is not None
+    project, subdir = match.group(1), match.group(2)
+
+    # Use RSS feed filtered to the subdir to get the latest release files
+    response = requests.get(
+        "https://sourceforge.net/projects/{}/rss?path=/{}".format(project, subdir)
+    )
+    response.raise_for_status()
+    # Extract download links from RSS <link> elements via regex
+    links = re.findall(r"<link>(https://sourceforge\.net/projects/[^<]+/download)</link>", response.text)
+    # Link format: .../files/SUBDIR/VERSION/FILE/download — version is at parts[-3]
+    candidates = {lnk.rstrip("/").split("/")[-3] for lnk in links if lnk}
+    versions = sorted(candidates, key=lambda v: packaging.version.parse(re.sub(r"^[^0-9]*", "", v)))
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
+def check_libedit_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("libedit-") : -len(".tar.gz")]
+
+    response = requests.get("https://www.thrysoee.dk/editline/")
+    response.raise_for_status()
+    document = html.fromstring(response.content)
+    hrefs = document.xpath("//a/@href")
+
+    pattern = re.compile(r"libedit-(\d{8}-\d+\.\d+)\.tar\.gz$")
+    versions = [m.group(1) for href in hrefs if (m := pattern.search(href))]
+    versions.sort()
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
 def check_updates(urls: dict[str, str]) -> tuple[list[str], list[str]]:
     checked = []
     updates = []
@@ -128,6 +307,41 @@ def check_updates(urls: dict[str, str]) -> tuple[list[str], list[str]]:
             checked.append(package)
         elif "github.com" in url:
             if check_github_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "static.rust-lang.org" in url:
+            if check_rust_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "pkgconfig.freedesktop.org" in url:
+            if check_pkgconfig_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "cpan.org" in url:
+            if check_perl_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "curl.se" in url:
+            if check_curl_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "sourceware.org/pub/bzip2" in url:
+            if check_bzip2_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "sqlite.org" in url:
+            if check_sqlite_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif (
+            "sourceforge.net/project/swig" in url
+            or "sourceforge.net/project/zsh" in url
+        ):
+            if check_sourceforge_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "thrysoee.dk" in url:
+            if check_libedit_package(package, url):
                 updates.append(package)
             checked.append(package)
     return (updates, checked)
