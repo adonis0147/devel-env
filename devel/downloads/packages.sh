@@ -6,14 +6,14 @@ if [[ "${ARCH}" == 'arm64' ]]; then
 	ARCH='aarch64'
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.94.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.94.1-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='e8fa4185f3ef6ae32725ff638b1ecdbff28f5d651dc0b3111e2539350d03b15a'
+	RUST_PACKAGE_SHA256SUM='294b3d81fa72e62581276290c60c81eb8b58498d333d422ca1dfc432877d0c40'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='c6fd6d1c925ed986df3b2c0b89bbc90ce15afb62e4d522a054e7d50c856b3c1a'
+	RUST_PACKAGE_SHA256SUM='bb1267e956ef7887049236d26b37e987da383e190c7d95c80731a302af01b650'
 fi
-RUST_PACKAGE_NAME="rust-1.94.0-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.94.0-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.94.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.94.1-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026a.tar.gz'
 TZDB_PACKAGE_SHA256SUM='686cdc7b5b1dbe8396f5e244782f1e3972ed3afae6c653c756949da803ab8129'
@@ -171,13 +171,14 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.3.0/cmake-4.3.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.3.1/cmake-4.3.1-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='201bdabe17a54e017f119cffa247648e9c44327e52473c2cc60a88fded94652a'
+	CMAKE_PACKAGE_SHA256SUM='208d76804009cbe8ec9aea0aa052c857c6e59bd289b43b9941c99324dc78b1d8'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='26fe3011f497eb9398115dcabcc094685e634b1841f7c01dc01c5a89b8b0ea0d'
+	CMAKE_PACKAGE_SHA256SUM='2c0eca48ac7d0e3a8b4120b801d48903b0630c8ff1e73c44a90398a300dec1ac'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.3.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_NAME="cmake-4.3.1-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.3.1-linux-${ARCH}"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
