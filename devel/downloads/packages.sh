@@ -83,10 +83,10 @@ ZLIB_PACKAGE_SHA256SUM='b99a0b86c0ba9360ec7e78c4f1e43b1cbdf1e6936c8fa0f6835c0cd6
 ZLIB_PACKAGE_NAME='zlib-1.3.2.tar.gz'
 ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3.2'
 
-PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.42.1.tar.gz'
-PERL_PACKAGE_SHA256SUM='6f84e6dc8cce97181d1c6aeeb552c13775c91ded3c6c73743c9211af87b16bf8'
-PERL_PACKAGE_NAME='perl-5.42.1.tar.gz'
-PERL_PACKAGE_EXTRACTED_DIR='perl-5.42.1'
+PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.42.2.tar.gz'
+PERL_PACKAGE_SHA256SUM='9384e8deb75b7b1695e5637971b752281aaecd025a3d5d4734d33c1d0adfee47'
+PERL_PACKAGE_NAME='perl-5.42.2.tar.gz'
+PERL_PACKAGE_EXTRACTED_DIR='perl-5.42.2'
 
 OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.6.1/openssl-3.6.1.tar.gz'
 OPENSSL_PACKAGE_SHA256SUM='b1bfedcd5b289ff22aee87c9d600f515767ebf45f77168cb6d64f231f518a82e'
@@ -108,10 +108,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.2/xz-5.8.2.tar.gz'
-XZ_PACKAGE_SHA256SUM='ce09c50a5962786b83e5da389c90dd2c15ecd0980a258dd01f70f9e7ce58a8f1'
-XZ_PACKAGE_NAME='xz-5.8.2.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.2'
+XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz'
+XZ_PACKAGE_SHA256SUM='3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0'
+XZ_PACKAGE_NAME='xz-5.8.3.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.3'
 
 SQLITE_PACKAGE_URL='https://sqlite.org/2026/sqlite-autoconf-3510300.tar.gz'
 SQLITE_PACKAGE_SHA256SUM='81f5be397049b0cae1b167f2225af7646fc0f82e4a9b3c48c9ea3a533e21d77a'
