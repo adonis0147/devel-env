@@ -1,9 +1,11 @@
 #!/bin/bash
 # shellcheck disable=2034
 
-ARCH="$(uname -m)"
-if [[ "${ARCH}" == 'arm64' ]]; then
-	ARCH='aarch64'
+if [[ -z "${ARCH}" ]]; then
+	ARCH="$(uname -m)"
+	if [[ "${ARCH}" == 'arm64' ]]; then
+		ARCH='aarch64'
+	fi
 fi
 
 RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.94.1-${ARCH}-unknown-linux-gnu.tar.xz"
@@ -158,11 +160,11 @@ GDB_PACKAGE_SHA256SUM='2b93c4c9726a4b8cfe771036e155377405dfa41c483d90945481319c5
 GDB_PACKAGE_NAME='gdb-17.1.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-17.1'
 
-NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
+NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	NEOVIM_PACKAGE_SHA256SUM='160b69125defb16e60b283b69be112fd4850d67ac8f9a752328c20ad43ec34af'
+	NEOVIM_PACKAGE_SHA256SUM='ab757a1fd9ad307d53d2df4045698906a7ca3993d92260dd8fe49108712d57d0'
 else
-	NEOVIM_PACKAGE_SHA256SUM='89024e7be2ef3c8f08e9c002b1eb3e3b36672ee44bd6343cf2d168d38b3736b2'
+	NEOVIM_PACKAGE_SHA256SUM='a3f8aa5590fd2ac930bcc5c9070b9ac1ec33461d262b6428874c5fc640f3f13c'
 fi
 NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
