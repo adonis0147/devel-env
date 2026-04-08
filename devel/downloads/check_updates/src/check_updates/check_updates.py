@@ -11,6 +11,22 @@ import requests
 from lxml import html
 
 
+class ColoredLevelFormatter(logging.Formatter):
+    COLORS = {
+        logging.INFO: "\033[1;32m",  # bold green
+        logging.WARNING: "\033[1;33m",  # bold yellow
+        logging.ERROR: "\033[1;31m",  # bold red
+    }
+    RESET = "\033[0m"
+
+    def format(self, record: logging.LogRecord) -> str:
+        color = self.COLORS.get(record.levelno, "")
+        if color:
+            record = logging.makeLogRecord(record.__dict__)
+            record.levelname = f"{color}{record.levelname}{self.RESET}"
+        return super().format(record)
+
+
 class GNUFTP:
     def __init__(self):
         self.url = "https://ftp.gnu.org/gnu"
@@ -251,9 +267,9 @@ def check_sourceforge_package(package: str, url: str) -> bool:
     url_parts = url.rstrip("/").split("/")
     version = url_parts[-2]
 
-    match = re.compile(r"https://downloads\.sourceforge\.net/project/([^/]+)/([^/]+)/").match(
-        url
-    )
+    match = re.compile(
+        r"https://downloads\.sourceforge\.net/project/([^/]+)/([^/]+)/"
+    ).match(url)
     assert match is not None
     project, subdir = match.group(1), match.group(2)
 
@@ -263,10 +279,15 @@ def check_sourceforge_package(package: str, url: str) -> bool:
     )
     response.raise_for_status()
     # Extract download links from RSS <link> elements via regex
-    links = re.findall(r"<link>(https://sourceforge\.net/projects/[^<]+/download)</link>", response.text)
+    links = re.findall(
+        r"<link>(https://sourceforge\.net/projects/[^<]+/download)</link>",
+        response.text,
+    )
     # Link format: .../files/SUBDIR/VERSION/FILE/download — version is at parts[-3]
     candidates = {lnk.rstrip("/").split("/")[-3] for lnk in links if lnk}
-    versions = sorted(candidates, key=lambda v: packaging.version.parse(re.sub(r"^[^0-9]*", "", v)))
+    versions = sorted(
+        candidates, key=lambda v: packaging.version.parse(re.sub(r"^[^0-9]*", "", v))
+    )
     latest_version = versions[-1]
 
     logging.log(
@@ -348,10 +369,13 @@ def check_updates(urls: dict[str, str]) -> tuple[list[str], list[str]]:
 
 
 def main() -> int:
-    logging.basicConfig(
-        level=logging.INFO,
-        format="[%(levelname)s] %(asctime)s - (%(filename)s:%(lineno)d) - %(message)s",
+    handler = logging.StreamHandler()
+    handler.setFormatter(
+        ColoredLevelFormatter(
+            "[%(levelname)s] %(asctime)s - (%(filename)s:%(lineno)d) - %(message)s"
+        )
     )
+    logging.basicConfig(level=logging.INFO, handlers=[handler])
 
     urls = get_all_urls(
         "{}/packages.sh".format(
