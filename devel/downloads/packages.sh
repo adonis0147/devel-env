@@ -187,10 +187,10 @@ XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f390
 XXHASH_PACKAGE_NAME='xxHash-0.8.3.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.3'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.13.2/ccache-4.13.2.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='e87efda8ae54f94b1cb0e8dbfdf26397bd7d0a9c0c4f38b18dde73f4ec9ac721'
-CCACHE_PACKAGE_NAME='ccache-4.13.2.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.13.2'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.13.3/ccache-4.13.3.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='c149d71f47f6fe08e4f2e43db4b0b091c61e8ea3daa23aa998b094bd84ecdfe8'
+CCACHE_PACKAGE_NAME='ccache-4.13.3.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.13.3'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.2.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='2769234c4fe2fab9b0b043e891c2af0f1ae51c8d4b94799472981e676ed8009e'
