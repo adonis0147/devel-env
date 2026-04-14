@@ -130,6 +130,8 @@ function setup_terminfo() {
 			return 1
 		fi
 	fi
+
+	export COLORTERM='truecolor'
 }
 
 # Example:
