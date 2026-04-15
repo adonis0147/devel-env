@@ -16,6 +16,7 @@ jobs:
 
       - name: Install prerequisites
         run: |
+          sudo apt update
           sudo apt install qemu-system cloud-image-utils
 
           cd .github/qemu
@@ -109,4 +110,3 @@ jobs:
           done
 
           ssh -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -p 2222 -n centos@127.0.0.1 'bash -x build.sh'
-
