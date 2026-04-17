@@ -8,14 +8,14 @@ if [[ -z "${ARCH}" ]]; then
 	fi
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.94.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.95.0-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='294b3d81fa72e62581276290c60c81eb8b58498d333d422ca1dfc432877d0c40'
+	RUST_PACKAGE_SHA256SUM='2e0338f18ecbaa4a0f631b9e80e8b8e26bb6fe77dd5454fba8a70cf96c1e84a1'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='bb1267e956ef7887049236d26b37e987da383e190c7d95c80731a302af01b650'
+	RUST_PACKAGE_SHA256SUM='094c9c36531911c5cc7dd6ab2d3069ab8dcd744d6239b0bda1387b243dfc391e'
 fi
-RUST_PACKAGE_NAME="rust-1.94.1-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.94.1-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.95.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.95.0-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026a.tar.gz'
 TZDB_PACKAGE_SHA256SUM='686cdc7b5b1dbe8396f5e244782f1e3972ed3afae6c653c756949da803ab8129'
@@ -192,10 +192,10 @@ CCACHE_PACKAGE_SHA256SUM='c149d71f47f6fe08e4f2e43db4b0b091c61e8ea3daa23aa998b094
 CCACHE_PACKAGE_NAME='ccache-4.13.3.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.13.3'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.2.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='2769234c4fe2fab9b0b043e891c2af0f1ae51c8d4b94799472981e676ed8009e'
-LIBXML2_PACKAGE_NAME='libxml2-2.15.2.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.2'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.3.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='5c6060277173270356c3f1c321a640ab629bdabc5e5ba9095b99e00759ba0c39'
+LIBXML2_PACKAGE_NAME='libxml2-2.15.3.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.3'
 
 SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.4.1/swig-4.4.1.tar.gz'
 SWIG_PACKAGE_SHA256SUM='40162a706c56f7592d08fd52ef5511cb7ac191f3593cf07306a0a554c6281fcf'
