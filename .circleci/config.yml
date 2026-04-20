@@ -1,0 +1,86 @@
+version: 2.1
+
+jobs:
+  build_packages:
+    parameters:
+      arch:
+        type: string
+        default: x86_64
+      resource_class:
+        type: string
+        default: medium
+    machine:
+      image: ubuntu-2204:current
+      resource_class: << parameters.resource_class >>
+    working_directory: ~/devel-env
+    steps:
+      - checkout
+
+      - run:
+          name: Display environment
+          command: uname -a
+
+      - run:
+          name: Download toolchain
+          command: |
+            cd ~/devel-env
+
+            curl -L "$(curl -L https://api.github.com/repos/adonis0147/devel-env/releases/latest |
+              sed -n 's|[[:space:]]*"browser_download_url": "\(.*\)\"|\1|p' |
+              grep "$(uname -m | sed 's/arm64/aarch64/')")" -o devel/scripts/install_toolchain.sh
+            chmod a+x devel/scripts/install_toolchain.sh
+
+      - run:
+          name: Download packages
+          command: cd ~/devel-env && devel/downloads/download_packages.sh
+
+      - run:
+          name: Prepare install script
+          command: |
+            cd ~/devel-env
+
+            # Don't install llvm
+            sed -i '/function install_packages/,/^}/ s/llvm//' devel/scripts/install.sh
+
+      - run:
+          name: Build and run package installation
+          command: |
+            cd ~/devel-env
+
+            if [[ "$(uname -m)" == 'x86_64' ]]; then
+              cmd="sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://vault.centos.org/7.9.2009|' /etc/yum.repos.d/CentOS-Base.repo"
+            else
+              cmd="sed -i -e 's|mirrorlist=|#mirrorlist=|' -e 's|#baseurl=http://mirror.centos.org/altarch|baseurl=https://vault.centos.org/altarch|' /etc/yum.repos.d/CentOS-Base.repo"
+            fi
+
+            cat >>Dockerfile \<<EOF
+            FROM centos:7
+            RUN ${cmd}
+
+            RUN mkdir /devel-env
+            WORKDIR /devel-env
+
+            CMD ["/bin/bash"]
+            EOF
+
+            docker build -t packages .
+            docker run --rm --mount=type=bind,source="$(pwd)",target=/devel-env packages \
+              bash -c 'cd devel/scripts; bash install.sh'
+
+workflows:
+  build:
+    jobs:
+      - build_packages:
+          name: build_packages_x86_64
+          arch: x86_64
+          resource_class: large
+          filters:
+            tags:
+              ignore: /.*/
+      - build_packages:
+          name: build_packages_aarch64
+          arch: aarch64
+          resource_class: arm.large
+          filters:
+            tags:
+              ignore: /.*/
