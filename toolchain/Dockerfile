@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 AS builder
+FROM ubuntu:24.04 AS builder
 
 RUN apt update && apt upgrade --yes
 RUN DEBIAN_FRONTEND=noninteractive apt install --yes \
