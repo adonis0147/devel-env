@@ -135,10 +135,10 @@ GETTEXT_PACKAGE_SHA256SUM='71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae
 GETTEXT_PACKAGE_NAME='gettext-1.0.tar.xz'
 GETTEXT_PACKAGE_EXTRACTED_DIR='gettext-1.0'
 
-GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.53.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='0492bcd8a9fc99bedca75dbec7c8c15b24dd1501c82d4518294ee0850f91f219'
-GIT_PACKAGE_NAME='git-2.53.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.53.0'
+GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.54.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='7b01a23c44c9ccfca2e3ad9daf8cbdd4d4caaaa6b5181e77e16e60c6ae5f772a'
+GIT_PACKAGE_NAME='git-2.54.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.54.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -207,10 +207,10 @@ LIBEDIT_PACKAGE_SHA256SUM='21362b00653bbfc1c71f71a7578da66b5b5203559d43134d2dd77
 LIBEDIT_PACKAGE_NAME='libedit-20251016-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20251016-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.3/llvm-project-22.1.3.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='2488c33a959eafba1c44f253e5bbe7ac958eb53fa626298a3a5f4b87373767cd'
-LLVM_PACKAGE_NAME='llvm-project-22.1.3.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-22.1.3.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.4/llvm-project-22.1.4.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='3e68c90dda630c27d41d201e37b8bbf5222e39b273dec5ca880709c69e0a07d4'
+LLVM_PACKAGE_NAME='llvm-project-22.1.4.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-22.1.4.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
