@@ -91,6 +91,15 @@ function download() {
 	if [[ ! -f "${package}" ]] || ! echo "${md5sum}  ${package}" | md5sum --check &>/dev/null; then
 		log_info "Download ${package} ..."
 		curl -L "${url}" -o "${package}"
+
+		if ! echo "${md5sum}  ${package}" | md5sum --check &>/dev/null; then
+			url="${url/ftpmirror.gnu.org/ftp.gnu.org/gnu}"
+			curl -L "${url}" -o "${package}"
+		fi
+
+		if ! echo "${md5sum}  ${package}" | md5sum --check &>/dev/null; then
+			log_error "Failed to download ${package}!"
+		fi
 		log_info "Download ${package} successfully!"
 	fi
 
