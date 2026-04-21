@@ -1,3 +1,0 @@
-[submodule ".github/cirrus-ci-tools"]
-	path = .github/cirrus-ci-tools
-	url = https://github.com/adonis0147/cirrus-ci-tools

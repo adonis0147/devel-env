@@ -6,9 +6,38 @@ on:
       - '*'
 
 jobs:
+  Build:
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        include:
+          - arch: x86_64
+            runner: ubuntu-latest
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Build toolchain
+        run: |
+          mkdir -p output
+          docker build -t toolchain toolchain
+          docker run --rm --mount type=bind,source="$(pwd)/output",target=/output toolchain
+          mv output/install_toolchain.sh "output/install_toolchain_${{ matrix.arch }}.sh"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: toolchain-${{ matrix.arch }}
+          path: output/install_toolchain_${{ matrix.arch }}.sh
+
   Publish:
+    needs:
+      - Build
     runs-on: ubuntu-latest
-    environment: CIRRUS-CI
     env:
       GH_REPO: ${{ github.repository }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -19,28 +48,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref_name }}
-          submodules: true
 
-      - name: Setup uv
-        run: |
-          export PATH="${HOME}/.local/bin:${PATH}"
-          curl -LsSf https://astral.sh/uv/install.sh | bash
-          cd .github/cirrus-ci-tools
-          uv sync --no-dev
-
-      - name: Cirrus CI Build
-        run: |
-          source .github/cirrus-ci-tools/.venv/bin/activate
-
-          config='.github/cirrus-ci/build_toolchain.yml'
-          urls="$(trigger-cirrus-ci --token ${{ secrets.CIRRUS_CI_TOKEN }} --repository ${{ github.repository }} \
-            --branch main --config "${config}" --timeout 240)"
-
-          while read -r url; do
-            echo "The artifact url: ${url}"
-            curl -L ${url} -o binary.zip
-            unzip binary.zip
-          done <<<"${urls}"
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: toolchain-*
+          merge-multiple: true
+          path: output
 
       - name: Upload
         run: |

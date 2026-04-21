@@ -82,8 +82,7 @@ For the optional toolset, the expected order is:
 ## Release And CI Notes
 
 - Release publishing uses `.github/workflows/release.yml`.
-- The release workflow depends on the `.github/cirrus-ci-tools` git submodule.
-- Release automation runs `uv sync --no-dev` inside `.github/cirrus-ci-tools` before triggering Cirrus CI builds.
+- Toolchain release artifacts are built directly in GitHub Actions jobs for `x86_64` and `aarch64` before the release is published.
 
 ## Generated / Ignored Artifacts
 
