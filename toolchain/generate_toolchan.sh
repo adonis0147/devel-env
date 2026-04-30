@@ -8,20 +8,20 @@ declare -r WORKSPACE_PATH
 
 declare -r PACKAGES_PATH="${WORKSPACE_PATH}/packages"
 
-declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.45.tar.xz'
-declare -r BINUTILS_MD5SUM='dee5b4267e0305a99a3c9d6131f45759'
+declare -r BINUTILS_PACKAGE_URL='https://ftpmirror.gnu.org/binutils/binutils-2.46.0.tar.xz'
+declare -r BINUTILS_MD5SUM='81bb6810bcd1119819dc0804956e1c92'
 
-declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.1.tar.xz'
-declare -r LINUX_MD5SUM='a09fa9fc11ac8e087661edd7b9524bc0'
+declare -r LINUX_PACKAGE_URL='https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.14.tar.xz'
+declare -r LINUX_MD5SUM='e32bba7d039ae6a34879d2898c1228cf'
 
-declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.42.tar.xz'
-declare -r GLIBC_MD5SUM='23c6f5a27932b435cae94e087cb8b1f5'
+declare -r GLIBC_PACKAGE_URL='https://ftpmirror.gnu.org/glibc/glibc-2.43.tar.xz'
+declare -r GLIBC_MD5SUM='7ec2588300b299215a65aec7e6afa04f'
 
-declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz'
-declare -r GCC_MD5SUM='b861b092bf1af683c46a8aa2e689a6fd'
+declare -r GCC_PACKAGE_URL='https://ftpmirror.gnu.org/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz'
+declare -r GCC_MD5SUM='9b016416f8e2dce4a0ef8759d1936446'
 
-declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz'
-declare -r LIBXCRYPT_MD5SUM='1796a5d20098e9dd9e3f576803c83000'
+declare -r LIBXCRYPT_PACKAGE_URL='https://github.com/besser82/libxcrypt/releases/download/v4.5.2/libxcrypt-4.5.2.tar.xz'
+declare -r LIBXCRYPT_MD5SUM='25e888919ddcd153a07daa95224fa436'
 
 declare -r MUSL_OBSTACK_URL='https://github.com/void-linux/musl-obstack/archive/refs/tags/v1.2.3.tar.gz'
 declare -r MUSL_OBSTACK_MD5SUM='e4f1d16aa3187e8d071f656dd2b10a9e'
@@ -291,7 +291,8 @@ function build_binutils_final() {
 	mkdir build
 	cd build
 
-	LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
+	CFLAGS='-Wno-discarded-qualifiers' \
+		LDFLAGS="-L${PREFIX}/lib -Wl,-rpath,${PREFIX}/lib \
         -Wl,-dynamic-linker,$(find "${PREFIX}/lib" -name 'ld-linux-*')" \
 		../configure --prefix="${PREFIX}" \
 		--host="${TARGET}" \
@@ -366,7 +367,7 @@ function build_libxcrypt() {
 	mkdir build
 	cd build
 
-	../configure --prefix="${PREFIX}"
+	CFLAGS='-Wno-discarded-qualifiers' ../configure --prefix="${PREFIX}"
 	make -j "$(nproc)"
 	make install
 
