@@ -115,10 +115,10 @@ XZ_PACKAGE_SHA256SUM='3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546
 XZ_PACKAGE_NAME='xz-5.8.3.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.3'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2026/sqlite-autoconf-3530000.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='851e9b38192fe2ceaa65e0baa665e7fa06230c3d9bd1a6a9662d02380d73365a'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3530000.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3530000'
+SQLITE_PACKAGE_URL='https://sqlite.org/2026/sqlite-autoconf-3530100.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ffb98359fc4f'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3530100.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3530100'
 
 PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.4.tar.gz'
 PYTHON_PACKAGE_SHA256SUM='6e36595892672ed6694591217b1372cf8f66deeb47bc29f23bedb3402d00353f'
@@ -187,10 +187,10 @@ XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f390
 XXHASH_PACKAGE_NAME='xxHash-0.8.3.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.3'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.13.5/ccache-4.13.5.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='2fb4896269a1ef15da99ba940ac1478b38f2c4b720797205860bf40364f37d37'
-CCACHE_PACKAGE_NAME='ccache-4.13.5.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.13.5'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.13.6/ccache-4.13.6.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='d42ace95dec14583fb8af19ed117919995bd910376f52d9b6f546046b792dfb7'
+CCACHE_PACKAGE_NAME='ccache-4.13.6.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.13.6'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.3.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='5c6060277173270356c3f1c321a640ab629bdabc5e5ba9095b99e00759ba0c39'
@@ -207,10 +207,10 @@ LIBEDIT_PACKAGE_SHA256SUM='21362b00653bbfc1c71f71a7578da66b5b5203559d43134d2dd77
 LIBEDIT_PACKAGE_NAME='libedit-20251016-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20251016-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.4/llvm-project-22.1.4.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='3e68c90dda630c27d41d201e37b8bbf5222e39b273dec5ca880709c69e0a07d4'
-LLVM_PACKAGE_NAME='llvm-project-22.1.4.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-22.1.4.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.5/llvm-project-22.1.5.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='7972b87b705a003ce70ab55f9f0fb495d156887cba0eb296d284731139118e2c'
+LLVM_PACKAGE_NAME='llvm-project-22.1.5.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-22.1.5.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
 ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
