@@ -120,15 +120,15 @@ SQLITE_PACKAGE_SHA256SUM='83e6b2020a034e9a7ad4a72feea59e1ad52f162e09cbd26735a3ff
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3530100.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3530100'
 
-PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.4.tar.gz'
-PYTHON_PACKAGE_SHA256SUM='6e36595892672ed6694591217b1372cf8f66deeb47bc29f23bedb3402d00353f'
-PYTHON_PACKAGE_NAME='cpython-3.14.4.tar.gz'
-PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.4'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.5.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='6b9ee05e36ea9f477e3d49d1feb49598eb0907dc588259c8b25d6a485ee25e11'
+PYTHON_PACKAGE_NAME='cpython-3.14.5.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.5'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_0/expat-2.8.0.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='c7cec5f60ea3a42e7780781c6745255c19aa3dbfeeae58646b7132f88dc24780'
-EXPAT_PACKAGE_NAME='expat-2.8.0.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.8.0'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_1/expat-2.8.1.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='a52eb72108be160e190b5cafa5bba8663f1313f2013e26060d1c18e26e31067b'
+EXPAT_PACKAGE_NAME='expat-2.8.1.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.8.1'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-1.0.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7'
@@ -155,10 +155,10 @@ TEXINFO_PACKAGE_SHA256SUM='51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f6
 TEXINFO_PACKAGE_NAME='texinfo-7.3.tar.xz'
 TEXINFO_PACKAGE_EXTRACTED_DIR='texinfo-7.3'
 
-GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-17.1.tar.gz'
-GDB_PACKAGE_SHA256SUM='2b93c4c9726a4b8cfe771036e155377405dfa41c483d90945481319c5663c120'
-GDB_PACKAGE_NAME='gdb-17.1.tar.gz'
-GDB_PACKAGE_EXTRACTED_DIR='gdb-17.1'
+GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-17.2.tar.gz'
+GDB_PACKAGE_SHA256SUM='cb891b9a9f554cac972eea5368176b240640ae90b681aae84bf873a9501f0063'
+GDB_PACKAGE_NAME='gdb-17.2.tar.gz'
+GDB_PACKAGE_EXTRACTED_DIR='gdb-17.2'
 
 NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.2/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
