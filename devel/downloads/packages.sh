@@ -8,14 +8,14 @@ if [[ -z "${ARCH}" ]]; then
 	fi
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.95.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.96.0-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='2e0338f18ecbaa4a0f631b9e80e8b8e26bb6fe77dd5454fba8a70cf96c1e84a1'
+	RUST_PACKAGE_SHA256SUM='c295047583a56238ea06b43f849f4b877fa12bfd4c7103f8d9a74c94c9c4e108'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='094c9c36531911c5cc7dd6ab2d3069ab8dcd744d6239b0bda1387b243dfc391e'
+	RUST_PACKAGE_SHA256SUM='371eadcca97062219cbd8593628eb5d2802bc370515d085fedce1b56b2baed57'
 fi
-RUST_PACKAGE_NAME="rust-1.95.0-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.95.0-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.96.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.96.0-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026b.tar.gz'
 TZDB_PACKAGE_SHA256SUM='bba53da7f6e4fd7739f464ca3356dd9dbe9730c0b098337049f1bbc956b87159'
