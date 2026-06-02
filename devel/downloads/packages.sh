@@ -212,7 +212,7 @@ LLVM_PACKAGE_SHA256SUM='6e0b376a1f6d9873e7dfb09ae6e04b9c7024400f01733fa4c29be69d
 LLVM_PACKAGE_NAME='llvm-project-22.1.6.src.tar.xz'
 LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-22.1.6.src'
 
-ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz'
-ZSH_PACKAGE_SHA256SUM='9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
-ZSH_PACKAGE_NAME='zsh-5.9.tar.xz'
-ZSH_PACKAGE_EXTRACTED_DIR='zsh-5.9'
+ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9.1/zsh-5.9.1.tar.xz'
+ZSH_PACKAGE_SHA256SUM='5d20bec03f981dc4e9a09ec245e7415388ff641f79c5c5c416b5042e58d8280d'
+ZSH_PACKAGE_NAME='zsh-5.9.1.tar.xz'
+ZSH_PACKAGE_EXTRACTED_DIR='zsh-5.9.1'

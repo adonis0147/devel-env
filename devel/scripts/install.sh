@@ -804,13 +804,6 @@ function install_zsh() {
 
 	pushd "${ZSH_PACKAGE_EXTRACTED_DIR}" >/dev/null
 
-	if command -v patch &>/dev/null; then
-		patch -p1 <"${DOWNLOADS_PATH}/patches/zsh.patch"
-	elif command -v git &>/dev/null; then
-		git init .
-		git apply "${DOWNLOADS_PATH}/patches/zsh.patch"
-	fi
-
 	mkdir -p build
 	cd build
 	CFLAGS='-Wno-incompatible-pointer-types' \
