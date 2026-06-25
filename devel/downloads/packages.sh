@@ -75,10 +75,10 @@ READLINE_PACKAGE_SHA256SUM='fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f6
 READLINE_PACKAGE_NAME='readline-8.3.tar.gz'
 READLINE_PACKAGE_EXTRACTED_DIR='readline-8.3'
 
-LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz'
-LIBFFI_PACKAGE_SHA256SUM='f3a3082a23b37c293a4fcd1053147b371f2ff91fa7ea1b2a52e335676bac82dc'
-LIBFFI_PACKAGE_NAME='libffi-3.5.2.tar.gz'
-LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.5.2'
+LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.6.0/libffi-3.6.0.tar.gz'
+LIBFFI_PACKAGE_SHA256SUM='31ff1fe32deaebfbb388727f32677bb254bf2a41382c51464c0b1837c9ee9828'
+LIBFFI_PACKAGE_NAME='libffi-3.6.0.tar.gz'
+LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.6.0'
 
 ZLIB_PACKAGE_URL='https://github.com/madler/zlib/archive/refs/tags/v1.3.2.tar.gz'
 ZLIB_PACKAGE_SHA256SUM='b99a0b86c0ba9360ec7e78c4f1e43b1cbdf1e6936c8fa0f6835c0cd694a495a1'
@@ -95,10 +95,10 @@ OPENSSL_PACKAGE_SHA256SUM='aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676
 OPENSSL_PACKAGE_NAME='openssl-3.6.2.tar.gz'
 OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.6.2'
 
-CURL_PACKAGE_URL='https://curl.se/download/curl-8.20.0.tar.gz'
-CURL_PACKAGE_SHA256SUM='fc5819cad3f9f5482669adcdc49a782c15f36d2a0715b395b06d9173593d2dc0'
-CURL_PACKAGE_NAME='curl-8.20.0.tar.gz'
-CURL_PACKAGE_EXTRACTED_DIR='curl-8.20.0'
+CURL_PACKAGE_URL='https://curl.se/download/curl-8.21.0.tar.gz'
+CURL_PACKAGE_SHA256SUM='d9b327997999045a24cda50f3983e69e51c516bd8be6ef9842fc7f99135e33bb'
+CURL_PACKAGE_NAME='curl-8.21.0.tar.gz'
+CURL_PACKAGE_EXTRACTED_DIR='curl-8.21.0'
 
 WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.2.1.tar.gz'
 WGET_PACKAGE_SHA256SUM='d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4'
@@ -173,14 +173,14 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.3.3/cmake-4.3.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.3.4/cmake-4.3.4-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='927b2368a946c37269c3a66225ab00544e756459cdd0b5d0da438694fb9ff802'
+	CMAKE_PACKAGE_SHA256SUM='ca6f08ccbd5e6b0a9068d33317d0d1aff7278d08cccaed4529b8fbead7942a68'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='9ea38356dbd3e32e51029a3e09a0f2f8e117ef4fbcaad7a21ffb36409bbd5cb4'
+	CMAKE_PACKAGE_SHA256SUM='56a8014a8f28b8ff9cbe2c6fa8beebc028ac5b1987195d122b847fb486dc5282'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.3.3-linux-${ARCH}.tar.gz"
-CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.3.3-linux-${ARCH}"
+CMAKE_PACKAGE_NAME="cmake-4.3.4-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.3.4-linux-${ARCH}"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
