@@ -6,6 +6,10 @@ on:
       url:
         description: The url of the GCC toolchain
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   build:
     name: Build
@@ -13,6 +17,22 @@ jobs:
     steps:
       - name: Checkout ${{ github.ref }}
         uses: actions/checkout@v4
+
+      - name: Download toolchain artifact
+        if: ${{ contains(inputs.url, '/actions/runs/') && contains(inputs.url, '/artifacts/') }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: ${{ inputs.url }}
+        run: |
+          url="${URL%/}"
+          artifact_id="${url##*/}"
+
+          gh api \
+            "/repos/${{ github.repository }}/actions/artifacts/${artifact_id}/zip" \
+            > toolchain.zip
+
+          unzip toolchain.zip -d toolchain-artifact
+          test -f toolchain-artifact/install_toolchain_x86_64.sh
 
       - name: Install prerequisites
         run: |
@@ -70,7 +90,9 @@ jobs:
 
           pushd devel/scripts
 
-          if [[ -z '${url}' ]]; then
+          if [[ -f ~/install_toolchain_x86_64.sh ]]; then
+            cp ~/install_toolchain_x86_64.sh install_toolchain.sh
+          elif [[ -z '${url}' ]]; then
             latest="\$(curl -s 'https://api.github.com/repos/adonis0147/devel-env/releases/latest' | \
               python -c "import json; import sys; print(json.load(sys.stdin)['tag_name'])")"
             curl -L "https://github.com/adonis0147/devel-env/releases/download/\${latest}/install_toolchain_x86_64.sh" -o install_toolchain.sh
@@ -108,5 +130,10 @@ jobs:
             echo 'Retry...'
             sleep 1
           done
+
+          if [[ -f toolchain-artifact/install_toolchain_x86_64.sh ]]; then
+            scp -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -P 2222 \
+              toolchain-artifact/install_toolchain_x86_64.sh centos@127.0.0.1:~/
+          fi
 
           ssh -o StrictHostKeyChecking=no -i "$(pwd)"/.github/qemu/cloud-init/ssh/id_rsa -p 2222 -n centos@127.0.0.1 'bash -x build.sh'
