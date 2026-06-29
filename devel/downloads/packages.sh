@@ -57,13 +57,13 @@ NINJA_PACKAGE_SHA256SUM='974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd
 NINJA_PACKAGE_NAME='ninja-1.13.2.tar.gz'
 NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.13.2'
 
-PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.15.5/patchelf-0.15.5-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.19.0/patchelf-0.19.0-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='ed3b12af4b61733ee65e18d58c52855469ff7d879d91e1ba4239d3b73af8c295'
+	PATCHELF_PACKAGE_SHA256SUM='a493df96abeecee55d539071e9bace94d32458a3baf54d9495da94f44c647d86'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='6b4c8206c6c1c2f1da76a283fb564df3b339ce844096e0488654001621177435'
+	PATCHELF_PACKAGE_SHA256SUM='ef0868f7f6e932c1ba974850ab68e893b3206b581442e734258dea66cbc0ebea'
 fi
-PATCHELF_PACKAGE_NAME="patchelf-0.15.5-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_NAME="patchelf-0.19.0-${ARCH}.tar.gz"
 
 NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.6.tar.gz'
 NCURSES_PACKAGE_SHA256SUM='355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11'
