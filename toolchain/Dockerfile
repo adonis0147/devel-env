@@ -5,7 +5,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt install --yes \
     build-essential texinfo bison flex git curl rsync gawk python-is-python3 help2man file autoconf libtool pkg-config
 
 RUN mkdir -p /opt/patchelf
-RUN curl -L "https://github.com/NixOS/patchelf/releases/download/0.16.1/patchelf-0.16.1-$(uname -m).tar.gz" \
+RUN curl -L "https://github.com/NixOS/patchelf/releases/download/0.19.0/patchelf-0.19.0-$(uname -m).tar.gz" \
     -o - | tar -zxv -C /opt/patchelf
 
 ADD . /devel-env/toolchain/
