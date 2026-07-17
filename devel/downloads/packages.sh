@@ -8,14 +8,14 @@ if [[ -z "${ARCH}" ]]; then
 	fi
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.97.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.97.1-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='1cf17e4905b841d4c8e3f76467ac148d55fb3f54bf213c86f0d287a36471d904'
+	RUST_PACKAGE_SHA256SUM='88f28fa9af20594179f85d6df67078dfd6fa93e2f6da5e1e9b0ac4997988ca4f'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='4c88fe30a748a8853c19f4e8876a64b32005bc4cbcde48e93732d06a430e808a'
+	RUST_PACKAGE_SHA256SUM='9a7a2c336b4787f1b72f6bab7c35d5b7af2fd03cbd39b4fc721466a70d402a7d'
 fi
-RUST_PACKAGE_NAME="rust-1.97.0-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.97.0-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.97.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.97.1-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026c.tar.gz'
 TZDB_PACKAGE_SHA256SUM='99fcce3d468fbb94b9395db2d4a83777ffdf7740a1890ba2e52e8ae089cc8e3b'
@@ -37,10 +37,10 @@ AUTOMAKE_PACKAGE_SHA256SUM='63e585246d0fc8772dffdee0724f2f988146d1a3f1c756a3dc5c
 AUTOMAKE_PACKAGE_NAME='automake-1.18.1.tar.gz'
 AUTOMAKE_PACKAGE_EXTRACTED_DIR='automake-1.18.1'
 
-LIBTOOL_PACKAGE_URL='https://ftpmirror.gnu.org/libtool/libtool-2.5.4.tar.gz'
-LIBTOOL_PACKAGE_SHA256SUM='da8ebb2ce4dcf46b90098daf962cffa68f4b4f62ea60f798d0ef12929ede6adf'
-LIBTOOL_PACKAGE_NAME='libtool-2.5.4.tar.gz'
-LIBTOOL_PACKAGE_EXTRACTED_DIR='libtool-2.5.4'
+LIBTOOL_PACKAGE_URL='https://ftpmirror.gnu.org/libtool/libtool-2.6.2.tar.gz'
+LIBTOOL_PACKAGE_SHA256SUM='24adb3aa9ae035c70faba344af57d73215eb89281045af6c7ccd307751f8b0bf'
+LIBTOOL_PACKAGE_NAME='libtool-2.6.2.tar.gz'
+LIBTOOL_PACKAGE_EXTRACTED_DIR='libtool-2.6.2'
 
 MAKE_PACKAGE_URL='https://ftpmirror.gnu.org/make/make-4.4.1.tar.gz'
 MAKE_PACKAGE_SHA256SUM='dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3'
