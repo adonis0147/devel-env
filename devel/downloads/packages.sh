@@ -175,9 +175,9 @@ ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
 CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.2/cmake-4.4.2-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='4174c82216014ff5ddee5dc2fb1fdcefa331ab1c234ea60d8210f5f05d9e5b3a'
+	CMAKE_PACKAGE_SHA256SUM='3ada9a3f5d8a85413579bdd0ea6aa8e8da86efdd6d15c91a1afa517f2021956c'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='24c6cf51032d3ca8be983e7b5e0b36cebd5eb929a38500a3ee113088c5ff9e99'
+	CMAKE_PACKAGE_SHA256SUM='9ca1aadb4451c5dcbdc67f9b4aff42dab52abbaebd8db9e2900026502dbed671'
 fi
 CMAKE_PACKAGE_NAME="cmake-4.4.2-linux-${ARCH}.tar.gz"
 CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.2-linux-${ARCH}"
