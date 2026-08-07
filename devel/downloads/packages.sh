@@ -120,10 +120,10 @@ SQLITE_PACKAGE_SHA256SUM='0e9483900e92cd5de8fd48d16bf9200145a61f7fd5be542a5ac81d
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3530400.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3530400'
 
-PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.6.tar.gz'
-PYTHON_PACKAGE_SHA256SUM='7f77ccf3613ddadc74dfb8d6f8082581a8835115a25e1307d189f03aa750893e'
-PYTHON_PACKAGE_NAME='cpython-3.14.6.tar.gz'
-PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.6'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.7.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='23794c71dc5aa636ef2f6774270c3d48f755afaaa474fd3e0d49de8292b69dbb'
+PYTHON_PACKAGE_NAME='cpython-3.14.7.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.7'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_2/expat-2.8.2.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='ef7d1994f533c9e7343d6c19f31064fc8ebbcbcaa144be3812b4f43052a05f4c'
@@ -197,10 +197,10 @@ LIBXML2_PACKAGE_SHA256SUM='5c6060277173270356c3f1c321a640ab629bdabc5e5ba9095b99e
 LIBXML2_PACKAGE_NAME='libxml2-2.15.3.tar.gz'
 LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.3'
 
-SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.4.1/swig-4.4.1.tar.gz'
-SWIG_PACKAGE_SHA256SUM='40162a706c56f7592d08fd52ef5511cb7ac191f3593cf07306a0a554c6281fcf'
-SWIG_PACKAGE_NAME='swig-4.4.1.tar.gz'
-SWIG_PACKAGE_EXTRACTED_DIR='swig-4.4.1'
+SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.5.0/swig-4.5.0.tar.gz'
+SWIG_PACKAGE_SHA256SUM='22ae0e887f8cca8031a325c67d005207653200b40e71edb3f88780e28e47d0ff'
+SWIG_PACKAGE_NAME='swig-4.5.0.tar.gz'
+SWIG_PACKAGE_EXTRACTED_DIR='swig-4.5.0'
 
 LIBEDIT_PACKAGE_URL='https://www.thrysoee.dk/editline/libedit-20260512-3.1.tar.gz'
 LIBEDIT_PACKAGE_SHA256SUM='432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0'
