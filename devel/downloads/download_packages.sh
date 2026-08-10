@@ -8,6 +8,7 @@ declare -r DOWNLOADS_PATH
 SCRIPTS_PATH="$(readlink -f "${DOWNLOADS_PATH}/../scripts")"
 declare -r PACKAGES_PATH="${DOWNLOADS_PATH}/packages"
 
+# shellcheck source=../scripts/common.sh
 source "${SCRIPTS_PATH}/common.sh"
 source "${DOWNLOADS_PATH}/packages.sh"
 
@@ -25,7 +26,12 @@ function download() {
 
 	log_info "Downloading ${package}..."
 	if [[ ! -f "${output}" ]] || ! echo "${sha256sum}  ${output}" | "${sha256sum_cmd}" --check &>/dev/null; then
-		curl -L "${url}" -o "${output}"
+		if ! curl -L "${url}" -o "${output}" || ! echo "${sha256sum}  ${output}" | "${sha256sum_cmd}" --check &>/dev/null; then
+			url="${url/ftpmirror.gnu.org/ftp.gnu.org/gnu}"
+			if ! curl -L "${url}" -o "${output}" || ! echo "${sha256sum}  ${output}" | "${sha256sum_cmd}" --check &>/dev/null; then
+				log_error "Failed to download ${package}!"
+			fi
+		fi
 	fi
 	log_info "Download ${package} successfully!"
 }

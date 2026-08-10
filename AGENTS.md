@@ -71,7 +71,7 @@ For the optional toolset, the expected order is:
 ## Toolchain Build Notes
 
 - The toolchain build path is separate from the optional package installer.
-- Key entrypoints: `toolchain/Dockerfile`, `toolchain/generate_toolchan.sh`, `toolchain/setup_toolchain.sh`
+- Key entrypoints: `toolchain/Dockerfile`, `toolchain/generate_toolchain.sh`, `toolchain/setup_toolchain.sh`
 - Documented local build flow:
   1. `docker build --platform=linux/x86-64 -t toolchain toolchain`
   2. `mkdir output`

@@ -10,7 +10,7 @@ RUN curl -L "https://github.com/NixOS/patchelf/releases/download/0.19.0/patchelf
 
 ADD . /devel-env/toolchain/
 WORKDIR /devel-env/toolchain
-RUN TARGET="$(uname -m)-linux-gnu" bash generate_toolchan.sh
+RUN TARGET="$(uname -m)-linux-gnu" bash generate_toolchain.sh
 
 RUN cd /opt && mv patchelf/bin/patchelf /compiler/bin && tar -cf - /compiler | xz -T0 -z - >output.tar.xz
 
