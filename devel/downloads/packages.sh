@@ -160,11 +160,11 @@ GDB_PACKAGE_SHA256SUM='cb891b9a9f554cac972eea5368176b240640ae90b681aae84bf873a95
 GDB_PACKAGE_NAME='gdb-17.2.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-17.2'
 
-NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
+NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	NEOVIM_PACKAGE_SHA256SUM='012bf3fcac5ade43914df3f174668bf64d05e049a4f032a388c027b1ebd78628'
+	NEOVIM_PACKAGE_SHA256SUM='bce0f56eda1f1b1db6eee8f4133d7a38813ea07933837dd1777411ca384c6875'
 else
-	NEOVIM_PACKAGE_SHA256SUM='ceb7e88c6b681f0515d135dcdfad54f5eb4373b25ce6172197cd9a69c758063f'
+	NEOVIM_PACKAGE_SHA256SUM='1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725'
 fi
 NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
@@ -187,10 +187,10 @@ XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f390
 XXHASH_PACKAGE_NAME='xxHash-0.8.3.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.3'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.13.6/ccache-4.13.6.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='d42ace95dec14583fb8af19ed117919995bd910376f52d9b6f546046b792dfb7'
-CCACHE_PACKAGE_NAME='ccache-4.13.6.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.13.6'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14/ccache-4.14.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='fca63f36a83fb2f4b3cc4c01b2c7a1cd6e3629e7f7bd1e01a2eb8810f947c5ab'
+CCACHE_PACKAGE_NAME='ccache-4.14.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.3.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='5c6060277173270356c3f1c321a640ab629bdabc5e5ba9095b99e00759ba0c39'
