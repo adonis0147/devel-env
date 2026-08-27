@@ -173,14 +173,14 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.2/cmake-4.4.2-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='3ada9a3f5d8a85413579bdd0ea6aa8e8da86efdd6d15c91a1afa517f2021956c'
+	CMAKE_PACKAGE_SHA256SUM='d6c83076c575bc00b823522ac974bda66d0af05d6ddc30e739c12385cf32c6cc'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='9ca1aadb4451c5dcbdc67f9b4aff42dab52abbaebd8db9e2900026502dbed671'
+	CMAKE_PACKAGE_SHA256SUM='2efc974dbd63b4444c0e8494b92f2e80c2d7e635b4b80eac2916985ddd8f72a6'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.4.2-linux-${ARCH}.tar.gz"
-CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.2-linux-${ARCH}"
+CMAKE_PACKAGE_NAME="cmake-4.4.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.3-linux-${ARCH}"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
@@ -207,10 +207,10 @@ LIBEDIT_PACKAGE_SHA256SUM='432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89
 LIBEDIT_PACKAGE_NAME='libedit-20260512-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20260512-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888'
-LLVM_PACKAGE_NAME='llvm-project-22.1.8.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-22.1.8.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff'
+LLVM_PACKAGE_NAME='llvm-project-23.1.0.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.0.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9.2/zsh-5.9.2.tar.xz'
 ZSH_PACKAGE_SHA256SUM='36fa734374b44783582cec09bcd67822e2f992c779ec1624ab5596df078d2f81'
