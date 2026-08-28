@@ -87,3 +87,28 @@ For the optional toolset, the expected order is:
 ## Generated / Ignored Artifacts
 
 - Do not commit generated download caches or local installer artifacts: `devel/downloads/packages/*`, `toolchain/packages/*`, root `install_toolchain.sh`.
+
+## Adding New Libraries
+
+To include additional libraries (e.g., ALSA, PulseAudio, SDL) in the optional toolset:
+
+1. **Define Package Metadata** in `devel/downloads/packages.sh`:
+   Add variables for the download URL, SHA256 checksum, archive filename, and the top-level extracted directory name. Use an uppercase prefix for consistency.
+   ```bash
+   ALSA_PACKAGE_URL='https://www.alsa-project.org/files/pub/lib/libasound-1.2.13.tar.gz'
+   ALSA_PACKAGE_SHA256SUM='...'
+   ALSA_PACKAGE_NAME='libasound-1.2.13.tar.gz'
+   ALSA_PACKAGE_EXTRACTED_DIR='libasound-1.2.13'
+   ```
+
+2. **Register the Download** in `devel/downloads/download_packages.sh`:
+   Append a `download` call inside the `main` function using the variables defined above.
+   ```bash
+   download 'alsa' "${ALSA_PACKAGE_URL}" "${ALSA_PACKAGE_SHA256SUM}" "${ALSA_PACKAGE_NAME}"
+   ```
+
+3. **Implement Build Steps** in `devel/scripts/install.sh`:
+   Add the package to the build sequence and provide a function that configures, compiles, and installs it into `${DEVEL_HOME_PATH}/opt/<package>`. Most libraries follow a standard `./configure --prefix=... && make && make install` flow.
+
+4. **Wire Environment Symlinks**:
+   After the library is installed, run `devel/scripts/setup_package.sh <package>` to generate top-level symlinks for binaries, libraries, and headers. Run without arguments to process all packages.
