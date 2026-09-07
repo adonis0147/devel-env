@@ -8,14 +8,14 @@ if [[ -z "${ARCH}" ]]; then
 	fi
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.98.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.98.1-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='ed8ee2df70909c88cbaf87a6cfa3920dac00b537de12a6abe6906641e0f5952f'
+	RUST_PACKAGE_SHA256SUM='5326b36c53de11d148c8f8dab6553a3d1006c2cfd32123683073fad3c302605b'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='ac9283184301aeed06ecc9f5aa4c1be7041e18a1b197b6cb6c5d162d98f566da'
+	RUST_PACKAGE_SHA256SUM='0b514a8cc1cbcd939bff0f151661fe58b6ea5c7a7f645a5098c69e32e8c1e0a2'
 fi
-RUST_PACKAGE_NAME="rust-1.98.0-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.98.0-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.98.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.98.1-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026c.tar.gz'
 TZDB_PACKAGE_SHA256SUM='99fcce3d468fbb94b9395db2d4a83777ffdf7740a1890ba2e52e8ae089cc8e3b'
@@ -192,15 +192,15 @@ CCACHE_PACKAGE_SHA256SUM='fca63f36a83fb2f4b3cc4c01b2c7a1cd6e3629e7f7bd1e01a2eb88
 CCACHE_PACKAGE_NAME='ccache-4.14.tar.gz'
 CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14'
 
-LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.3.tar.gz'
-LIBXML2_PACKAGE_SHA256SUM='5c6060277173270356c3f1c321a640ab629bdabc5e5ba9095b99e00759ba0c39'
-LIBXML2_PACKAGE_NAME='libxml2-2.15.3.tar.gz'
-LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.3'
+LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.4.tar.gz'
+LIBXML2_PACKAGE_SHA256SUM='bb01bd9ac9a7403f9706816fd6d3e7888041d32b0211075feb20e755d2a9f29d'
+LIBXML2_PACKAGE_NAME='libxml2-2.15.4.tar.gz'
+LIBXML2_PACKAGE_EXTRACTED_DIR='libxml2-2.15.4'
 
-SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.5.0/swig-4.5.0.tar.gz'
-SWIG_PACKAGE_SHA256SUM='22ae0e887f8cca8031a325c67d005207653200b40e71edb3f88780e28e47d0ff'
-SWIG_PACKAGE_NAME='swig-4.5.0.tar.gz'
-SWIG_PACKAGE_EXTRACTED_DIR='swig-4.5.0'
+SWIG_PACKAGE_URL='https://downloads.sourceforge.net/project/swig/swig/swig-4.5.1/swig-4.5.1.tar.gz'
+SWIG_PACKAGE_SHA256SUM='7fec50b27deddab5455a9633780b6341eddfb96215a7619e93a76eb27178f653'
+SWIG_PACKAGE_NAME='swig-4.5.1.tar.gz'
+SWIG_PACKAGE_EXTRACTED_DIR='swig-4.5.1'
 
 LIBEDIT_PACKAGE_URL='https://www.thrysoee.dk/editline/libedit-20260512-3.1.tar.gz'
 LIBEDIT_PACKAGE_SHA256SUM='432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0'
