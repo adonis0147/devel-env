@@ -57,6 +57,11 @@ NINJA_PACKAGE_SHA256SUM='974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd
 NINJA_PACKAGE_NAME='ninja-1.13.2.tar.gz'
 NINJA_PACKAGE_EXTRACTED_DIR='ninja-1.13.2'
 
+POLYFILL_GLIBC_PACKAGE_URL='https://github.com/corsix/polyfill-glibc/archive/e8107d6b05aab7dfe1f52ff3d362c15909cb03ff.tar.gz'
+POLYFILL_GLIBC_PACKAGE_SHA256SUM='ff6bd3be3f2fd919143150b49a9ab98d9370f0e37b110482a934e8bb79308e3c'
+POLYFILL_GLIBC_PACKAGE_NAME='polyfill-glibc-e8107d6b05aab7dfe1f52ff3d362c15909cb03ff.tar.gz'
+POLYFILL_GLIBC_PACKAGE_EXTRACTED_DIR='polyfill-glibc-e8107d6b05aab7dfe1f52ff3d362c15909cb03ff'
+
 PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.19.1/patchelf-0.19.1-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
 	PATCHELF_PACKAGE_SHA256SUM='a6818fef80128fb354423234ecacdcca3e993913d774e5d8346bc63f70fed4cf'

@@ -80,6 +80,25 @@ class GitHubGraphQL:
             raise RuntimeError(response["errors"])
         return response["data"]["repository"]["refs"]["nodes"][0]["name"]
 
+    def get_default_branch_commit(self, owner: str, name: str) -> str:
+        query = """
+            query GetDefaultBranchCommit($owner: String!, $name: String!) {
+                repository(owner: $owner, name: $name) {
+                    defaultBranchRef {
+                        target {
+                            ... on Commit {
+                                oid
+                            }
+                        }
+                    }
+                }
+            }
+        """
+        response = self._request(query, {"owner": owner, "name": name})
+        if "errors" in response:
+            raise RuntimeError(response["errors"])
+        return response["data"]["repository"]["defaultBranchRef"]["target"]["oid"]
+
 
 def get_all_urls(file: str) -> dict[str, str]:
     urls = dict()
@@ -113,6 +132,20 @@ def check_gnu_package(package: str, url: str) -> bool:
         "Check {}: {} -> {}".format(package, version, latest_version),
     )
     return version != latest_version
+
+
+def check_github_commit_package(package: str, url: str) -> bool:
+    match = re.compile(
+        r"https://github.com/([^/]*)/([^/]*)/archive/([0-9a-f]{40})\.tar\.gz$"
+    ).match(url)
+    assert match is not None
+    owner, name, commit = match.groups()
+    latest_commit = GitHubGraphQL().get_default_branch_commit(owner, name)
+    logging.log(
+        logging.INFO if commit == latest_commit else logging.WARN,
+        "Check {}: {} -> {}".format(package, commit, latest_commit),
+    )
+    return commit != latest_commit
 
 
 def check_github_package(package: str, url: str) -> bool:
@@ -324,6 +357,12 @@ def check_updates(urls: dict[str, str]) -> tuple[list[str], list[str]]:
     for package, url in urls.items():
         if "ftpmirror.gnu.org" in url:
             if check_gnu_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif re.match(
+            r"https://github.com/[^/]*/[^/]*/archive/[0-9a-f]{40}\.tar\.gz$", url
+        ):
+            if check_github_commit_package(package, url):
                 updates.append(package)
             checked.append(package)
         elif "github.com" in url:

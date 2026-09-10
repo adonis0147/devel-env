@@ -208,6 +208,21 @@ function install_ninja() {
 	log_info 'Success!'
 }
 
+function install_polyfill_glibc() {
+	local package='polyfill-glibc'
+	log_info "Start to install ${package}."
+	rm -rf "${POLYFILL_GLIBC_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${POLYFILL_GLIBC_PACKAGE_NAME}"
+
+	pushd "${POLYFILL_GLIBC_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	ninja
+	install -Dm755 polyfill-glibc "${DEVEL_HOME_PATH}/opt/${package}/bin/polyfill-glibc"
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_patchelf() {
 	local package='patchelf'
 	log_info "Start to install ${package}."
@@ -839,6 +854,7 @@ function install_packages() {
 			pkg_config
 			cmake
 			ninja
+			polyfill_glibc
 			patchelf
 			ncurses
 			readline
