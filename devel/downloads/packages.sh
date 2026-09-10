@@ -115,10 +115,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.3/xz-5.8.3.tar.gz'
-XZ_PACKAGE_SHA256SUM='3d3a1b973af218114f4f889bbaa2f4c037deaae0c8e815eec381c3d546b974a0'
-XZ_PACKAGE_NAME='xz-5.8.3.tar.gz'
-XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.3'
+XZ_PACKAGE_URL='https://github.com/tukaani-project/xz/releases/download/v5.8.4/xz-5.8.4.tar.gz'
+XZ_PACKAGE_SHA256SUM='0014c7886930454fe8bd4228665b51af55eeae560ea135c9c4cd33f55b2591d9'
+XZ_PACKAGE_NAME='xz-5.8.4.tar.gz'
+XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.4'
 
 SQLITE_PACKAGE_URL='https://sqlite.org/2026/sqlite-autoconf-3530400.tar.gz'
 SQLITE_PACKAGE_SHA256SUM='0e9483900e92cd5de8fd48d16bf9200145a61f7fd5be542a5ac81d8a9516eb9c'
@@ -212,10 +212,10 @@ LIBEDIT_PACKAGE_SHA256SUM='432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89
 LIBEDIT_PACKAGE_NAME='libedit-20260512-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20260512-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/llvm-project-23.1.0.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='ab1f0e3ec52448c33e8782eaf0422504b87c7b016b22514653ee0d8fcee479ff'
-LLVM_PACKAGE_NAME='llvm-project-23.1.0.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.0.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6'
+LLVM_PACKAGE_NAME='llvm-project-23.1.1.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.1.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9.2/zsh-5.9.2.tar.xz'
 ZSH_PACKAGE_SHA256SUM='36fa734374b44783582cec09bcd67822e2f992c779ec1624ab5596df078d2f81'
