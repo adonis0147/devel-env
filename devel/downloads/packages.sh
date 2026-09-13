@@ -17,10 +17,10 @@ fi
 RUST_PACKAGE_NAME="rust-1.98.1-${ARCH}-unknown-linux-gnu.tar.xz"
 RUST_PACKAGE_EXTRACTED_DIR="rust-1.98.1-${ARCH}-unknown-linux-gnu"
 
-TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026c.tar.gz'
-TZDB_PACKAGE_SHA256SUM='99fcce3d468fbb94b9395db2d4a83777ffdf7740a1890ba2e52e8ae089cc8e3b'
-TZDB_PACKAGE_NAME='tz-2026c.tar.gz'
-TZDB_PACKAGE_EXTRACTED_DIR='tz-2026c'
+TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026d.tar.gz'
+TZDB_PACKAGE_SHA256SUM='788a3d041a92c8ec4df0b7109fb2ce028bc6d73292f293994430b6e3fdb802ec'
+TZDB_PACKAGE_NAME='tz-2026d.tar.gz'
+TZDB_PACKAGE_EXTRACTED_DIR='tz-2026d'
 
 M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.21.tar.xz'
 M4_PACKAGE_SHA256SUM='f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66'
