@@ -105,10 +105,10 @@ CURL_PACKAGE_SHA256SUM='d54dd598bf05927a726deb38df31c6a255ba83ff1de57c5d1464dac3
 CURL_PACKAGE_NAME='curl-8.22.0.tar.gz'
 CURL_PACKAGE_EXTRACTED_DIR='curl-8.22.0'
 
-WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.2.1.tar.gz'
-WGET_PACKAGE_SHA256SUM='d7544b13e37f18e601244fce5f5f40688ac1d6ab9541e0fbb01a32ee1fb447b4'
-WGET_PACKAGE_NAME='wget2-2.2.1.tar.gz'
-WGET_PACKAGE_EXTRACTED_DIR='wget2-2.2.1'
+WGET_PACKAGE_URL='https://ftpmirror.gnu.org/wget/wget2-2.3.0.tar.gz'
+WGET_PACKAGE_SHA256SUM='4f1915b2a55a789a15f2f9ada7cc44bca81418e648f76fd88a7f4dd028b2149f'
+WGET_PACKAGE_NAME='wget2-2.3.0.tar.gz'
+WGET_PACKAGE_EXTRACTED_DIR='wget2-2.3.0'
 
 BZIP2_PACKAGE_URL='https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269'
@@ -130,10 +130,10 @@ PYTHON_PACKAGE_SHA256SUM='23794c71dc5aa636ef2f6774270c3d48f755afaaa474fd3e0d49de
 PYTHON_PACKAGE_NAME='cpython-3.14.7.tar.gz'
 PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.7'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_4/expat-2.8.4.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='b8ece2437692dad44d851c4532723390a5a330990007706be9c8d2b90d294f36'
-EXPAT_PACKAGE_NAME='expat-2.8.4.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.8.4'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='920dde485e15eda0cce8d2310b41d492c534e5e3d89ad407a0b4176dd2ff88fe'
+EXPAT_PACKAGE_NAME='expat-2.8.5.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.8.5'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-1.0.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7'
@@ -187,10 +187,10 @@ fi
 CMAKE_PACKAGE_NAME="cmake-4.4.3-linux-${ARCH}.tar.gz"
 CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.3-linux-${ARCH}"
 
-XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.3.tar.gz'
-XXHASH_PACKAGE_SHA256SUM='aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80'
-XXHASH_PACKAGE_NAME='xxHash-0.8.3.tar.gz'
-XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.3'
+XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.4.tar.gz'
+XXHASH_PACKAGE_SHA256SUM='5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52ab504acd32'
+XXHASH_PACKAGE_NAME='xxHash-0.8.4.tar.gz'
+XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.4'
 
 CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14/ccache-4.14.tar.gz'
 CCACHE_PACKAGE_SHA256SUM='fca63f36a83fb2f4b3cc4c01b2c7a1cd6e3629e7f7bd1e01a2eb8810f947c5ab'
@@ -212,10 +212,10 @@ LIBEDIT_PACKAGE_SHA256SUM='432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89
 LIBEDIT_PACKAGE_NAME='libedit-20260512-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20260512-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6'
-LLVM_PACKAGE_NAME='llvm-project-23.1.1.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.1.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/llvm-project-23.1.2.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='c98bbef08b2c4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a'
+LLVM_PACKAGE_NAME='llvm-project-23.1.2.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.2.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9.2/zsh-5.9.2.tar.xz'
 ZSH_PACKAGE_SHA256SUM='36fa734374b44783582cec09bcd67822e2f992c779ec1624ab5596df078d2f81'
