@@ -17,10 +17,10 @@ fi
 RUST_PACKAGE_NAME="rust-1.98.1-${ARCH}-unknown-linux-gnu.tar.xz"
 RUST_PACKAGE_EXTRACTED_DIR="rust-1.98.1-${ARCH}-unknown-linux-gnu"
 
-TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026d.tar.gz'
-TZDB_PACKAGE_SHA256SUM='788a3d041a92c8ec4df0b7109fb2ce028bc6d73292f293994430b6e3fdb802ec'
-TZDB_PACKAGE_NAME='tz-2026d.tar.gz'
-TZDB_PACKAGE_EXTRACTED_DIR='tz-2026d'
+TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026e.tar.gz'
+TZDB_PACKAGE_SHA256SUM='5b62258a9a868813f00b070983b9b3e7279634575571a0fcc732be6a1f7047c1'
+TZDB_PACKAGE_NAME='tz-2026e.tar.gz'
+TZDB_PACKAGE_EXTRACTED_DIR='tz-2026e'
 
 M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.21.tar.xz'
 M4_PACKAGE_SHA256SUM='f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66'
@@ -125,10 +125,10 @@ SQLITE_PACKAGE_SHA256SUM='0e9483900e92cd5de8fd48d16bf9200145a61f7fd5be542a5ac81d
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3530400.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3530400'
 
-PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.7.tar.gz'
-PYTHON_PACKAGE_SHA256SUM='23794c71dc5aa636ef2f6774270c3d48f755afaaa474fd3e0d49de8292b69dbb'
-PYTHON_PACKAGE_NAME='cpython-3.14.7.tar.gz'
-PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.7'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.8.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='43b34b293476c1520636c5fdf809db62b29b9f8290cd1cf92770596d78e73320'
+PYTHON_PACKAGE_NAME='cpython-3.14.8.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.8'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='920dde485e15eda0cce8d2310b41d492c534e5e3d89ad407a0b4176dd2ff88fe'
@@ -140,10 +140,10 @@ GETTEXT_PACKAGE_SHA256SUM='71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae
 GETTEXT_PACKAGE_NAME='gettext-1.0.tar.xz'
 GETTEXT_PACKAGE_EXTRACTED_DIR='gettext-1.0'
 
-GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.55.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='72923418db7b26dfddc21e2268660c5118e560bdfaa09b4489b67b38e9b69c49'
-GIT_PACKAGE_NAME='git-2.55.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.55.0'
+GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.56.0.tar.gz'
+GIT_PACKAGE_SHA256SUM='d761232b81394f7d4c3ef1a99fa804ffbe10d278ae1ad302833a0892050ca9fc'
+GIT_PACKAGE_NAME='git-2.56.0.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.56.0'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -160,10 +160,10 @@ TEXINFO_PACKAGE_SHA256SUM='51f74eb0f51cfa9873b85264dfdd5d46e8957ec95b88f0fb762f6
 TEXINFO_PACKAGE_NAME='texinfo-7.3.tar.xz'
 TEXINFO_PACKAGE_EXTRACTED_DIR='texinfo-7.3'
 
-GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-17.2.tar.gz'
-GDB_PACKAGE_SHA256SUM='cb891b9a9f554cac972eea5368176b240640ae90b681aae84bf873a9501f0063'
-GDB_PACKAGE_NAME='gdb-17.2.tar.gz'
-GDB_PACKAGE_EXTRACTED_DIR='gdb-17.2'
+GDB_PACKAGE_URL='https://ftpmirror.gnu.org/gdb/gdb-18.1.tar.gz'
+GDB_PACKAGE_SHA256SUM='fb83623deb238cab91ad17f8a906e2da26d0b4620fb1da43c20a274252e51082'
+GDB_PACKAGE_NAME='gdb-18.1.tar.gz'
+GDB_PACKAGE_EXTRACTED_DIR='gdb-18.1'
 
 NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
@@ -192,10 +192,10 @@ XXHASH_PACKAGE_SHA256SUM='5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52
 XXHASH_PACKAGE_NAME='xxHash-0.8.4.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.4'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14/ccache-4.14.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='fca63f36a83fb2f4b3cc4c01b2c7a1cd6e3629e7f7bd1e01a2eb8810f947c5ab'
-CCACHE_PACKAGE_NAME='ccache-4.14.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14.1/ccache-4.14.1.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='dfd2b9e446b2cf68e83e21b25317d8f868de6f1b246c7e99e04d07f4e1b0b97e'
+CCACHE_PACKAGE_NAME='ccache-4.14.1.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14.1'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.4.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='bb01bd9ac9a7403f9706816fd6d3e7888041d32b0211075feb20e755d2a9f29d'
