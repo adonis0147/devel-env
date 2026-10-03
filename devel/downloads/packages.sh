@@ -8,14 +8,14 @@ if [[ -z "${ARCH}" ]]; then
 	fi
 fi
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.98.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.99.0-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='5326b36c53de11d148c8f8dab6553a3d1006c2cfd32123683073fad3c302605b'
+	RUST_PACKAGE_SHA256SUM='891c6366d7100feda0bca4c03ce63f3c9ac827cbebbc283e7433061d42c6a376'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='0b514a8cc1cbcd939bff0f151661fe58b6ea5c7a7f645a5098c69e32e8c1e0a2'
+	RUST_PACKAGE_SHA256SUM='5a30ce742be0835d9b23fc862db5cbbbc71464e1c9b1fca22917e10e4ba32a92'
 fi
-RUST_PACKAGE_NAME="rust-1.98.1-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.98.1-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.99.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.99.0-${ARCH}-unknown-linux-gnu"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026e.tar.gz'
 TZDB_PACKAGE_SHA256SUM='5b62258a9a868813f00b070983b9b3e7279634575571a0fcc732be6a1f7047c1'
@@ -62,13 +62,13 @@ POLYFILL_GLIBC_PACKAGE_SHA256SUM='ff6bd3be3f2fd919143150b49a9ab98d9370f0e37b1104
 POLYFILL_GLIBC_PACKAGE_NAME='polyfill-glibc-e8107d6b05aab7dfe1f52ff3d362c15909cb03ff.tar.gz'
 POLYFILL_GLIBC_PACKAGE_EXTRACTED_DIR='polyfill-glibc-e8107d6b05aab7dfe1f52ff3d362c15909cb03ff'
 
-PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.19.1/patchelf-0.19.1-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.19.2/patchelf-0.19.2-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='a6818fef80128fb354423234ecacdcca3e993913d774e5d8346bc63f70fed4cf'
+	PATCHELF_PACKAGE_SHA256SUM='2abdc34fbe949c995a1baa4ec310896a085588a45a99cd0d726851bdfac2a4bb'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='a2f8f5add5910a521d35062adf2c9f55d75b65ae5508d290758787004054e702'
+	PATCHELF_PACKAGE_SHA256SUM='ba6850c1a6f4cbdb050e1cc22fa5239159ad31c43606846e49c408d335f594ff'
 fi
-PATCHELF_PACKAGE_NAME="patchelf-0.19.1-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_NAME="patchelf-0.19.2-${ARCH}.tar.gz"
 
 NCURSES_PACKAGE_URL='https://ftpmirror.gnu.org/ncurses/ncurses-6.6.tar.gz'
 NCURSES_PACKAGE_SHA256SUM='355b4cbbed880b0381a04c46617b7656e362585d52e9cf84a67e2009b749ff11'
@@ -178,14 +178,14 @@ ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7e
 ZSTD_PACKAGE_NAME='zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_EXTRACTED_DIR='zstd-1.5.7'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.4/cmake-4.4.4-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='d6c83076c575bc00b823522ac974bda66d0af05d6ddc30e739c12385cf32c6cc'
+	CMAKE_PACKAGE_SHA256SUM='e5bb807f7728cb60cd8b27ebc97a2edb469b68655f21e844a600c3575b76f5bb'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='2efc974dbd63b4444c0e8494b92f2e80c2d7e635b4b80eac2916985ddd8f72a6'
+	CMAKE_PACKAGE_SHA256SUM='a1b6cc63636a0e55c63257cf3315a8a5f129e42fade25db1afea4ff8ab06f25e'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.4.3-linux-${ARCH}.tar.gz"
-CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.3-linux-${ARCH}"
+CMAKE_PACKAGE_NAME="cmake-4.4.4-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.4-linux-${ARCH}"
 
 XXHASH_PACKAGE_URL='https://github.com/Cyan4973/xxHash/archive/refs/tags/v0.8.4.tar.gz'
 XXHASH_PACKAGE_SHA256SUM='5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52ab504acd32'
