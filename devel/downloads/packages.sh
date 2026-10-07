@@ -130,10 +130,10 @@ PYTHON_PACKAGE_SHA256SUM='43b34b293476c1520636c5fdf809db62b29b9f8290cd1cf9277059
 PYTHON_PACKAGE_NAME='cpython-3.14.8.tar.gz'
 PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.8'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='920dde485e15eda0cce8d2310b41d492c534e5e3d89ad407a0b4176dd2ff88fe'
-EXPAT_PACKAGE_NAME='expat-2.8.5.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.8.5'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_9_0/expat-2.9.0.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='16afbb9cefead2aa278105cf27d9f597bde7fbf3dbb85015857ca7ca6a4e89ba'
+EXPAT_PACKAGE_NAME='expat-2.9.0.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.9.0'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-1.0.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7'
@@ -212,10 +212,10 @@ LIBEDIT_PACKAGE_SHA256SUM='432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89
 LIBEDIT_PACKAGE_NAME='libedit-20260512-3.1.tar.gz'
 LIBEDIT_PACKAGE_EXTRACTED_DIR='libedit-20260512-3.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/llvm-project-23.1.2.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='c98bbef08b2c4c2613cd50e9aa9ae7b69b1fe6c16b2c40373bc0ab6116fdf78a'
-LLVM_PACKAGE_NAME='llvm-project-23.1.2.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.2.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34'
+LLVM_PACKAGE_NAME='llvm-project-23.1.3.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.3.src'
 
 ZSH_PACKAGE_URL='https://downloads.sourceforge.net/project/zsh/zsh/5.9.2/zsh-5.9.2.tar.xz'
 ZSH_PACKAGE_SHA256SUM='36fa734374b44783582cec09bcd67822e2f992c779ec1624ab5596df078d2f81'
