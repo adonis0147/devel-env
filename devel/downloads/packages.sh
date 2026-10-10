@@ -125,6 +125,16 @@ SQLITE_PACKAGE_SHA256SUM='134ec0802dda5795816e25d25872d20b312cb3973438c49b30bc40
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3540000.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3540000'
 
+LIBMPDEC_PACKAGE_URL='https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-4.0.1.tar.gz'
+LIBMPDEC_PACKAGE_SHA256SUM='96d33abb4bb0070c7be0fed4246cd38416188325f820468214471938545b1ac8'
+LIBMPDEC_PACKAGE_NAME='mpdecimal-4.0.1.tar.gz'
+LIBMPDEC_PACKAGE_EXTRACTED_DIR='mpdecimal-4.0.1'
+
+LIBUUID_PACKAGE_URL='https://github.com/util-linux/util-linux/archive/refs/tags/v2.42.4.tar.gz'
+LIBUUID_PACKAGE_SHA256SUM='e1d38037dab761a2d39114d88a6744ffd5a4576efa29fe41e1dfbd8453891fe7'
+LIBUUID_PACKAGE_NAME='util-linux-2.42.4.tar.gz'
+LIBUUID_PACKAGE_EXTRACTED_DIR='util-linux-2.42.4'
+
 PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.15.0.tar.gz'
 PYTHON_PACKAGE_SHA256SUM='f8cb0b9a98d5412cab2d207241fec5aa5a09552e33f237c7a06cfe36be8687c4'
 PYTHON_PACKAGE_NAME='cpython-3.15.0.tar.gz'

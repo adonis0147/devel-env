@@ -275,6 +275,27 @@ def check_bzip2_package(package: str, url: str) -> bool:
     return version != latest_version
 
 
+def check_libmpdec_package(package: str, url: str) -> bool:
+    file = os.path.basename(url)
+    version = file[len("mpdecimal-") : -len(".tar.gz")]
+
+    response = requests.get("https://www.bytereef.org/mpdecimal/download.html")
+    response.raise_for_status()
+    document = html.fromstring(response.content)
+    hrefs = document.xpath("//a/@href")
+
+    pattern = re.compile(r"mpdecimal-(\d+(?:\.\d+)*)\.tar\.gz$")
+    versions = [m.group(1) for href in hrefs if (m := pattern.search(href))]
+    versions.sort(key=packaging.version.parse)
+    latest_version = versions[-1]
+
+    logging.log(
+        logging.INFO if version == latest_version else logging.WARN,
+        "Check {}: {} -> {}".format(package, version, latest_version),
+    )
+    return version != latest_version
+
+
 def check_sqlite_package(package: str, url: str) -> bool:
     file = os.path.basename(url)
     version = file[len("sqlite-autoconf-") : -len(".tar.gz")]
@@ -387,6 +408,10 @@ def check_updates(urls: dict[str, str]) -> tuple[list[str], list[str]]:
             checked.append(package)
         elif "sourceware.org/pub/bzip2" in url:
             if check_bzip2_package(package, url):
+                updates.append(package)
+            checked.append(package)
+        elif "bytereef.org/software/mpdecimal/releases/" in url:
+            if check_libmpdec_package(package, url):
                 updates.append(package)
             checked.append(package)
         elif "sqlite.org" in url:
