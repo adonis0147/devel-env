@@ -450,6 +450,47 @@ function install_sqlite() {
 	log_info 'Success!'
 }
 
+function install_libmpdec() {
+	local package='libmpdec'
+	log_info "Start to install ${package}."
+	rm -rf "${LIBMPDEC_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${LIBMPDEC_PACKAGE_NAME}"
+
+	pushd "${LIBMPDEC_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}"
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
+function install_libuuid() {
+	local package='libuuid'
+	log_info "Start to install ${package}."
+	rm -rf "${LIBUUID_PACKAGE_EXTRACTED_DIR}"
+	tar -zxvf "${LIBUUID_PACKAGE_NAME}"
+
+	pushd "${LIBUUID_PACKAGE_EXTRACTED_DIR}" >/dev/null
+	# GitHub tag archives omit the generated configure script and gettext file list.
+	po/update-potfiles
+	autoreconf -fi
+	mkdir build
+	cd build
+	../configure --prefix="${DEVEL_HOME_PATH}/opt/${package}" \
+		--libdir="${DEVEL_HOME_PATH}/opt/${package}/lib" \
+		--disable-all-programs --enable-libuuid --disable-nls
+	make -j "${NUM_CORES}"
+	make install
+	popd >/dev/null
+	setup_package "${package}"
+
+	log_info 'Success!'
+}
+
 function install_python() {
 	local package='python'
 	log_info "Start to install ${package}."
@@ -866,9 +907,11 @@ function install_packages() {
 			curl
 			wget
 			sqlite
-			python
 			expat
 			gettext
+			libmpdec
+			libuuid
+			python
 			git
 			gmp
 			mpfr
