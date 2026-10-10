@@ -95,10 +95,10 @@ PERL_PACKAGE_SHA256SUM='3b855066b92491cb40e86affb1ca57d1a388aa43e51b91c7806a32c2
 PERL_PACKAGE_NAME='perl-5.44.0.tar.gz'
 PERL_PACKAGE_EXTRACTED_DIR='perl-5.44.0'
 
-OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-3.6.2/openssl-3.6.2.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='aaf51a1fe064384f811daeaeb4ec4dce7340ec8bd893027eee676af31e83a04f'
-OPENSSL_PACKAGE_NAME='openssl-3.6.2.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-3.6.2'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9'
+OPENSSL_PACKAGE_NAME='openssl-4.0.3.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-4.0.3'
 
 CURL_PACKAGE_URL='https://curl.se/download/curl-8.22.0.tar.gz'
 CURL_PACKAGE_SHA256SUM='d54dd598bf05927a726deb38df31c6a255ba83ff1de57c5d1464dac3ed8f44a1'
@@ -120,15 +120,15 @@ XZ_PACKAGE_SHA256SUM='0014c7886930454fe8bd4228665b51af55eeae560ea135c9c4cd33f55b
 XZ_PACKAGE_NAME='xz-5.8.4.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.4'
 
-SQLITE_PACKAGE_URL='https://sqlite.org/2026/sqlite-autoconf-3530400.tar.gz'
-SQLITE_PACKAGE_SHA256SUM='0e9483900e92cd5de8fd48d16bf9200145a61f7fd5be542a5ac81d8a9516eb9c'
-SQLITE_PACKAGE_NAME='sqlite-autoconf-3530400.tar.gz'
-SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3530400'
+SQLITE_PACKAGE_URL='https://sqlite.org/2026/sqlite-autoconf-3540000.tar.gz'
+SQLITE_PACKAGE_SHA256SUM='134ec0802dda5795816e25d25872d20b312cb3973438c49b30bc40b7705ea9ed'
+SQLITE_PACKAGE_NAME='sqlite-autoconf-3540000.tar.gz'
+SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3540000'
 
-PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.14.8.tar.gz'
-PYTHON_PACKAGE_SHA256SUM='43b34b293476c1520636c5fdf809db62b29b9f8290cd1cf92770596d78e73320'
-PYTHON_PACKAGE_NAME='cpython-3.14.8.tar.gz'
-PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.14.8'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.15.0.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='f8cb0b9a98d5412cab2d207241fec5aa5a09552e33f237c7a06cfe36be8687c4'
+PYTHON_PACKAGE_NAME='cpython-3.15.0.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.15.0'
 
 EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_9_0/expat-2.9.0.tar.gz'
 EXPRT_PACKAGE_SHA256SUM='16afbb9cefead2aa278105cf27d9f597bde7fbf3dbb85015857ca7ca6a4e89ba'
@@ -165,11 +165,11 @@ GDB_PACKAGE_SHA256SUM='fb83623deb238cab91ad17f8a906e2da26d0b4620fb1da43c20a27425
 GDB_PACKAGE_NAME='gdb-18.1.tar.gz'
 GDB_PACKAGE_EXTRACTED_DIR='gdb-18.1'
 
-NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.5/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
+NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	NEOVIM_PACKAGE_SHA256SUM='bce0f56eda1f1b1db6eee8f4133d7a38813ea07933837dd1777411ca384c6875'
+	NEOVIM_PACKAGE_SHA256SUM='474430d53e6264f6d6dd18db42d6dc9df3a1b56ca9e88a325bbf860e1a811d87'
 else
-	NEOVIM_PACKAGE_SHA256SUM='1aa5ca085249580ae0f91eb14f27ec0919773ff2d99a163d03f3d6c21ac29725'
+	NEOVIM_PACKAGE_SHA256SUM='8f1f64a0bdb97247034038c3823c6cbad5bdf9ecd5751b85494b71c3ee04c815'
 fi
 NEOVIM_PACKAGE_NAME="nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 
