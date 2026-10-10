@@ -4,10 +4,10 @@ _**Devel-env**_ is aimed to set the development environment up on Linux server _
 
 It provides the following stuffs:
 
-1. Portable GCC toolchain **(GCC 16.1 + GLIBC 2.43)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
+1. Portable GCC toolchain **(GCC 16.2 + GLIBC 2.44)** - relocated by [patchelf](https://github.com/NixOS/patchelf)
 2. Toolset - built from source manually
 
-### TIPS: The GCC toolchain can be used *standalone*.
+### TIPS: The GCC toolchain can be used _standalone_.
 
 ---
 
@@ -15,9 +15,9 @@ It provides the following stuffs:
 
 ### Prerequisites
 
-* Linux (x86_64 or aarch64)
-* Bash
-* XZ
+- Linux (x86_64 or aarch64)
+- Bash
+- XZ
 
 ### Use Prebuilt GCC Toolchain
 
@@ -113,10 +113,10 @@ The project provides scripts to install some softwares built by the GCC toolchai
 
 ### Prerequisites
 
-* Linux (x86_64 or aarch64)
-* Bash
-* XZ
-* install_toolchain.sh (_*provided*_)
+- Linux (x86_64 or aarch64)
+- Bash
+- XZ
+- install_toolchain.sh (_*provided*_)
 
 ## Usage
 
