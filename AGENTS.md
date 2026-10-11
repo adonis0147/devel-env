@@ -68,6 +68,16 @@ Helpers are `relocate [--overwrite] <path>`, `setup_locale`, `setup_terminfo`, a
 
 Treat install and relocation smoke tests as mutating operations. Use disposable containers or VMs with an isolated `HOME` and `DEVEL_HOME_PATH`, not the developer's active environment. The `/` install-root guard is not a substitute for isolation.
 
+## Adding packages
+
+1. Inspect a similar recipe and the new package's upstream build instructions. Verify a suitable upstream release directly; prefer a release archive with generated build files when available. Check requirements for both `x86_64` and `aarch64` and identify build and runtime dependencies.
+2. Add `<NAME>_PACKAGE_URL`, `<NAME>_PACKAGE_SHA256SUM`, `<NAME>_PACKAGE_NAME`, and `<NAME>_PACKAGE_EXTRACTED_DIR` in `devel/downloads/packages.sh`. Calculate SHA256 from the actual archive bytes (`set -o pipefail; curl -fL <url> | sha256sum`), verify the extracted directory name, and supply architecture-specific URLs/checksums when needed.
+3. Add a matching `download` call in `devel/downloads/download_packages.sh`, using the same variable names.
+4. Add `install_<name>` in `devel/scripts/install.sh`, following a similar recipe's extraction and build conventions. Install into `${DEVEL_HOME_PATH}/opt/<package>` and call `setup_package "${package}"`. Include any required bootstrap steps for archives without generated build files; preserve existing compatibility flags.
+5. If the package belongs in the default toolset, add its function suffix to `install_packages` after all its dependencies and before its consumers. Adjust consumer recipes if needed to use it. Explicit CLI package lists do not resolve dependencies; include the required recipes in order when testing.
+6. Ensure `devel/downloads/check_updates/src/check_updates/check_updates.py` can check the new package's URL. Reuse an existing upstream handler where possible; add a handler and dispatch rule only when the URL is otherwise unhandled. Preserve `data/packages.sh` as a symlink to the shared pins.
+7. Run `bash -n` and ShellCheck on the changed shell files from the repository root. When practical, smoke-test the package and affected consumers in a disposable container or VM with isolated `HOME` and `DEVEL_HOME_PATH`; source `env_vars.sh` before testing installed tools. Validate any new update-check handler with a targeted check using the helper's existing `uv` environment. Report skipped checks/builds and check `git status` for generated files.
+
 ## Updating packages
 
 - Change optional package pins in `devel/downloads/packages.sh`: keep URL, SHA256, archive name, and extracted-directory name consistent. Update every architecture-specific checksum affected by a release.
@@ -75,11 +85,10 @@ Treat install and relocation smoke tests as mutating operations. Use disposable 
 - The Expat checksum variable is currently spelled `EXPRT_PACKAGE_SHA256SUM` in both pins and downloader. Do not rename only one side.
 - Calculate checksums from the actual archive bytes, preferably without retaining the archive: `set -o pipefail; curl -fL <url> | sha256sum`. Do not guess or copy a checksum for a different asset.
 - Toolchain pins and MD5 sums live separately in `toolchain/generate_toolchain.sh`. The Dockerfile's bundled patchelf pin is independent of the optional toolset's patchelf pin.
-- Adding an optional package generally touches the pins, downloader, `install_<name>` recipe, and default sequence if it should be installed by default. Place it after its dependencies and finish its link setup.
 
 ### Required update-audit workflow
 
-When asked to check or update optional package versions, run the existing audit helper first instead of manually searching every upstream or writing a replacement checker. From the repository root:
+When checking or updating versions of existing optional packages, run the existing audit helper first instead of manually searching every upstream or writing a replacement checker. From the repository root:
 
 ```bash
 cd devel/downloads/check_updates && uv run check_updates
