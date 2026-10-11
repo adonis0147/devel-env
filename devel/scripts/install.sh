@@ -883,6 +883,8 @@ function install_packages() {
 	if [[ "${#packages[@]}" -eq 0 ]]; then
 		packages+=(
 			make
+			xz
+			patchelf
 			tzdb
 			m4
 			zlib
@@ -895,13 +897,11 @@ function install_packages() {
 			cmake
 			ninja
 			polyfill_glibc
-			patchelf
 			ncurses
 			readline
 			libffi
 			zstd
 			bzip2
-			xz
 			openssl
 			curl
 			wget
@@ -915,10 +915,10 @@ function install_packages() {
 			gmp
 			mpfr
 			texinfo
+			libedit
 			gdb
 			xxhash
 			ccache
-			libedit
 			libxml2
 			swig
 			llvm
