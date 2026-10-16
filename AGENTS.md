@@ -140,6 +140,16 @@ Current CI definitions:
 
 Package CI intentionally removes LLVM from the default sequence. Preserve this unless changing CI coverage deliberately. QEMU cloud-init credentials are test fixtures for the disposable VM, not deployment credentials.
 
+## Committing edits
+
+Use lowercase Conventional Commit-style subjects: `<type>: <imperative summary>`, with an optional scope when useful (for example, `feat(toolchain): update the GCC toolchain`). For an individual package update, use `chore: bump the version of <Package>`. For grouped package updates, use the exact subject `chore: upgrade packages`, followed by a blank line and an indented body listing affected package names exactly as they appear in the history:
+
+```
+chore: upgrade packages
+
+    OpenSSL and Python
+```
+
 ## Generated files
 
 Do not commit download/build caches, generated installers, or local environments: `devel/downloads/packages/*`, `toolchain/packages/*`, `output/`, root or `devel/scripts/install_toolchain.sh`, `.venv/`, `__pycache__/`, and Python build artifacts. Not all generated paths are covered by `.gitignore`; check `git status` before finishing.
