@@ -41,14 +41,14 @@ ZLIB_PACKAGE_SHA256SUM='b99a0b86c0ba9360ec7e78c4f1e43b1cbdf1e6936c8fa0f6835c0cd6
 ZLIB_PACKAGE_NAME='zlib-1.3.2.tar.gz'
 ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3.2'
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.99.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.99.1-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='891c6366d7100feda0bca4c03ce63f3c9ac827cbebbc283e7433061d42c6a376'
+	RUST_PACKAGE_SHA256SUM='231fcae47ee950621374725b5fc3b5441d2fbda2955ac45dd7dc816d8876cfe7'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='5a30ce742be0835d9b23fc862db5cbbbc71464e1c9b1fca22917e10e4ba32a92'
+	RUST_PACKAGE_SHA256SUM='a48fb1e853be56ce9b8e2751f5464dbd5e16440cd81e237920f3a5e7e806333e'
 fi
-RUST_PACKAGE_NAME="rust-1.99.0-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.99.0-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.99.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.99.1-${ARCH}-unknown-linux-gnu"
 
 PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz'
 PERL_PACKAGE_SHA256SUM='3b855066b92491cb40e86affb1ca57d1a388aa43e51b91c7806a32c2f65f96c3'
