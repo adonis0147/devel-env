@@ -199,10 +199,10 @@ XXHASH_PACKAGE_SHA256SUM='5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52
 XXHASH_PACKAGE_NAME='xxHash-0.8.4.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.4'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14.1/ccache-4.14.1.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='dfd2b9e446b2cf68e83e21b25317d8f868de6f1b246c7e99e04d07f4e1b0b97e'
-CCACHE_PACKAGE_NAME='ccache-4.14.1.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14.1'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14.2/ccache-4.14.2.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='35921f80a93d6453a874525f2e4bd97264c46ddc349d87aacc1032cde4dd2924'
+CCACHE_PACKAGE_NAME='ccache-4.14.2.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14.2'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.4.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='bb01bd9ac9a7403f9706816fd6d3e7888041d32b0211075feb20e755d2a9f29d'
@@ -214,10 +214,10 @@ SWIG_PACKAGE_SHA256SUM='7fec50b27deddab5455a9633780b6341eddfb96215a7619e93a76eb2
 SWIG_PACKAGE_NAME='swig-4.5.1.tar.gz'
 SWIG_PACKAGE_EXTRACTED_DIR='swig-4.5.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/llvm-project-23.1.3.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='c44186a7762ed28954be72e5ff6df9808e0779d4f1bf014ecc4e7e211d31ee34'
-LLVM_PACKAGE_NAME='llvm-project-23.1.3.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.3.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2'
+LLVM_PACKAGE_NAME='llvm-project-23.1.4.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.4.src'
 
 NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
