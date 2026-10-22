@@ -408,7 +408,7 @@ function install_bzip2() {
 	make -f Makefile-libbz2_so
 	mv libbz2.so* "${DEVEL_HOME_PATH}/opt/${package}/lib"
 	cd "${DEVEL_HOME_PATH}/opt/${package}/lib"
-	ln -s libbz2.so.1.0 libbz2.so
+	ln -snf libbz2.so.1.0 libbz2.so
 	popd >/dev/null
 	setup_package "${package}"
 
