@@ -161,6 +161,10 @@ function setup_ca_certificate() {
 	# openssl
 	export SSL_CERT_FILE="${cacert}"
 
+	local ssl_cert_file="${DEVEL_HOME_PATH}/opt/openssl/ssl/cert.pem"
+	mkdir -p "$(dirname "${ssl_cert_file}")"
+	ln -snf "${cacert}" "${ssl_cert_file}"
+
 	# git
 	export GIT_SSL_CAINFO="${cacert}"
 	export GIT_PROXY_SSL_CAINFO="${cacert}"
