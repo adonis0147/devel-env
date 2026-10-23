@@ -159,10 +159,10 @@ LIBUUID_PACKAGE_SHA256SUM='e1d38037dab761a2d39114d88a6744ffd5a4576efa29fe41e1dfb
 LIBUUID_PACKAGE_NAME='util-linux-2.42.4.tar.gz'
 LIBUUID_PACKAGE_EXTRACTED_DIR='util-linux-2.42.4'
 
-PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.15.0.tar.gz'
-PYTHON_PACKAGE_SHA256SUM='f8cb0b9a98d5412cab2d207241fec5aa5a09552e33f237c7a06cfe36be8687c4'
-PYTHON_PACKAGE_NAME='cpython-3.15.0.tar.gz'
-PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.15.0'
+PYTHON_PACKAGE_URL='https://github.com/python/cpython/archive/refs/tags/v3.15.1.tar.gz'
+PYTHON_PACKAGE_SHA256SUM='b0ca8592506635d0b2dbf73a198931300d542afa2b62f63213ae0d401ff855af'
+PYTHON_PACKAGE_NAME='cpython-3.15.1.tar.gz'
+PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.15.1'
 
 GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.56.0.tar.gz'
 GIT_PACKAGE_SHA256SUM='d761232b81394f7d4c3ef1a99fa804ffbe10d278ae1ad302833a0892050ca9fc'
