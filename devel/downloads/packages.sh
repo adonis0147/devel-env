@@ -119,10 +119,10 @@ BZIP2_PACKAGE_SHA256SUM='ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682c
 BZIP2_PACKAGE_NAME='bzip2-1.0.8.tar.gz'
 BZIP2_PACKAGE_EXTRACTED_DIR='bzip2-1.0.8'
 
-OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz'
-OPENSSL_PACKAGE_SHA256SUM='325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9'
-OPENSSL_PACKAGE_NAME='openssl-4.0.3.tar.gz'
-OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-4.0.3'
+OPENSSL_PACKAGE_URL='https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz'
+OPENSSL_PACKAGE_SHA256SUM='50c17baf54cb008f6ce42d50deb4b28050a1aad711636cabd4b241c7e90cc2fd'
+OPENSSL_PACKAGE_NAME='openssl-4.1.0.tar.gz'
+OPENSSL_PACKAGE_EXTRACTED_DIR='openssl-4.1.0'
 
 CURL_PACKAGE_URL='https://curl.se/download/curl-8.23.0.tar.gz'
 CURL_PACKAGE_SHA256SUM='e3de77cfa6367083c776a26647fc9f633b538c06c3baa73d931a252ac8f72b49'
