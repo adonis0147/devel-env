@@ -75,14 +75,14 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.4/cmake-4.4.4-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.5/cmake-4.4.5-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='e5bb807f7728cb60cd8b27ebc97a2edb469b68655f21e844a600c3575b76f5bb'
+	CMAKE_PACKAGE_SHA256SUM='ed85135c5a5135b45e50423cb406dea04ca3338da0b8ef3c9ede963559680be0'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='a1b6cc63636a0e55c63257cf3315a8a5f129e42fade25db1afea4ff8ab06f25e'
+	CMAKE_PACKAGE_SHA256SUM='301d5063ab259577c1b57ce5490b1aab9ea5c56dc4c822f73499553dab94925f'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.4.4-linux-${ARCH}.tar.gz"
-CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.4-linux-${ARCH}"
+CMAKE_PACKAGE_NAME="cmake-4.4.5-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.5-linux-${ARCH}"
 
 NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.2.tar.gz'
 NINJA_PACKAGE_SHA256SUM='974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17'
