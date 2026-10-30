@@ -26,10 +26,10 @@ elif [[ "${ARCH}" == 'aarch64' ]]; then
 fi
 PATCHELF_PACKAGE_NAME="patchelf-0.19.2-${ARCH}.tar.gz"
 
-TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026e.tar.gz'
-TZDB_PACKAGE_SHA256SUM='5b62258a9a868813f00b070983b9b3e7279634575571a0fcc732be6a1f7047c1'
-TZDB_PACKAGE_NAME='tz-2026e.tar.gz'
-TZDB_PACKAGE_EXTRACTED_DIR='tz-2026e'
+TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026f.tar.gz'
+TZDB_PACKAGE_SHA256SUM='2fe4b4f27f75beea17970dfdd242ffb7f099fad9447950a39d0fe8eae522d8e2'
+TZDB_PACKAGE_NAME='tz-2026f.tar.gz'
+TZDB_PACKAGE_EXTRACTED_DIR='tz-2026f'
 
 M4_PACKAGE_URL='https://ftpmirror.gnu.org/m4/m4-1.4.21.tar.xz'
 M4_PACKAGE_SHA256SUM='f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a2408ab66'
