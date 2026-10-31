@@ -18,13 +18,13 @@ XZ_PACKAGE_SHA256SUM='0014c7886930454fe8bd4228665b51af55eeae560ea135c9c4cd33f55b
 XZ_PACKAGE_NAME='xz-5.8.4.tar.gz'
 XZ_PACKAGE_EXTRACTED_DIR='xz-5.8.4'
 
-PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.19.2/patchelf-0.19.2-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_URL="https://github.com/NixOS/patchelf/releases/download/0.19.3/patchelf-0.19.3-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='2abdc34fbe949c995a1baa4ec310896a085588a45a99cd0d726851bdfac2a4bb'
+	PATCHELF_PACKAGE_SHA256SUM='38861b171079e440b25ac86483284f690d0ee7921dba98b0c8fe04a9b0a11667'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	PATCHELF_PACKAGE_SHA256SUM='ba6850c1a6f4cbdb050e1cc22fa5239159ad31c43606846e49c408d335f594ff'
+	PATCHELF_PACKAGE_SHA256SUM='2281dd071995b449b9ce7c53c71d6d56ec3a280ae1cc66b779442abf624f7c10'
 fi
-PATCHELF_PACKAGE_NAME="patchelf-0.19.2-${ARCH}.tar.gz"
+PATCHELF_PACKAGE_NAME="patchelf-0.19.3-${ARCH}.tar.gz"
 
 TZDB_PACKAGE_URL='https://github.com/eggert/tz/archive/refs/tags/2026f.tar.gz'
 TZDB_PACKAGE_SHA256SUM='2fe4b4f27f75beea17970dfdd242ffb7f099fad9447950a39d0fe8eae522d8e2'
