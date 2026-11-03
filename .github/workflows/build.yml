@@ -47,8 +47,12 @@ jobs:
 
           cloud-localds cloud-init.iso cloud-init/user-data.yaml cloud-init/meta-data.yaml
 
+          test -c /dev/kvm
+          sudo chown "$(id -un)" /dev/kvm
+
           nohup qemu-system-x86_64 \
-            -accel tcg \
+            -accel kvm \
+            -cpu host \
             -smp "$(nproc)" \
             -m 7G \
             -drive if=virtio,format=raw,file=centos.img \
