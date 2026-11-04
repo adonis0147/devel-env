@@ -139,10 +139,10 @@ SQLITE_PACKAGE_SHA256SUM='926ef8d3eab93fbf6e06011901273eec076b25594a4e1cdadd50c9
 SQLITE_PACKAGE_NAME='sqlite-autoconf-3540100.tar.gz'
 SQLITE_PACKAGE_EXTRACTED_DIR='sqlite-autoconf-3540100'
 
-EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_9_0/expat-2.9.0.tar.gz'
-EXPRT_PACKAGE_SHA256SUM='16afbb9cefead2aa278105cf27d9f597bde7fbf3dbb85015857ca7ca6a4e89ba'
-EXPAT_PACKAGE_NAME='expat-2.9.0.tar.gz'
-EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.9.0'
+EXPAT_PACKAGE_URL='https://github.com/libexpat/libexpat/releases/download/R_2_10_0/expat-2.10.0.tar.gz'
+EXPRT_PACKAGE_SHA256SUM='5466a341f9c692ef7a958a6881311be597f8e1ce345984cf78414f54793dea4c'
+EXPAT_PACKAGE_NAME='expat-2.10.0.tar.gz'
+EXPAT_PACKAGE_EXTRACTED_DIR='expat-2.10.0'
 
 GETTEXT_PACKAGE_URL='https://ftpmirror.gnu.org/gettext/gettext-1.0.tar.xz'
 GETTEXT_PACKAGE_SHA256SUM='71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7'
@@ -214,10 +214,10 @@ SWIG_PACKAGE_SHA256SUM='7fec50b27deddab5455a9633780b6341eddfb96215a7619e93a76eb2
 SWIG_PACKAGE_NAME='swig-4.5.1.tar.gz'
 SWIG_PACKAGE_EXTRACTED_DIR='swig-4.5.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2'
-LLVM_PACKAGE_NAME='llvm-project-23.1.4.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.4.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e'
+LLVM_PACKAGE_NAME='llvm-project-23.1.5.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.5.src'
 
 NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
