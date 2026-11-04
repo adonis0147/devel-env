@@ -113,19 +113,6 @@ jobs:
 
           cd devel/scripts
 
-          packages=(
-            tzdb
-            m4
-            zlib
-            perl
-            autoconf
-            automake
-            libtool
-            make
-            pkg_config
-            cmake
-            ninja
-          )
           bash install.sh "\${packages[@]}"
           EOF
 
