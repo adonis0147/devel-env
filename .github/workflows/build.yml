@@ -15,6 +15,17 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          # /mnt may share the root filesystem; leave room for the second PV and apt.
+          root-reserve-mb: 8192
+          temp-reserve-mb: 4096
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+
       - name: Checkout ${{ github.ref }}
         uses: actions/checkout@v4
 
@@ -42,7 +53,7 @@ jobs:
           cd .github/qemu
 
           curl -LO 'https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2'
-          qemu-img resize CentOS-7-x86_64-GenericCloud.qcow2 10G
+          qemu-img resize CentOS-7-x86_64-GenericCloud.qcow2 40G
           qemu-img convert -f qcow2 -O raw -o preallocation=full CentOS-7-x86_64-GenericCloud.qcow2 centos.img
 
           cloud-localds cloud-init.iso cloud-init/user-data.yaml cloud-init/meta-data.yaml
