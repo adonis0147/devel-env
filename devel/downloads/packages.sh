@@ -36,10 +36,10 @@ M4_PACKAGE_SHA256SUM='f25c6ab51548a73a75558742fb031e0625d6485fe5f9155949d6486a24
 M4_PACKAGE_NAME='m4-1.4.21.tar.xz'
 M4_PACKAGE_EXTRACTED_DIR='m4-1.4.21'
 
-ZLIB_PACKAGE_URL='https://github.com/madler/zlib/archive/refs/tags/v1.3.2.tar.gz'
-ZLIB_PACKAGE_SHA256SUM='b99a0b86c0ba9360ec7e78c4f1e43b1cbdf1e6936c8fa0f6835c0cd694a495a1'
-ZLIB_PACKAGE_NAME='zlib-1.3.2.tar.gz'
-ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.3.2'
+ZLIB_PACKAGE_URL='https://github.com/madler/zlib/archive/refs/tags/v1.4.tar.gz'
+ZLIB_PACKAGE_SHA256SUM='4331355048e286908260fdbeaa0b8cf75ceaf2907c75855a093a6487c7032aaa'
+ZLIB_PACKAGE_NAME='zlib-1.4.tar.gz'
+ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.4'
 
 RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.99.1-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
