@@ -41,14 +41,14 @@ ZLIB_PACKAGE_SHA256SUM='4331355048e286908260fdbeaa0b8cf75ceaf2907c75855a093a6487
 ZLIB_PACKAGE_NAME='zlib-1.4.tar.gz'
 ZLIB_PACKAGE_EXTRACTED_DIR='zlib-1.4'
 
-RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.99.1-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_URL="https://static.rust-lang.org/dist/rust-1.100.0-${ARCH}-unknown-linux-gnu.tar.xz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	RUST_PACKAGE_SHA256SUM='231fcae47ee950621374725b5fc3b5441d2fbda2955ac45dd7dc816d8876cfe7'
+	RUST_PACKAGE_SHA256SUM='98ee6bec240e1cfe944f17e7092412dc5ef6e008484bb668c6936d35a7d15acd'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	RUST_PACKAGE_SHA256SUM='a48fb1e853be56ce9b8e2751f5464dbd5e16440cd81e237920f3a5e7e806333e'
+	RUST_PACKAGE_SHA256SUM='a21f6a21818df07c1e2e7addb570af5444b3fa9dd61e3a207f4fb1c5a5e665c9'
 fi
-RUST_PACKAGE_NAME="rust-1.99.1-${ARCH}-unknown-linux-gnu.tar.xz"
-RUST_PACKAGE_EXTRACTED_DIR="rust-1.99.1-${ARCH}-unknown-linux-gnu"
+RUST_PACKAGE_NAME="rust-1.100.0-${ARCH}-unknown-linux-gnu.tar.xz"
+RUST_PACKAGE_EXTRACTED_DIR="rust-1.100.0-${ARCH}-unknown-linux-gnu"
 
 PERL_PACKAGE_URL='https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz'
 PERL_PACKAGE_SHA256SUM='3b855066b92491cb40e86affb1ca57d1a388aa43e51b91c7806a32c2f65f96c3'
@@ -60,10 +60,10 @@ AUTOCONF_PACKAGE_SHA256SUM='259ddfa3bddc799cfb81489cc0f17dfdf1bd6d1505dda53c0f45
 AUTOCONF_PACKAGE_NAME='autoconf-2.73.tar.gz'
 AUTOCONF_PACKAGE_EXTRACTED_DIR='autoconf-2.73'
 
-AUTOMAKE_PACKAGE_URL='https://ftpmirror.gnu.org/automake/automake-1.19.tar.gz'
-AUTOMAKE_PACKAGE_SHA256SUM='79e8b1f7a967e87ce8a9ded76bee7f793d0ce1886ab2002feb1b0510f578b75a'
-AUTOMAKE_PACKAGE_NAME='automake-1.19.tar.gz'
-AUTOMAKE_PACKAGE_EXTRACTED_DIR='automake-1.19'
+AUTOMAKE_PACKAGE_URL='https://ftpmirror.gnu.org/automake/automake-1.20.tar.gz'
+AUTOMAKE_PACKAGE_SHA256SUM='00c0e397a3c0096b1b9167eb4a5ecb87a66fe50888d939c4e02111e603936570'
+AUTOMAKE_PACKAGE_NAME='automake-1.20.tar.gz'
+AUTOMAKE_PACKAGE_EXTRACTED_DIR='automake-1.20'
 
 LIBTOOL_PACKAGE_URL='https://ftpmirror.gnu.org/libtool/libtool-2.6.2.tar.gz'
 LIBTOOL_PACKAGE_SHA256SUM='24adb3aa9ae035c70faba344af57d73215eb89281045af6c7ccd307751f8b0bf'
@@ -75,14 +75,14 @@ PKG_CONFIG_PACKAGE_SHA256SUM='6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf442
 PKG_CONFIG_PACKAGE_NAME='pkg-config-0.29.2.tar.gz'
 PKG_CONFIG_PACKAGE_EXTRACTED_DIR='pkg-config-0.29.2'
 
-CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.4.5/cmake-4.4.5-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_URL="https://github.com/Kitware/CMake/releases/download/v4.5.0/cmake-4.5.0-linux-${ARCH}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='ed85135c5a5135b45e50423cb406dea04ca3338da0b8ef3c9ede963559680be0'
+	CMAKE_PACKAGE_SHA256SUM='81f0d5b0960fb6adc8197030ffc827fba937640d51e73e39e0e9e40d88c66f6f'
 elif [[ "${ARCH}" == 'aarch64' ]]; then
-	CMAKE_PACKAGE_SHA256SUM='301d5063ab259577c1b57ce5490b1aab9ea5c56dc4c822f73499553dab94925f'
+	CMAKE_PACKAGE_SHA256SUM='0c8447e7bba9701467b5ac6155d157aa9e309e71af4981f78bd4b9176107f553'
 fi
-CMAKE_PACKAGE_NAME="cmake-4.4.5-linux-${ARCH}.tar.gz"
-CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.4.5-linux-${ARCH}"
+CMAKE_PACKAGE_NAME="cmake-4.5.0-linux-${ARCH}.tar.gz"
+CMAKE_PACKAGE_EXTRACTED_DIR="cmake-4.5.0-linux-${ARCH}"
 
 NINJA_PACKAGE_URL='https://github.com/ninja-build/ninja/archive/refs/tags/v1.13.2.tar.gz'
 NINJA_PACKAGE_SHA256SUM='974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17'
@@ -164,10 +164,10 @@ PYTHON_PACKAGE_SHA256SUM='4e35a9145e728fa51c4950d3fe490c419dc1587c7ea21757a50cb5
 PYTHON_PACKAGE_NAME='cpython-3.15.2.tar.gz'
 PYTHON_PACKAGE_EXTRACTED_DIR='cpython-3.15.2'
 
-GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.56.0.tar.gz'
-GIT_PACKAGE_SHA256SUM='d761232b81394f7d4c3ef1a99fa804ffbe10d278ae1ad302833a0892050ca9fc'
-GIT_PACKAGE_NAME='git-2.56.0.tar.gz'
-GIT_PACKAGE_EXTRACTED_DIR='git-2.56.0'
+GIT_PACKAGE_URL='https://github.com/git/git/archive/refs/tags/v2.56.1.tar.gz'
+GIT_PACKAGE_SHA256SUM='7352791502f1b9745e7414e15e4ae9b7bb4773428b9a1b4f7beb3fdd1073aba4'
+GIT_PACKAGE_NAME='git-2.56.1.tar.gz'
+GIT_PACKAGE_EXTRACTED_DIR='git-2.56.1'
 
 GMP_PACKAGE_URL='https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz'
 GMP_PACKAGE_SHA256SUM='a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898'
@@ -199,10 +199,10 @@ XXHASH_PACKAGE_SHA256SUM='5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52
 XXHASH_PACKAGE_NAME='xxHash-0.8.4.tar.gz'
 XXHASH_PACKAGE_EXTRACTED_DIR='xxHash-0.8.4'
 
-CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14.2/ccache-4.14.2.tar.gz'
-CCACHE_PACKAGE_SHA256SUM='35921f80a93d6453a874525f2e4bd97264c46ddc349d87aacc1032cde4dd2924'
-CCACHE_PACKAGE_NAME='ccache-4.14.2.tar.gz'
-CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14.2'
+CCACHE_PACKAGE_URL='https://github.com/ccache/ccache/releases/download/v4.14.3/ccache-4.14.3.tar.gz'
+CCACHE_PACKAGE_SHA256SUM='d50587abd5b787a7ba48cb1d76f7a4f09036e0181e742fc7383a8b154d73f0ba'
+CCACHE_PACKAGE_NAME='ccache-4.14.3.tar.gz'
+CCACHE_PACKAGE_EXTRACTED_DIR='ccache-4.14.3'
 
 LIBXML2_PACKAGE_URL='https://github.com/GNOME/libxml2/archive/refs/tags/v2.15.4.tar.gz'
 LIBXML2_PACKAGE_SHA256SUM='bb01bd9ac9a7403f9706816fd6d3e7888041d32b0211075feb20e755d2a9f29d'
