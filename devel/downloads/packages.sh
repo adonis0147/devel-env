@@ -104,10 +104,10 @@ READLINE_PACKAGE_SHA256SUM='fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f6
 READLINE_PACKAGE_NAME='readline-8.3.tar.gz'
 READLINE_PACKAGE_EXTRACTED_DIR='readline-8.3'
 
-LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.8.0/libffi-3.8.0.tar.gz'
-LIBFFI_PACKAGE_SHA256SUM='7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4'
-LIBFFI_PACKAGE_NAME='libffi-3.8.0.tar.gz'
-LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.8.0'
+LIBFFI_PACKAGE_URL='https://github.com/libffi/libffi/releases/download/v3.8.1/libffi-3.8.1.tar.gz'
+LIBFFI_PACKAGE_SHA256SUM='81e879c094cc5ec3186c48510c6385ac6b3e866192e8bc71a35245703757ee40'
+LIBFFI_PACKAGE_NAME='libffi-3.8.1.tar.gz'
+LIBFFI_PACKAGE_EXTRACTED_DIR='libffi-3.8.1'
 
 ZSTD_PACKAGE_URL='https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz'
 ZSTD_PACKAGE_SHA256SUM='eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3'
