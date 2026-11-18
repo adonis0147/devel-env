@@ -214,10 +214,10 @@ SWIG_PACKAGE_SHA256SUM='7fec50b27deddab5455a9633780b6341eddfb96215a7619e93a76eb2
 SWIG_PACKAGE_NAME='swig-4.5.1.tar.gz'
 SWIG_PACKAGE_EXTRACTED_DIR='swig-4.5.1'
 
-LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz'
-LLVM_PACKAGE_SHA256SUM='fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e'
-LLVM_PACKAGE_NAME='llvm-project-23.1.5.src.tar.xz'
-LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.5.src'
+LLVM_PACKAGE_URL='https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.6/llvm-project-23.1.6.src.tar.xz'
+LLVM_PACKAGE_SHA256SUM='d3b86ab29cfb4445a6652e5c2642ccc75e04e38084dde3701d323320f35a31da'
+LLVM_PACKAGE_NAME='llvm-project-23.1.6.src.tar.xz'
+LLVM_PACKAGE_EXTRACTED_DIR='llvm-project-23.1.6.src'
 
 NEOVIM_PACKAGE_URL="https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-${ARCH/aarch64/arm64}.tar.gz"
 if [[ "${ARCH}" == 'x86_64' ]]; then
